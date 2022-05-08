@@ -1,0 +1,8 @@
+export {default as Datenschutz} from './Datenschutz/Datenschutz'
+export {default as Fahrzeugangebote} from './Fahrzeugangebote/Fahrzeugangebote'
+export {default as Fahrzeugankauf} from './Fahrzeugankauf/Fahrzeugankauf'
+export {default as Finanzierung} from './Finanzierung/Finanzierung'
+export {default as Galerie} from './Galerie/Galerie'
+export {default as Home} from './Home/Home'
+export {default as Impressium} from './Impressium/Impressium'
+export {default as Kontakt} from './Kontakt/Kontakt'
