@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 2rem 8rem ;
+  
+    padding: 2rem  35rem;
 }
 
 .mka__navbar-links {
@@ -16,6 +16,7 @@
 .mka__navbar-links_container {
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 
 .mka__navbar-links_container p,
@@ -34,4 +35,59 @@
 .mka__navbar-links_container p > a:hover {
     transition: 0.9s;
     color: #db2d2e;
+}
+
+.mka__navbar-menu {
+    margin-left: 1rem;
+    display: none;
+
+    position: relative;
+}
+
+.mka__navbar-menu_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+
+    text-align: end;
+    background-color: black;
+    padding: 2rem;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0 0 5 rgba(0,0,0,0,0.2);
+}
+
+.mka__navbar-menu_container p {
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 1050px){
+    .mka__navbar-links_container {
+        display: none;
+    }
+
+    .mka__navbar-menu {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .mka__navbar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .mka__navbar {
+        padding: 2rem;
+    }
+
+    .mka__navbar-menu_container {
+        top: 20px;
+    }
 }
