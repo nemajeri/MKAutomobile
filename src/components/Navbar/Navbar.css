@@ -37,8 +37,16 @@
     color: #db2d2e;
 }
 
+.mka__navbar-links_container p > a:link {
+    color: #fff;
+}
+
+.mka__navbar-links_container p > a:visited {
+    color: #db2d2e;
+}
+
 .mka__navbar-menu {
-    margin-left: 1rem;
+    margin-left: 5rem;
     display: none;
 
     position: relative;
