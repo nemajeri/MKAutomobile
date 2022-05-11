@@ -41,14 +41,11 @@
     color: #fff;
 }
 
-.mka__navbar-links_container p > a:visited {
-    color: #db2d2e;
-}
-
 .mka__navbar-menu {
     margin-left: 5rem;
     display: none;
 
+    
     position: relative;
 }
 
@@ -58,13 +55,13 @@
     align-items: flex-end;
     flex-direction: column;
 
-    text-align: end;
+    text-align: start;
     background-color: black;
-    padding: 2rem;
+    padding: 2rem 7rem;
     position: absolute;
     top: 40px;
     right: 0;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     min-width: 210px;
     border-radius: 5px;
     box-shadow: 0 0 5 rgba(0,0,0,0,0.2);
@@ -81,6 +78,7 @@
 
     .mka__navbar-menu {
         display: flex;
+        float: right;
     }
 }
 
@@ -93,9 +91,11 @@
 @media screen and (max-width: 550px){
     .mka__navbar {
         padding: 2rem;
-    }
+        
+    } 
 
     .mka__navbar-menu_container {
         top: 20px;
+        text-align: end;
     }
 }
