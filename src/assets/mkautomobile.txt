@@ -1,0 +1,59 @@
+//theme colors
+red: #ff0000
+black: #000000
+grey: #5f5d59
+white: #ffffff
+  <Router>
+        <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/fahrzeugangebote/' element={<Offers />} />
+        <Route path='/finanzierung/' element={<Financing />} />
+        <Route path='/fahrzeugankauf/' element={<Buying />} />
+        <Route path='/galerie/' element={<Gallery />} />
+        <Route path='/kontakt/' element={<Contact />} />
+        <Route path='/' element={<Search />} />
+        </Routes>
+      </Router>
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
+import Home from './pages/Home';
+import Offers from './pages/Offers';
+import Financing from './pages/Financing';
+import Buying from './pages/Buying';
+import Contact from './pages/Contact';
+import Gallery from './pages/Gallery';
+import Search from './components/Search';
+import Layout from './components/Layout';
+
+
+<div className='nav'>
+     <Container>
+      <Nav className="justify-content-center" activeKey="/home">
+    <Nav.Item>
+      <Nav.Link href="/">HOME</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/fahrzeugangebote/">FAHRZEUGANGEBOTE</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/finanzierung/">FINANZIERUNG</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/fahrzeugankauf/">FAHRZEUGANKAUF</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/galerie/">GALERIE</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/kontakt/">KONTAKT</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+      <Nav.Link href="/"><FaSearch/></Nav.Link>
+    </Nav.Item>
+  </Nav>
+  </Container>
+  </div>;
+
+<div style={{ backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat',
+  height:'50em'  }}>
+import background from './assets/dark-min.jpg';

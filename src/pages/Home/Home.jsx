@@ -2,8 +2,8 @@ import './Home.css';
 
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className='header-img'>
+      <img src={require('../../assets/dark-min.jpg')}  alt='background' />
     </div>
   );
 }
