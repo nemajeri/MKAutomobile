@@ -32,13 +32,13 @@
     cursor: pointer;
 }
 
+.mka__navbar-links_container p > a:link {
+    color: #fff;
+}
+
 .mka__navbar-links_container p > a:hover {
     transition: 0.9s;
     color: #db2d2e;
-}
-
-.mka__navbar-links_container p > a:link {
-    color: #fff;
 }
 
 .mka__navbar-menu {
@@ -71,7 +71,7 @@
     margin: 1rem 0;
 }
 
-@media screen and (max-width: 1050px){
+@media (max-width: 1200px){
     .mka__navbar-links_container {
         display: none;
     }
@@ -80,16 +80,21 @@
         display: flex;
         float: right;
     }
-}
 
-@media screen and (max-width: 700px){
     .mka__navbar {
-        padding: 2rem 4rem;
+        padding: 2rem 1rem;
         margin-left: 16rem;
     }
 }
 
-@media screen and (max-width: 550px){
+@media (max-width: 992px){
+    .mka__navbar {
+        padding: 2rem 1rem;
+        margin-left: 16rem;
+    }
+}
+
+@media (max-width: 768px){
     .mka__navbar {
         padding: 2rem 1rem;
         margin-left: 18rem;

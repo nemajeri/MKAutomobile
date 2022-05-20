@@ -1,33 +1,8 @@
 .mka__div {
-    width: 100%;
+    width: auto;
     top: 0;
     border-bottom: 1px solid rgba(255,255,255,.2);
-    height: 50px;
-}
-
-.mka__container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    
-}
-
-@media screen and (min-width: 1200px){
-    .mka__container {
-       width: 1170px;
-    }
-}
-@media screen and ((min-width: 992px)){
-    .mka__container {
-        width: 970px;
-     }
-}
-
-@media screen and ((min-width: 768px)){
-    .mka__container {
-        height: 750px;
-    }
+    max-height: 105px;
 }
 
 .mka__header {
@@ -35,35 +10,35 @@
     flex-wrap: wrap;
     align-items: center;
     padding: 0.5rem 1rem ;
+    justify-content: center;
 }
 
 .mka__header-list {
-    flex: 1;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow-wrap: break-word;
-    justify-content: start;
-    align-items: center;
-    
-    
+    flex: 4 1;
 }
 
 .mka__header-list > ul,li {
     color: #fff;
     list-style: none;
-    display: flex;
+    display: inline-block;
     padding: 0.2em;
-   
+    line-height: 24px;
+    font-family: var(--font-family);
+    font-size: min(22px, 14px);
 }
 
 .mka__header-link {
     color: #fff;
-    
+    font-family: var(--font-family);
 }
 
 .mka__header-link p > a:hover {
     transition: 0.9s;
     color: #db2d2e;
+}
+
+.mka__header-link p > a:active {
+  color: #db2d2e;
 }
 
 .mka__icons {
@@ -72,3 +47,52 @@
     padding-right: 5px;
 }
 
+.mka__container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+  @media (min-width: 768px) {
+    .mka__container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .mka__container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .mka__container {
+      width: 1170px;
+    }
+  }
+  @media (max-width: 768px) {
+    .mka__container {
+      width: 370px;
+    }
+
+    .mka__header-list {   
+    text-align: center;
+    position: inherit;
+    display: contents;
+        
+    }
+  }
+
+  @media (max-width: 340px) {
+    .mka__container {
+      width: 260px;
+    }
+
+    .mka__header-list {   
+    text-align: center;
+    position: inherit;
+    display: contents;
+        
+    }
+  }
+
+ 
