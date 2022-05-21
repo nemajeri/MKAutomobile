@@ -1,0 +1,37 @@
+.mka__jumbotrone-bg-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-image: url(http://mkautomobile.at/wp-content/uploads/2021/04/Background.jpg?id=28);
+}
+
+.mka__jumbotrone-div {
+    display: flex;
+}
+
+.mka__jumbotrone-contact {
+    color: #fff;
+    max-width: 50%;
+    padding: 60px 0;
+}
+
+.mka__jumbotrone-contact > p {
+    word-break: break-all;
+    font-family: var(--font-family);
+    line-height: 24px;
+    font-size: 14px;
+    color: #d2d2d2;
+}
+
+.mka__jumbotrone-contact p > a:link {
+    color: var(--color-red);
+}
+
+.mka__jumbotrone-red-line {
+    height: 2px;
+    width: 20px;
+    background-color: var(--color-red);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

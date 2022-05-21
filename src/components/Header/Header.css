@@ -33,13 +33,20 @@
     font-size: min(22px, 14px);
 }
 
+
+.mka__header-link > p {
+  display: flex;
+  justify-items: center;
+  gap: 5px;
+}
+
 .mka__header-link p > a:hover {
     transition: 0.9s;
-    color: #db2d2e;
+    color: var(--color-red);
 }
 
 .mka__header-link p > a:active {
-  color: #db2d2e;
+  color: var(--color-red);
 }
 
 .mka__icons {

@@ -77,6 +77,10 @@
         display: none;
     }
 
+    .dropdown {
+        display: none;
+    }
+
     .mka__navbar-menu {
         display: flex;
         float: right;
