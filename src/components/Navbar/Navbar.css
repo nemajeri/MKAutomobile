@@ -23,8 +23,8 @@
     text-transform: uppercase;
     font-weight: 400;
     font-family: var(--font-family);
-
-    padding: 0 1rem;
+    transition: padding .25s linear;
+    padding: 0 0.5rem;
     cursor: pointer;
 }
 
@@ -33,7 +33,12 @@
 }
 
 .mka__navbar-links_container p > a:hover {
-    transition: 0.9s;
+    transition: 0.5s;
+    color: #db2d2e;
+}
+
+.mka__navbar-links_container p > i:hover {
+    transition: 0.5s;
     color: #db2d2e;
 }
 
@@ -89,4 +94,9 @@
    
 }
 
+@media (min-width: 1200px){
+    .mka__navbar-links_container p {
+        padding: 0 1rem;
+    }
+}
 
