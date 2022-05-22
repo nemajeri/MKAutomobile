@@ -10,7 +10,7 @@
     display: flex;
     font-family: var(--font-family);
     font-size: min(22px, 14px);
-    color: var(--color-grey);
+    color: #626262;
     flex-wrap: wrap;
     align-items: center;
     padding-top: 30px;
@@ -51,6 +51,7 @@
 
     .mka__footer-links {
         justify-content: center;
+        margin-bottom: 15px;
     }
 
     .mka__footer-copyright {

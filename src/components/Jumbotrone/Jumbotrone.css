@@ -3,11 +3,21 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-    background-image: url(http://mkautomobile.at/wp-content/uploads/2021/04/Background.jpg?id=28);
+    background-image: url('../../assets/Background.jpg');
+    
+}
+
+.mka__image-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .mka__jumbotrone-div {
     display: flex;
+    gap: 28rem;
+    justify-content: flex-start;
 }
 
 .mka__jumbotrone-contact {
@@ -35,3 +45,67 @@
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
+.mka__jumbotrone-opening-times {
+    color: #fff;
+    padding: 60px 0;
+}
+
+.mka__jumbotrone-opening-times > p {
+    word-break: break-all;
+    font-family: var(--font-family);
+    line-height: 24px;
+    font-size: 14px;
+    color: #d2d2d2;
+}
+
+@media (max-width: 992px) {
+    .mka__jumbotrone-contact {
+        max-width: 100%;
+        padding-right: 16rem;
+    }
+
+    .mka__jumbotrone-div {
+        gap: 0;
+    }
+  }
+
+@media (max-width: 767px) {
+    .mka__jumbotrone-div {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-left: -7px;
+    }
+
+    .mka__image-container {
+        margin-left: 0.5em;
+    }
+
+    .mka__jumbotrone-contact {
+        padding: 44px 0;
+    }
+
+    .mka__jumbotrone-opening-times {
+        padding: 0;
+        padding-bottom: 60px;
+    }
+}
+
+@media (min-width: 768px) {
+    .mka__image-container {
+      width: 750px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .mka__image-container {
+      width: 970px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .mka__image-container {
+      width: 1170px;
+    }
+  }

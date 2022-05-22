@@ -3,7 +3,7 @@ import './Jumbotrone.css';
 function Jumbotrone() {
   return (
     <div className='mka__jumbotrone-bg-image'>
-      <div className='mka__container'>
+      <div className='mka__image-container'>
         <div className='mka__jumbotrone-div'>
         <div className='mka__jumbotrone-contact'>
      <h6>KONTAKT</h6> 
@@ -17,7 +17,7 @@ function Jumbotrone() {
       <div className='mka__jumbotrone-opening-times'>
       <h6>ÖFFNUNGSZEITEN</h6>
       <div className='mka__jumbotrone-red-line'></div>
-<p>Probefahrt und Besichtigung sind
+<p>Probefahrt und Besichtigung sind<br></br>
 ausschließlich nach Terminvereinbarung möglich.</p>
       </div>
       </div>
