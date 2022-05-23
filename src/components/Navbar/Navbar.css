@@ -65,14 +65,24 @@
 .mka__search-div {
     background: #0e0e0ed1;
     display: block;
-    margin: 0;
+    margin-right: auto;
+    margin-right: auto;
     padding: 15px;
     position: absolute;
-    right: 0;
+    right: 590px;
+    top: 150px;
     width: 327px;
     z-index: 888;
     border-radius: 0;
     border-top: 5px solid #db2d2e;
+}
+
+input {
+    border: 1px solid #fff;
+    background: #0f1215;
+    color: gray;
+    padding: 12px;
+    width: 290px;
 }
 
 @media (min-width: 992px){

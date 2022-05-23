@@ -22,7 +22,7 @@ function Navbar() {
            {
             toggleSearch ?
               <div className='mka__search-div'>
-              < input type="text"/>  
+              < input type="text" value="Suche..."/>  
               </div>
            : null
           }
