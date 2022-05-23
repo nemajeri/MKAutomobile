@@ -50,25 +50,29 @@
 }
 
 .mka__navbar-menu_container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
-
-    text-align: start;
-    background-color: black;
-    padding: 2rem 7rem;
+    background-color: #0f1215;
     position: absolute;
     top: 40px;
     right: 0;
     margin-top: 0.5rem;
-    min-width: 210px;
     border-radius: 5px;
-    box-shadow: 0 0 5 rgba(0,0,0,0,0.2);
 }
 
 .mka__navbar-menu_container p {
     margin: 1rem 0;
+}
+
+.mka__search-div {
+    background: #0e0e0ed1;
+    display: block;
+    margin: 0;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    width: 327px;
+    z-index: 888;
+    border-radius: 0;
+    border-top: 5px solid #db2d2e;
 }
 
 @media (min-width: 992px){
@@ -91,6 +95,9 @@
         float: right;
     }
 
+    .mka__navbar-menu_container {
+        width: auto;
+    }
    
 }
 

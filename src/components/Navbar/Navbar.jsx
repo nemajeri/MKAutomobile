@@ -1,13 +1,12 @@
 import React from 'react' 
 import './Navbar.css'
 import { useState } from 'react'
-import { AiOutlineClose } from 'react-icons/ai'
-import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaSearch } from 'react-icons/fa'
+import Hamburger from 'hamburger-react'
 
 
 function Navbar() {
-  const [toggleMenu, setToggleMenu] = useState(false)
+  const [toggleMenu, setToggleMenu] = useState(true)
   const [toggleSearch, setSearchWindow] = useState(false)
   return (
     <div className='mka__navbar'>
@@ -19,15 +18,18 @@ function Navbar() {
            <p><a href='/fahrzeugankauf'>FAHRZEUGANKAUF</a></p>
            <p><a href='/galerie'>GALERIE</a></p>
            <p><a href='/kontakt'>KONTAKT</a></p>
-           <p><i><FaSearch /></i></p>
+           <p><i><FaSearch onClick={() => setSearchWindow(!toggleSearch)} /></i></p>
+           {
+            toggleSearch ?
+              <div className='mka__search-div'>
+              < input type="text"/>  
+              </div>
+           : null
+          }
         </div>
         <div className='mka__navbar-menu'>
-          {toggleMenu
-          ? <AiOutlineClose color="#fff" size={27} onClick={() => setToggleMenu(false)} />
-          : <GiHamburgerMenu color="#fff" size={27} onClick={() => setToggleMenu(true)} /> 
-          }
-          {
-            toggleMenu && (
+        {
+            toggleMenu ?
               <div className='mka__navbar-menu_container scale scale-up-center'>
                 <div className='mka__navbar-menu_container-links'>
                 <p><a href='/'>HOME</a></p>
@@ -38,8 +40,9 @@ function Navbar() {
            <p><a href='/kontakt'>KONTAKT</a></p>
                 </div>
               </div>
-            )
+           : null
           }
+          <Hamburger color="#fff" direction="right" duration="0.1" size={27} onClick={() => setToggleMenu(!toggleMenu)} /> 
         </div>
       </div>
     </div>
