@@ -2,12 +2,12 @@ import React from 'react'
 import './Navbar.css'
 import { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
-import Hamburger from 'hamburger-react'
 import { NavLink } from 'react-router-dom'
-
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { AiOutlineClose } from 'react-icons/ai'
 
 function Navbar() {
-  const [toggleMenu, setToggleMenu] = useState(true)
+  const [toggleMenu, setToggleMenu] = useState(false)
   const [toggleSearch, setSearchWindow] = useState(false)
   return (
     <div className='mka__navbar'>
@@ -30,9 +30,13 @@ function Navbar() {
           }
            </div>
           </div>
-        <div className='mka__navbar-menu'>
+          {
+          toggleMenu  
+          ? <AiOutlineClose color="#fff" className='hamburger-react' size={27} onClick={() => setToggleMenu(false)} />
+          : <GiHamburgerMenu size={27} color="#fff" className='hamburger-react' onClick={() => setToggleMenu(true)} />  
+          }
         {
-            toggleMenu ?
+            toggleMenu &&     
             <div className='mka__navbar-menu_container'>
               <div className='mka__navbar-menu_container-links'>
                 <p><NavLink to='/'>HOME</NavLink></p>
@@ -43,13 +47,10 @@ function Navbar() {
            <p><NavLink to='/kontakt'>KONTAKT</NavLink></p>
                 </div>
                 </div>
-           : null
           }
-             <Hamburger color="#fff" direction="right" duration="0.1" size={27} onClick={() => setToggleMenu(!toggleMenu)} /> 
           </div>
       </div>
-    </div>
-
+      
   );
 }
 
