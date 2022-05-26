@@ -13,12 +13,12 @@ function Navbar() {
     <div className='mka__navbar'>
          <div className='mka__navbar-links'>
          <div className='mka__navbar-links_container'>
-           <p id='/'><NavLink to='/'>HOME</NavLink></p>
-           <p id='/fahrzeugangebote'><NavLink to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink></p>
-           <p id='/finanzierung'><NavLink to='/finanzierung'>FINANZIERUNG</NavLink></p>
-           <p id='/fahrzeugankauf'><NavLink to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink></p>
-           <p id='/galerie'><NavLink to='/galerie'>GALERIE</NavLink></p>
-           <p id='/kontakt'><NavLink to='/kontakt'>KONTAKT</NavLink></p>
+           <p><NavLink to='/'>HOME</NavLink></p>
+           <p><NavLink to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink></p>
+           <p><NavLink to='/finanzierung'>FINANZIERUNG</NavLink></p>
+           <p><NavLink to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink></p>
+           <p><NavLink to='/galerie'>GALERIE</NavLink></p>
+           <p><NavLink to='/kontakt'>KONTAKT</NavLink></p>
            <div className='mka__search_column'>
         <p><i><FaSearch onClick={() => setSearchWindow(!toggleSearch)} /></i></p>
            {
@@ -31,22 +31,23 @@ function Navbar() {
            </div>
           </div>
           {
-          toggleMenu  
-          ? <AiOutlineClose color="#fff" className='hamburger-react' size={27} onClick={() => setToggleMenu(false)} />
-          : <GiHamburgerMenu size={27} color="#fff" className='hamburger-react' onClick={() => setToggleMenu(true)} />  
+           toggleMenu  
+          ? <AiOutlineClose color="#fff" className='mka___hamburger-menu' size={27} onClick={() => setToggleMenu(false)} />
+          : <GiHamburgerMenu size={27} className='mka___hamburger-menu' color="#fff" onClick={() => setToggleMenu(true)} /> 
           }
-        {
-            toggleMenu &&     
-            <div className='mka__navbar-menu_container'>
-              <div className='mka__navbar-menu_container-links'>
-                <p><NavLink to='/'>HOME</NavLink></p>
-           <p><NavLink to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink></p>
-           <p><NavLink to='/finanzierung'>FINANZIERUNG</NavLink></p>
-           <p><NavLink to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink></p>
-           <p><NavLink to='/galerie'>GALERIE</NavLink></p>
-           <p><NavLink to='/kontakt'>KONTAKT</NavLink></p>
-                </div>
-                </div>
+          {
+          <div className='mka__navbar-menu-margins'>
+          <div className='mka__navbar-menu_container'>
+            <div className='mka__navbar-menu_container-links'>
+              <p><NavLink to='/'>HOME</NavLink></p>
+         <p><NavLink to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink></p>
+         <p><NavLink to='/finanzierung'>FINANZIERUNG</NavLink></p>
+         <p><NavLink to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink></p>
+         <p><NavLink to='/galerie'>GALERIE</NavLink></p>
+         <p><NavLink to='/kontakt'>KONTAKT</NavLink></p>
+              </div>
+              </div>
+              </div> && toggleMenu
           }
           </div>
       </div>

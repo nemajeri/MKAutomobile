@@ -1,0 +1,44 @@
+.card_wrapper {
+    text-align: center;
+     min-height: 437.5px;
+     background: #00000033;
+     color: #363636;
+     overflow: hidden;
+    width: 100%;
+    z-index: 9;
+  }
+  
+  .card_image {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .card_list {
+    position: relative;
+    bottom: 0;
+    height: auto;
+    border: none;
+    border-bottom: 1px solid #f1f1f1;
+      
+  }
+  
+  .card_inline-list {
+    padding-left: 0;
+    margin-left: 5px;
+    max-width: 95%;
+  }
+  
+  .card_car-content {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .card_separator {
+      width: 15px;
+      border: #363636 solid 1px;
+  }
