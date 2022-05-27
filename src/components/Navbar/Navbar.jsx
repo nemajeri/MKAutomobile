@@ -3,11 +3,11 @@ import './Navbar.css'
 import { useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineClose } from 'react-icons/ai'
-
+import { IoClose } from 'react-icons/io5'
+import { Fade as Hamburger } from 'hamburger-react'
+ 
 function Navbar() {
-  const [toggleMenu, setToggleMenu] = useState(false)
+  const [isOpen, setOpen] = useState(false)
   const [toggleSearch, setSearchWindow] = useState(false)
   return (
     <div className='mka__navbar'>
@@ -20,23 +20,22 @@ function Navbar() {
            <p><NavLink to='/galerie'>GALERIE</NavLink></p>
            <p><NavLink to='/kontakt'>KONTAKT</NavLink></p>
            <div className='mka__search_column'>
-        <p><i><FaSearch onClick={() => setSearchWindow(!toggleSearch)} /></i></p>
+           <p><i>{ toggleSearch 
+           ? < IoClose color="#fff" className='io-close' size={19} onClick={() => setSearchWindow(false)} />
+           : < FaSearch onClick={() => setSearchWindow(true)}/> }</i></p>
            {
-            toggleSearch ?
+            toggleSearch &&
               <div className='mka__search-div'>
               < input type="text" value="Suche..."/>  
               </div>
-           : null
           }
            </div>
           </div>
           {
-           toggleMenu  
-          ? <AiOutlineClose color="#fff" className='mka___hamburger-menu' size={27} onClick={() => setToggleMenu(false)} />
-          : <GiHamburgerMenu size={27} className='mka___hamburger-menu' color="#fff" onClick={() => setToggleMenu(true)} /> 
+        <div className='mka___hamburger-menu'>< Hamburger color="#fff" className='' size={27} toggled={isOpen} toggle={setOpen} /></div>
           }
           {
-          <div className='mka__navbar-menu-margins'>
+            isOpen  &&  <div className='mka__navbar-menu-margins'>
           <div className='mka__navbar-menu_container'>
             <div className='mka__navbar-menu_container-links'>
               <p><NavLink to='/'>HOME</NavLink></p>
@@ -47,7 +46,7 @@ function Navbar() {
          <p><NavLink to='/kontakt'>KONTAKT</NavLink></p>
               </div>
               </div>
-              </div> && toggleMenu
+              </div> 
           }
           </div>
       </div>
