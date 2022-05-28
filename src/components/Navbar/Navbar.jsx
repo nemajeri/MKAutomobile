@@ -5,6 +5,7 @@ import { FaSearch } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 import { IoClose } from 'react-icons/io5'
 import { Fade as Hamburger } from 'hamburger-react'
+import { IconContext } from "react-icons";
  
 function Navbar() {
   const [isOpen, setOpen] = useState(false)
@@ -21,7 +22,7 @@ function Navbar() {
            <p><NavLink to='/kontakt'>KONTAKT</NavLink></p>
            <div className='mka__search_column'>
            <p><i>{ toggleSearch 
-           ? < IoClose color="#fff" className='io-close' size={19} onClick={() => setSearchWindow(false)} />
+           ? <IconContext.Provider value={{ className: "io-close" }}> < IoClose onClick={() => setSearchWindow(false)} /></IconContext.Provider>
            : < FaSearch onClick={() => setSearchWindow(true)}/> }</i></p>
            {
             toggleSearch &&

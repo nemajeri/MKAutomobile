@@ -3,7 +3,7 @@ import './Footer.css';
 function Footer() {
   return (
     <div className='mka__div-footer'>
-       <div className='mka__container'>
+       <div className='mka__container-footer'>
          <div className='mka__footer'>
            <div className='mka__footer-links'>
        <p><a href='/datenschutz'>DATENSCHUTZ</a></p>

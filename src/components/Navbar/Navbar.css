@@ -1,7 +1,10 @@
  /* Navbar links */
 .mka__navbar {
     display: flex;
-    padding: 2rem;
+    padding-right: 15px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
 }
 
 .mka__navbar-links {
@@ -95,6 +98,21 @@ input {
 .mka__search_column {
     display: flex;
     flex-direction: column;
+    max-width: 30px;
+}
+
+.io-close {
+    color: #fff;
+    width: 21px;
+    height: 21px;
+    margin-top: 20px;
+    padding-right: 5px;
+    
+}
+
+.io-close:hover {
+    transition: 1s;
+    color: #db2d2e;
 }
 
  /* Media Queries */
@@ -134,18 +152,22 @@ input {
         margin-top: 30px;
         position: absolute;
         right: 27px;
-        left: 53px;
+        left: 21px;
     }
 }
 
 @media (min-width: 1200px){
     .mka__navbar-links_container p {
-        padding: 0 1rem;
+        padding: 0 0.8rem;
     }
+
+    .mka__search-div {
+        left: 24rem;
+}
 }
 
 @media (max-width: 1200px){
     .mka__search-div {
-        left: 21rem;
+        left: 20rem;
     }
 }
