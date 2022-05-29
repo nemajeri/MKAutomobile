@@ -60,9 +60,6 @@
   }
   
   @media (max-width: 600px) {
-    .mka__container-footer {
-      width: 370px;
-    }
 
     .mka__footer {   
     display: block;

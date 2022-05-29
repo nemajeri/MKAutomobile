@@ -6,6 +6,18 @@
 
 }
 
+html::-webkit-scrollbar {
+    width: 5px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #db2d2e;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #e7e7e7;
+}
+
 body {
     background: var(--color-bg);
 }
@@ -15,28 +27,4 @@ a {
     text-decoration: none;
 }
 
-.section__padding {
-    padding: 4rem 6rem;
-}
 
-.section__margin {
-    margin: 4rem 6rem;
-}
-
-@media screen and (max-width: 700px) {
-   .section__padding { 
-    padding: 4rem;
-}
-   .section__margin { 
-    margin: 4rem;
-}
-}
-
-@media screen and (max-width: 550px) {
-    .section__padding { 
-     padding: 4rem 2rem;
- }
-    .section__margin { 
-     margin: 4rem 2rem;
- }
- }

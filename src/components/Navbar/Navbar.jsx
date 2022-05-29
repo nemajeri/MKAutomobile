@@ -27,7 +27,8 @@ function Navbar() {
            {
             toggleSearch &&
               <div className='mka__search-div'>
-              < input type="text" value="Suche..."/>  
+              < input className='mka__search-input' type="text" value="Suche..."/>  
+              <IconContext.Provider value={{ className: "fa-search" }}> < FaSearch /></IconContext.Provider>
               </div>
           }
            </div>

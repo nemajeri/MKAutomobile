@@ -37,6 +37,7 @@
 .mka__header-link > p {
   display: flex;
   justify-items: center;
+  justify-content: center;
   gap: 5px;
 }
 
@@ -80,10 +81,7 @@
 }
   }
 
-  @media (max-width: 768px) {
-    .mka__container {
-      width: 370px;
-    }
+  @media (max-width: 767px) {
 
     .mka__header-list {   
     text-align: center;
@@ -95,6 +93,8 @@
     .mka__header {
       padding-top: 2px;
       padding-bottom: 15px;
+      display: block;
+      text-align: center;
   }
   }
 
