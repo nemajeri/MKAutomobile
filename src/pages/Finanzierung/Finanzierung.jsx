@@ -1,10 +1,19 @@
+import React from 'react';
 import './Finanzierung.css';
+import {Header, Navbar, Footer, Jumbotrone} from '../../components'
+import Financing from '../../components/Financing/Financing'
 
 function Finanzierung() {
   return (
     <div>
-      <h1>Finanzierung</h1>
-    </div>
+         <Header/>
+          <Navbar />
+      <div className='page-container'>
+      <Financing/>
+    </div> 
+    <Jumbotrone/>
+      <Footer/>
+      </div>
   );
 }
 

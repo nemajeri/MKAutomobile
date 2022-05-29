@@ -1,0 +1,21 @@
+.header-img-div {
+    top: 0;
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+}
+.header-img-shorten {
+    height: auto;
+    object-fit: fill;
+    height: 470px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
+}

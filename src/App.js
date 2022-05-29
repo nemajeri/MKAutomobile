@@ -1,5 +1,4 @@
 import React from 'react';
-import {Header, Navbar, Footer, Jumbotrone} from './components'
 import {Datenschutz, Fahrzeugangebote, Fahrzeugankauf, Finanzierung, Galerie, Home, Impressum, Kontakt } from './pages'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './App.css';
@@ -7,8 +6,6 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <Header/>
-      <Navbar />
       <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/datenschutz' element={<Datenschutz/>} />
@@ -19,8 +16,6 @@ function App() {
       <Route path='/impressum' element={<Impressum/>} />
       <Route path='/kontakt' element={<Kontakt/>} />
       </Routes>
-      <Jumbotrone/>
-      <Footer/>
     </Router>
   );
 }
