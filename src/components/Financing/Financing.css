@@ -1,11 +1,107 @@
-.display-block {
-    flex-basis: 100px;
-	flex-grow: 0;
-	flex-shrink: 0;
+.mka__svg-size {
+    height: 30px;
+    width: 2rem;
 }
 
 .mka__financing-bg-image {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-image: url('../../assets/dark.jpg');
+}
+
+.mka__container-finacing {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+}
+
+.mka__financing-partners-section > h1{
+    color: #fff;
+    font-family: var(--font-family);
+    text-align: center;
+}
+
+.row__without-sidebar > p{
+    margin: 0 0 10px;
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: min(22px, 14px);
+    line-height: 22px;
+}
+
+.row__without-sidebar > ul{
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: min(22px, 14px);
+    padding: 0 0 0 15px;
+    margin-left: 10px;
+}
+
+.row__without-sidebar > li{
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: min(22px, 14px);
+    list-style: disc outside;
+}
+
+.mka__wrapper-financing {
+    padding: 32px 0;
+    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg)!important;
+}
+
+@media (max-width: 1200px) {
+    .mka__wrapper-financing {
+    padding: 70px 0;
+}
+}
+
+@media (max-width: 992px) {
+    .mka__wrapper-financing {
+        padding: 60px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .mka__container-finacing {
+        width: 970px;
+    }
+    .row__without-sidebar {
+        width: 100%;
+        float: left;
+}
+}
+@media (max-width: 767px) {
+    .mka__wrapper-financing {
+        padding: 50px 0;
+    }
+}
+
+@media (min-width: 767px) {
+    .mka__container-finacing {
+        width: 750px;
+    }
+    .row__without-sidebar {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+    .mka__container-finacing {
+        width: 96%;
+    }
+}
+
+@media (max-width: 479px) {
+    .mka__wrapper-financing {
+        padding: 40px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .row__without-sidebar {
+        width: 100%;
+        float: left;
+}
 }

@@ -6,11 +6,11 @@ import Financing from '../../components/Financing/Financing'
 function Finanzierung() {
   return (
     <div>
+      <div id='header-img-id' className='header-img-div'>
          <Header/>
           <Navbar />
-      <div className='page-container'>
+          </div>
       <Financing/>
-    </div> 
     <Jumbotrone/>
       <Footer/>
       </div>

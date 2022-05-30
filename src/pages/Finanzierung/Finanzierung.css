@@ -1,21 +1,30 @@
 .header-img-div {
-    top: 0;
-    position: absolute;
-    z-index: -10;
-    width: 100%;
-}
-.header-img-shorten {
-    height: auto;
-    object-fit: fill;
+    position: relative;
+    z-index: 1;
     height: 470px;
+}
+
+#header-img-id {
+    background-image: url(http://mkautomobile.at/wp-content/uploads/2021/04/dark-min.jpg?id=492);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
 }
 
 .page-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-.content-wrap {
-    flex: 1;
+@media (max-width: 992px) {
+    .page-container {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .page-container {
+        padding: 70px 0;
+    }
 }

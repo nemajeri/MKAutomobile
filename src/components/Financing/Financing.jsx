@@ -3,10 +3,11 @@ import React from 'react';
 
 function Financing() {
   return (
-    <div className='display-block'>
-    <div>
-      <p>Gerne bieten wir Ihnen über unsere Finanzierungspartner beste Angebote rund um Leasing und Kreditfinanzierung an.
-Unkomplizierte Abwicklung direkt bei uns im Haus.
+    <div className='mka__wrapper-financing'>
+    <div className='mka__container-finacing'>
+      <div className='row__without-sidebar'>
+      <p>Gerne bieten wir Ihnen über unsere Finanzierungspartner beste Angebote rund um Leasing und Kreditfinanzierung an.<br/>
+Unkomplizierte Abwicklung direkt bei uns im Haus.<br/>
 So ersparen Sie sich Zeit und können rasch und ohne zusätzlichen Aufwand Ihr neues Auto in Gebrauch nehmen!
       </p>
       <ul>
@@ -25,10 +26,11 @@ So ersparen Sie sich Zeit und können rasch und ohne zusätzlichen Aufwand Ihr n
       <li>Klassische Kreditfinanzierung</li> 
       </ul>
       <p>Gerne nehmen wir Ihr altes Fahrzeug zu guten Konditionen in Zahlung.</p>
-      <div>
+      <div className='mka__financing-partners-section'>
         <h1>UNSERE FINANZIERUNGSPARTNER</h1>
-        <img src={require ('../../assets/santanderbank (2).svg')} alt='santanderbank' />
-        <img src={require ('../../assets/denzelbank (2).svg')} alt='denzelbank'/>
+        <img className='mka__svg-size' src={require ('../../assets/santanderbank.png')} alt='santanderbank' />
+        <img className='mka__svg-size' src={require ('../../assets/denzelbank.png')} alt='denzelbank'/>
+      </div>
       </div>
     </div>
     </div>
