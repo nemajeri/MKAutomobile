@@ -9,20 +9,22 @@
     background-image: url('../../assets/dark.jpg');
 }
 
-.mka__container-finacing {
+.mka__container-financing {
         margin-right: auto;
         margin-left: auto;
         padding-left: 15px;
         padding-right: 15px;
+        height: 50rem;
 }
 
-.mka__financing-partners-section > h1{
+.mka__content-financing > h1{
     color: #fff;
     font-family: var(--font-family);
     text-align: center;
+    padding: 64px 0;
 }
 
-.row__without-sidebar > p{
+.mka__content-financing > p{
     margin: 0 0 10px;
     color: #fff;
     font-family: var(--font-family);
@@ -30,7 +32,7 @@
     line-height: 22px;
 }
 
-.row__without-sidebar > ul{
+.mka__content-financing ul {
     color: #fff;
     font-family: var(--font-family);
     font-size: min(22px, 14px);
@@ -38,70 +40,63 @@
     margin-left: 10px;
 }
 
-.row__without-sidebar > li{
+.mka__content-financing ul > li {
     color: #fff;
     font-family: var(--font-family);
     font-size: min(22px, 14px);
     list-style: disc outside;
+    display: list-item;
+    padding: 0;
 }
 
 .mka__wrapper-financing {
-    padding: 32px 0;
-    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg)!important;
+    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+    height: 50rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-@media (max-width: 1200px) {
-    .mka__wrapper-financing {
-    padding: 70px 0;
-}
-}
-
-@media (max-width: 992px) {
-    .mka__wrapper-financing {
-        padding: 60px 0;
-    }
-}
-
-@media (min-width: 992px) {
-    .mka__container-finacing {
-        width: 970px;
-    }
-    .row__without-sidebar {
-        width: 100%;
-        float: left;
-}
-}
-@media (max-width: 767px) {
-    .mka__wrapper-financing {
-        padding: 50px 0;
-    }
+.mka__content-financing {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 32px;
 }
 
 @media (min-width: 767px) {
-    .mka__container-finacing {
+    .mka__container-financing {
         width: 750px;
     }
-    .row__without-sidebar {
+    .mka__content-financing {
         width: 100%;
         float: left;
-    }
+}
 }
 
-@media only screen and (min-width: 768px) and (max-width: 999px) {
-    .mka__container-finacing {
-        width: 96%;
+@media (min-width: 992px) {
+    .mka__container-financing {
+        width: 970px;
     }
+    .mka__content-financing {
+        width: 100%;
+        float: left;
 }
-
-@media (max-width: 479px) {
-    .mka__wrapper-financing {
-        padding: 40px 0;
-    }
 }
 
 @media (min-width: 1200px) {
-    .row__without-sidebar {
+    .mka__container-financing {
+    width: 1170px;
+    }
+    .mka__content-financing {
         width: 100%;
         float: left;
 }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+    .mka__container-financing {
+        width: 96%;
+    }
 }

@@ -9,6 +9,9 @@ function Finanzierung() {
       <div id='header-img-id' className='header-img-div'>
          <Header/>
           <Navbar />
+          <div className='mka__title-container'>
+          <h1>FINANZIERUNG</h1>
+          </div>
           </div>
       <Financing/>
     <Jumbotrone/>
