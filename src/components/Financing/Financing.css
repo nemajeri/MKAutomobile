@@ -19,9 +19,11 @@
 
 .mka__content-financing > h1{
     color: #fff;
+    font-weight: 400;
     font-family: var(--font-family);
     text-align: center;
     padding: 64px 0;
+    font-size: clamp(1.75rem, 10vw, 2.5rem);
 }
 
 .mka__content-financing > p{
@@ -65,6 +67,8 @@
     padding-top: 32px;
 }
 
+
+/*CSS for container and content responsivnes*/
 @media (min-width: 767px) {
     .mka__container-financing {
         width: 750px;

@@ -31,8 +31,6 @@ So ersparen Sie sich Zeit und können rasch und ohne zusätzlichen Aufwand Ihr n
       <br/>
       <p>Gerne nehmen wir Ihr altes Fahrzeug zu guten Konditionen in Zahlung.</p>
         <h1>UNSERE FINANZIERUNGSPARTNER</h1>
-        <img className='mka__svg-size' src={require ('../../assets/santanderbank.png')} alt='santanderbank' />
-        <img className='mka__svg-size' src={require ('../../assets/denzelbank.png')} alt='denzelbank'/>
     </div>
     </div>
     </div>

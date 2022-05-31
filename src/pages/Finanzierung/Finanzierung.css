@@ -17,9 +17,46 @@
     flex-direction: column;
 }
 
+.mka__title-wrapper {
+    margin-top: 13.5rem;
+}
+
+.mka__logo-img {
+    margin-top: 2rem;
+}
+
+.mka__logo-size {
+    width: clamp(264px, 28%, 500px);
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+@media (max-width: 479px) {
+    .mka__title-wrapper h1 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    }
+
+@media (max-width: 767px) {
+    .mka__title-wrapper h1 {
+        font-size: 26px;
+        line-height: 42px;
+        text-align: center;
+    }
+    }
+
 @media (max-width: 992px) {
     .page-container {
         padding: 60px 0;
+    }
+    .mka__title-wrapper h1 {
+        font-size: 30px;
+        line-height: 38px;
     }
 }
 
@@ -28,3 +65,8 @@
         padding: 70px 0;
     }
 }
+
+
+
+
+
