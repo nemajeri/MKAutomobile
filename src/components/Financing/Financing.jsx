@@ -1,5 +1,7 @@
 import './Financing.css';
 import React from 'react';
+import  Denzelbank  from '../Denzelbank/Denzelbank'
+import Santanderbank from '../Santanderbank/Santanderbank'
 
 function Financing() {
   return (
@@ -31,6 +33,14 @@ So ersparen Sie sich Zeit und können rasch und ohne zusätzlichen Aufwand Ihr n
       <br/>
       <p>Gerne nehmen wir Ihr altes Fahrzeug zu guten Konditionen in Zahlung.</p>
         <h1>UNSERE FINANZIERUNGSPARTNER</h1>
+        <div className='mka__logos-wrapper'>
+          <div className='mka__logos-santanderbank'>
+      <Santanderbank/>
+      </div>
+      <div className='mka__logos-denzelbank'>
+      <Denzelbank/>
+      </div>
+      </div>
     </div>
     </div>
     </div>

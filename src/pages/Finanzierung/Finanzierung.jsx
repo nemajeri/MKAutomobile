@@ -1,6 +1,6 @@
 import React from 'react';
 import './Finanzierung.css';
-import {Header, Navbar, Footer, Jumbotrone, Logo, Financing} from '../../components'
+import {Header, Navbar, Footer, Jumbotrone, Logo, Financing } from '../../components'
 
 function Finanzierung() {
   return (
