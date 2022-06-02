@@ -77,14 +77,14 @@ justify-content: center;
 
 .mka__logos-santanderbank {
     display: inline-block;
-    max-width: 100%;
+    width: 10vh;
     margin-left: auto;
     margin-right: auto;
 }
 
-.mka__logos-santanderbank {
+.mka__logos-denzelbank {
     display: inline-block;
-    max-width: 100%;
+    width: 10vh;
     margin-left: auto;
     margin-right: auto;
 }

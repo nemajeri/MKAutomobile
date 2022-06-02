@@ -1,8 +1,10 @@
-import React from "react";
+import React from "react"
+import './Santanderbank.css'
 
 function Icon() {
   return (
     <svg
+    className="mka__responsive-svg"
       xmlns="http://www.w3.org/2000/svg"
       width="370"
       height="200"

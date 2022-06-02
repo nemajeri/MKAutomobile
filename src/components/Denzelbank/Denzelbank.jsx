@@ -3,10 +3,12 @@ import React from "react";
 function Icon() {
   return (
     <svg
+      className="mka__responsive-svg"
       xmlns="http://www.w3.org/2000/svg"
       width="370"
       height="200"
       version="1.1"
+      viewBox="0 0 370 200"
     >
       <path
         fill="#fff"
