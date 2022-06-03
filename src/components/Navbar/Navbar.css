@@ -169,6 +169,7 @@ input {
         position: absolute;
         right: 27px;
         left: 21px;
+        z-index: 99;
     }
 }
 

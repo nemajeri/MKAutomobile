@@ -23,7 +23,7 @@
     font-family: var(--font-family);
     text-align: center;
     padding: 64px 0;
-    font-size: clamp(1.75rem, 10vw, 2.5rem);
+    font-size: clamp(1.5rem, 0.5vw, 2.5rem);
 }
 
 .mka__content-financing > p{
@@ -53,7 +53,7 @@
 
 .mka__wrapper-financing {
     background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-    height: 60rem;
+    height: clamp(55rem,  131.70vh, 74rem);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -77,19 +77,26 @@ justify-content: center;
 
 .mka__logos-santanderbank {
     display: inline-block;
-    width: 10vh;
     margin-left: auto;
     margin-right: auto;
 }
 
 .mka__logos-denzelbank {
     display: inline-block;
-    width: 10vh;
     margin-left: auto;
     margin-right: auto;
 }
 
 /*CSS for container and content responsivnes*/
+
+@media (max-width: 340px) {
+    .mka__content-financing > h1{
+        font-family: var(--font-family);
+        font-size: 18px;
+        line-height: 2;
+    }
+}
+
 @media (min-width: 767px) {
     .mka__container-financing {
         width: 750px;
