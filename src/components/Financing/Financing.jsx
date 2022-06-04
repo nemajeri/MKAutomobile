@@ -5,7 +5,7 @@ import Santanderbank from '../Santanderbank/Santanderbank'
 
 function Financing(props) {
   return (
-    <div className='mka__wrapper-content'>
+    <div className='mka__wrapper-financing'>
     <div className='mka__container-financing'>
       <div className='mka__content-financing'>
       <p>Gerne bieten wir Ihnen über unsere Finanzierungspartner beste Angebote rund um Leasing und Kreditfinanzierung an.<br/>

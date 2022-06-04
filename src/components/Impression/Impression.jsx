@@ -3,7 +3,7 @@ import './Impression.css'
 
 function Financing() {
   return (
-    <div className='mka__wrapper-content'>
+    <div className='mka__wrapper-impression'>
     <div className='mka__container-impression'>
       <div className='mka__content-impression'>
           <h4>FIRMENBEZEICHNUNG</h4>
