@@ -1,0 +1,60 @@
+.mka__content-impression {
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 32px;
+}
+
+.mka__container-impression {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: auto;
+}
+
+.mka__content-impression > p{
+    margin: 0 0 10px;
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: min(22px, 14px);
+    line-height: 22px;
+}
+
+@media (min-width: 767px) {
+    .mka__container-impression {
+        width: 750px;
+    }
+    .mka__content-impression {
+        width: 100%;
+        float: left;
+}
+}
+
+@media (min-width: 992px) {
+    .mka__content-impression {
+        width: 970px;
+    }
+    .mka__content-impression {
+        width: 100%;
+        float: left;
+}
+}
+
+@media (min-width: 1200px) {
+    .mka__content-impression {
+    width: 1170px;
+    }
+    .mka__content-financing {
+        width: 100%;
+        float: left;
+}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+    .mka__content-impression {
+        width: 96%;
+    }
+}
