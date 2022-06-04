@@ -45,7 +45,7 @@ Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Ei
              Österreich</p>
           <h4>KONTAKT</h4>
           <p>T: +43 680 3149332</p>
-          <p><a href='mailto:office@mkautomobile.at'>E: office@mkautomobile.at</a></p>
+          <p>E:<a href='mailto:office@mkautomobile.at'> office@mkautomobile.at</a></p>
           </div>
     </div>
     </div>

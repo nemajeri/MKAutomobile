@@ -35,6 +35,15 @@
     margin-bottom: 10px;
 }
 
+.mka__content-copyright p > a {
+    color: var(--color-red);
+}
+
+.mka__content-copyright p > a:hover {
+    transition: 0.9s;
+    color: var(--color-grey);
+}
+
 .mka__content-information {
     text-align: center;
 }
