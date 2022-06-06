@@ -4,6 +4,27 @@ import "./ImageSlider.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <div
+      className="slider-arrow"
+      onClick={onClick}
+    />
+  );
+}
+
 class ImageSlider extends Component {
     render() {  
   const settings = {
@@ -13,6 +34,8 @@ class ImageSlider extends Component {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     customPaging: function (i) {
       return <div className="dot"></div>;
     },

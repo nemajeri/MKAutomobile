@@ -13,7 +13,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 38rem;
+    min-height: 63rem;
 }
 
 .mka__container-gallery {
@@ -35,7 +35,7 @@
 }
 
 @media (min-width: 992px) {
-    .mka__container-.mka__content-gallery {
+    .mka__container-gallery {
         width: 970px;
     }
     .mka__content-gallery {
@@ -45,7 +45,7 @@
 }
 
 @media (min-width: 1200px) {
-    .mka__container-.mka__content-gallery {
+    .mka__container-gallery {
     width: 1170px;
     }
     .mka__content-gallery {

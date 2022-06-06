@@ -5,16 +5,22 @@
   }
   
   .slick-dots.slick-thumb li {
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
     margin: 0 3px;
     border-radius: 999px;
     transition: all 0.5s ease-in-out;
     will-change: width;
-    background-color: black;
+    background-color: var(--color-grey);
   }
   
   .slick-dots.slick-thumb li.slick-active {
     background-color: red;
     width: 24px;
+  }
+
+  .slider-arrow {
+    background-color: white;
+    width: 2rem;
+    height: 2rem;
   }
