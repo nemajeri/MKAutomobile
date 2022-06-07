@@ -19,8 +19,34 @@
     width: 24px;
   }
 
-  .slider-arrow {
+  .btn-prv {
+    left: -25px;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
     background-color: white;
-    width: 2rem;
-    height: 2rem;
+    z-index: 99;
+  }
+
+  .btn-nxt {
+    right: -25px;
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    background-color: white;
+    z-index: 99;
   }
