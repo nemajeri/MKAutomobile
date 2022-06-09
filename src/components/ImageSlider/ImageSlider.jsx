@@ -5,20 +5,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function SampleNextArrow(props) {
-  const { onClick } = props;
+  const { className, onClick } = props;
   return (
     <div
-      className="btn-nxt"
+      className={className}
       onClick={onClick}
     />
   );
 }
 
 function SamplePrevArrow(props) {
-  const { onClick } = props;
+  const { className, onClick } = props;
   return (
     <div
-      className="btn-prv"
+      className={className}
       onClick={onClick}
     />
   );

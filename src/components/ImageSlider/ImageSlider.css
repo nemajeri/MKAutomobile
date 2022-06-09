@@ -19,94 +19,26 @@
     width: 24px;
   }
 
-  .btn-prv {
-    left: -25px;
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 50%;
-    display: block;
+  .slick-prev, .slick-next {
     width: 50px;
     height: 50px;
-    padding: 0;
-    transform: translate(0, -50%);
-    cursor: pointer;
-    background-color: white;
-    z-index: 99;
+    background-color: #fff;
   }
-
-  .btn-nxt {
-    right: -25px;
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    transform: translate(0, -50%);
-    cursor: pointer;
-    background-color: white;
-    z-index: 99;
+  
+  .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    color: #fff;
+    outline: none;
+    background: #fff;
   }
-
-  .btn-prv::before {
-    content: '';
-    left: 50px;
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    transform: translate(0, -50%);
-    cursor: pointer;
-    background-color: white;
-    z-index: 99;
+  
+  .slick-prev:before, .slick-next:before {
+    color: #000;
   }
-
-  .btn-prv::after {
-    content: '';
-    left: -25px;
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    transform: translate(0, -50%);
-    cursor: pointer;
-    background-color: red;
-    z-index: 99;
+  
+  .slick-next {
+    right: -55px;
   }
-
-  .btn-nxt::before {
-    content: '';
-    right: 50px;
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    transform: translate(0, -50%);
-    cursor: pointer;
-    background-color: white;
-    z-index: 99;
-  }
-
-  .btn-nxt::after {
-    content: '';
-    right: -25px;
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    transform: translate(0, -50%);
-    cursor: pointer;
-    background-color: red;
-    z-index: 99;
+  
+  .slick-prev {
+    left: -55px;
   }
