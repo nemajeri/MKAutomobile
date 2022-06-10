@@ -5,20 +5,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function SampleNextArrow(props) {
-  const { className, onClick } = props;
+  const { onClick } = props;
   return (
     <div
-      className={className}
+      className="slick-prev"
       onClick={onClick}
     />
   );
 }
 
 function SamplePrevArrow(props) {
-  const { className, onClick } = props;
+  const { onClick } = props;
   return (
     <div
-      className={className}
+      className="slick-next"
       onClick={onClick}
     />
   );
@@ -27,7 +27,6 @@ function SamplePrevArrow(props) {
 class ImageSlider extends Component {
     render() {  
   const settings = {
-    autoplay: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -42,7 +41,7 @@ class ImageSlider extends Component {
   };
 
   return (
-    <div>
+    <div className="mka__main-gallery-div">
       <Slider {...settings}>
         <div>
         <img src={require("../../assets/1.jpg")} alt="gallery-image_1" />

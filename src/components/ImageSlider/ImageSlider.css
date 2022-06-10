@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+/* Dots */
 .slick-dots.slick-thumb {
     display: flex;
     flex-direction: row;
@@ -18,27 +21,54 @@
     background-color: red;
     width: 24px;
   }
-
+  /* Arrows */
   .slick-prev, .slick-next {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-  }
-  
-  .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
-    color: #fff;
-    outline: none;
-    background: #fff;
+    width: 44px !important; 
+    height: 44px !important;
+    background-color: #fff !important;
   }
   
   .slick-prev:before, .slick-next:before {
-    color: #000;
+    color: var(--color-red) !important;
+    line-height: 2 !important;
+    font-family: 'Rubik', sans-serif !important;
   }
   
+  .slick-prev:before {
+    content: "<" !important;
+  }
+
+  .slick-next:before {
+    content: ">" !important;
+  }
+
   .slick-next {
-    right: -55px;
+    right: -22px !important;
+    z-index: 99;
   }
   
   .slick-prev {
-    left: -55px;
+    left: -22px !important;
+    z-index: 99;
+  }
+
+  /* Arrows on hover */
+  .slick-prev:hover{
+    color: red;
+  }
+
+  .slick-next:hover {
+    color: red;
+  }
+
+  .slick-prev:hover:before {
+    color: #fff;
+  }
+
+  .slick-next:hover:before {
+    color: #fff;
+  }
+
+  .slick-slider .slick-initialized:hover > .slick-prev {
+    transform: translate(200px);
   }
