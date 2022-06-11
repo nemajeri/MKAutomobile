@@ -8,7 +8,7 @@ function SampleNextArrow(props) {
   const { onClick } = props;
   return (
     <div
-      className="slick-prev"
+      className="slick-next"
       onClick={onClick}
     />
   );
@@ -18,27 +18,29 @@ function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
     <div
-      className="slick-next"
+      className="slick-prev"
       onClick={onClick}
     />
   );
 }
 
 class ImageSlider extends Component {
-    render() {  
+  render () {
   const settings = {
+    autoplay: true,
     dots: true,
     infinite: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
     customPaging: function (i) {
       return <div className="dot"></div>;
     },
     dotsClass: "slick-dots slick-thumb"
   };
+  
 
   return (
     <div className="mka__main-gallery-div">

@@ -2,73 +2,84 @@
 
 /* Dots */
 .slick-dots.slick-thumb {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  .slick-dots.slick-thumb li {
-    width: 10px;
-    height: 10px;
-    margin: 0 3px;
-    border-radius: 999px;
-    transition: all 0.5s ease-in-out;
-    will-change: width;
-    background-color: var(--color-grey);
-  }
-  
-  .slick-dots.slick-thumb li.slick-active {
-    background-color: red;
-    width: 24px;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.slick-dots.slick-thumb li {
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
+  border-radius: 999px;
+  transition: all 0.5s ease-in-out;
+  will-change: width;
+  background-color: gray;
+}
+
+.slick-dots.slick-thumb li.slick-active {
+  background-color: red;
+  width: 24px;
+}
+
   /* Arrows */
-  .slick-prev, .slick-next {
-    width: 44px !important; 
-    height: 44px !important;
-    background-color: #fff !important;
-  }
-  
-  .slick-prev:before, .slick-next:before {
+  .slick-prev:before {
+    content: "<" !important;
     color: var(--color-red) !important;
     line-height: 2 !important;
     font-family: 'Rubik', sans-serif !important;
   }
-  
-  .slick-prev:before {
-    content: "<" !important;
-  }
 
   .slick-next:before {
     content: ">" !important;
+    color: var(--color-red) !important;
+    line-height: 2 !important;
+    font-family: 'Rubik', sans-serif !important;
   }
 
   .slick-next {
-    right: -22px !important;
+    right: 60px !important;
     z-index: 99;
+    width: 44px !important; 
+    height: 44px !important;
+    background-color: #fff !important;
+    transition: 300ms ease-out;
+    opacity: 0;
+    transform: translate(0, 0);
   }
   
   .slick-prev {
-    left: -22px !important;
+    left: 60px !important;
     z-index: 99;
+    width: 44px !important; 
+    height: 44px !important;
+    background-color: #fff !important;
+    transition: 300ms ease-out;
+    opacity: 0;
+    transform: translate(0, 0);
   }
 
-  /* Arrows on hover */
-  .slick-prev:hover{
-    color: red;
+  .mka__main-gallery-div:hover .slick-prev {
+    opacity: 1;
+    transform: translateX(-190%);
+
   }
 
-  .slick-next:hover {
-    color: red;
+  .mka__main-gallery-div:hover .slick-next {
+    opacity: 1;
+    transform: translateX(190%);
   }
 
-  .slick-prev:hover:before {
-    color: #fff;
+   /* Arrows hover */
+  .slick-next:hover,
+  .slick-prev:hover {
+    background-color: var(--color-red) !important;
   }
 
-  .slick-next:hover:before {
-    color: #fff;
+  .slick-prev:hover::before {
+    color: #fff !important;
   }
 
-  .slick-slider .slick-initialized:hover > .slick-prev {
-    transform: translate(200px);
+  .slick-next:hover::before {
+    color: #fff !important;
   }
