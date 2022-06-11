@@ -45,7 +45,7 @@
     background-color: #fff !important;
     transition: 300ms ease-out;
     opacity: 0;
-    transform: translate(0, 0);
+    transform: translate(0, 0)!important;
   }
   
   .slick-prev {
@@ -56,18 +56,18 @@
     background-color: #fff !important;
     transition: 300ms ease-out;
     opacity: 0;
-    transform: translate(0, 0);
+    transform: translate(0, 0)!important;
   }
 
   .mka__main-gallery-div:hover .slick-prev {
     opacity: 1;
-    transform: translateX(-190%);
+    transform: translateX(-190%)!important ;
 
   }
 
   .mka__main-gallery-div:hover .slick-next {
     opacity: 1;
-    transform: translateX(190%);
+    transform: translateX(190%)!important;
   }
 
    /* Arrows hover */
