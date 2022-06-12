@@ -36,7 +36,7 @@ class ImageSlider extends Component {
     slidesToShow: 1,
     slidesToScroll: 1,
     customPaging: function (i) {
-      return <div className="dot"></div>;
+      return <div className="dot">{i + 1}</div>;
     },
     dotsClass: "slick-dots slick-thumb"
   };
