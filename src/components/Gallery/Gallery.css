@@ -9,11 +9,10 @@
 
 .mka__wrapper-gallery {
     background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-    height:100%;
+    height: clamp(34rem, 96vh, 102vh);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 63rem;
 }
 
 .mka__container-gallery {
