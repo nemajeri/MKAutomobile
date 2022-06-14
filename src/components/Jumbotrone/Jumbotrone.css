@@ -4,6 +4,8 @@
     background-attachment: fixed;
     background-position: center center;
     background-image: url('../../assets/Background.jpg');
+    width: -webkit-fill-available;
+    display: table;
 }
 
 .mka__image-container {

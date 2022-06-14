@@ -2,6 +2,7 @@ import './Jumbotrone.css';
 
 function Jumbotrone() {
   return (
+    <div>
     <div className='mka__jumbotrone-bg-image'>
       <div className='mka__image-container'>
         <div className='mka__jumbotrone-div'>
@@ -22,6 +23,7 @@ ausschließlich nach Terminvereinbarung möglich.</p>
       </div>
       </div>
       </div>
+    </div>
     </div>
   );
 }
