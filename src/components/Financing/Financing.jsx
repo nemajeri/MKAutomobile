@@ -3,7 +3,7 @@ import React from 'react';
 import  Denzelbank  from '../Denzelbank/Denzelbank'
 import Santanderbank from '../Santanderbank/Santanderbank'
 
-function Financing(props) {
+function Financing() {
   return (
     <div className='mka__wrapper-financing'>
     <div className='mka__container-financing'>

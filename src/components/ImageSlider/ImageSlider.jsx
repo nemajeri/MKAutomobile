@@ -27,7 +27,6 @@ function SamplePrevArrow(props) {
 class ImageSlider extends Component {
   render () {
   const settings = {
-    autoplay: true,
     dots: true,
     infinite: true,
     nextArrow: <SampleNextArrow />,
