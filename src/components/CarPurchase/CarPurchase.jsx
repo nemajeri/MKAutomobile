@@ -21,22 +21,23 @@ function CarPurchase() {
         <li>Verkaufsgespräche und Vertragsgestaltung</li>
         <li>Garantie und Finanzierung können mit angeboten werden, keine zusätzlichen Kosten für den Verkäufer</li>
         </ul>
-        <div>
+        <div className='mka__forms-purchase'>
         <form>
         <label>
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" />
         </label>
         </form>
         <form>
         <label>
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" />
         </label>
         </form>
         <form>
         <label>
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" />
         </label>
         </form>
+        <button type='submit' value='SENDEN'></button>
         </div>
     </div>
     </div>

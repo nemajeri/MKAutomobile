@@ -24,6 +24,10 @@
     height: auto;
 }
 
+.mka__forms-purchase {
+    display: flex;
+}
+
 @media (min-width: 767px) {
     .mka__container-purchase {
         width: 750px;
