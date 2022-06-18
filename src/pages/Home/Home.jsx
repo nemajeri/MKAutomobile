@@ -1,5 +1,5 @@
 import './Home.css';
-import {Header, Navbar, Footer, Jumbotrone, Logo} from '../../components'
+import {Header, Navbar, Footer, Jumbotrone, Logo, HomePageCarList} from '../../components'
 
 function Home() {
   return (
@@ -23,6 +23,7 @@ function Home() {
           </div>
           </div>
           </div>
+          <HomePageCarList/>
     <Jumbotrone/>
       <Footer/>
     </div>

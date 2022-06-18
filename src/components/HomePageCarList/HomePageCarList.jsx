@@ -1,0 +1,78 @@
+import './HomePageCarList.css';
+import React from 'react';
+import { FaCarAlt } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
+import { FaWallet } from 'react-icons/fa';
+import { FaCommentDots } from 'react-icons/fa';
+
+function HomePageCarList() {
+  return (
+    <div className='mka__wrapper-home-list'>
+    <div className='mka__container-home-list'>
+      <div className='mka__content-home-list'>
+      <p>Gerne bieten wir Ihnen über unsere Finanzierungspartner beste Angebote rund um Leasing und Kreditfinanzierung an.<br/>
+Unkomplizierte Abwicklung direkt bei uns im Haus.<br/>
+So ersparen Sie sich Zeit und können rasch und ohne zusätzlichen Aufwand Ihr neues Auto in Gebrauch nehmen!
+      </p>
+      <ul>
+        <li>Finanzierung bereits ab 1 Monat Beschäftigungsdauer möglich</li>
+        <li>Auch ohne Anzahlung</li>
+        <li>Sofortkreditanfrage</li>
+        <li>Fast alle gängigen Finanzierungsmodelle</li>
+        <li>Bei passender Bonität Abwicklung innerhalb von 24h</li>
+      </ul>
+      <br/>
+      <br/>
+      <p>Bei uns können Sie Ihr Fahrzeug wie folgt finanzieren:</p>
+      <ul>
+      <li>Restwertleasing</li> 
+      <li>Leasing</li> 
+      <li>50:50 Finanzierung mit 0% Zinsen</li> 
+      <li>Drittelfinanzierung</li> 
+      <li>Klassische Kreditfinanzierung</li> 
+      </ul>
+      <br/>
+      <br/>
+      <p>Gerne nehmen wir Ihr altes Fahrzeug zu guten Konditionen in Zahlung.</p>
+        <div className='mka__section-divider'></div>
+        <div className='mka__shortcuts-home-list'>
+            <div className='mka__shortcut-home-list'>
+            <div className='mka__shortcut-icon'>
+            <i><FaCarAlt/></i>
+            </div>
+            <div className='mka__shortcut-text'>
+                <a href='/fahrzeugangebote'>FAHRZEUGANGEBOTE</a>
+                </div>
+            </div>
+            <div className='mka__shortcut-home-list'>
+            <div className='mka__shortcut-icon'>
+            <i><FaStar/></i>
+            </div>
+            <div className='mka__shortcut-text'>
+                <a href='/finanzierung'>FINANZIERUNG</a>
+                </div>
+            </div>
+            <div className='mka__shortcut-home-list'>
+            <div className='mka__shortcut-icon'>
+            <i><FaWallet/></i>
+            </div>
+            <div className='mka__shortcut-text'>
+                <a href='/fahrzeugankauf'>FAHRZEUGANKAUF</a>
+            </div>
+            </div>
+            <div className='mka__shortcut-home-list'>
+                <div className='mka__shortcut-icon'>
+                 <i><FaCommentDots/></i>
+                 </div>
+                 <div className='mka__shortcut-text'>
+                <a href='/kontakt'>KONTAKT</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  );
+}
+
+export default HomePageCarList;
