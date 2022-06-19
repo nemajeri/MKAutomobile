@@ -4,6 +4,7 @@ import { FaCarAlt } from 'react-icons/fa';
 import { FaStar } from 'react-icons/fa';
 import { FaWallet } from 'react-icons/fa';
 import { FaCommentDots } from 'react-icons/fa';
+import { IconContext } from "react-icons";
 
 function HomePageCarList() {
   return (
@@ -37,36 +38,28 @@ So ersparen Sie sich Zeit und können rasch und ohne zusätzlichen Aufwand Ihr n
         <div className='mka__section-divider'></div>
         <div className='mka__shortcuts-home-list'>
             <div className='mka__shortcut-home-list'>
-            <div className='mka__shortcut-icon'>
+            <IconContext.Provider value={{ className: "mka__icon-size" }}>
             <i><FaCarAlt/></i>
-            </div>
-            <div className='mka__shortcut-text'>
+            </IconContext.Provider>
                 <a href='/fahrzeugangebote'>FAHRZEUGANGEBOTE</a>
-                </div>
             </div>
             <div className='mka__shortcut-home-list'>
-            <div className='mka__shortcut-icon'>
+            <IconContext.Provider value={{ className: "mka__icon-size" }}>
             <i><FaStar/></i>
-            </div>
-            <div className='mka__shortcut-text'>
+            </IconContext.Provider>
                 <a href='/finanzierung'>FINANZIERUNG</a>
-                </div>
             </div>
             <div className='mka__shortcut-home-list'>
-            <div className='mka__shortcut-icon'>
+            <IconContext.Provider value={{ className: "mka__icon-size" }}>
             <i><FaWallet/></i>
-            </div>
-            <div className='mka__shortcut-text'>
+            </IconContext.Provider>
                 <a href='/fahrzeugankauf'>FAHRZEUGANKAUF</a>
             </div>
-            </div>
             <div className='mka__shortcut-home-list'>
-                <div className='mka__shortcut-icon'>
+                <IconContext.Provider value={{ className: "mka__icon-size" }}>
                  <i><FaCommentDots/></i>
-                 </div>
-                 <div className='mka__shortcut-text'>
+                 </IconContext.Provider>
                 <a href='/kontakt'>KONTAKT</a>
-                </div>
             </div>
         </div>
       </div>
