@@ -9,7 +9,7 @@ function SampleNextArrow(props) {
   const { onClick } = props;
   return (
     <div
-      className="slick-next"
+      className="slick-next1"
       onClick={onClick}
     />
   );
@@ -19,13 +19,13 @@ function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
     <div
-      className="slick-prev"
+      className="slick-prev1"
       onClick={onClick}
     />
   );
 }
 
-class ImageSlider extends Component {
+class HomeSlider extends Component {
   render () {
   const settings = {
     dots: false,
@@ -41,9 +41,7 @@ class ImageSlider extends Component {
   return (
     <div className="mka__main-gallery-div">
       <Slider {...settings}>
-        <div className="mka__spacing-between-cards ">
        <Card/>
-       </div>
        <Card/>
        <Card/>
        <Card/>
@@ -55,4 +53,4 @@ class ImageSlider extends Component {
 }
 }
 
-export default ImageSlider
+export default HomeSlider
