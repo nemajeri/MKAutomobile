@@ -1,11 +1,12 @@
 .card_wrapper {
     text-align: center;
-     min-height: 437.5px;
-     background: #00000033;
-     color: #363636;
-     overflow: hidden;
-    width: 100%;
+    min-height: 437.5px;
+    background: #00000033;
+    color: #363636;
+    overflow: hidden;
     z-index: 9;
+    padding-top: 30px;
+    width: 260px;
   }
   
   .card_image {
@@ -13,6 +14,7 @@
     overflow: hidden;
     display: inline-block;
     width: 100%;
+    height: 15rem;
   }
   
   .card_list {

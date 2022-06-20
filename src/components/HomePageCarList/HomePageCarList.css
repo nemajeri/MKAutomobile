@@ -1,8 +1,3 @@
-.mka__svg-size {
-    height: 30px;
-    width: 2rem;
-}
-
 .mka__financing-bg-image {
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,40 +10,6 @@
         padding-left: 15px;
         padding-right: 15px;
         height: auto;
-}
-
-.mka__content-home-list > h1{
-    color: #fff;
-    font-weight: 400;
-    font-family: var(--font-family);
-    text-align: center;
-    padding: 64px 0;
-    font-size: clamp(1.5rem, 5.5vw, 2.5rem);
-}
-
-.mka__content-home-list > p{
-    margin: 0 0 10px;
-    color: #fff;
-    font-family: var(--font-family);
-    font-size: min(22px, 14px);
-    line-height: 22px;
-}
-
-.mka__content-home-list ul {
-    color: #fff;
-    font-family: var(--font-family);
-    font-size: min(22px, 14px);
-    padding: 0 0 0 15px;
-    margin-left: 10px;
-}
-
-.mka__content-home-list ul > li {
-    color: #fff;
-    font-family: var(--font-family);
-    font-size: min(22px, 14px);
-    list-style: disc outside;
-    display: list-item;
-    padding: 0;
 }
 
 .mka__wrapper-home-list {
@@ -72,6 +33,8 @@
     display: flex;
     gap: 180px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .mka__shortcut-home-list {
@@ -112,6 +75,21 @@
     margin-right: auto;
     margin-top: 70px;
     margin-bottom: 80px;
+}
+
+.mka__second-section-divider {
+    background-color: var(--color-red);
+    height: 1px;
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+}
+
+.mka__content-home-title {
+    text-align: center;
+    padding: 32px 0;
 }
 
 /*CSS for container and content responsivnes*/
