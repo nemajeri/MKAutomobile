@@ -22,23 +22,48 @@ function CarPurchase() {
         <li>Garantie und Finanzierung können mit angeboten werden, keine zusätzlichen Kosten für den Verkäufer</li>
         </ul>
         <div className='mka__forms-purchase'>
+          <div className='mka__form-design'>
+          <p>Persönliche Daten</p>
         <form>
         <label>
-          <input type="text" />
+          <input type="text" value="VORNAME"/>
+          <input type="text" value="NACHNAME"/>
+          <input type="text" value="GESCHLECHT"/>
+          <input type="text" value="STRASSE / NR."/>
+          <input type="text" value="PLZ"/>
+          <input type="text" value="STADT"/>
+          <input type="text" value="FIRMA"/>
         </label>
         </form>
-        <form>
-        <label>
-          <input type="text" />
-        </label>
-        </form>
-        <form>
-        <label>
-          <input type="text" />
-        </label>
-        </form>
-        <button type='submit' value='SENDEN'></button>
         </div>
+        <div className='mka__form-design'>
+        <p>Kontaktdaten</p>
+        <form>
+        <label>
+          <input type="text" value="E-MAIL"/>
+          <input type="text" value="MOBILNUMMER"/>
+          <input type="text" value="FAX"/>
+          <input type="text" value="TEL"/>
+        </label>
+        </form>
+        </div>
+        <div className='mka__form-design'>
+        <p>Fahrzeugdaten</p>
+        <form>
+        <label>
+          <input type="text" value="MARKE"/>
+          <input type="text" value="MODELL"/>
+          <input type="text" value="PREISVORSTELLUNG"/>
+          <input type="text" value="KRAFTSTOFF"/>
+          <input type="text" value="KILOMETERSTAND"/>
+          <input type="text" value="AKTUELLER ZUSTAND"/>
+          <input type="text" value="EZ DES FAHRZEUGES"/>
+          <input type="text" value="SONDERAUSSTATTUNGEN"/>
+        </label>
+        </form>
+        </div>
+        </div>
+        <button type='submit' className='mka__form-button'>SENDEN</button>
     </div>
     </div>
     </div>

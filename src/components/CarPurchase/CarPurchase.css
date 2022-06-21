@@ -1,11 +1,9 @@
 .mka__content-purchase {
-    text-align: center;
     position: relative;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 64px;
-    padding-bottom: 80px;
+    padding-top: 32px;
 }
 
 .mka__wrapper-purchase {
@@ -24,8 +22,63 @@
     height: auto;
 }
 
+.mka__content-purchase > h2 {
+    padding-bottom: 10px;
+}
+
+.mka__content-purchase > p{
+    margin: 0 0 10px;
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.mka__content-purchase ul {
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: 15px;
+    padding: 0 0 0 15px;
+    margin-left: 40px;
+}
+
+.mka__content-purchase ul > li {
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: 15px;
+    list-style: disc outside;
+    display: list-item;
+    padding: 0;
+}
+
 .mka__forms-purchase {
+    padding: 24px 0;
     display: flex;
+    gap: 80px;
+}
+
+.mka__form-design > p {
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    color: #fff;
+}
+
+input {
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+.mka__form-button {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    padding: 10px 15px;
+    min-width: 300px;
+    height: 50px;
+    margin-left: 760px;
+    margin-right: auto;
 }
 
 @media (min-width: 767px) {
