@@ -18,7 +18,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 55rem;
+    min-height: 65rem;
 }
 
 .mka__content-home-list {
@@ -31,11 +31,12 @@
 
 .mka__shortcuts-home-list {
     display: flex;
-    gap: 180px;
+    justify-content: space-around;
     text-align: center;
+    width: 100%;
     margin-left: auto;
-    margin-right: auto;
-}
+    margin-right: auto; 
+} 
 
 .mka__shortcut-home-list {
     display: flex;
@@ -61,7 +62,7 @@
 
 .mka__icon-size:hover {
     color: var(--color-red);
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 /*Red line to divide content section*/
@@ -90,6 +91,7 @@
 .mka__content-home-title {
     text-align: center;
     padding: 32px 0;
+    font-weight: 400;
 }
 
 /*CSS for container and content responsivnes*/
@@ -113,6 +115,15 @@
 }
 }
 
+
+@media (max-width: 767px) {
+    .mka__shortcuts-home-list {
+    flex-direction: column;
+    gap: 5rem;
+    padding-bottom: 140px;
+} 
+}
+
 @media (min-width: 992px) {
     .mka__container-home-list {
         width: 970px;
@@ -130,7 +141,7 @@
     .mka__content-home-list {
         width: 100%;
         float: left;
-}
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 999px) {

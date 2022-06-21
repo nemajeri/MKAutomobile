@@ -1,4 +1,3 @@
-import React from 'react' 
 import './Card.css'
 import { FaCalendarAlt, FaCog,  } from 'react-icons/fa';
 import { GiGasPump } from 'react-icons/gi'
