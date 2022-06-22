@@ -26,6 +26,7 @@
 .mka__contact-infos-container {
     display: flex;
     justify-content: space-around;
+    margin: 50px 0;
 }
 
 .mka__contact-infos-card {
@@ -56,10 +57,47 @@
 }
 
 .mka__contact-infos-divider {
-    height: 1px;
+    height: 2px;
     width: 1.5rem;
     background-color: red;
-    padding: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.mka__google-api-contact {
+    display: flex;
+    margin: 130px 0;
+    justify-content: space-around;
+}
+
+.mka__opening-times-divider {
+    height: 2px;
+    width: 1.5rem;
+    background-color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mka__opening-times-contact {
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: 14px;
+    line-height: 1.8rem;
+    padding-top: 30px;
+}
+
+.mka__opening-times-text {
+    display: flex;
+    gap: 30px;
+}
+
+#mka__text-red {
+    color: var(--color-red);
+}
+strong {
+    font-weight: 500;
 }
 /*CSS for container and content responsivnes*/
 
