@@ -58,10 +58,17 @@ function CarPurchase() {
           <input type="text" value="KILOMETERSTAND"/>
           <input type="text" value="AKTUELLER ZUSTAND"/>
           <input type="text" value="EZ DES FAHRZEUGES"/>
-          <input type="text" value="SONDERAUSSTATTUNGEN"/>
+          <input id='mka__larger-submit-field' type="text" value="SONDERAUSSTATTUNGEN"/>
         </label>
         </form>
         </div>
+        </div>
+        <h5 id='mka__input-field-title'>Fahrzeugbilder</h5>
+        <div className='mka__input-field-docs'>
+          <div className='mka__input-field-msg'>
+            <p>Klicken oder ziehen Sie Dateien in diesen Bereich, um sie hochzuladen.</p>
+            <p>Sie können bis zu 3 Dateien hochladen.</p>
+          </div>
         </div>
         <button type='submit' className='mka__form-button'>SENDEN</button>
     </div>

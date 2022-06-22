@@ -28,7 +28,7 @@ function SamplePrevArrow(props) {
 class HomeSlider extends Component {
   state = {
     display: true,
-    width: 280
+    width: 270
   }
   render () {
   const settings = {

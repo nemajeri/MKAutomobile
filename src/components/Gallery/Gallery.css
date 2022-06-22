@@ -24,6 +24,10 @@
     height: auto;
 }
 
+.slick-track {
+    height: 850px;
+}
+
 @media (min-width: 767px) {
     .mka__container-gallery {
         width: 750px;
