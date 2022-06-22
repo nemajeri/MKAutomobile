@@ -1,0 +1,131 @@
+.mka__financing-bg-image {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('../../assets/dark.jpg');
+}
+
+.mka__container-contact {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        height: auto;
+}
+
+.mka__content-contact > h1{
+    color: #fff;
+    font-weight: 400;
+    font-family: var(--font-family);
+    text-align: center;
+    padding: 64px 0;
+    font-size: clamp(1.5rem, 5.5vw, 2.5rem);
+}
+
+.mka__content-contact > p{
+    margin: 0 0 10px;
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: min(22px, 14px);
+    line-height: 22px;
+}
+
+.mka__content-contact ul {
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: min(22px, 14px);
+    padding: 0 0 0 15px;
+    margin-left: 10px;
+}
+
+.mka__content-contact ul > li {
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: min(22px, 14px);
+    list-style: disc outside;
+    display: list-item;
+    padding: 0;
+}
+
+.mka__wrapper-contact {
+    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 55rem;
+}
+
+.mka__content-contact {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 32px;
+}
+
+.mka__logos-wrapper {
+    display: flex;
+    gap: 5rem;
+justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mka__logos-santanderbank {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mka__logos-denzelbank {
+    display: inline-block;
+    margin-left: -60px;
+    margin-right: auto;
+}
+
+/*CSS for container and content responsivnes*/
+
+@media (max-width: 340px) {
+    .mka__content-contact > h1{
+        font-family: var(--font-family);
+        font-size: 18px;
+        line-height: 2;
+    }
+}
+
+
+@media (min-width: 767px) {
+    .mka__container-contact {
+        width: 750px;
+    }
+    .mka__content-contact {
+        width: 100%;
+        float: left;
+}
+}
+
+@media (min-width: 992px) {
+    .mka__container-contact {
+        width: 970px;
+    }
+    .mka__content-contact {
+        width: 100%;
+        float: left;
+}
+}
+
+@media (min-width: 1200px) {
+    .mka__container-contact {
+    width: 1170px;
+    }
+    .mka__content-contact {
+        width: 100%;
+        float: left;
+}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+    .mka__container-contact {
+        width: 96%;
+    }
+}

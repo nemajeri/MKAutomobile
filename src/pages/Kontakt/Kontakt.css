@@ -1,0 +1,86 @@
+
+.contact-img-div {
+    position: relative;
+    z-index: 1;
+    height: 490px;
+}
+
+#mka__contact-subtitle {
+    text-align: center;
+    padding-top: 8rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+#contact-img-id {
+    background-image: url(http://mkautomobile.at/wp-content/uploads/2021/04/dark-min.jpg?id=492);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#mka__contact-description {
+    text-align: center;
+    color: white;
+    padding-top: 8rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: x-large;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mka__title-wrapper {
+    margin-top: 13.5rem;
+}
+
+.mka__logo-img {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.mka__logo-size {
+    width: clamp(264px, 24%, 440px);
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#mka__contact-title {
+    margin-top: -10rem;
+}
+
+@media (max-width: 479px) {
+    .mka__title-wrapper h1 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    }
+
+@media (max-width: 767px) {
+    .mka__title-wrapper h1 {
+        font-size: 26px;
+        line-height: 42px;
+        text-align: center;
+    }
+    }
+
+@media (max-width: 992px) {
+    .page-container {
+        padding: 60px 0;
+    }
+    .mka__title-wrapper h1 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .page-container {
+        padding: 70px 0;
+    }
+}
