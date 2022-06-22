@@ -17,9 +17,9 @@ function Kontakt() {
         <div className='mka__container'>
         <h1 id='mka__contact-title'>KONTAKT</h1>
         </div>
+        </div>
+        </div>
         <Contact/>
-        </div>
-        </div>
   <Jumbotrone/>
     <Footer/>
   </div>

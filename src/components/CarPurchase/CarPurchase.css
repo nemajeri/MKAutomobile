@@ -52,17 +52,19 @@
 }
 
 .mka__forms-purchase {
-    padding: 24px 0;
+    padding-top: 50px;
     display: flex;
-    gap: 80px;
+    justify-content: flex-start;
+    gap: 180px;
 }
+
 
 .mka__form-design > p {
     font-family: var(--font-family);
     font-size: 24px;
     font-weight: 500;
-    padding-bottom: 15px;
-    color: #fff;
+    padding-bottom: 20px;
+    color: var(--color-grey);
 }
 
 input {
@@ -74,17 +76,22 @@ input {
     padding: 6px 10px;
     height: 38px;
     margin-bottom: 20px;
-    width: 130%;
+    width: 160%;
+}
+
+.mka__form-button-align {
+    text-align: end;
 }
 
 .mka__form-button {
     background-color: #eee;
     border: 1px solid #ddd;
     font-size: 1em;
-    padding: 10px 15px;
-    min-width: 300px;
-    height: 50px;
-    float: right;
+    min-width: 350px;
+    height: 45px;
+    margin-top: 15px;
+    margin-right: -30px;
+    margin-bottom: 30px;
 }
 
 .mka__form-button:hover {
@@ -103,7 +110,7 @@ input {
     justify-content: center;
     flex-direction: column;
     cursor: pointer;
-    width: 100%;
+    width: 71.3rem;
     height: 8rem;
 }
 
@@ -117,13 +124,7 @@ input {
     font-family: var(--font-family);
 }
 
-.slick-track {
-    height: 250px;
-}
 
-.mka__input-field-title {
-    float: right;
-}
 
 @media (min-width: 767px) {
     .mka__container-purchase {

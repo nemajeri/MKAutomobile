@@ -72,22 +72,22 @@ class HomeSlider extends Component {
   return (
 <div className="mka__home-page-slider">
       <Slider {...settings}>
-        <div>
+        <div style={{ height: 500 }}>
        <Card/>
        </div>
-       <div>
+       <div style={{ height: 500 }}>
        <Card/>
        </div>
-       <div>
+       <div style={{ height: 500 }}>
        <Card/>
        </div>
-       <div>
+       <div style={{ height: 500 }}>
        <Card/>
        </div>
-       <div>
+       <div style={{ height: 500 }}>
        <Card/>
        </div>
-       <div>
+       <div style={{ height: 500 }}>
        <Card/>
        </div>
       </Slider>

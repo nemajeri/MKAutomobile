@@ -44,34 +44,34 @@ class ImageSlider extends Component {
   return (
     <div className="mka__main-gallery-div">
       <Slider {...settings}>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/1.jpg")} alt="gallery-image_1" />
         </div>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/2.jpg")} alt="gallery-image_2"/>
         </div>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/3.jpg")} alt="gallery-image_3"/>
         </div>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/4.jpg")} alt="gallery-image_4"/>
         </div>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/5.jpg")} alt="gallery-image_5"/>
         </div>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/6.jpg")} alt="gallery-image_6"/>
         </div>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/7.jpg")} alt="gallery-image_7"/>
         </div>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/8.jpg")} alt="gallery-image_8"/>
         </div>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/9.jpg")} alt="gallery-image_9"/>
         </div>
-        <div>
+        <div style={{ height: 850 }}>
         <img src={require("../../assets/10.jpg")} alt="gallery-image_10"/>
         </div>
       </Slider>

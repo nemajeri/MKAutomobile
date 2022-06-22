@@ -70,7 +70,7 @@ function CarPurchase() {
             <p>Sie können bis zu 3 Dateien hochladen.</p>
           </div>
         </div>
-        <button type='submit' className='mka__form-button'>SENDEN</button>
+        <div className='mka__form-button-align'><button type='submit' className='mka__form-button'>SENDEN</button></div>  
     </div>
     </div>
     </div>

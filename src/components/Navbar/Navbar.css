@@ -87,12 +87,12 @@
     top: 9rem;
 }
 
-input {
+.mka__search-input {
     border: 1px solid #fff;
     background: #0f1215;
     color: gray;
-    padding: 12px;
-    width: 297px;
+    width: 300px;
+    margin-bottom: 0 !important;
 }
 
 .mka__search-input:focus {

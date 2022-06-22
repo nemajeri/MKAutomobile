@@ -1,7 +1,6 @@
 .mka__content-gallery {
     text-align: center;
     position: relative;
-    min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 64px;
@@ -21,11 +20,6 @@
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
-    height: auto;
-}
-
-.slick-track {
-    height: 850px;
 }
 
 @media (min-width: 767px) {
