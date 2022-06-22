@@ -14,12 +14,10 @@ function Kontakt() {
           </div>
           <p id="mka__contact-description">Probefahrt und Besichtigung sind ausschließlich nach Terminvereinbarung möglich</p>
         <div className='mka__title-wrapper'>
-        <div className='mka__wrapper-contact'>
         <div className='mka__container'>
         <h1 id='mka__contact-title'>KONTAKT</h1>
+        </div>
         <Contact/>
-        </div>
-        </div>
         </div>
         </div>
   <Jumbotrone/>

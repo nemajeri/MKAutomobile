@@ -1,49 +1,9 @@
-.mka__financing-bg-image {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: url('../../assets/dark.jpg');
-}
-
 .mka__container-contact {
         margin-right: auto;
         margin-left: auto;
         padding-left: 15px;
         padding-right: 15px;
         height: auto;
-}
-
-.mka__content-contact > h1{
-    color: #fff;
-    font-weight: 400;
-    font-family: var(--font-family);
-    text-align: center;
-    padding: 64px 0;
-    font-size: clamp(1.5rem, 5.5vw, 2.5rem);
-}
-
-.mka__content-contact > p{
-    margin: 0 0 10px;
-    color: #fff;
-    font-family: var(--font-family);
-    font-size: min(22px, 14px);
-    line-height: 22px;
-}
-
-.mka__content-contact ul {
-    color: #fff;
-    font-family: var(--font-family);
-    font-size: min(22px, 14px);
-    padding: 0 0 0 15px;
-    margin-left: 10px;
-}
-
-.mka__content-contact ul > li {
-    color: #fff;
-    font-family: var(--font-family);
-    font-size: min(22px, 14px);
-    list-style: disc outside;
-    display: list-item;
-    padding: 0;
 }
 
 .mka__wrapper-contact {
@@ -63,26 +23,44 @@
     padding-top: 32px;
 }
 
-.mka__logos-wrapper {
+.mka__contact-infos-container {
     display: flex;
-    gap: 5rem;
-justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: space-around;
 }
 
-.mka__logos-santanderbank {
+.mka__contact-infos-card {
+    text-align: center;
+}
+
+.mka__contact-infos-card > p {
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mka__contact-infos-circle {
+    margin-bottom: 20px;
+    background-color: azure;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
     display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.mka__logos-denzelbank {
-    display: inline-block;
-    margin-left: -60px;
-    margin-right: auto;
+.mka__icon-color {
+    margin-top: 20px;
+    color: var(--color-grey);
+    height: 30px;
+    width: 30px;
 }
 
+.mka__contact-infos-divider {
+    height: 1px;
+    width: 1.5rem;
+    background-color: red;
+    padding: 10px 0;
+}
 /*CSS for container and content responsivnes*/
 
 @media (max-width: 340px) {
@@ -92,7 +70,6 @@ justify-content: center;
         line-height: 2;
     }
 }
-
 
 @media (min-width: 767px) {
     .mka__container-contact {
