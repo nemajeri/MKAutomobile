@@ -1,29 +1,35 @@
-import React from 'react';
-import './Finanzierung.css';
-import {Header, Navbar, Footer, Jumbotrone, Logo, Financing } from '../../components'
+import "./Finanzierung.css";
+import {
+  Header,
+  Navbar,
+  Footer,
+  Jumbotrone,
+  Logo,
+  Financing,
+} from "../../components"
 
-function Finanzierung() {
+const Finanzierung = () => {
   return (
-    <div>
-      <div id='header-img-id' className='header-img-div'>
-         <Header/>
-          <Navbar />
-          <div className='mka__logo-img'>
-            <div className='mka__logo-size'>
-            <Logo/>
-            </div>
-            </div>
-          <div className='mka__title-wrapper'>
-          <div className='mka__container'>
-          <h1>FINANZIERUNG</h1>
+    <>
+      <div id="header-img-id" className="header-img-div">
+        <Header />
+        <Navbar />
+        <div className="mka__logo-img">
+          <div className="mka__logo-size">
+            <Logo />
           </div>
+        </div>
+        <div className="mka__title-wrapper">
+          <div className="mka__container">
+            <h1>FINANZIERUNG</h1>
           </div>
-          </div>
-      <Financing/>
-    <Jumbotrone/>
-      <Footer/>
+        </div>
       </div>
-  );
+      <Financing />
+      <Jumbotrone />
+      <Footer />
+    </>
+  )
 }
 
-export default Finanzierung;
+export default Finanzierung

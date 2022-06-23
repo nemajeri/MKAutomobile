@@ -3,7 +3,7 @@
   color: var(--color-red) !important;
   line-height: 2.5 !important;
   padding-left: 1rem;
-  font-family: 'Rubik', sans-serif !important;
+  font-family: "Rubik", sans-serif !important;
 }
 
 .slick-next-home-slider:before {
@@ -11,7 +11,7 @@
   color: var(--color-red) !important;
   line-height: 2.5 !important;
   padding-left: 1rem;
-  font-family: 'Rubik', sans-serif !important;
+  font-family: "Rubik", sans-serif !important;
 }
 
 .slick-next-home-slider {
@@ -19,12 +19,12 @@
   z-index: 99;
   position: absolute;
   top: 160px;
-  width: 44px !important; 
+  width: 44px !important;
   height: 44px !important;
   background-color: #fff !important;
   transition: 300ms ease-out;
   opacity: 0;
-  transform: translate(0, 0)!important;
+  transform: translate(0, 0) !important;
 }
 
 .slick-prev-home-slider {
@@ -32,26 +32,25 @@
   z-index: 99;
   position: absolute;
   top: 160px;
-  width: 44px !important; 
+  width: 44px !important;
   height: 44px !important;
   background-color: #fff !important;
   transition: 300ms ease-out;
   opacity: 0;
-  transform: translate(0, 0)!important;
+  transform: translate(0, 0) !important;
 }
 
 .mka__home-page-slider:hover .slick-prev-home-slider {
   opacity: 1;
-  transform: translateX(-190%)!important ;
-
+  transform: translateX(-190%) !important ;
 }
 
 .mka__home-page-slider:hover .slick-next-home-slider {
   opacity: 1;
-  transform: translateX(190%)!important;
+  transform: translateX(190%) !important;
 }
 
- /* Arrows hover */
+/* Arrows hover */
 .slick-next-home-slider:hover,
 .slick-prev-home-slider:hover {
   background-color: var(--color-red) !important;
@@ -65,6 +64,6 @@
   color: #fff !important;
 }
 
-.slick-track{
+.slick-track {
   display: flex;
 }

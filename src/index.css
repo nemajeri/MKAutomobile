@@ -24,6 +24,7 @@ h1 {
     letter-spacing: 0px;
     color: var(--color-white);
   }
+
   h2 {
     font-family: var(--font-family);
     font-weight: 500;
@@ -33,6 +34,7 @@ h1 {
     letter-spacing: 0px;
     color: var(--color-white);
   }
+
   h3 {
     font-family: var(--font-family);
     font-weight: 500;
@@ -42,6 +44,7 @@ h1 {
     letter-spacing: 0px;
     color: var(--color-white);
   }
+
   h4 {
     font-family: var(--font-family);
     font-weight: 500;
@@ -51,6 +54,7 @@ h1 {
     letter-spacing: 0px;
     color: var(--color-white);
   }
+
   h5 {
     font-family: var(--font-family);
     font-weight: 500;
@@ -60,6 +64,7 @@ h1 {
     letter-spacing: 0px;
     color: var(--color-white);
   }
+
   h6 {
     font-family: var(--font-family);
     font-weight: 500;
@@ -69,3 +74,18 @@ h1 {
     letter-spacing: 0px;
     color: var(--color-white);
   }
+
+  p {
+    font-family: var(--font-family) !important;
+    font-weight: 400!important;
+    font-size: 15px!important;
+    color: var(--color-white)!important;
+  }
+
+  li {
+    color: var(--color-white)!important;
+    font-family: var(--font-family)!important;
+    font-weight: 400!important;
+    font-size: 15px!important;
+  }
+

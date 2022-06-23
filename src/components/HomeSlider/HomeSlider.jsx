@@ -1,28 +1,28 @@
-import React, { Component } from "react";
+import { Component } from "react"
 import Card from '../Card/Card'
-import Slider from "react-slick";
-import "./HomeSlider.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick"
+import "./HomeSlider.css"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
-function SampleNextArrow(props) {
+const SampleNextArrow = (props) => {
   const { onClick } = props;
   return (
     <div
       className="slick-next-home-slider"
       onClick={onClick}
     />
-  );
+  )
 }
 
-function SamplePrevArrow(props) {
+const SamplePrevArrow = (props) => {
   const { onClick } = props;
   return (
     <div
       className="slick-prev-home-slider"
       onClick={onClick}
     />
-  );
+  )
 }
 
 class HomeSlider extends Component {
@@ -30,6 +30,7 @@ class HomeSlider extends Component {
     display: true,
     width: 270
   }
+
   render () {
   const settings = {
     className: "slider variable-width",
@@ -66,34 +67,33 @@ class HomeSlider extends Component {
         }
       }
     ]
-  };
+  }
   
-
   return (
 <div className="mka__home-page-slider">
       <Slider {...settings}>
-        <div style={{ height: 500 }}>
+        <div>
        <Card/>
        </div>
-       <div style={{ height: 500 }}>
+       <div>
        <Card/>
        </div>
-       <div style={{ height: 500 }}>
+       <div>
        <Card/>
        </div>
-       <div style={{ height: 500 }}>
+       <div>
        <Card/>
        </div>
-       <div style={{ height: 500 }}>
+       <div>
        <Card/>
        </div>
-       <div style={{ height: 500 }}>
+       <div>
        <Card/>
        </div>
       </Slider>
       </div>
 
-  );
+  )
 }
 }
 

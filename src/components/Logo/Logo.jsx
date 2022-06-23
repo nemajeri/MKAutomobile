@@ -1,6 +1,4 @@
-import React from "react";
-
-function Icon() {
+const Icon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +130,7 @@ function Icon() {
         ></path>
       </g>
     </svg>
-  );
+  )
 }
 
-export default Icon;
+export default Icon

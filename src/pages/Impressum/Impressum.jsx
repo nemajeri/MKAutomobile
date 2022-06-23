@@ -1,29 +1,34 @@
-import React from 'react';
-import './Impressum.css';
-import {Header, Navbar, Footer, Jumbotrone, Logo, Impression } from '../../components'
+import {
+  Header,
+  Navbar,
+  Footer,
+  Jumbotrone,
+  Logo,
+  Impression,
+} from "../../components"
 
-function Impressum() {
+const Impressum = () => {
   return (
-    <div>
-      <div id='header-img-id' className='header-img-div'>
-         <Header/>
-          <Navbar />
-          <div className='mka__logo-img'>
-            <div className='mka__logo-size'>
-            <Logo/>
-            </div>
-            </div>
-          <div className='mka__title-wrapper'>
-          <div className='mka__container'>
-          <h1>IMPRESSUM</h1>
+    <>
+      <div id="header-img-id" className="header-img-div">
+        <Header />
+        <Navbar />
+        <div className="mka__logo-img">
+          <div className="mka__logo-size">
+            <Logo />
           </div>
+        </div>
+        <div className="mka__title-wrapper">
+          <div className="mka__container">
+            <h1>IMPRESSUM</h1>
           </div>
-          </div>
-    <Impression/>
-    <Jumbotrone/>
-      <Footer/>
+        </div>
       </div>
-  );
+      <Impression />
+      <Jumbotrone />
+      <Footer />
+    </>
+  )
 }
 
-export default Impressum;
+export default Impressum

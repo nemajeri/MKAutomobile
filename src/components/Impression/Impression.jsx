@@ -1,11 +1,10 @@
-import React from 'react';
-import './Impression.css'
+import "./Impression.css"
 
-function Financing() {
+const Impression = () => {
   return (
-    <div className='mka__wrapper-impression'>
-    <div className='mka__container-impression'>
-      <div className='mka__content-impression'>
+    <div className="mka__wrapper-impression">
+      <div className="mka__container-impression">
+        <div className="mka__content-impression">
           <h4>FIRMENBEZEICHNUNG</h4>
           <p>Milan Kuzmanovic KG</p>
           <h4>FIRMENBUCHNUMMER</h4>
@@ -15,15 +14,13 @@ function Financing() {
           <h4>GESCHÄFTSFÜHRER / CEO</h4>
           <p>Milan Kuzmanovic</p>
           <h4>ADRESSE</h4>
-          <p>Im Trenkenschuh 15-17
-             2100 Korneuburg
-             Österreich</p>
+          <p>Im Trenkenschuh 15-17 2100 Korneuburg Österreich</p>
           <h4>KONTAKT</h4>
           <p>T: +43 680 3149332</p>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-  );
+  )
 }
 
-export default Financing;
+export default Impression

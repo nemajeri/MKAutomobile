@@ -1,6 +1,4 @@
-import React from "react";
-
-function Icon() {
+const Icon = () => {
   return (
     <svg
       className="mka__responsive-svg"
@@ -23,7 +21,7 @@ function Icon() {
         display="inline"
       ></path>
     </svg>
-  );
+  )
 }
 
-export default Icon;
+export default Icon
