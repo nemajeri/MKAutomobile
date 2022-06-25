@@ -1,0 +1,38 @@
+.mka__main-car-container {
+    text-align: center;
+    width: 5rem;
+    height: 8rem;
+    background-color: black;
+}
+
+.mka__main-car-image {
+    position: relative;
+    margin-top: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: gray;
+}
+
+.top-divider {
+    height: 2px;
+    width: 0.5rem;
+    background-color: black;
+}
+
+.top-divider:hover {
+    width: 1rem;
+    transition: width 1s;
+    background-color: red;
+}
+
+.mka__main-car {
+    height: 2px;
+    width: 1rem;
+    background-color: black;
+}
+
+.mka__main-car:hover {
+    width: 0.5rem;
+    background-color: red;
+    transition: widht 1s;
+}

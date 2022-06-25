@@ -1,0 +1,53 @@
+.mka__content-car-offers {
+    text-align: center;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+  
+  .mka__wrapper-car-offers {
+    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .mka__container-car-offers {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  @media (min-width: 767px) {
+    .mka__container-car-offers {
+      width: 750px;
+    }
+    .mka__content-car-offers {
+      width: 100%;
+      float: left;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .mka__container-car-offers {
+      width: 970px;
+    }
+    .mka__content-car-offers {
+      width: 100%;
+      float: left;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .mka__container-car-offers {
+      width: 1170px;
+    }
+    .mka__content-car-offers {
+      width: 100%;
+      float: left;
+    }
+  }
