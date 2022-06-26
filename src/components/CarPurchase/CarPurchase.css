@@ -62,7 +62,7 @@
     color: var(--color-grey);
   }
   
-  input {
+  textarea {
     background-color: #fff;
     border-radius: 2px;
     display: block;

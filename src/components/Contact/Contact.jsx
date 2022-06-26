@@ -1,6 +1,7 @@
-import "./Contact.css"
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa"
-import { IconContext } from "react-icons"
+import "./Contact.css";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { IconContext } from "react-icons";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
@@ -49,37 +50,7 @@ const Contact = () => {
               </p>
             </div>
           </div>
-          <div className="mka__forms-purchase">
-            <div className="mka__form-design">
-              <form>
-                <label>
-                  <input type="text" value="VORNAME" />
-                  <input type="text" value="TEL" />
-                </label>
-              </form>
-            </div>
-            <div className="mka__form-design">
-              <form>
-                <label>
-                  <input type="text" value="NACHNAME" />
-                  <input type="text" value="FIRMA" />
-                </label>
-              </form>
-            </div>
-            <div className="mka__form-design">
-              <form>
-                <label>
-                  <input type="text" value="E-MAIL" />
-                  <input type="text" value="IHRE NACHRICHT" />
-                </label>
-              </form>
-            </div>
-          </div>
-          <div className="mka__button-align">
-            <button type="submit" className="mka__form-button">
-              SENDEN
-            </button>
-          </div>
+          <ContactForm />
           <div className="mka__google-api-contact">
             <iframe
               title="Google maps"

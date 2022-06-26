@@ -67,3 +67,7 @@
 .slick-track {
   display: flex;
 }
+
+.variable-width {
+  height: 30rem !important;
+}

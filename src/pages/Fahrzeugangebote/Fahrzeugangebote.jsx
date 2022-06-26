@@ -5,7 +5,7 @@ import {
   Footer,
   Jumbotrone,
   Logo,
-  CarOffers
+  CarOffers,
 } from "../../components"
 
 const Fahrzeugangebote = () => {

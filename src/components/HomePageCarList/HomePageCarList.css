@@ -36,6 +36,7 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    z-index: 999;
   }
   
   .mka__shortcut-home-list {
@@ -44,11 +45,11 @@
     justify-content: center;
     color: #fff;
   }
-  /*
+
   .mka__shortcut-home-list > a {
       font-family: var(--font-family);
   }
-  */
+
   .mka__shortcut-home-list:hover {
     color: var(--color-red);
     transition: 0.3s;
@@ -66,7 +67,7 @@
   }
   
   /*Red line to divide content section*/
-  /*
+  
   .mka__section-divider {
       background-color: var(--color-red);
       height: 1px;
@@ -77,8 +78,8 @@
       margin-top: 70px;
       margin-bottom: 80px;
   }
-  */
-  /*
+  
+
   .mka__second-section-divider {
       background-color: var(--color-red);
       height: 1px;
@@ -88,7 +89,7 @@
       margin-right: auto;
       margin-bottom: 60px;
   }
-  */
+
   .mka__content-home-title {
     text-align: center;
     padding: 32px 0;

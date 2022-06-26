@@ -86,3 +86,7 @@
 .slick-next:hover::before {
   color: #fff !important;
 }
+
+.slick-list {
+  height: 50rem;
+}
