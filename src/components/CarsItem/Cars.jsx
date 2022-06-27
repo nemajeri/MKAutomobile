@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import CarsItem from './CarsItem';
+import './Cars.css'
 
 
 export class Cars extends Component {
   render() {
     return (
-        <div className={carsStyle}>
+        <div className='mka__cars-grid'>
         {this.props.cars.map(car =>
             <CarsItem key={car.id} car={car}/>)}
         </div>
@@ -13,10 +14,5 @@ export class Cars extends Component {
   }
 }
 
-const carsStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'auto auto auto',
-    gridGap: '1rem'
-};
 
 export default Cars
