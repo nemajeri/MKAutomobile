@@ -1,5 +1,6 @@
 import "./CarOffers.css"
 import Cars from "../CarsItem/Cars"
+import CarSorting from "../CarSorting/CarSorting";
 import axios from 'axios';
 import React, { Component } from "react";
 
@@ -23,6 +24,7 @@ this.setState({cars: res.data, loading: false});
     <div className="mka__wrapper-car-offers">
       <div className="mka__container-car-offers">
         <div className="mka__content-car-offers">
+          < CarSorting/>
           <Cars loading={this.state.loading} cars={this.state.cars}/>
         </div>
       </div>
