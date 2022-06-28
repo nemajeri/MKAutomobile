@@ -1,8 +1,10 @@
 import "./CarOffers.css"
 import Cars from "../CarsItem/Cars"
-import CarSorting from "../CarSorting/CarSorting";
+import CarSlider from "../CarSlider/CarSlider";
 import axios from 'axios';
 import React, { Component } from "react";
+import Search from "../Search/Search";
+import FilterSideBar from "../FilterSideBar/FilterSideBar"
 
 class CarOffers extends Component {
   state = {
@@ -24,8 +26,18 @@ this.setState({cars: res.data, loading: false});
     <div className="mka__wrapper-car-offers">
       <div className="mka__container-car-offers">
         <div className="mka__content-car-offers">
-          < CarSorting/>
+          <div className="mka__content-grid offers">
+          <div className="item1">
+          < CarSlider/>
+          </div>
+          <div className="item2">
+          < Search/>
+          < FilterSideBar/>
+          </div>
+          <div className="item3">
           <Cars loading={this.state.loading} cars={this.state.cars}/>
+          </div>
+          </div>
         </div>
       </div>
     </div>

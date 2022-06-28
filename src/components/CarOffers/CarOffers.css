@@ -22,6 +22,19 @@
     padding-right: 15px;
   }
   
+  .item1 { grid-area: header; }
+  .item2 { grid-area: menu; }
+  .item3 { grid-area: main; }
+
+  .mka__content-grid offers {
+    display: grid;
+    grid-template-areas:
+    'header header header header header header'
+    'menu menu main main main main'
+    'menu menu main main main main';
+     gap: 10px;
+  }
+
   @media (min-width: 767px) {
     .mka__container-car-offers {
       width: 750px;

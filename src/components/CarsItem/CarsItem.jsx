@@ -3,7 +3,7 @@ import { FaCalendarAlt, FaCog } from "react-icons/fa";
 import { GiGasPump } from "react-icons/gi";
 import './CarsItem.css'
 
-const CarsItem = ({car: {year,month,transmission,mileage,price}}) => {
+const CarsItem = ({car: {fuel,year,month,transmission,mileage,price}}) => {
    
     return (
       <Fragment>

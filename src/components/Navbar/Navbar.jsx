@@ -40,7 +40,7 @@ const Navbar = () => {
                     <IoClose onClick={() => setSearchWindow(false)} />
                   </IconContext.Provider>
                 ) : (
-                  <FaSearch onClick={() => setSearchWindow(true)} />
+                  <FaSearch onClick={() => setOpen(true)} />
                 )}
               </i>
             </p>
@@ -49,7 +49,7 @@ const Navbar = () => {
                 <input
                   className="mka__search-input"
                   type="text"
-                  value="Suche..."
+                  placeholder="Suche..."
                 />
                 <IconContext.Provider value={{ className: "fa-search" }}>
                   {" "}
