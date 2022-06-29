@@ -26,7 +26,7 @@
   .item2 { grid-area: menu; }
   .item3 { grid-area: main; }
 
-  .mka__content-grid offers {
+  .mka__content-grid-offers {
     display: grid;
     grid-template-areas:
     'header header header header header header'

@@ -5,6 +5,8 @@ import axios from 'axios';
 import React, { Component } from "react";
 import Search from "../Search/Search";
 import FilterSideBar from "../FilterSideBar/FilterSideBar"
+import CarSorting from "../CarSorting/CarSorting";
+import CarAlignment from "../CarAlignment/CarAlignment";
 
 class CarOffers extends Component {
   state = {
@@ -26,9 +28,11 @@ this.setState({cars: res.data, loading: false});
     <div className="mka__wrapper-car-offers">
       <div className="mka__container-car-offers">
         <div className="mka__content-car-offers">
-          <div className="mka__content-grid offers">
+          <div className="mka__content-grid-offers">
           <div className="item1">
           < CarSlider/>
+          < CarSorting/>
+          < CarAlignment/>
           </div>
           <div className="item2">
           < Search/>
