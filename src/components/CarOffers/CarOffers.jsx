@@ -21,7 +21,6 @@ const res = await axios.get('http://finity.pro/clients/mkautomobile/cars/all');
 
 this.setState({cars: res.data, loading: false});
 
-    console.log(res.data)
 }
   render () {
   return (
@@ -35,8 +34,12 @@ this.setState({cars: res.data, loading: false});
           < CarAlignment/>
           </div>
           <div className="item2">
+            <div className="mka__side-bar-divider">
           < Search/>
+          </div>
+          <div>
           < FilterSideBar/>
+          </div>
           </div>
           <div className="item3">
           <Cars loading={this.state.loading} cars={this.state.cars}/>

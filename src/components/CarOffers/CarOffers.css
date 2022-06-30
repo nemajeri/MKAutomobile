@@ -35,6 +35,10 @@
      gap: 10px;
   }
 
+  .mka__side-bar-divider {
+    margin-bottom: 4rem;
+  }
+
   @media (min-width: 767px) {
     .mka__container-car-offers {
       width: 750px;
