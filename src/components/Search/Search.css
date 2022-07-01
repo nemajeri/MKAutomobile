@@ -1,0 +1,20 @@
+.mka__search-divider {
+    background-color: var(--color-red);
+    height: 3px;
+    width: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.fa-search-car-offers {
+    position: absolute;
+    top: 16.2rem;
+    left: 17.5rem;
+    color: #db2d2e;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  .mka__left-alignment {
+    text-align: left;
+  }
