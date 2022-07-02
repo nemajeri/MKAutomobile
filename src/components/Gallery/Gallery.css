@@ -21,7 +21,16 @@
     padding-left: 15px;
     padding-right: 15px;
   }
-  
+
+  .slick-prev, .slick-next {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .slick-dots {
+    margin-top: 30px !important;
+  }
 
   @media (min-width: 767px) {
     .mka__container-gallery {

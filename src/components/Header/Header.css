@@ -9,7 +9,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding-top: 2px;
+  padding-top: 5px;
   padding-bottom: 5px;
 }
 
@@ -24,6 +24,7 @@ ul > li {
   display: inline-block;
   padding: 0.2em;
   line-height: 24px;
+  margin-right: 10px;
 }
 
 .mka__header-link {
@@ -35,8 +36,8 @@ ul > li {
 
 .mka__header-link > p {
   display: flex;
-  justify-items: center; 
   justify-content: center;
+  align-items: center;
   gap: 5px;
 }
 

@@ -76,16 +76,16 @@ h1 {
   }
 
   p {
-    font-family: var(--font-family) !important;
-    font-weight: 400!important;
-    font-size: 15px!important;
-    color: var(--color-white)!important;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-white)
   }
 
   li {
-    color: var(--color-white)!important;
-    font-family: var(--font-family)!important;
-    font-weight: 400!important;
-    font-size: 15px!important;
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
   }
 
