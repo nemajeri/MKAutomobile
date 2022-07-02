@@ -2,7 +2,7 @@
 .contact-img-div {
     position: relative;
     z-index: 1;
-    height: 500px;
+    height: 470px;
 }
 
 #mka__contact-subtitle {
@@ -32,7 +32,10 @@
 }
 
 .mka__title-wrapper {
-    margin-top: 13.5rem;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
 }
 
 .mka__logo-img {
@@ -51,7 +54,7 @@
 }
 
 #mka__contact-title {
-    margin-top: -10rem;
+
 }
 
 @media (max-width: 479px) {

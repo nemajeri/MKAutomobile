@@ -14,40 +14,26 @@ class ContactForm extends Component {
 
   render() {
     return (
-      <> 
-        <div className="mka__forms-purchase">
-      <div className="mka__form-design">
-        <form>
-          <label>
-            <textarea type="text" value={this.state.value} />
-            <textarea type="text" value={this.state.value} />
-          </label>
-        </form>
-      </div>
-      <div className="mka__form-design">
-        <form>
-          <label>
-            <textarea type="text" value={this.state.value} />
-            <textarea type="text" value={this.state.value}/>
-          </label>
-        </form>
-      </div>
-      <div className="mka__form-design">
-        <form>
-          <label>
-            <textarea type="text" value={this.state.value}/>
-            <textarea type="text" value={this.state.value} />
-          </label>
-        </form>
-      </div>
-    </div>
-    <div className="mka__button-align">
-      <button type="submit" className="mka__form-button">
-        SENDEN
-      </button>
-    </div>
-    </>
-    )
+      <form class="form" onSubmit={this.handleSubmit}>
+        <input class="form-field" placeholder="VORNAME" type="text" value={this.state.value} onChange={this.handleChange} />
+        <input class="form-field" placeholder="NACHNAME" type="text" value={this.state.value} onChange={this.handleChange} />
+        <input class="form-field" placeholder="E-MAIL" type="text" value={this.state.value} onChange={this.handleChange} />
+        <input class="form-field" placeholder="TEL" type="text" value={this.state.value} onChange={this.handleChange} />
+        <input class="form-field" placeholder="FIRMA" type="text" value={this.state.value} onChange={this.handleChange} />
+        <input class="form-field" placeholder="IHRE NACHRICHT" type="text" value={this.state.value} onChange={this.handleChange} />
+
+        <div class="center">
+          <button class="btn">
+            <svg class="button" width="180px" height="60px" viewBox="0 0 180 60" class="border">
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+            </svg>
+            <span>SENDEN</span>
+          </button>
+        </div>
+
+      </form>
+    );
   }
 }
 
