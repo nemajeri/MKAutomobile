@@ -36,6 +36,12 @@
   
   .mka__jumbotrone-contact p > a:link {
     color: var(--color-red);
+    transition: 0.5s;
+  }
+
+  .mka__jumbotrone-contact p > a:hover {
+    color: white;
+    transition: 0.5s;
   }
   
   .mka__jumbotrone-red-line {
