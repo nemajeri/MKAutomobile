@@ -26,10 +26,14 @@
     display: flex;
     gap: 12px;
   }
+
+  .mka__footer-links p > a {
+    transition: 0.5s;
+  }
   
   .mka__footer-links p > a:hover {
     color: var(--color-red);
-    transition: 0.9s;
+    transition: 0.5s;
   }
   
   .mka__footer-copyright {
@@ -37,10 +41,14 @@
     gap: 12px;
     margin-left: auto;
   }
+
+  .mka__footer-copyright p > a {
+    transition: 0.5s;
+  }
   
   .mka__footer-copyright p > a:hover {
     color: var(--color-red);
-    transition: 0.9s;
+    transition: 0.5s;
   }
   
   @media (min-width: 992px) {
