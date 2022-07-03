@@ -30,6 +30,7 @@
   
   .mka__navbar-links_container p > a:link {
     color: #fff;
+    transition: 0.5s;
   }
   
   .mka__navbar-links_container p > a:hover {
