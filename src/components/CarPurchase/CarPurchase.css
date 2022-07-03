@@ -63,6 +63,7 @@
   }
 
   .form {
+    margin-top: 5em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1em 4em;
@@ -113,9 +114,9 @@
   height: 60px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #91C9FF;
+  border: 1px solid #FFF;
   outline: none;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .btn>svg {
@@ -124,15 +125,16 @@
   left: 0;
   top: 0;
   fill: none;
-  stroke: #fff;
+  stroke: var(--color-red);
   stroke-dasharray: 150 480;
   stroke-dashoffset: 150;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .btn:hover {
-  transition: 1s ease-in-out;
-  background: #4F95DA;
+  transition: 0.5s ease-in-out;
+  background: transparent;
+  border-color: var(--color-red);
 }
 
 .btn:hover svg {
@@ -142,7 +144,10 @@
 .btn span {
   color: white;
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 400;
+}
+
+.btn:hover span {
 }
 
   
