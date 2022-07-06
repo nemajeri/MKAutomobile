@@ -43,14 +43,8 @@
     margin-bottom: 2rem;
 }
 
-.mka__logo-size {
+.mka__logo-size-kontakt {
     width: clamp(264px, 24%, 440px);
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
 }
 
 #mka__contact-title {

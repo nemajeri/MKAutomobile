@@ -15,7 +15,7 @@ const Kontakt = () => {
         <Header />
         <Navbar />
         <div className="mka__logo-img">
-          <div className="mka__logo-size">
+          <div className="mka__logo-size mka__logo-size-kontakt">
             <Logo />
           </div>
         </div>
