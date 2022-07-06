@@ -9,7 +9,7 @@
   .mka__wrapper-copyright {
     background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
     height: 100%;
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     overflow: hidden;
     background-size: contain;
     min-height: 67rem;
