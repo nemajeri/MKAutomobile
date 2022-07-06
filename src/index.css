@@ -13,6 +13,8 @@
     --color-white: #fff;
     --color-grey: #abb8c3;
     --color-red: #cf2e2e;
+
+    --font-open-sans: Open Sans, Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -76,9 +78,10 @@ h1 {
   }
 
   p {
-    font-family: var(--font-family);
+    font-family: var(--font-open-sans);
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 22px;
     color: var(--color-white)
   }
 
@@ -86,6 +89,7 @@ h1 {
     color: var(--color-white);
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 22px;
   }
 
