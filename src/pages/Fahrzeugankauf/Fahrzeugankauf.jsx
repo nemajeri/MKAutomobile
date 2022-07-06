@@ -26,7 +26,6 @@ const Fahrzeugankauf = () => {
       </div>
       <CarPurchase />
       <Jumbotrone />
-      <Footer />
     </>
   )
 }

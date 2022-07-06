@@ -44,7 +44,6 @@ const Home = () => {
       </div>
       <HomePageCarList />
       <Jumbotrone />
-      <Footer />
     </>
   )
 }

@@ -31,7 +31,6 @@ const Kontakt = () => {
       </div>
       <Contact />
       <Jumbotrone />
-      <Footer />
     </>
   )
 }

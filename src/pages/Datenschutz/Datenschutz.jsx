@@ -26,7 +26,6 @@ const Datenschutz = () => {
       </div>
       <Copyright />
       <Jumbotrone />
-      <Footer />
     </>
   )
 }

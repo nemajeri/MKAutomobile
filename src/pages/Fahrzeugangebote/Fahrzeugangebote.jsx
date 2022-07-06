@@ -27,7 +27,6 @@ const Fahrzeugangebote = () => {
       </div>
       <CarOffers/>
       <Jumbotrone />
-      <Footer />
     </>
   )
 }

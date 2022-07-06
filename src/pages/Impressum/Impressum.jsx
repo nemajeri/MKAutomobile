@@ -26,7 +26,6 @@ const Impressum = () => {
       </div>
       <Impression />
       <Jumbotrone />
-      <Footer />
     </>
   )
 }

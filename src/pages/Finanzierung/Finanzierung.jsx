@@ -2,7 +2,6 @@ import "./Finanzierung.css";
 import {
   Header,
   Navbar,
-  Footer,
   Jumbotrone,
   Logo,
   Financing,
@@ -27,7 +26,6 @@ const Finanzierung = () => {
       </div>
       <Financing />
       <Jumbotrone />
-      <Footer />
     </>
   )
 }
