@@ -28,12 +28,14 @@
     justify-content: center !important;
   }
 
-  .slick-dots {
-    margin-top: 30px !important;
-  }
-
   .slick-slide img {
     width: inherit;
+  }
+
+  .slick-dots {
+    position: relative !important;
+    margin-top: 30px !important;
+    bottom: 0px !important;
   }
 
   @media (min-width: 767px) {
