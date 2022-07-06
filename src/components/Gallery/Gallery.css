@@ -9,8 +9,7 @@
   
   .mka__wrapper-gallery {
     background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat-y;
     height: 100%;
     overflow: hidden;
   }
