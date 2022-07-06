@@ -25,16 +25,6 @@
     margin-top: 2rem;
 }
 
-.mka__logo-size {
-    width: clamp(264px, 28%, 500px);
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-}
-
 @media (max-width: 479px) {
     .mka__title-wrapper h1 {
         font-size: 24px;
