@@ -28,6 +28,7 @@
   }
 
   .mka__footer-links p > a {
+    color: #626262;
     transition: 0.5s;
   }
   
@@ -42,7 +43,12 @@
     margin-left: auto;
   }
 
+  .mka__footer-copyright p {
+    color: #626262;
+  }
+
   .mka__footer-copyright p > a {
+    color: #626262;
     transition: 0.5s;
   }
   
