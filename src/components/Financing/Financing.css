@@ -19,7 +19,7 @@
   
   .mka__content-financing > h1 {
     text-align: center;
-    padding: 64px 0;
+    padding-top: 64px;
     font-size: clamp(1.5rem, 5.5vw, 2.5rem);
   }
   
