@@ -103,6 +103,10 @@
     flex-direction: column;
     max-width: 30px;
   }
+
+  .mka__search_column svg {
+    transition: 0.5s;
+  }
   
   .io-close {
     color: #fff;
