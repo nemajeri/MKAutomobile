@@ -1,4 +1,5 @@
 import "./Jumbotrone.css"
+import { Footer } from "../../components"
 
 const Jumbotrone = () => {
   return (
@@ -32,6 +33,7 @@ const Jumbotrone = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </footer>
   )
 }
