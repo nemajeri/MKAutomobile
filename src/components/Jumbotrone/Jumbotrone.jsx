@@ -2,7 +2,7 @@ import "./Jumbotrone.css"
 
 const Jumbotrone = () => {
   return (
-    <div>
+    <footer className="mka__footer-normal">
       <div className="mka__jumbotrone-bg-image">
         <div className="mka__image-container">
           <div className="mka__jumbotrone-div">
@@ -32,7 +32,7 @@ const Jumbotrone = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 

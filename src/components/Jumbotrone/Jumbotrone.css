@@ -1,9 +1,4 @@
 .mka__jumbotrone-bg-image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    background-image: url("../../assets/Background.jpg");
     width: 100%;
     display: table;
   }
@@ -62,6 +57,13 @@
     line-height: 24px;
     font-size: 14px;
     color: #d2d2d2;
+  }
+
+  .mka__footer-normal {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-image: url(http://localhost:3000/static/media/Background.cfbea4ef19fe51ae09ee.jpg);
   }
   
   @media (max-width: 992px) {
