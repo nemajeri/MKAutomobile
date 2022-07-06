@@ -9,6 +9,7 @@
     background-repeat: repeat-y;
     height: 100%;
     overflow: hidden;
+    background-size: contain;
   }
   
   .mka__content-contact {

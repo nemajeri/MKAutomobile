@@ -10,9 +10,9 @@
   .mka__wrapper-impression {
     background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
     height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat-y;
+    overflow: hidden;
+    background-size: contain;
     min-height: 38rem;
   }
   
