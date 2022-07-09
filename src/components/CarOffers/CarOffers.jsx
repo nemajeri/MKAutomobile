@@ -6,7 +6,6 @@ import React, { Component } from "react";
 import Search from "../Search/Search";
 import FilterSideBar from "../FilterSideBar/FilterSideBar"
 import CarSorting from "../CarSorting/CarSorting";
-import CarAlignment from "../CarAlignment/CarAlignment";
 
 class CarOffers extends Component {
   state = {
@@ -31,7 +30,6 @@ this.setState({cars: res.data, loading: false});
           <div className="item1">
           < CarSlider/>
           < CarSorting/>
-          < CarAlignment/>
           </div>
           <div className="item2">
             <div className="mka__side-bar-divider">
