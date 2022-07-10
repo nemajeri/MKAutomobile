@@ -2,7 +2,6 @@ import "./Home.css";
 import {
   Header,
   Navbar,
-  Footer,
   Jumbotrone,
   Logo,
   HomePageCarList,

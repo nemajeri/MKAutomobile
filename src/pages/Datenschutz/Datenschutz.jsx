@@ -1,7 +1,6 @@
 import {
   Header,
   Navbar,
-  Footer,
   Jumbotrone,
   Logo,
   Copyright,

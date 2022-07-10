@@ -2,7 +2,6 @@ import "./Kontakt.css"
 import {
   Header,
   Navbar,
-  Footer,
   Jumbotrone,
   Logo,
   Contact,

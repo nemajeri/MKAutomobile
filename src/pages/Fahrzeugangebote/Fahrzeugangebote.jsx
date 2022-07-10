@@ -2,7 +2,6 @@ import './Fahrzeugangebote.css'
 import {
   Header,
   Navbar,
-  Footer,
   Jumbotrone,
   Logo,
   CarOffers,
