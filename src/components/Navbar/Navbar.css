@@ -50,15 +50,7 @@
   /* Hamburger menu */
 
   .mka__navbar-menu_container-links {
-    color: #fff;
-    font-size: 14px;
-    line-height: 66px;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-family: var(--font-family);
     padding: 1em;
-    cursor: pointer;
-    width: 100%;
   }
 
   .mka__navbar-menu_container-links p > a:hover {
