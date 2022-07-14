@@ -1,10 +1,12 @@
 import "./CarOffers.css"
 import Cars from "../CarsItem/Cars"
-import CarSlider from "../CarSlider/CarSlider";
+import CarSlider from "./CarSlider";
 import axios from 'axios';
 import React, { Component } from "react";
 import Search from "../Search/Search";
 import FilterSideBar from "../FilterSideBar/FilterSideBar"
+import CarAlignment from "./CarAlignment";
+import CarSorting from "./CarSorting";
 
 class CarOffers extends Component {
   state = {
@@ -28,6 +30,8 @@ this.setState({cars: res.data, loading: false});
           <div className="mka__content-grid-offers">
           <div className="item1">
           < CarSlider/>
+          < CarSorting/>
+          < CarAlignment/>
           </div>
           <div className="item2">
             <div className="mka__side-bar-divider">
