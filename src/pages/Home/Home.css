@@ -25,12 +25,6 @@
     font-size: x-large;
 }
 
-
-.mka__title-wrapper {
-    margin-top: 13.5rem;
-}
-
-
 .mka__logo-size {
     width: 28%;
     position: absolute;
@@ -39,12 +33,6 @@
     left: 2em;
     right: 0;
     text-align: center;
-}
-
-.mka__car-img-div {
-    text-align: center;
-    width: 100%;
-    padding-top:2em;
 }
 
 #mercedes-min {
@@ -61,27 +49,3 @@
     transform: translateX(10%);
 }
 
-@media (max-width: 479px) {
-    .mka__title-wrapper h1 {
-        font-size: 24px;
-        line-height: 30px;
-    }
-    }
-
-@media (max-width: 767px) {
-    .mka__title-wrapper h1 {
-        font-size: 26px;
-        line-height: 42px;
-        text-align: center;
-    }
-    }
-
-@media (max-width: 992px) {
-    .mka__title-wrapper h1 {
-        font-size: 30px;
-        line-height: 38px;
-    }
-    .header-img-div {
-      height: 350px;
-    }
-}

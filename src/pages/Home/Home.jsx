@@ -19,7 +19,7 @@ const Home = () => {
           </div>
         </div>
         <h2 id="mka__home-subtitle">HERZLICH WILLKOMMEN</h2>
-        <div className="mka__car-img-div">
+        <div className="mka__container">
           <img
             id="bmw-min"
             className="mka__car-img"
@@ -32,13 +32,11 @@ const Home = () => {
             src={require("../../assets/mercedes-min.png")}
             alt="mercedes-min"
           />
-        </div>
+
         <p id="mka__home-description">
           Probefahrt und Besichtigung sind ausschließlich nach
           Terminvereinbarung möglich
         </p>
-        <div className="mka__title-wrapper">
-          <div className="mka__container"></div>
         </div>
       </div>
       <HomePageCarList />
