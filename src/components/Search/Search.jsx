@@ -24,7 +24,7 @@ class Search extends Component {
         <br />
         <form>
                 <input
-                  className="mka__search-input"
+                  className="dropbtn"
                   type="text"
                   value={this.state.text}
                   placeholder="Suche..."
