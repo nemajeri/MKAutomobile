@@ -25,19 +25,11 @@
     font-size: x-large;
 }
 
-.page-container {
-    display: flex;
-    flex-direction: column;
-}
 
 .mka__title-wrapper {
     margin-top: 13.5rem;
 }
 
-.mka__logo-img {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-}
 
 .mka__logo-size {
     width: 28%;
@@ -85,23 +77,11 @@
     }
 
 @media (max-width: 992px) {
-    .page-container {
-        padding: 60px 0;
-    }
     .mka__title-wrapper h1 {
         font-size: 30px;
         line-height: 38px;
     }
-    .mka__logo-size {
-        width: 50%;
-    }
     .header-img-div {
       height: 350px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .page-container {
-        padding: 70px 0;
     }
 }

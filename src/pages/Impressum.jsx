@@ -3,10 +3,10 @@ import {
   Navbar,
   Jumbotrone,
   Logo,
-  CarPurchase,
-} from "../../components"
+  Impression,
+} from "../components"
 
-const Fahrzeugankauf = () => {
+const Impressum = () => {
   return (
     <>
       <div id="header-img-id" className="header-img-div">
@@ -19,14 +19,14 @@ const Fahrzeugankauf = () => {
         </div>
         <div className="mka__title-wrapper">
           <div className="mka__container">
-            <h1>FAHRZEUGANKAUF</h1>
+            <h1>IMPRESSUM</h1>
           </div>
         </div>
       </div>
-      <CarPurchase />
+      <Impression />
       <Jumbotrone />
     </>
   )
 }
 
-export default Fahrzeugankauf
+export default Impressum

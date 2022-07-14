@@ -1,11 +1,10 @@
-import './Fahrzeugangebote.css'
 import {
   Header,
   Navbar,
   Jumbotrone,
   Logo,
   CarOffers,
-} from "../../components"
+} from "../components"
 
 const Fahrzeugangebote = () => {
   return (

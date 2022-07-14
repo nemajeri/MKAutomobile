@@ -3,10 +3,10 @@ import {
   Navbar,
   Jumbotrone,
   Logo,
-  Impression,
-} from "../../components"
+  Copyright,
+} from "../components"
 
-const Impressum = () => {
+const Datenschutz = () => {
   return (
     <>
       <div id="header-img-id" className="header-img-div">
@@ -19,14 +19,14 @@ const Impressum = () => {
         </div>
         <div className="mka__title-wrapper">
           <div className="mka__container">
-            <h1>IMPRESSUM</h1>
+            <h1>DATENSCHUTZ</h1>
           </div>
         </div>
       </div>
-      <Impression />
+      <Copyright />
       <Jumbotrone />
     </>
   )
 }
 
-export default Impressum
+export default Datenschutz;

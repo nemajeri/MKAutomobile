@@ -26,3 +26,29 @@ a {
     color: unset;
     text-decoration: none;
 }
+
+.header-img-div {
+    position: relative;
+    z-index: 1;
+    height: 470px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mka__title-wrapper {
+    margin-top: 13.5rem;
+}
+
+.mka__logo-img {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+#header-img-id {
+    background-image: url(http://mkautomobile.at/wp-content/uploads/2021/04/dark-min.jpg?id=492);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

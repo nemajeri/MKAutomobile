@@ -3,8 +3,8 @@ import {
   Navbar,
   Jumbotrone,
   Logo,
-  Copyright,
-} from "../../components"
+  Gallery,
+} from "../components"
 
 const Datenschutz = () => {
   return (
@@ -19,11 +19,11 @@ const Datenschutz = () => {
         </div>
         <div className="mka__title-wrapper">
           <div className="mka__container">
-            <h1>DATENSCHUTZ</h1>
+            <h1>GALERIE</h1>
           </div>
         </div>
       </div>
-      <Copyright />
+      <Gallery />
       <Jumbotrone />
     </>
   )

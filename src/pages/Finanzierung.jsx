@@ -1,11 +1,10 @@
-import "./Finanzierung.css";
 import {
   Header,
   Navbar,
   Jumbotrone,
   Logo,
   Financing,
-} from "../../components"
+} from "../components"
 
 const Finanzierung = () => {
   return (

@@ -10,7 +10,7 @@ import {
 const Kontakt = () => {
   return (
     <>
-      <div id="contact-img-id" className="contact-img-div">
+      <div id="header-img-id" className="header-img-div">
         <Header />
         <Navbar />
         <div className="mka__logo-img">
