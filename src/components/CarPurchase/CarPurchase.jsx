@@ -1,4 +1,5 @@
 import "./CarPurchase.css"
+import ContactForm from "./ContactForm"
 
 const CarPurchase = () => {
   return (
@@ -32,68 +33,8 @@ const CarPurchase = () => {
               zusätzlichen Kosten für den Verkäufer
             </li>
           </ul>
-          <div className="mka__forms-purchase">
-            <div className="mka__form-design">
-              <p>Persönliche Daten</p>
-              <form>
-                <label>
-                  <input type="text" value="VORNAME" />
-                  <input type="text" value="NACHNAME" />
-                  <input type="text" value="GESCHLECHT" />
-                  <input type="text" value="STRASSE / NR." />
-                  <input type="text" value="PLZ" />
-                  <input type="text" value="STADT" />
-                  <input type="text" value="FIRMA" />
-                </label>
-              </form>
-            </div>
-            <div className="mka__form-design">
-              <p>Kontaktdaten</p>
-              <form>
-                <label>
-                  <input type="text" value="E-MAIL" />
-                  <input type="text" value="MOBILNUMMER" />
-                  <input type="text" value="FAX" />
-                  <input type="text" value="TEL" />
-                </label>
-              </form>
-            </div>
-            <div className="mka__form-design">
-              <p>Fahrzeugdaten</p>
-              <form>
-                <label>
-                  <input type="text" value="MARKE" />
-                  <input type="text" value="MODELL" />
-                  <input type="text" value="PREISVORSTELLUNG" />
-                  <input type="text" value="KRAFTSTOFF" />
-                  <input type="text" value="KILOMETERSTAND" />
-                  <input type="text" value="AKTUELLER ZUSTAND" />
-                  <input type="text" value="EZ DES FAHRZEUGES" />
-                  <input
-                    id="mka__larger-submit-field"
-                    type="text"
-                    value="SONDERAUSSTATTUNGEN"
-                  />
-                </label>
-              </form>
-            </div>
-          </div>
-          <h5 id="mka__input-field-title">Fahrzeugbilder</h5>
-          <div className="mka__input-field-docs">
-            <div className="mka__input-field-msg">
-              <p>
-                Klicken oder ziehen Sie Dateien in diesen Bereich, um sie
-                hochzuladen.
-              </p>
-              <p>Sie können bis zu 3 Dateien hochladen.</p>
-            </div>
-          </div>
-          <div className="mka__form-button-align">
-            <button type="submit" className="mka__form-button">
-              SENDEN
-            </button>
-          </div>
-        </div>
+          <ContactForm/>
+         </div>
       </div>
     </div>
   )
