@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CarsItem from './CarsItem';
-import './Cars.css'
+import './Cars.css';
+
 
 
 export class Cars extends Component {

@@ -1,7 +1,6 @@
 import "./HomePageCarList.css"
 import { FaCarAlt, FaStar, FaWallet, FaCommentDots } from "react-icons/fa"
 import { IconContext } from "react-icons"
-import Cars from "../CarsItem/Cars"
 
 const HomePageCarList = () => {
   return (
@@ -10,7 +9,6 @@ const HomePageCarList = () => {
         <div className="mka__content-home-list">
           <h2 className="mka__content-home-title"> FAHRZEUGANGEBOTE </h2>
           <div className="mka__second-section-divider"></div>
-          <Cars />
           <div className="mka__section-divider"></div>
           <div className="mka__shortcuts-home-list">
             <div className="mka__shortcut-home-list">
