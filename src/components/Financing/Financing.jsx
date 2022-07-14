@@ -1,11 +1,11 @@
 import "./Financing.css"
-import Denzelbank from "../Denzelbank/Denzelbank"
-import Santanderbank from "../Santanderbank/Santanderbank"
+import Denzelbank from "../Denzelbank"
+import Santanderbank from "../Santanderbank"
 
 const Financing = () => {
   return (
     <div className="mka__wrapper-financing">
-      <div className="mka__container-financing">
+      <div className="mka__container">
         <div className="mka__content-financing">
           <p>
             Gerne bieten wir Ihnen über unsere Finanzierungspartner beste

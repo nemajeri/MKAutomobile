@@ -1,2 +1,0 @@
-http://codentengineering.com/clients/react/application/api/cars/all
-Link za filter: http://codentengineering.com/clients/react/application/api/filter

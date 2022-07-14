@@ -5,7 +5,7 @@ const Jumbotrone = () => {
   return (
     <footer className="mka__footer-normal">
       <div className="mka__jumbotrone-bg-image">
-        <div className="mka__image-container">
+        <div className="mka__container">
           <div className="mka__jumbotrone-div">
             <div className="mka__jumbotrone-contact">
               <h6>KONTAKT</h6>

@@ -61,31 +61,6 @@ ul > li {
   padding-right: 5px;
 }
 
-.mka__container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 992px) {
-  .mka__container {
-    width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .mka__container {
-    width: 1170px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 999px) {
-  .mka__container {
-    width: 96%;
-  }
-}
-
 @media (max-width: 767px) {
   .mka__header-list {
     text-align: center;
@@ -102,10 +77,6 @@ ul > li {
 }
 
 @media (max-width: 295px) {
-  .mka__container {
-    width: 260px;
-  }
-
   .mka__header-list {
     text-align: center;
     position: inherit;

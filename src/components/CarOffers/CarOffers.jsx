@@ -23,7 +23,7 @@ this.setState({cars: res.data, loading: false});
   render () {
   return (
     <div className="mka__wrapper-car-offers">
-      <div className="mka__container-car-offers">
+      <div className="mka__container">
         <div className="mka__content-car-offers">
           <div className="mka__content-grid-offers">
           <div className="item1">

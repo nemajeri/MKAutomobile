@@ -47,8 +47,53 @@ a {
     margin-bottom: 2rem;
 }
 
+.mka__responsive-svg {
+    width: 100%;
+    height: auto;
+}
+
 #header-img-id {
     background-image: url(http://mkautomobile.at/wp-content/uploads/2021/04/dark-min.jpg?id=492);
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.mka__left-alignment {
+    text-align: left;
+  }
+
+  .mka__section-divider {
+    background-color: var(--color-red);
+    height: 1px;
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
+ 
+.mka__container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @media (min-width: 992px) {
+    .mka__container {
+      width: 970px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .mka__container {
+      width: 1170px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 999px) {
+    .mka__container {
+      width: 96%;
+    }
+  }

@@ -1,10 +1,4 @@
-.mka__financing-bg-image {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: url("../../assets/dark.jpg");
-  }
-  
-  .mka__container-home-list {
+ .mka__container-home-list {
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
@@ -19,14 +13,6 @@
     overflow: hidden;
     background-size: contain;
     min-height: 65rem;
-  }
-  
-  .mka__content-home-list {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 32px;
   }
   
   .mka__shortcuts-home-list {
@@ -66,27 +52,8 @@
     transition: 0.1s;
   }
   
-  /*Red line to divide content section*/
-  
-  .mka__section-divider {
-      background-color: var(--color-red);
-      height: 1px;
-      width: 300px;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 70px;
-      margin-bottom: 80px;
-  }
-  
-
-  .mka__second-section-divider {
-      background-color: var(--color-red);
-      height: 1px;
-      width: 300px;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
+  .second-divider {
+      margin-top: 0;
       margin-bottom: 60px;
   }
 
@@ -95,8 +62,6 @@
     padding: 32px 0;
     font-weight: 400;
   }
-  
-  /*CSS for container and content responsivnes*/
   
   @media (max-width: 340px) {
     .mka__content-home-list > h1 {

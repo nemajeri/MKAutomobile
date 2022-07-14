@@ -1,25 +1,9 @@
-.mka__content-gallery {
-    text-align: center;
-    position: relative;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 64px;
-    padding-bottom: 80px;
-  }
-
   .mka__wrapper-gallery {
     background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
     background-repeat: repeat;
     height: 100%;
     overflow: hidden;
     background-size: contain;
-  }
-
-  .mka__container-gallery {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
   }
 
   .slick-prev, .slick-next {

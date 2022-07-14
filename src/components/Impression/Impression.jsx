@@ -3,7 +3,7 @@ import "./Impression.css"
 const Impression = () => {
   return (
     <div className="mka__wrapper-impression">
-      <div className="mka__container-impression">
+      <div className="mka__container">
         <div className="mka__content-impression">
           <h4>FIRMENBEZEICHNUNG</h4>
           <p>Milan Kuzmanovic KG</p>

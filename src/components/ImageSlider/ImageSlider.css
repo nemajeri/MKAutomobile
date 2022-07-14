@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap");
 
-/* Dots */
 .dot {
   color: transparent;
 }
@@ -26,7 +25,6 @@
   width: 24px;
 }
 
-/* Arrows */
 .slick-prev:before {
   content: "<" !important;
   color: var(--color-red) !important;
@@ -73,7 +71,6 @@
   transform: translateX(190%) !important;
 }
 
-/* Arrows hover */
 .slick-next:hover,
 .slick-prev:hover {
   background-color: var(--color-red) !important;

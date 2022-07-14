@@ -15,13 +15,6 @@
     padding-bottom: 20px;
   }
   
-  .mka__container-footer {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  
   .mka__footer-links {
     display: flex;
     gap: 12px;

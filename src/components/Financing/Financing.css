@@ -9,14 +9,6 @@
     background-image: url("../../assets/dark.jpg");
   }
   
-  .mka__container-financing {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: auto;
-  }
-  
   .mka__content-financing > h1 {
     text-align: center;
     padding-top: 64px;

@@ -1,5 +1,3 @@
-import './Santanderbank.css'
-
 const Icon = () => {
   return (
     <svg

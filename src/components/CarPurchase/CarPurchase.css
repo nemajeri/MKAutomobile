@@ -9,15 +9,7 @@
     height: 100%;
     overflow: hidden;
     background-size: contain;
-  }
-  
-  .mka__container-purchase {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: auto;
-  }
+  } 
   
   .mka__content-purchase > h2 {
     padding-bottom: 10px;

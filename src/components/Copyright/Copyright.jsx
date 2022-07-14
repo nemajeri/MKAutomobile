@@ -3,7 +3,7 @@ import "./Copyright.css"
 const Copyright = () => {
   return (
     <div className="mka__wrapper-copyright">
-      <div className="mka__container-copyright">
+      <div className="mka__container">
         <div className="mka__content-copyright">
           <p>
             <strong>

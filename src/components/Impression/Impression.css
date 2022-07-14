@@ -16,14 +16,6 @@
     min-height: 38rem;
   }
   
-  .mka__container-impression {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: auto;
-  }
-  
   .mka__content-impression > p {
     margin: 0 0 10px;
     color: #fff;

@@ -6,7 +6,7 @@ import ContactForm from "./ContactForm";
 const Contact = () => {
   return (
     <div className="mka__wrapper-contact">
-      <div className="mka__container-contact">
+      <div className="mka__container">
         <div className="mka__content-contact">
           <div className="mka__contact-infos-container">
             <div className="mka__contact-infos-card">

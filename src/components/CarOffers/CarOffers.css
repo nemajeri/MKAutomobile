@@ -15,13 +15,6 @@
     background-size: contain;
   }
   
-  .mka__container-car-offers {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
   .item1 { 
     grid-area: header;
       border: 1px solid white;

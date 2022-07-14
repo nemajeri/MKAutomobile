@@ -3,7 +3,7 @@ import "./CarPurchase.css"
 const CarPurchase = () => {
   return (
     <div className="mka__wrapper-purchase">
-      <div className="mka__container-purchase">
+      <div className="mka__container">
         <div className="mka__content-purchase">
           <p>
             Wir kaufen laufend Gebrauchtwagen unterschiedlicher Marken und
