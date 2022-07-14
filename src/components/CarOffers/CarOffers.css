@@ -22,7 +22,14 @@
     padding-right: 15px;
   }
   
-  .item1 { grid-area: header; }
+  .item1 { 
+    grid-area: header;
+      border: 1px solid white;
+      height: 5rem;
+      margin-top: 40px;
+      margin-bottom: 75px;
+   }
+
   .item2 { grid-area: menu; }
   .item3 { grid-area: main; }
 

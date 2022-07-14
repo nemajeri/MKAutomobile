@@ -10,6 +10,7 @@ import 'rc-slider/assets/index.css';
   return (
     <div className='mka__sorter-wrapper'>
       <div className='mka__sorter-range-width'>
+      <p>Preisklasse</p>
     <Range />
     </div>
     </div>
