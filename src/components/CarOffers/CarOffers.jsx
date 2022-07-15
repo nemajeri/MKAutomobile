@@ -3,8 +3,8 @@ import Cars from "../CarsItem/Cars"
 import CarSlider from "./CarSlider";
 import axios from 'axios';
 import React, { Component } from "react";
-import Search from "../Search/Search";
-import FilterSideBar from "../FilterSideBar/FilterSideBar"
+import Search from "./Search";
+import FilterSideBar from "./FilterSideBar"
 import CarAlignment from "./CarAlignment";
 import CarSorting from "./CarSorting";
 
