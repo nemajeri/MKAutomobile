@@ -2,7 +2,8 @@ import React from "react";
 import SelectSearch from 'react-select-search';
 import "./Search.css";
 
-const Search = () => (
+const Search = (props) => (
+
   <div>
   <SelectSearch
       className="select-search"

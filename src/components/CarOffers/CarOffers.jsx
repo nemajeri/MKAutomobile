@@ -1,5 +1,5 @@
 import "./CarOffers.css"
-import Cars from "../CarsItem/Cars"
+import Cars from "./Cars"
 import CarSlider from "./CarSlider";
 import axios from 'axios';
 import React, { Component } from "react";
@@ -10,16 +10,13 @@ import CarSorting from "./CarSorting";
 
 class CarOffers extends Component {
   state = {
-    cars: [],
-    loading: false
+    cars: []
 }
 
 async componentDidMount() {
-this.setState({loading: true})
-
 const res = await axios.get('http://finity.pro/clients/mkautomobile/cars/all');
 
-this.setState({cars: res.data, loading: false});
+this.setState({cars: res.data});
 
 }
   render () {
@@ -35,14 +32,14 @@ this.setState({cars: res.data, loading: false});
           </div>
           <div className="item2">
             <div className="mka__side-bar-divider">
-          < Search/>
+          < Search cars={this.state.cars}/>
           </div>
           <div>
           < FilterSideBar/>
           </div>
           </div>
           <div className="item3">
-          <Cars loading={this.state.loading} cars={this.state.cars}/>
+          <Cars cars={this.state.cars}/>
           </div>
           </div>
         </div>
