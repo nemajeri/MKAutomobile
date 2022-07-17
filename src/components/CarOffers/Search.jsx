@@ -1,6 +1,5 @@
 import React from 'react';
 import { Component } from 'react';
-import axios from 'axios';
 import AsyncSelect from 'react-select/async'
 import './Search.css'
 
@@ -9,33 +8,46 @@ import './Search.css'
 class Search extends Component {
   state = {
     inputValue: '',
-    selectedValue: null
+    selectedOption: '',
+    cleareble: false,
+    cars: []
   }    
 
-  render() {
-    const getData = () => {
-      axios
-        .get("https://jsonplaceholder.typicode.com/users")
-        .then((res) => res.data);
-    };
-    
-    const loadOptions = (inputValue) => {
-      return getData(inputValue).then((res) => {
-        return res
-          .filter((r) => r.name.toLowerCase().startsWith(inputValue))
-          .map((t) => ({ value: t.id, label: t.name }));
-      });
-    };  
+  componentDidMount() {
+        fetch('http://finity.pro/clients/mkautomobile/search')
+        .then(res => {
+            this.setState({
+                cars: [res.cars.make, res.cars.link]
+            })
+            console.log("hello", this.state.cars)
+        })
+   }
 
+   handleChange(selectedOption) {
+    this.setState({selectedOption});
+   }
+  render() {
+    let options = this.state.cars.map(function (car) {
+      return { value: car.make, label: car.make, image: car.link };
+    })
   return (
     <div>
 <AsyncSelect
   className='select-search'
-  loadOptions={loadOptions}
-/>
+  value={this.state.inputValue}
+  onChange={this.handleChange}
+  cleareble={this.state.cleareble}
+  options={options}
+  formatOptionLabel={car => (
+    <div className="car-option">
+      <img src={car.image} alt="car-image" />
+      <span>{car.label}</span>
+    </div>
+      )}/>
     </div>
   );
 }
+
 }
 
 export default Search;
