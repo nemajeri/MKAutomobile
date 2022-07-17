@@ -3,11 +3,11 @@ import './FilterSideBar.css'
 import Select from 'react-select';
 
 const colourStyles = {
-  control: (styles) => ({ ...styles, backgroundColor: "#0a0b0d" }),
+  control: (styles) => ({ ...styles, backgroundColor: "transparent" }),
   option: (styles, { isDisabled }) => {
     return {
       ...styles,
-      backgroundColor: isDisabled ? "red" : "green",
+      backgroundColor: isDisabled ? "transparent" : "grey" ,
       color: "#FFF",
       cursor: isDisabled ? "not-allowed" : "default"
     };
@@ -23,7 +23,7 @@ const FilterSideBar = () => {
   ]
     return (
             <>
-<Select options={options} styles={colourStyles} />
+<Select options={options} styles={colourStyles} isSearchable={false}/>
             </>
         )
     }

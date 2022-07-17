@@ -1,25 +1,31 @@
 import "./CarOffers.css"
 import Cars from "./Cars"
 import CarSlider from "./CarSlider";
-import axios from 'axios';
-import React, { Component } from "react";
+import React from "react";
 import Search from "./Search";
 import FilterSideBar from "./FilterSideBar"
 import CarAlignment from "./CarAlignment";
 import CarSorting from "./CarSorting";
+import { useState, useEffect } from "react";
 
-class CarOffers extends Component {
-  state = {
-    cars: []
-}
+const CarOffers = () => {
 
-async componentDidMount() {
-const res = await axios.get('http://finity.pro/clients/mkautomobile/cars/all');
+  useEffect(() => {
+    const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
-this.setState({cars: res.data});
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        console.log(json);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
 
-}
-  render () {
+    fetchData();
+}, []);
+
   return (
     <div className="mka__wrapper-car-offers">
       <div className="mka__container">
@@ -32,14 +38,14 @@ this.setState({cars: res.data});
           </div>
           <div className="item2">
             <div className="mka__side-bar-divider">
-          < Search cars={this.state.cars}/>
+          < Search/>
           </div>
           <div>
           < FilterSideBar/>
           </div>
           </div>
           <div className="item3">
-          <Cars cars={this.state.cars}/>
+          <Cars/>
           </div>
           </div>
         </div>
@@ -47,6 +53,6 @@ this.setState({cars: res.data});
     </div>
   )
 }
-}
+
 
 export default CarOffers

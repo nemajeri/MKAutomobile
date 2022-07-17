@@ -8,8 +8,9 @@ export class Cars extends Component {
   render() {
     return (
         <div className='mka__cars-grid'>
-        {this.props.cars.map(car =>
-            <CarsItem key={car.id} car={car}/>)}
+          <h1>auto</h1>
+        {/*{this.props.cars.map(car =>
+            <CarsItem key={car.id} car={car}/>)}*/}
         </div>
     )
   }

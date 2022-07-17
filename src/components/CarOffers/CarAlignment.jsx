@@ -5,7 +5,7 @@ import { AlignItem3 } from './AlignItem3'
 import { AlignItem4 } from './AlignItem4'
 import './CarAlignment.css'
 
-export default class CarAlignment extends Component {
+ class CarAlignment extends Component {
   render() {
     return (
       <div className='mka__div-icon1'>
@@ -34,3 +34,5 @@ export default class CarAlignment extends Component {
     )
   }
 }
+
+export default CarAlignment
