@@ -33,8 +33,10 @@ const CarOffers = () => {
           <div className="mka__content-grid-offers">
           <div className="item1">
           < CarSlider/>
+          <div className="mka-responsive-item">
           < CarSorting/>
           < CarAlignment/>
+          </div>
           </div>
           <div className="item2">
             <div className="mka__side-bar-divider">
