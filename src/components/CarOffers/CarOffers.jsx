@@ -6,7 +6,7 @@ import Search from "./Search";
 import FilterSideBar from "./FilterSideBar"
 import CarAlignment from "./CarAlignment";
 import CarSorting from "./CarSorting";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const CarOffers = () => {
 
