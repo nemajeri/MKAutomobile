@@ -39,13 +39,19 @@
     width: clamp(300px, 100%, 650px);
     position: relative;
     z-index: 0;
-    transform: translate(-10%, -5%);
+    float: right;
+;
 }
 
 #bmw-min {
     width: clamp(300px, 100%, 650px);
     position: relative;
     z-index: 1;
-    transform: translateX(10%);
+    float: left;
 }
 
+.mka__container .car-aligment {
+    width: auto;
+    position: relative;
+    display: flex;
+}
