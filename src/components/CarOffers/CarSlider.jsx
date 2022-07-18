@@ -5,17 +5,25 @@ import 'rc-slider/assets/index.css';
 
 
  class CarSlider extends Component{
-  
+  state = { sliderValues: [2900, 29000] };
+  handleChange = sliderValues => {
+    this.setState({ sliderValues });
+    };
+
   render () {
+    const {sliderValues} = this.state;
+
   return (
     <div className='mka__range-alignment'>
       <div className='mka__range-text'>
      <p>Preisklasse:</p>
-     <p>2.900€ - 29.000€</p>
+     <p>{sliderValues[0]}€ - {sliderValues[1]}€</p>
      </div>
      <div className='mka__range-btn-align'>
     <div className='mka__range-width'>
-    <Range />
+    <Range 
+      min={2900}
+      max={29000}/>
     </div>
     <button className='mka__range-button'>Filter</button>
     </div>
