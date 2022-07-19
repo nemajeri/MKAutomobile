@@ -64,10 +64,11 @@
   color: #fff !important;
 }
 
-.slick-track {
-  display: flex;
-}
 
 .variable-width {
   height: 30rem !important;
+} 
+
+.slick-slide {
+  box-sizing: border-box;
 }

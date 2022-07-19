@@ -61,17 +61,6 @@ a {
 .mka__left-alignment {
     text-align: left;
   }
-
-  .mka__section-divider {
-    background-color: var(--color-red);
-    height: 1px;
-    width: 300px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 70px;
-    margin-bottom: 80px;
-}
  
 .mka__container {
     padding-right: 15px;

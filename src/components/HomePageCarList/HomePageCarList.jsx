@@ -10,7 +10,9 @@ const HomePageCarList = () => {
         <div className="mka__content">
           <h2 className="mka__content-home-title"> FAHRZEUGANGEBOTE </h2>
           <div className="mka__section-divider-second-divider"></div>
+          <div>
           <HomeSlider/>
+          </div>
           <div className="mka__section-divider"></div>
           <div className="mka__shortcuts-home-list">
             <div className="mka__shortcut-home-list">
