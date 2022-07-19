@@ -36,22 +36,23 @@
 }
 
 #mercedes-min {
-    width: clamp(300px, 100%, 650px);
+    height: auto;
     position: relative;
-    z-index: 0;
-    float: right;
+    width: 100%;
+    transform: translate(-60px, 0px);
 ;
 }
 
 #bmw-min {
-    width: clamp(300px, 100%, 650px);
+    z-index: 99;
+    height: auto;
     position: relative;
-    z-index: 1;
-    float: left;
+    width: 100%;
+    transform: translate(60px, 0px);
 }
 
 .mka__container .car-aligment {
-    width: auto;
-    position: relative;
+    width: 60%;
     display: flex;
+    justify-content: center;
 }

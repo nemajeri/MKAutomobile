@@ -27,7 +27,7 @@ const Home = () => {
             src={require("../../assets/bmw-min.png")}
             alt="bmw-min"
           />
-          <img
+            <img
             id="mercedes-min"
             className="mka__car-img"
             src={require("../../assets/mercedes-min.png")}
