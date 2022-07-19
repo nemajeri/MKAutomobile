@@ -3,7 +3,7 @@ import {
   Navbar,
   Jumbotrone,
   Logo,
-  CarPurchase,
+  CarPurchase
 } from "../components"
 
 const Fahrzeugankauf = () => {

@@ -6,7 +6,7 @@
   .mka__wrapper-purchase {
     background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
     background-repeat: repeat;
-    height: 100%;
+    height: auto;
     overflow: hidden;
     background-size: contain;
   } 
