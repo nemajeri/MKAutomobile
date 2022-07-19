@@ -1,14 +1,23 @@
 import "./Card.css"
 import { Fragment } from 'react'
-import { FaCalendarAlt, FaCog } from "react-icons/fa"
+import { FaCalendarAlt, FaCog, FaLink } from "react-icons/fa"
 import { GiGasPump } from "react-icons/gi"
 
 const Card = () => {
   return (
     <Fragment>
       <div className="card_wrapper">
-        <div className="card_image">
-          <img src={require("../../assets/bmw.jpg")} alt="bmw" />
+        <div className="card_image-container">
+          <img className="image" src={require("../../assets/bmw.jpg")} alt="bmw" />
+          <div class="overlay">
+          <ul>
+            <li>
+             <a href="https://mkautomobile.at/fahrzeugdaten/579220740/">
+              <i><FaLink/></i>
+              </a> 
+            </li>
+          </ul>
+          </div>
         </div>
         <div className="card_list">
           <ul className="card_inline-list">
