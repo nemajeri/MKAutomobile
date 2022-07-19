@@ -52,9 +52,15 @@
     transition: 0.1s;
   }
   
-  .second-divider {
-      margin-top: 0;
-      margin-bottom: 60px;
+  .mka__section-divider-second-divider {
+    background-color: var(--color-red);
+    height: 1px;
+    width: 300px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 60px;
   }
 
   .mka__content-home-title {
