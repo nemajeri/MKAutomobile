@@ -57,6 +57,7 @@ const Contact = () => {
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2651.6948709379444!2d16.3221874!3d48.34717!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d0e3bfb300989%3A0x729d0e5fe5bbceee!2sIm%20Trenkenschuh%2015-17%2C%202100%20Korneuburg%2C%20%C3%96sterreich!5e0!3m2!1sde!2sba!4v1628134320122!5m2!1sde!2sba"
               width={750}
               height={450}
+              style={{width: "100%"}}
             ></iframe>
             <div className="mka__opening-times-contact">
               <h6>ÖFFNUNGSZEITEN</h6>

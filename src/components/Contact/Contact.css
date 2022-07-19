@@ -21,6 +21,7 @@
 
   .mka__contact-infos-card {
     text-align: center;
+    margin-bottom: 10px;
   }
   
   .mka__contact-infos-card > p {
@@ -68,6 +69,7 @@
     display: flex;
     margin: 130px 0;
     justify-content: space-around;
+    gap: 50px;
   }
   
   .mka__opening-times-divider {
@@ -119,6 +121,15 @@
     }
   }
   
+  @media (max-width: 767px) {
+    .mka__contact-infos-container {
+      flex-direction: column;
+    }
+    .mka__google-api-contact {
+      flex-direction: column;
+    }
+  }
+
   @media (min-width: 992px) {
     .mka__container-contact {
       width: 970px;
