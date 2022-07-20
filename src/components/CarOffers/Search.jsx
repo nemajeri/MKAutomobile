@@ -1,52 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AsyncSelect from 'react-select/async';
+import axios from 'axios';
 
 var url = 'http://finity.pro/clients/mkautomobile/search';
 
-export default class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputValue: null,
-      cars: []
-    };
-  }
+const Search = () => {
 
- componentDidMount() {
-  fetch(url)
-  .then(res => {
-    this.setState(prevState => ({...prevState, cars: res.make}))
-})
-.then(console.log(this.state.cars))
-.catch(err => console.log(err))
-}
-  handleInputChange = (newValue) => {
-    const inputValue = newValue.replace(/\W/g, '');
-    this.setState({ inputValue });
-    return inputValue;
-  };
-  render() {
-    const filterCars = (inputValue) => {
-      return this.state.cars.filter((car) =>
-        car.make.toLowerCase().includes(inputValue.toLowerCase())
-      );
-    };
-    const loadOptions = (
-      inputValue,
-      callback) => {
-      setTimeout(() => {
-        callback(filterCars(inputValue));
-      }, 1000);
-    };
-    return (
-      <div>
-        <AsyncSelect
-          cacheOptions
-          loadOptions={loadOptions}
-          defaultOptions
-          onInputChange={this.handleInputChange}
-        />
-      </div>
-    );
+  const loadOptions = (inputValue, callback) => {
+    axios.get(url)
+      .then((response) => {
+        const options = []
+        response.data.forEach(() => {
+            options.push({
+            label: response.data.make,
+            value: response.data.make
+          })
+        })
+        callback(options);
+      })
   }
+  return ( 
+    <AsyncSelect 
+      cacheOptions 
+      loadOptions={loadOptions}
+    />
+  )
 }
+
+export default Search

@@ -6,6 +6,7 @@ import 'rc-slider/assets/index.css';
 
  class CarSlider extends Component{
   state = { sliderValues: [2900, 29000] };
+
   handleChange = sliderValues => {
     this.setState({ sliderValues });
     };
@@ -23,7 +24,8 @@ import 'rc-slider/assets/index.css';
     <div className='mka__range-width'>
     <Range 
       min={2900}
-      max={29000}/>
+      max={29000}
+      onChange={this.handleChange}/>
     </div>
     <button className='mka__range-button'>Filter</button>
     </div>
