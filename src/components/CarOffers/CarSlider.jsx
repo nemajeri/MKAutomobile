@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './CarSlider.css';
-import Range from 'rc-slider';
+import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
 
@@ -22,10 +22,15 @@ import 'rc-slider/assets/index.css';
      </div>
      <div className='mka__range-btn-align'>
     <div className='mka__range-width'>
-    <Range 
-      min={2900}
-      max={29000}
-      onChange={this.handleChange}/>
+    <Slider
+    range
+    onChange={this.handleChange}
+    tipFormatter={(value) => `${value}`}
+    tipProps={{ visible: true }}
+    defaultValue={[2900, 29000]}
+    min={2900}
+    max={29000}
+/>
     </div>
     <button className='mka__range-button'>Filter</button>
     </div>

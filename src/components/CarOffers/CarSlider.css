@@ -15,14 +15,14 @@
     box-sizing: border-box;
     -webkit-tap-highlight-color: var(--color-red) !important;
 }
+
 .rc-slider-rail {
     position: absolute;
     width: 100%;
-    background-color: #f9f8f8;
-    height: 100%;
+    background-color: #f50c0c !important;
+    /* height: 100%; */
     border-radius: 6px;
-
-}
+    }
 
 .rc-slider-track {
     position: absolute;
@@ -66,12 +66,15 @@
     flex-direction: column;
     justify-content: flex-start;
     float: left;
-}
+    background-color: transparent;
+    padding: 10px;
+    }
 
 .mka__range-text {
     display: flex;
     gap: 10px;
-}
+    color: white;
+    }
 
 .mka__range-button {
     margin-top: -10px;
