@@ -1,26 +1,21 @@
 import React from 'react';
-import AsyncSelect from 'react-select/async';
+import Select from 'react-select';
 
 
-const Search = ({ carsList, changeInput}) => {
+const Search = ({ value, carsList, changeInput}) => {
 
-    const filterCars = (value) => {
-    return carsList.filter((car) =>
-      car.make.toLowerCase().includes(value.toLowerCase())
-    );
-  };
-
-    const loadOptions = (value, callback) => {
-    setTimeout(() => {
-      callback(filterCars(value));
-    }, 1000);
-  };
-
+  const carsOptions = carsList.map((car) => {
+    return {
+      value: car.make,
+      label: car.make
+    }
+  })
     return (
       <>
-  <AsyncSelect
+  <Select
   cacheOptions
-  loadOptions={loadOptions}
+  value={value}
+  options={carsOptions}
   defaultOptions
   onInputChange={changeInput}
     />
