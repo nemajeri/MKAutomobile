@@ -4,8 +4,10 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
 
- class CarSlider extends Component{
-  state = { sliderValues: [2900, 29000] };
+
+class CarSlider extends Component{
+  state = { sliderValues: [2900, 29000],
+            prices: [] };
 
   handleChange = sliderValues => {
     this.setState({ sliderValues });

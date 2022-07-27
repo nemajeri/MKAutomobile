@@ -1,57 +1,66 @@
-import axios from 'axios';
-import React, { Component } from 'react';
+import React from 'react';
 import AsyncSelect from 'react-select/async';
 
 
-export default class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputValue: null,
-      cars: []
-    };
-  }
+const Search = ({ carsList, changeInput}) => {
 
-     getCars = () => {
-      axios.get('http://finity.pro/clients/mkautomobile/search')
-      .then((response) => {
-        response.data.forEach(() =>
-        this.state.cars.push(
-          {
-            label: response.data.make,
-            value: response.data.make
-          }
-        ))
-      })
-    } 
+    const filterCars = (value) => {
+    return carsList.filter((car) =>
+      car.make.toLowerCase().includes(value.toLowerCase())
+    );
+  };
 
-  handleInputChange = (newValue) => {
-    const inputValue = newValue.replace(/\W/g, '');
-    this.setState({ inputValue });
-    return inputValue;
-  }
+    const loadOptions = (value, callback) => {
+    setTimeout(() => {
+      callback(filterCars(value));
+    }, 1000);
+  };
 
-  render() {
-    const filterCars = (inputValue) => {
-      return this.state.cars.filter((i) =>
-        i.this.cars.make.toLowerCase().includes(inputValue.toLowerCase())
-      );
-    };
-
-    const loadOptions = (inputValue, callback) => {
-      setTimeout(() => {
-        callback(filterCars(inputValue));
-      }, 1000);
-    };
     return (
-      <div>
-        <AsyncSelect
-          cacheOptions
-          loadOptions={loadOptions}
-          defaultOptions
-          onInputChange={this.handleInputChange}
-        />
-      </div>
+      <>
+  <AsyncSelect
+  cacheOptions
+  loadOptions={loadOptions}
+  defaultOptions
+  onInputChange={changeInput}
+    />
+      </>
     );
   }
-}
+
+
+export default Search  
+
+//constructor(carsList) {
+/// super(carsList);
+ // this.state = {
+ //   inputValue: null,
+  //  cars: carsList
+ // };
+//}
+
+//handleInputChange = (newValue) => {
+ // const inputValue = newValue.replace(/\W/g, '');
+ // this.setState({ inputValue });
+  //return inputValue;
+//}
+//
+
+//render() {
+ // const filterCars = (inputValue) => {
+  //  return this.state.cars.filter((i) =>
+   //   i.this.cars.make.toLowerCase().includes(inputValue.toLowerCase())
+   // );
+  //};
+
+  //const loadOptions = (inputValue, callback) => {
+   // setTimeout(() => {
+     // callback(filterCars(inputValue));
+   // }, 1000);
+  //};
+
+  //<AsyncSelect
+  //cacheOptions
+  //loadOptions={loadOptions}
+  //defaultOptions
+  //onInputChange={changeInput}

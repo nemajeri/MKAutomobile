@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CarsItem from './CarsItem';
 import './Cars.css';
 
 
 
-export class Cars extends Component {
-  render() {
+const Cars = ({ carsList }) => {
     return (
         <div className='mka__cars-grid'>
-          <h1>auto</h1>
-        {/*{this.props.cars.map(car =>
-            <CarsItem key={car.id} car={car}/>)}*/}
+        {carsList.map(car =>
+            <CarsItem key={car.id} car={car}/>)}
         </div>
     )
   }
-}
+
 
 
 export default Cars
