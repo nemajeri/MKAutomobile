@@ -9,11 +9,12 @@ import CarAlignment from "./CarAlignment";
 import { useEffect } from "react";
 import DisplayCars from "./DisplayCars";
 import { useState } from "react";
+import SortingCars from "./SortingCars";
 
 const CarOffers = () => {
     const [carsList, setCarsList] = useState([]);
     const [selectedPrice, setSelectedPrice] = useState([2900,29000])
-    const [selectedMake, setSelectedMake] = useState(null);
+    const [selectMake, setSelectMake] = useState(null);
     const [selectedModel, setSelectedModel] = useState(null);
     const [selectedYear, setSelectedYear] = useState(null);
     const [selectedMileage, setSelectedMileage] = useState(null);
@@ -22,6 +23,7 @@ const CarOffers = () => {
     const [selectedDriveTrain, setSelectedDriveTrain] = useState(null);
     const [resultsFound, setResultsFound] = useState(true);
     const [searchInput, setSearchInput] = useState('');
+    const [selectSortByPriceUp, setSelectSortByPriceUp] = useState(null);
 
 
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
@@ -31,14 +33,26 @@ const CarOffers = () => {
       .then((response) => {
        const carsList = response.data;
         setCarsList(carsList)
-        console.log(carsList)
       })
     }
 
-    const handleSelectMake = (make) => {
-    const selectedMake = carsList.map((car) =>
-    car.make === make ? car : null);
-    setSelectedMake(selectedMake)
+    const handleChange = (selectMake) => {
+          setSelectMake(selectMake[0])
+          console.log(selectMake)
+    
+       const updatedCarsList = carsList.filter(
+           (car) => car.make === selectMake[0]
+          )
+          console.log(updatedCarsList)
+           setCarsList(updatedCarsList)
+       
+    }
+
+
+    const handleSortByPriceUp = (e) => {
+      let {value} = e.target;
+    const selectSortByPriceUp = [...carsList].sort((a, b) => b.price - a.price);
+    setSelectSortByPriceUp(selectSortByPriceUp)
     }
 
     const handleSelectModel = (model) => {
@@ -84,11 +98,6 @@ const CarOffers = () => {
     const applyFilters = () => {
       let updatedCarsList = carsList;
 
-      if (selectedMake) {
-        updatedCarsList = updatedCarsList.filter(
-          (car) => car.make === selectedMake
-        );
-      }
 
       if (selectedModel) {
         updatedCarsList = updatedCarsList.filter(
@@ -122,18 +131,10 @@ const CarOffers = () => {
 
       if (selectedDriveTrain) {
         updatedCarsList = updatedCarsList.filter(
-          (car) => car.drivetrain === selectedMake
+          (car) => car.drivetrain === selectMake
         );
       }
 
-       // Search Filter
-       if (searchInput) {
-        updatedCarsList = updatedCarsList.filter(
-          (car) =>
-            car.make.toLowerCase().search(searchInput.toLowerCase().trim()) !==
-            -1
-        );
-      }
       // Price Filter
       const minPrice = selectedPrice[0];
       const maxPrice = selectedPrice[1];
@@ -150,7 +151,7 @@ const CarOffers = () => {
     useEffect(() => { 
       getCars()
       applyFilters()
-  }, [ searchInput, selectedPrice]);
+  }, [ selectMake, selectedPrice]);
 
   return (
     <div className="mka__wrapper-car-offers">
@@ -161,18 +162,22 @@ const CarOffers = () => {
           < CarSlider/>
           <div className="mka-responsive-item">
           < DisplayCars/>
+          < SortingCars
+          handleSortByPriceUp={handleSortByPriceUp}
+          />
           < CarAlignment/>
           </div>
           </div>
           <div className="item2">
             <div className="mka__side-bar-divider">
           < Search 
-          value={searchInput}
-          changeInput={(e) => setSearchInput(e.target.value)}
           carsList={carsList}/>
           </div>
           <div>
-          < FilterSideBar/>
+          < FilterSideBar
+          carsList={carsList}
+          handleChange={handleChange} 
+          selectMake={selectMake}/>
           </div>
           </div>
           <div className="item3">

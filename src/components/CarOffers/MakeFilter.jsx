@@ -14,7 +14,7 @@ const colourStyles = {
 };
 
 
-const MakeFilter = ({carsList,handleSelectMake}) => {
+const MakeFilter = ({carsList, selectMake, handleChange}) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex((b) => f(a) === f(b)) === i);
   }
@@ -31,7 +31,9 @@ const MakeFilter = ({carsList,handleSelectMake}) => {
 
     return (
             <>
-<Select  options={distinctOptions}  onChange={handleSelectMake} styles={colourStyles} isSearchable={false}/>
+<Select   options={distinctOptions} 
+          onChange={handleChange} 
+          selectMake={selectMake}/>
             </>
         )
     }

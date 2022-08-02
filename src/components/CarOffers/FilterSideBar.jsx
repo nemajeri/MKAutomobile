@@ -1,29 +1,14 @@
 import React from 'react'
 import './FilterSideBar.css'
-import Select from 'react-select';
-
-const colourStyles = {
-  control: (styles) => ({ ...styles, backgroundColor: "transparent" }),
-  option: (styles, { isDisabled }) => {
-    return {
-      ...styles,
-      backgroundColor: isDisabled ? "transparent" : "grey" ,
-      color: "#FFF",
-      cursor: isDisabled ? "not-allowed" : "default"
-    };
-  }
-};
+import MakeFilter from './MakeFilter';
 
 
-const FilterSideBar = () => {
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
+const FilterSideBar = ({carsList, handleChange, selectMake}) => {
     return (
             <>
-<Select options={options} styles={colourStyles} isSearchable={false}/>
+<MakeFilter carsList={carsList} 
+            handleChange={handleChange} 
+            selectMake={selectMake}/>
             </>
         )
     }

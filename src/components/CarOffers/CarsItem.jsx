@@ -9,7 +9,7 @@ const CarsItem = ({car: {year,month,transmission,mileage,price,title,link}}) => 
       <Fragment>
       <div className="cars-item_wrapper">
         <div className="cars-item_image">
-          <img src={link} alt="bmw" />
+          <img src={link} alt="car" />
         </div>
         <div>
           <a

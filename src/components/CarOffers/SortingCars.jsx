@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Select from 'react-select';
 
-export class SortingCars extends Component {
-  render() {
+const SortingCars = () => {
     const options = [
       { value: 'Sortieren nach Preis', label: 'Sortieren nach Preis' },
       { value: 'Sortieren nach Jahr', label: 'Sortieren nach Jahr' }
@@ -22,10 +21,9 @@ export class SortingCars extends Component {
 
     return (
       <div className='mka__sorting-alignment'>
-<Select options={options} onChange={(e) => { const sortBy = e.target.value; console.log(sortBy)}} styles={colourStyles} placeholder='Sortieren von Daten' isSearchable={false}/>
+<Select options={options}  styles={colourStyles} placeholder='Sortieren von Daten' isSearchable={false}/>
     </div>
     )
   }
-}
 
 export default SortingCars
