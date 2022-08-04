@@ -14,7 +14,7 @@ const colourStyles = {
 };
 
 
-const MakeFilter = ({carsList, handleMakeChange}) => {
+const MileageFilter = ({carsList, handleMileageChange}) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex((b) => f(a) === f(b)) === i);
   }
@@ -22,8 +22,8 @@ const MakeFilter = ({carsList, handleMakeChange}) => {
   const options = carsList
     .map((car) => {
       return {
-        value: car.make,
-        label: car.make
+        value: car.mileage,
+        label: car.mileage
       };
     })
    
@@ -33,11 +33,11 @@ const MakeFilter = ({carsList, handleMakeChange}) => {
     return (
             <>
 <Select   options={distinctOptions} 
-          onChange={handleMakeChange} 
+          onChange={handleMileageChange} 
           isSearchable={false}/>
 
             </>
         )
     }
 
-export default MakeFilter
+export default MileageFilter

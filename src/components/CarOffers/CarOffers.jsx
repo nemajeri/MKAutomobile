@@ -14,7 +14,7 @@ import SortingCars from "./SortingCars";
 const CarOffers = () => {
     const [carsList, setCarsList] = useState([]);
     const [selectedPrice, setSelectedPrice] = useState([2900,29000])
-    const [selectMake, setSelectMake] = useState(null);
+    const [selectedMake, setSelectedMake] = useState(undefined);
     const [selectedModel, setSelectedModel] = useState(null);
     const [selectedYear, setSelectedYear] = useState(null);
     const [selectedMileage, setSelectedMileage] = useState(null);
@@ -28,110 +28,49 @@ const CarOffers = () => {
 
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
-    const getCars = () => {
-      axios.get(url)
-      .then((response) => {
-       const carsList = response.data;
-        setCarsList(carsList)
-      })
-    }
-
-    const handleChange = (selectMake) => {
-          setSelectMake(selectMake[0])
-          console.log(selectMake)
-    
-       const updatedCarsList = carsList.filter(
-           (car) => car.make === selectMake[0]
-          )
-          console.log(updatedCarsList)
-           setCarsList(updatedCarsList)
-       
-    }
-
-
-    const handleSortByPriceUp = (e) => {
-      let {value} = e.target;
-    const selectSortByPriceUp = [...carsList].sort((a, b) => b.price - a.price);
-    setSelectSortByPriceUp(selectSortByPriceUp)
-    }
-
-    const handleSelectModel = (model) => {
-      const selectedModel = carsList.map((car) =>
-      car.model === model ? car : null);
-      setSelectedModel(selectedModel)
-      }
-
-      const handleSelectYear = (year) => {
-        const selectedYear = carsList.map((car) =>
-        car.year === year ? car : null);
-        setSelectedYear(selectedYear)
-        }
-
-        const handleSelectMileage = (mileage) => {
-          const selectedMileage = carsList.map((car) =>
-          car.mileage === mileage ? car : null);
-          setSelectedMileage(selectedMileage)
-          }
-
-          const handleSelectFuel = (fuel) => {
-            const selectedFuel = carsList.map((car) =>
-            car.fuel === fuel ? car : null);
-            setSelectedFuel(selectedFuel)
-            }
-
-            const handleSelectTransmission = (transmission) => {
-              const selectedTransmission = carsList.map((car) =>
-              car.transmission === transmission ? car : null);
-              setSelectedTransmission(selectedTransmission)
-              }
-
-              const handleSelectDriveTrain = (drivetrain) => {
-                const selectedMakes = carsList.map((car) =>
-                car.drivetrain === drivetrain ? car : null);
-                setSelectedDriveTrain(selectedDriveTrain)
-                }
-
-    const handleChangePrice = (event, value) => {
-      setSelectedPrice(value);
-    };
-
-    const applyFilters = () => {
-      let updatedCarsList = carsList;
+    const applyFilters = (cars) => {
+      let updatedCarsList = cars;
+  
+      if (selectedMake){
+        updatedCarsList = updatedCarsList.filter(
+           car => car.make ===  selectedMake
+        )
+     }; 
 
 
       if (selectedModel) {
-        updatedCarsList = updatedCarsList.filter(
-          (car) => car.model === selectedModel
+        updatedCarsList = carsList.filter(
+          car => car.model === selectedModel
         );
       }
   
       if (selectedYear) {
-        updatedCarsList = updatedCarsList.filter(
-          (car) => car.year === selectedYear
+        updatedCarsList = carsList.filter(
+          car => car.year === selectedYear
         );
       }
 
       if (selectedMileage) {
-        updatedCarsList = updatedCarsList.filter(
-          (car) => car.mileage === selectedMileage
+        updatedCarsList = carsList.filter(
+          car => car.mileage === selectedMileage
         );
       }
 
       if (selectedFuel) {
-        updatedCarsList = updatedCarsList.filter(
+        updatedCarsList = carsList.filter(
           (car) => car.fuel === selectedFuel
         );
       }
 
       if (selectedTransmission) {
-        updatedCarsList = updatedCarsList.filter(
+        updatedCarsList = carsList.filter(
           (car) => car.transmission === selectedTransmission
         );
       }
 
       if (selectedDriveTrain) {
-        updatedCarsList = updatedCarsList.filter(
-          (car) => car.drivetrain === selectMake
+        updatedCarsList = carsList.filter(
+          (car) => car.drivetrain === selectedMake
         );
       }
 
@@ -142,16 +81,40 @@ const CarOffers = () => {
       updatedCarsList = updatedCarsList.filter(
         (car) => car.price >= minPrice && car.price <= maxPrice
       );
-  
       setCarsList(updatedCarsList);
-  
-      !updatedCarsList.length ? setResultsFound(false) : setResultsFound(true);
     };
 
-    useEffect(() => { 
+    const getCars = () => {
+      axios.get(url)
+      .then((response) => {
+         return applyFilters(response.data)
+      })
+   }
+
+   const handleMakeChange = (select) => {
+    setSelectedMake(select.value) 
+   }
+
+   const handleModelChange = (select) => {
+    setSelectedModel(select.value) 
+   }
+
+   const handleYearChange = (select) => {
+    setSelectedYear(select.value) 
+   }
+
+   const handleMileageChange = (select) => {
+    setSelectedMileage(select.value)
+   }
+
+    const handleSortByPriceUp = (e) => {
+    const selectSortByPriceUp = [...carsList].sort((a, b) => b.price - a.price);
+    setSelectSortByPriceUp(selectSortByPriceUp)
+    }
+   
+    useEffect(() => {
       getCars()
-      applyFilters()
-  }, [ selectMake, selectedPrice]);
+  }, [ selectedMake, selectedModel, selectedYear, selectedMileage]);
 
   return (
     <div className="mka__wrapper-car-offers">
@@ -176,8 +139,10 @@ const CarOffers = () => {
           <div>
           < FilterSideBar
           carsList={carsList}
-          handleChange={handleChange} 
-          selectMake={selectMake}/>
+          handleMakeChange={handleMakeChange} 
+          handleModelChange={handleModelChange}
+          handleYearChange={handleYearChange}
+          handleMileageChange={handleMileageChange}/>
           </div>
           </div>
           <div className="item3">
@@ -191,4 +156,4 @@ const CarOffers = () => {
 }
 
 
-export default CarOffers
+export default CarOffers;
