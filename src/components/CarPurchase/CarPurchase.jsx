@@ -1,6 +1,5 @@
 import "./CarPurchase.css"
 import ContactForm from "./ContactForm"
-import DropzoneElement from "../Dropzone/Dropzone"
 
 const CarPurchase = () => {
   return (
@@ -36,10 +35,6 @@ const CarPurchase = () => {
           </ul>
           <div>
           <ContactForm/>
-          <div>
-            <p>Fahrzeugbilder</p>
-          <DropzoneElement/>
-          </div>
           </div>
          </div>
       </div>

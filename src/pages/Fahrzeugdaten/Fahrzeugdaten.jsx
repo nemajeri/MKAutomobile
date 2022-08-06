@@ -1,5 +1,5 @@
 import React from 'react'
-import './AutoSeite.css'
+import './Fahrzeugdaten.css'
 import {
     Header,
     Navbar,

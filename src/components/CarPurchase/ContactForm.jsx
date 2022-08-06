@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import DropzoneElement from "../Dropzone/Dropzone";
+
 
 class ContactForm extends Component {
       state = {
@@ -13,6 +15,7 @@ class ContactForm extends Component {
 
   render() {
     return (
+      <>
       <form className="form" onSubmit={this.handleSubmit}>
         <h4>Personliche Daten</h4>
         <h4>Kontaktdaten</h4>
@@ -36,8 +39,12 @@ class ContactForm extends Component {
         <input className="form-field" placeholder="FIRMA" type="text" value={this.state.value} onChange={this.handleChange} />
         <input className="form-field" placeholder="EZ DES FAHRZEUGS" type="text" value={this.state.value} onChange={this.handleChange} />
         <input className="form-field" placeholder="SONDERAUSSTATTUNGEN" type="text" value={this.state.value} onChange={this.handleChange} />
-
-
+        </form>
+        <br/>
+        <div>
+        <h6>Fahrzeugbilder</h6>
+        <DropzoneElement/>
+        </div>
         <div class="center">
           <button class="btn">
             <svg class="button" width="180px" height="60px" viewBox="0 0 180 60" className="border">
@@ -48,7 +55,8 @@ class ContactForm extends Component {
           </button>
         </div>
 
-      </form>
+
+      </>
     );
   }
 }
