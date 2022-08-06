@@ -7,11 +7,26 @@ const CarPage = () => {
     <div className="mka__container">
       <div className='mka__content-error'>
         <div>
-        <h1>VW EOS 2,0 TDI DPF ** AUTOMATIK DSG ** CABRIO / ROADSTER</h1>
-        <h3>8.490€</h3>
+        <div>
+          <div>
+          <a><i>Neka ikona</i></a>
+          <h4>Hinzufügen zum vergleichen</h4>
+          </div>
+          <button>Email</button>
         </div>
-        <p id='text'>Sie können nicht finden, wonach Sie suchen? Nehmen Sie sich einen Moment Zeit und suchen Sie unten oder starten Sie auf unserer <a id='link' href='/'>Homepage</a></p>
-        <input />
+        </div>
+        <div>
+          <div>
+            <h1>Slider</h1>
+          </div>
+          <div>
+            <h4>BESCHREIBUNG</h4>
+            <div>Crvena linija</div>
+          </div>
+          <div>
+            
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -19,3 +34,19 @@ const CarPage = () => {
 }
 
 export default CarPage
+
+
+//         <h1>{car.title}</h1>
+//<ul>
+//<li>{car.month}/{car.year}</li>
+//<li>{car.make}</li>
+///<li>{car.model}</li>
+//<li>{car.body}</li>
+//<li>{car.condition}</li>
+//<li>{car.mileage}</li>
+//<li>{car.transmission}</li>
+//<li>{car.drivetrain}</li>
+//<li>{car.engline}</li>
+//<li>{car.fuel}</li>
+//<li>{car.exterior}</li>
+//</ul>

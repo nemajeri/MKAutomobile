@@ -208,7 +208,7 @@ i {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 981px) {
   .card_wrapper {
     width: 420px;
   }

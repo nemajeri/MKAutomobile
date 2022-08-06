@@ -1,100 +1,48 @@
-import { Component } from "react"
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Card from '../Card/Card'
-import Slider from "react-slick"
-import "./HomeSlider.css"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 
-const SampleNextArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div
-      className="slick-next-home-slider"
-      onClick={onClick}
-    />
-  )
-}
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-const SamplePrevArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div
-      className="slick-prev-home-slider"
-      onClick={onClick}
-    />
-  )
-}
 
-class HomeSlider extends Component {
-  state = {
-    display: true,
-    width: 270
+import { Navigation } from "swiper";
+
+const HomeSlider = () => {
+  const slides = []
+  for(let i = 0; i < 5; i += 1) {
+    slides.push(
+      <SwiperSlide><Card/></SwiperSlide>
+    )
+
   }
-
-  render () {
-  const settings = {
-    className: "slider variable-width",
-    dots: false,
-    infinite: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          infinite: true
-        }
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true
-        }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true
-        }
-      }
-    ]
-  }
-  
   return (
-<div className="mka__home-page-slider">
-      <Slider {...settings}>
-        <div>
-       <Card/>
-       </div>
-       <div>
-       <Card/>
-       </div>
-       <div>
-       <Card/>
-       </div>
-       <div>
-       <Card/>
-       </div>
-       <div>
-       <Card/>
-       </div>
-       <div>
-       <Card/>
-       </div>
-      </Slider>
-      </div>
-
-  )
-}
+    <>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={10}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          981: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1200: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          }
+        }}
+        modules={[Navigation]}
+        className="mySwiper"
+      >
+        {slides}
+      </Swiper>
+    </>
+  );
 }
 
 export default HomeSlider

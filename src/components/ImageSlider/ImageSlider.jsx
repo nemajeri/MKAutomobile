@@ -1,82 +1,34 @@
-import { Component } from "react"
-import Slider from "react-slick"
-import "./ImageSlider.css"
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import './ImageSlider.css'
 
+import { Pagination } from "swiper";
 
-const SampleNextArrow = (props) => {
-  const { onClick } = props;
+ const ImageSlider = () => {
   return (
-    <div
-      className="slick-next"
-      onClick={onClick}
-    />
-  )
-}
-
-const SamplePrevArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div
-      className="slick-prev"
-      onClick={onClick}
-    />
-  )
-}
-
-class ImageSlider extends Component {
-  render () {
-  const settings = {
-    className: "slider",
-    dots: true,
-    infinite: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    customPaging: function (i) {
-      return <div className="dot">{i + 1}</div>;
-    },
-    dotsClass: "slick-dots slick-thumb"
-  }
-  
-  return (
-    <div className="mka__main-gallery-div">
-      <Slider {...settings}>
-        <div>
-        <img src={require("../../assets/1.jpg")} alt="gallery-image_1" />
-        </div>
-        <div>
-        <img src={require("../../assets/2.jpg")} alt="gallery-image_2"/>
-        </div>
-        <div>
-        <img src={require("../../assets/3.jpg")} alt="gallery-image_3"/>
-        </div>
-        <div>
-        <img src={require("../../assets/4.jpg")} alt="gallery-image_4"/>
-        </div>
-        <div>
-        <img src={require("../../assets/5.jpg")} alt="gallery-image_5"/>
-        </div>
-        <div>
-        <img src={require("../../assets/6.jpg")} alt="gallery-image_6"/>
-        </div>
-        <div>
-        <img src={require("../../assets/7.jpg")} alt="gallery-image_7"/>
-        </div>
-        <div>
-        <img src={require("../../assets/8.jpg")} alt="gallery-image_8"/>
-        </div>
-        <div>
-        <img src={require("../../assets/9.jpg")} alt="gallery-image_9"/>
-        </div>
-        <div>
-        <img src={require("../../assets/10.jpg")} alt="gallery-image_10"/>
-        </div>
-      </Slider>
-    </div>
-  )
-}
+    <>
+      <Swiper
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide><img src={require("../../assets/1.jpg")} alt="gallery-image_1" /></SwiperSlide>
+        <SwiperSlide><img src={require("../../assets/2.jpg")} alt="gallery-image_2" /></SwiperSlide>
+        <SwiperSlide><img src={require("../../assets/3.jpg")} alt="gallery-image_3" /></SwiperSlide>
+        <SwiperSlide><img src={require("../../assets/4.jpg")} alt="gallery-image_4" /></SwiperSlide>
+        <SwiperSlide><img src={require("../../assets/5.jpg")} alt="gallery-image_5" /></SwiperSlide>
+        <SwiperSlide><img src={require("../../assets/6.jpg")} alt="gallery-image_6" /></SwiperSlide>
+        <SwiperSlide><img src={require("../../assets/7.jpg")} alt="gallery-image_7" /></SwiperSlide>
+        <SwiperSlide><img src={require("../../assets/8.jpg")} alt="gallery-image_8" /></SwiperSlide>
+        <SwiperSlide><img src={require("../../assets/9.jpg")} alt="gallery-image_9" /></SwiperSlide>
+      </Swiper>
+    </>
+  );
 }
 
 export default ImageSlider
