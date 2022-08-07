@@ -24,7 +24,7 @@ const Kontakt = () => {
         </p>
         <div className="mka__title-wrapper">
           <div className="mka__container">
-            <h1 id="mka__contact-title">KONTAKT</h1>
+            <h1 className="mka__title">KONTAKT</h1>
           </div>
         </div>
       </div>

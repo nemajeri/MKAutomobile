@@ -162,6 +162,16 @@ a {
     width: 140px;
     height: 50px;
   }
+  .mka__title {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .mka__title {
+    font-size: 28px;
+  }
 }
 
   @media (min-width: 992px) {

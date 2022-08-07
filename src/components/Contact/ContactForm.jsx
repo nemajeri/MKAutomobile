@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Contact.css';
 
-class ContactForm extends Component {
-      state = {
-        value: ''
-      }
+const ContactForm = () => {
 
-      handleChange = this.handleChange.bind(this);
+  const submitForm = (e) => {
+    e.preventDefault();
 
-      handleChange(e) {
-        this.setState({value: e.target.value});
-      }
+    const formData = new FormData(e.target);
+    const inputObject = Object.fromEntries(formData); // convert the FormData object to a JSON object
 
-  render() {
+    console.log(inputObject);
+  };
+
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
-        <input className="form-field" placeholder="VORNAME" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="NACHNAME" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="E-MAIL" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="TEL" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="FIRMA" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="IHRE NACHRICHT" type="text" value={this.state.value} onChange={this.handleChange} />
+      <form className="form" onSubmit={submitForm}>
+        <input className="form-field" placeholder="VORNAME" name="name" />
+        <input className="form-field" placeholder="NACHNAME" name="lastname" />
+        <input className="form-field" placeholder="E-MAIL" name="email" />
+        <input className="form-field" placeholder="TEL" name="telephone" />
+        <input className="form-field" placeholder="FIRMA" name="company" />
+        <input className="form-field" placeholder="IHRE NACHRICHT" name="message" />
 
         <div class="center">
           <button class="btn">
@@ -35,6 +34,5 @@ class ContactForm extends Component {
       </form>
     );
   }
-}
 
 export default ContactForm
