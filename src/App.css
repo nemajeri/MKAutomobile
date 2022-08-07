@@ -149,6 +149,12 @@ a {
   font-weight: 400;
 }
 
+.swiper-pagination-bullet-active {
+  background-color: red !important;
+}
+
+
+
   @media (min-width: 992px) {
     .mka__container {
       width: 970px;

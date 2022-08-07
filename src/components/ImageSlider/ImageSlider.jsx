@@ -12,10 +12,10 @@ import { Pagination } from "swiper";
       <Swiper
         spaceBetween={30}
         pagination={{
-          clickable: true,
+          clickable: true
         }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mka__gallery-swiper"
       >
         <SwiperSlide><img src={require("../../assets/1.jpg")} alt="gallery-image_1" /></SwiperSlide>
         <SwiperSlide><img src={require("../../assets/2.jpg")} alt="gallery-image_2" /></SwiperSlide>

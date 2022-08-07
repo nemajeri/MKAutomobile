@@ -1,6 +1,5 @@
 import React from 'react';
-import {Datenschutz, Fahrzeugangebote, Fahrzeugankauf, Finanzierung, Galerie, Home, Impressum, Kontakt, Fehler404 } from './pages'
-import  AutoSeite from './pages/AutoSeite/AutoSeite'
+import {Datenschutz, Fahrzeugangebote, Fahrzeugankauf, Finanzierung, Galerie, Home, Impressum, Kontakt, Fehler404, Fahrzeugdaten } from './pages'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './App.css';
 
@@ -17,7 +16,7 @@ function App() {
       <Route path='/galerie' element={<Galerie/>} />
       <Route path='/impressum' element={<Impressum/>} />
       <Route path='/kontakt' element={<Kontakt/>} />
-      <Route path='/car-page'element={<AutoSeite/>}/>
+      <Route path='/car-page'element={<Fahrzeugdaten/>}/>
       <Route path="*" element={<Fehler404/>} />
       </Routes>
     </Router>
