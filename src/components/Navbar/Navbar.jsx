@@ -8,7 +8,7 @@ import { IconContext } from "react-icons"
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-  const [toggleSearch, setSearchWindow] = useState(false);
+  const [toggleSearch, setToggleSearch] = useState(false);
   return (
     <div className="mka__navbar">
       <div className="mka__navbar-links">
@@ -37,17 +37,17 @@ const Navbar = () => {
                 {toggleSearch ? (
                   <IconContext.Provider value={{ className: "io-close" }}>
                     {" "}
-                    <IoClose onClick={() => setSearchWindow(false)} />
+                    <IoClose onClick={() => setToggleSearch(false)} />
                   </IconContext.Provider>
                 ) : (
-                  <FaSearch onClick={() => setOpen(true)} />
+                  <FaSearch onClick={() => setToggleSearch(true)} />
                 )}
               </i>
             </p>
             {toggleSearch && (
               <div className="mka__search-div">
                 <input
-                  className="mka__search-input"
+                  className="mka__input"
                   type="text"
                   placeholder="Suche..."
                 />

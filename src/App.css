@@ -155,6 +155,30 @@ a {
   background-color: red !important;
 }
 
+.mka__input {
+  border: 1px solid #fff;
+  background: #0f1215;
+  color: gray;
+  width: 300px;
+  height: 2.5rem;
+  margin-bottom: 0 !important;
+  padding-left: 15px;
+}
+
+.mka__input:focus {
+  border-color: #db2d2e !important;
+}
+
+
+.longer {
+  width: 37.5rem;
+}
+
+.shorter {
+  width: 100px;
+  height: 40px;
+}
+
 @media (max-width: 767px) {
   .form {
     display: flex;
@@ -167,6 +191,10 @@ a {
   .mka__title {
     font-size: 28px;
     text-align: center;
+  }
+  .shorter {
+    width: 100px;
+    height: 40px;
   }
 }
 
