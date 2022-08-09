@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import './Dropzone.css'
+import { IconContext } from "react-icons";
 import Dropzone from "react-dropzone";
-import { GrInbox } from 'react-icons/gr'
+import { VscInbox } from 'react-icons/vsc'
 
 const DropzoneElement = () => {
   const [fileNames, setFileNames] = useState([]);
@@ -19,7 +20,6 @@ const DropzoneElement = () => {
         {({
           getRootProps,
           getInputProps,
-          isDragActive,
           isDragAccept,
           isDragReject
         }) => {
@@ -36,7 +36,11 @@ const DropzoneElement = () => {
               })}
             >
               <input {...getInputProps()} />
-              <span id='icon'><GrInbox/></span>
+              <span>
+              <IconContext.Provider  value={{ size: '30px' }}>
+                <VscInbox/>
+               </IconContext.Provider>
+                </span>
               <p id='text'>Klicken oder ziehen Sie Dateien in diesen Bereich, um sie hochzuladen. <br/>
 Sie können bis zu 3 Dateien hochladen.</p>
             </div>

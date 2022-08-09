@@ -49,23 +49,27 @@ const onChangeMessage = (e) => {
       console.log(localStorage.getItem('telephone'));
       console.log(localStorage.getItem('company'));
       console.log(localStorage.getItem('message'));
-
   }
 
     return (
       <form className="form" onSubmit={onSubmit}>
+        <div>
         <input className="form-field" placeholder="VORNAME" name="name" onChange={onChangeName} />
         <input className="form-field" placeholder="NACHNAME" name="lastname" onChange={onChangeLastname} />
+        </div>
+        <div>
         <input className="form-field" placeholder="E-MAIL" name="email" onChange={onChangeEmail} />
         <input className="form-field" placeholder="TEL" name="telephone" onChange={onChangeTelephone} />
+        </div>
+        <div>
         <input className="form-field" placeholder="FIRMA" name="company" onChange={onChangeCompany} />
         <input className="form-field" placeholder="IHRE NACHRICHT" name="message" onChange={onChangeMessage} />
-
+        </div>
         <div className="center">
           <button onClick ={getData} className="btn">
             <svg class="button" width="180px" height="60px" viewBox="0 0 180 60" className="border">
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
             </svg>
             <span>SENDEN</span>
           </button>
