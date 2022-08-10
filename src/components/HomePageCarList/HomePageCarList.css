@@ -11,7 +11,7 @@
     height: 100%;
     background-repeat: repeat;
     overflow: hidden;
-    background-size: contain;
+    background-size: auto;
     min-height: 65rem;
   }
   
@@ -106,9 +106,6 @@
       gap: 5rem;
       padding-bottom: 140px;
     }
-    .mka__section-divider {
-      margin-top: 350px;
-    }
   }
   
   @media (min-width: 992px) {
@@ -118,9 +115,6 @@
     .mka__content-home-list {
       width: 100%;
       float: left;
-    }
-    .mka__section-divider {
-      margin-top: 35px;
     }
   }
   
@@ -133,7 +127,7 @@
       float: left;
     }
     .mka__section-divider {
-      margin-top: 35px;
+      margin-top: 80px;
     }
   }
   

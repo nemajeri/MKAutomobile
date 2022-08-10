@@ -5,6 +5,7 @@ import Card from '../Card/Card'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "./HomeSlider.css"
 
 
 import { Navigation } from "swiper";
@@ -37,7 +38,7 @@ const HomeSlider = () => {
           }
         }}
         modules={[Navigation]}
-        className="mySwiper"
+        className="mka__home-slider"
       >
         {slides}
       </Swiper>

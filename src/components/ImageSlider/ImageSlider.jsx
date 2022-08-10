@@ -17,6 +17,7 @@ import { Pagination, Navigation } from "swiper";
           clickable: true
         }}
         modules={[Pagination, Navigation]}
+        className="mka__home-slider"
       >
         <SwiperSlide><div className="mka__img-slider-size"><img src={require("../../assets/1.jpg")} alt="gallery-image_1" /></div></SwiperSlide>
         <SwiperSlide><div className="mka__img-slider-size"><img src={require("../../assets/2.jpg")} alt="gallery-image_2" /></div></SwiperSlide>
