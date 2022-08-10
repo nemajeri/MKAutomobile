@@ -23,6 +23,7 @@ const HomeSlider = () => {
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
+        navigation={true}
         breakpoints={{
           768: {
             slidesPerView: 2,
@@ -34,9 +35,9 @@ const HomeSlider = () => {
           },
           1200: {
             slidesPerView: 4,
-            spaceBetween: 50,
+            spaceBetween: 30,
           }
-        }}
+        }} 
         modules={[Navigation]}
         className="mka__home-slider"
       >

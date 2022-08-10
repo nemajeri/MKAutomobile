@@ -1,3 +1,7 @@
 .mka__home-slider {
     aspect-ratio: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
+

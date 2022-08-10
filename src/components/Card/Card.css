@@ -1,11 +1,10 @@
 .card_wrapper {
   text-align: center;
-  height: 437.5px;
+  height: auto;
   background: #00000033;
   color: #363636;
   z-index: 9;
-  width: 16.25em;
-  margin-right: 20px;
+  max-width: 100%;
 }
 
 .card_image-container {
@@ -32,7 +31,7 @@
   transition: .5s ease;
 }
 
-.card_image-container:hover .overlay {
+.card_wrapper:hover .overlay {
   bottom: 0;
   height: 100%;
 }
@@ -164,8 +163,6 @@ i {
   width: 30px;
   bottom: -10px;
   background: #000;
-  transition: width 0.8s ease, background-color 0.8s ease;
-  -webkit-transition: width 0.8s ease, background-color 0.8s ease;
   margin-bottom: 4px;
 }
 
@@ -179,7 +176,18 @@ i {
   bottom: 0;
   left: 50%;
   transition: width 0.8s ease, background-color 0.8s ease;
-  -webkit-transition: width 0.8s ease, background-color 0.8s ease;
+}
+
+.card_wrapper:hover .card_separator::before {
+  background: red;
+  width: 50px;
+  transition: width 0.8s ease, background-color 0.8s ease;
+}
+
+.card_wrapper:hover .card_separator::after {
+  background: red;
+  width: 30px;
+  transition: width 0.8s ease, background-color 0.8s ease;
 }
 
 .card_car-title {
@@ -190,16 +198,15 @@ i {
   display: block;
 }
 
+.card_car-title h6:hover {
+    color: #363636;
+    transition: color 0.8s ease;
+}
+
 .card_car-price {
   background: #db2d2e;
   padding: 5px 0;
   margin-top: 20px;
-}
-
-.card_car-text {
-  font-size: 16px;
-  font-weight: 500;
-  color: #fff;
 }
 
 @media (max-width: 1200px) {
@@ -217,6 +224,5 @@ i {
 @media (max-width: 767px) {
   .card_wrapper {
     width: 700px;
-    height: 790px;
   }
 }
