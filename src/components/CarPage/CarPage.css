@@ -1,0 +1,70 @@
+.mka__title-price-carpage {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mka__title-price-carpage h5 {
+    color: var(--color-red);
+}
+
+.mka__title-price-carpage h4 {
+    text-align: left;
+}
+
+.mka__email-filed-carpage {
+    display: inline-flex;
+    justify-content: space-between;
+    justify-items: center;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid white;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.mka__comparison-carpage {
+    display: flex;
+    gap: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.mka__comparison-carpage i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-red);
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mka__comparison-carpage i p {
+    margin-top: 5px;
+}
+
+.mka__comparison-carpage i:hover {
+    background-color: rgba(121, 120, 120, 0.133);
+    transition: background-color 0.2s ease;
+}
+
+.mka__comparison-carpage i svg {
+    margin-left: 5px;
+}
+
+.btn .mka__button-carpage {
+    margin-top: 0px;
+    width: 150px;
+    height: 45px;
+}
+
+.mka__description-section__carpage {
+    display: flex;
+}
+
+.short-carpage {
+    width: 15px;
+}
