@@ -10,14 +10,8 @@ import "./HomeSlider.css"
 
 import { Navigation } from "swiper";
 
-const HomeSlider = () => {
-  const slides = []
-  for(let i = 0; i < 5; i += 1) {
-    slides.push(
-      <SwiperSlide><Card/></SwiperSlide>
-    )
+const HomeSlider = ({cars}) => {
 
-  }
   return (
     <>
       <Swiper
@@ -41,7 +35,9 @@ const HomeSlider = () => {
         modules={[Navigation]}
         className="mka__home-slider"
       >
-        {slides}
+        { cars.map( car =>
+         <SwiperSlide><Card key={car.id} car={car}/></SwiperSlide>)
+        }
       </Swiper>
     </>
   );

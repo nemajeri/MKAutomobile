@@ -21,7 +21,9 @@ const CarOffers = () => {
     const getCars = () => {
       axios.get(url)
       .then((response) => {
+        console.log(response)
          return setCarsList(response.data)
+
       })
    }
 
