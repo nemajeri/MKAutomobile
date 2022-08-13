@@ -204,6 +204,12 @@ a {
   height: 40px;
 }
 
+.mka__button-carpage {
+  margin-top: 0px;
+  width: 150px;
+  height: 45px;
+}
+
 @media (max-width: 767px) {
   .form {
     display: flex;

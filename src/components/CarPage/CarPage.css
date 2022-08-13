@@ -55,16 +55,80 @@
     margin-left: 5px;
 }
 
-.btn .mka__button-carpage {
-    margin-top: 0px;
-    width: 150px;
-    height: 45px;
-}
-
 .mka__description-section__carpage {
     display: flex;
+    justify-content: space-around;
+    gap: 30px;
 }
 
 .short-carpage {
-    width: 15px;
+    width: 20px;
+    margin: 20px 0;
+    height: 2px;
+    margin-left: 0;
+}
+
+.mka__description-carpage {
+    width: 100%;
+}
+
+.mka__description-carpage h6 {
+    text-align: start;
+}
+
+.mka__list-carpage {
+    display: flex;
+    flex-direction: column;
+}
+
+.mka__list-carpage li {
+    border-bottom: 1px solid white;
+}
+
+.mka__list-content__carpage {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.mka__list-content__carpage strong{
+    text-align: center;
+}
+
+.mka__strong-alignment__carpage strong {
+    text-align: center;
+}
+
+.mka__gallery-carpage {
+    min-width: 0;
+    width: 90rem;
+    height: 20rem;
+}
+
+.mka__gallery-carpage .swiper {
+    height: 7rem;
+}
+
+.mka__gallery-carpage .mySwiper2 {
+    height: 22rem;
+  }
+
+.mka__description-tabs__carpage {
+    margin-top: 60px;
+    text-align: left;
+}
+
+.mka__description-tab--underline__carpage {
+    border-bottom: 3px solid red;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.mka__list-alignment__carpage {
+    display: flex;
+}
+
+.inner-div {
+    justify-content: space-between;
+    width: 70%;
 }
