@@ -8,13 +8,12 @@ import FilterSideBar from "./FilterSideBar"
 import CarAlignment from "./CarAlignment";
 import { useEffect } from "react";
 import DisplayCars from "./DisplayCars";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import SortingCars from "./SortingCars";
 
 const CarOffers = () => {
     const [carsList, setCarsList] = useState([]);
-    const [selectedMake, setSelectedMake] = useState(undefined);
-
+    const [selectedMake, setSelectedMake] = useState();
 
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
@@ -25,27 +24,24 @@ const CarOffers = () => {
          return setCarsList(response.data)
 
       })
-   }
-
-   const applyFilters = () => {
-    if(selectedMake) {
-    let updatedCarsList = carsList
-    updatedCarsList = carsList.filter(car => car.make === selectedMake)
-    setCarsList(prev => [...prev, updatedCarsList])
-    console.log(updatedCarsList)
     }
+
+    useEffect(() => {
+      getCars()
+  }, []);
+
+  const getFilteredList = () => {
+    if(!selectedMake) {
+      return carsList
+    }
+    return carsList.filter((car) => car.make === selectedMake)
   }
 
+  var filteredList = useMemo(getFilteredList, [ selectedMake, carsList ]);
 
-  
   const handleMakeChange = (select) => {
     setSelectedMake(select.value) 
    }
-
-    useEffect(() => {
-      applyFilters()
-      getCars()
-  }, [ selectedMake ]);
 
   return (
     <div className="mka__wrapper-car-offers">
@@ -72,7 +68,7 @@ const CarOffers = () => {
           </div>
           </div>
           <div className="item3">
-        <Cars carsList={carsList}/> 
+        <Cars filteredList={filteredList}/> 
           </div>
           </div>
         </div>
