@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CarPage.css'
 import CarEquipment from './CarEquipment';
 import CarDescription from './CarDescription'
@@ -8,10 +8,22 @@ import HomeSlider from '../HomeSlider/HomeSlider'
 
 const CarPage = () => {
   const [isActive, setIsActive] = useState(true);
+  const [cars, setCars] = useState([]);
 
   const handleClick = () => {
     setIsActive(false)
   }
+
+  const url = 'http://finity.pro/clients/mkautomobile/cars/all';
+
+  useEffect(() => {
+    fetch(url)
+    .then(response => response.json())
+    .then(cars => {
+    const currentCars = cars.slice(-5);
+    setCars(currentCars)
+  });
+  }, []);
 
   return (
     <div className="mka__wrapper-error">
@@ -72,7 +84,7 @@ const CarPage = () => {
               {isActive ? <CarEquipment/> : <CarDescription/>}
               </div>
       </div>
-              <HomeSlider/>
+              <HomeSlider cars={cars}/>
     </div>
   </div>
   )
