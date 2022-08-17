@@ -3,13 +3,13 @@ import { FaCalendarAlt, FaCog } from "react-icons/fa";
 import { GiGasPump } from "react-icons/gi";
 import './CarsItem.css'
 
-const CarsItem = ({car: {year,month,transmission,mileage,price,title,link}}) => {
+const CarsItem = ({car: {year,month,transmission,mileage,price,title}}) => {
    
     return (
       <Fragment>
       <div className="cars-item_wrapper">
-        <div className="cars-item_image">
-          <img src={link} alt="car" />
+        <div className="cars-item_image-container">
+          <img src={require("../../assets/bmw.jpg")} alt="car" className='cars-item_image'/>
         </div>
         <div>
           <a

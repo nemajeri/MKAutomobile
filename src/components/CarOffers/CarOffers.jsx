@@ -43,6 +43,7 @@ const CarOffers = () => {
     setSelectedMake(select.value) 
    }
 
+
   return (
     <div className="mka__wrapper-car-offers">
       <div className="mka__container">
@@ -51,20 +52,33 @@ const CarOffers = () => {
           <div className="item1">
           < CarSlider/>
           <div className="mka-responsive-item">
+            <div className="mka-sorting-div__offers">
           < DisplayCars/>
           < SortingCars/>
+            </div>
           < CarAlignment/>
           </div>
           </div>
           <div className="item2">
             <div className="mka__side-bar-divider">
+              <h6>FAHRZEUGSUCHE</h6>
+              <div className="mka__sidebar-divider"></div>
           < Search 
           carsList={carsList}/>
           </div>
-          <div>
+          <div className="mka__sidebar-detailed-search">
+            <h6>DETAILSUCHE</h6>
+            <div className="mka__sidebar-divider"></div>
           < FilterSideBar
           carsList={carsList}
           handleMakeChange={handleMakeChange} />
+          <button className="btn shorter">
+            <svg class="button" width="180px" height="60px" viewBox="0 0 180 60" className="border">
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
+            </svg>
+            <span>Zurucksetzen</span>
+          </button>
           </div>
           </div>
           <div className="item3">

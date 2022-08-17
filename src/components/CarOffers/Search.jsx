@@ -24,7 +24,10 @@ const Search = ({ carsList }) => {
       padding: '5px',
     }),
     control: () => ({
-      width: 200,
+      width: 'auto',
+      "&:hover": {
+        borderColor: "red"
+      }
     })
   }
     return (
