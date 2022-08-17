@@ -89,6 +89,17 @@
     text-align: left;
   }
 
+  #btn-txt {
+    font-size: 14px;
+    align-self: center;
+  }
+
+  .mka__sidebar-detailed-search > button,svg {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
+
   @media (max-width: 767px) {
     .mka__content-grid-offers {
       display: flex;

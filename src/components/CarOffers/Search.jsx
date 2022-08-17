@@ -33,6 +33,7 @@ const Search = ({ carsList }) => {
     return (
       <>
   <Select
+  className='select-search'
   cacheOptions
   placeholder='Suche...'
   options={carsOptions}

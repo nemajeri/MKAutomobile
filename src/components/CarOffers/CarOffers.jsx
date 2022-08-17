@@ -10,11 +10,12 @@ import { useEffect } from "react";
 import DisplayCars from "./DisplayCars";
 import { useState, useMemo } from "react";
 import SortingCars from "./SortingCars";
+import ReactPaginate from 'react-paginate';
 
 const CarOffers = () => {
     const [carsList, setCarsList] = useState([]);
     const [selectedMake, setSelectedMake] = useState();
-
+    const [pageCount, setPageCount] = useState(0);
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
     const getCars = () => {
@@ -26,6 +27,10 @@ const CarOffers = () => {
       })
     }
 
+    const handlePageClick = (event) => {
+      event.preventDefault()
+      setPageCount(1)
+    }
     useEffect(() => {
       getCars()
   }, []);
@@ -77,13 +82,19 @@ const CarOffers = () => {
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
             </svg>
-            <span>Zurucksetzen</span>
+            <span id="btn-txt">Zurucksetzen</span>
           </button>
           </div>
           </div>
           <div className="item3">
         <Cars filteredList={filteredList}/> 
           </div>
+          <ReactPaginate
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={pageCount}
+        renderOnZeroPageCount={null}
+      />
           </div>
         </div>
       </div>
