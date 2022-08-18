@@ -52,7 +52,7 @@ const Card = ({car: {year,month,transmission,mileage,price,title,link}}) => {
             <h6>{title}</h6>
           </a>
         </div>
-        <div className=" card_separator"></div>
+        <div className="card_separator"></div>
         <div className="card_car-price">
           <h6>{price}€</h6>
         </div>

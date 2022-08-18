@@ -9,13 +9,18 @@ const colourStyles = {
     marginBottom: "10px"
   }
     ),
-  option: (styles, { isDisabled }) => {
+  option: (styles) => {
     return {
       ...styles,
-      backgroundColor: isDisabled ? "transparent" : "grey" ,
-      color: "#FFF",
-      cursor: isDisabled ? "not-allowed" : "default"
+      backgroundColor: "black",
+      color: "grey"
     };
+  },
+  menu: (styles) => {
+    return {
+      ...styles,
+      backgroundColor: "black"
+    }
   }
 };
 
