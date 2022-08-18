@@ -2,7 +2,13 @@ import React from 'react'
 import Select from 'react-select';
 
 const colourStyles = {
-  control: (styles) => ({ ...styles, backgroundColor: "transparent" }),
+  control: (styles) => (
+    { ...styles, 
+    backgroundColor: "transparent",
+    borderRadius: "0px",
+    marginBottom: "10px"
+  }
+    ),
   option: (styles, { isDisabled }) => {
     return {
       ...styles,
@@ -34,9 +40,14 @@ const YearFilter = ({carsList, handleYearChange}) => {
 
     return (
             <>
-<Select   options={sortedOptions} 
-          onChange={handleYearChange} 
-          isSearchable={false}/>
+<Select   
+components={{ IndicatorSeparator:() => null }}
+placeholder='Erstzulassung'
+className='select-placeholder'
+styles={colourStyles} 
+options={sortedOptions} 
+onChange={handleYearChange} 
+isSearchable={false}/>
 
             </>
         )

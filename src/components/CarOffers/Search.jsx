@@ -14,26 +14,32 @@ const Search = ({ carsList }) => {
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
-      color: 'grey',
       padding: 20,
+      backgroundColor: 'white',
+      "&:hover": {
+        backgroundColor: 'white'
+      },
+      color: 'grey',
+      "&:hover": {
+        color: 'red'
+      }
     }),
     valueContainer: (provided, state) => ({
       ...provided,
       backgroundColor: 'transparent',
       border: state.isFocused ? '1px solid red' : '1px solid white',
-      padding: '5px',
+      padding: 8,
+      paddingLeft: 20
     }),
     control: () => ({
-      width: 'auto',
-      "&:hover": {
-        borderColor: "red"
-      }
+      width: 'auto'
     })
   }
+
     return (
       <>
   <Select
-  className='select-search'
+  className='select-placeholder'
   cacheOptions
   placeholder='Suche...'
   options={carsOptions}
@@ -41,8 +47,8 @@ const Search = ({ carsList }) => {
   defaultOptions
   components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}
   formatOptionLabel={car => (
-    <div className="country-option">
-      <img src={car.link} alt="car-label"/>
+    <div className="car-option">
+      <img src={require("../../assets/bmw.jpg")} alt="car-label"/>
       <span>{car.label}</span>
     </div>
   )}

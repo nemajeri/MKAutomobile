@@ -4,9 +4,12 @@ import MakeFilter from './MakeFilter';
 import ModelFilter from './ModelFilter'
 import YearFilter from './YearFilter'
 import MileageFilter from './MileageFilter';
+import TransmissionFilter from './TransmissionFilter';
+import FuelFilter from './FuelFilter'
+import DriveTrainFilter from './DriveTrainFilter'
 
 
-const FilterSideBar = ({carsList, handleMakeChange, handleModelChange, handleYearChange, handleModelMileage}) => {
+const FilterSideBar = ({carsList, handleMakeChange, handleModelChange, handleYearChange, handleMileageChange, handleFuelChange, handleTransmissionChange, handleDriveTrainChange}) => {
     return (
             <>
 <MakeFilter carsList={carsList} 
@@ -16,7 +19,13 @@ const FilterSideBar = ({carsList, handleMakeChange, handleModelChange, handleYea
 <YearFilter carsList={carsList} 
             handleYearChange={handleYearChange} />
 <MileageFilter carsList={carsList} 
-            handleModelChange={handleYearChange} />
+            handleMileageChange={handleMileageChange} />
+<FuelFilter carsList={carsList} 
+            handleFuelChange={handleFuelChange} />
+<TransmissionFilter carsList={carsList} 
+            handleTransmissionChange={handleTransmissionChange} />
+<DriveTrainFilter carsList={carsList} 
+            handleDriveTrainChange={handleDriveTrainChange} />                                    
             </>
         )
     }

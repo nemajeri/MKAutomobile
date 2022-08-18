@@ -2,7 +2,13 @@ import React from 'react'
 import Select from 'react-select';
 
 const colourStyles = {
-  control: (styles) => ({ ...styles, backgroundColor: "transparent" }),
+  control: (styles) => (
+    { ...styles, 
+    backgroundColor: "transparent",
+    borderRadius: "0px",
+    marginBottom: "10px"
+  }
+    ),
   option: (styles, { isDisabled }) => {
     return {
       ...styles,
@@ -32,9 +38,14 @@ const ModelFilter = ({carsList, handleModelChange}) => {
 
     return (
             <>
-<Select   options={distinctOptions} 
-          onChange={handleModelChange} 
-          isSearchable={false}/>
+<Select   
+components={{ IndicatorSeparator:() => null }}
+placeholder='Model'
+className='select-placeholder'
+styles={colourStyles} 
+options={distinctOptions} 
+onChange={handleModelChange} 
+isSearchable={false}/>
 
             </>
         )

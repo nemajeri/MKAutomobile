@@ -1,26 +1,32 @@
 import React from 'react'
 import Select from 'react-select';
 
+
 const colourStyles = {
   control: (styles) => (
     { ...styles, 
     backgroundColor: "transparent",
     borderRadius: "0px",
-    marginBottom: "10px" 
+    marginBottom: "10px"
   }
     ),
-  option: (styles, { isDisabled }) => {
+  option: (styles) => {
     return {
       ...styles,
-      backgroundColor: isDisabled ? "transparent" : "grey" ,
-      color: "#FFF",
-      cursor: isDisabled ? "not-allowed" : "default"
+      backgroundColor: "black",
+      color: "grey"
     };
+  },
+  menu: (styles) => {
+    return {
+      ...styles,
+      backgroundColor: "black"
+    }
   }
 };
 
 
-const MileageFilter = ({carsList, handleMileageChange}) => {
+const FuelFilter = ({carsList, handleFuelChange}) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex((b) => f(a) === f(b)) === i);
   }
@@ -28,8 +34,8 @@ const MileageFilter = ({carsList, handleMileageChange}) => {
   const options = carsList
     .map((car) => {
       return {
-        value: car.mileage,
-        label: car.mileage
+        value: car.fuel,
+        label: car.fuel
       };
     })
    
@@ -38,17 +44,16 @@ const MileageFilter = ({carsList, handleMileageChange}) => {
 
     return (
             <>
-<Select   
+<Select  
 components={{ IndicatorSeparator:() => null }}
-placeholder='Kilometer'
+placeholder='Treibstoff'
 className='select-placeholder'
 styles={colourStyles} 
 options={distinctOptions} 
-onChange={handleMileageChange} 
+onChange={handleFuelChange} 
 isSearchable={false}/>
-
             </>
         )
     }
 
-export default MileageFilter
+export default FuelFilter
