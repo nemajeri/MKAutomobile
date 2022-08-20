@@ -200,7 +200,7 @@ const setData = () => {
         </div>
         <div class="end">
           <button onClick ={setData} class="btn">
-            <svg class="button" width="180px" height="60px" viewBox="0 0 180 60" className="border">
+            <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
               <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
               <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
             </svg>

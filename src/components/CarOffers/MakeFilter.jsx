@@ -3,8 +3,9 @@ import Select from 'react-select';
 
 
 const colourStyles = {
-  control: (styles) => (
+  control: (styles, {isSelected}) => (
     { ...styles, 
+    borderColor: isSelected ? "red" : "grey",  
     backgroundColor: "transparent",
     borderRadius: "0px",
     marginBottom: "10px"

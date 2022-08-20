@@ -27,9 +27,8 @@ const CarOffers = () => {
       })
     }
 
-    const handlePageClick = (event) => {
-      event.preventDefault()
-      setPageCount(1)
+    const handlePageClick = () => {
+          console.log('clicked')
     }
     useEffect(() => {
       getCars()
@@ -58,27 +57,27 @@ const CarOffers = () => {
           < CarSlider/>
           <div className="mka-responsive-item">
             <div className="mka-sorting-div__offers">
-          < DisplayCars/>
-          < SortingCars/>
+          <DisplayCars/>
+          <SortingCars/>
             </div>
-          < CarAlignment/>
+          <CarAlignment/>
           </div>
           </div>
           <div className="item2">
             <div className="mka__side-bar-divider">
               <h6>FAHRZEUGSUCHE</h6>
               <div className="mka__sidebar-divider"></div>
-          < Search 
+          <Search 
           carsList={carsList}/>
           </div>
           <div className="mka__sidebar-detailed-search">
             <h6>DETAILSUCHE</h6>
             <div className="mka__sidebar-divider"></div>
-          < FilterSideBar
+          <FilterSideBar
           carsList={carsList}
           handleMakeChange={handleMakeChange} />
-          <button className="btn shorter">
-            <svg class="button" width="180px" height="60px" viewBox="0 0 180 60" className="border">
+          <button className="btn shorter left-alignment">
+            <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
             </svg>
@@ -87,14 +86,17 @@ const CarOffers = () => {
           </div>
           </div>
           <div className="item3">
-        <Cars filteredList={filteredList}/> 
+        <Cars filteredList={filteredList}/>
+        <ReactPaginate
+          previousLabel={'previous'}
+          nextLabel={'next'}
+          pageCount={2}
+          onPageChange={handlePageClick}
+          containerClassName={'mka__pagination-car-offers'}
+          pageClassName={'mka__page-car-offers'}
+          pageLinkClassName={'mka__link-car-offers'}
+          /> 
           </div>
-          <ReactPaginate
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={pageCount}
-        renderOnZeroPageCount={null}
-      />
           </div>
         </div>
       </div>

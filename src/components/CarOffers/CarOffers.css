@@ -18,13 +18,12 @@
   .item1 { 
     grid-area: header;
       border: 1px solid white;
-      height: auto;
+      flex-wrap: wrap;
       margin-top: 40px;
       margin-bottom: 75px;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      position: relative;
    }
 
    .mka-sorting-div__offers {
@@ -40,12 +39,14 @@
 
    .mka-responsive-item {
     display: flex;
+    flex-wrap: wrap;
     border: none;
+    gap: 40px;
    }
 
    @media (max-width: 590px) {
     .mka-responsive-item {
-      flex-direction: column;
+      gap: 20px;
     }
   }
 
@@ -92,6 +93,37 @@
   #btn-txt {
     font-size: 14px;
     align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .left-alignment {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .mka__page-car-offers {
+    width: 40px;
+    height: 40px;
+    padding-top: 8px;
+    border: 1px solid grey;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .mka__page-car-offers:hover {
+    background-color: red;
+    border: 1px solid red;
+    transition: all 0.8s;
+  }
+
+  .mka__page-car-offers:focus {
+    background-color: red;
+    border: 1px solid red;
+  }
+
+  .mka__pagination-car-offers {
+    margin-top: 20px;
   }
 
   @media (max-width: 767px) {

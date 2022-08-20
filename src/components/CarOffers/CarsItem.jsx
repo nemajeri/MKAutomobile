@@ -10,7 +10,7 @@ const CarsItem = ({car: {year,month,transmission,price,title}}) => {
       <div className="cars-item_wrapper">
         <div className="cars-item_image-container">
           <img src={require("../../assets/bmw.jpg")} alt="car" className='cars-item_image'/>
-          <div class="overlay">
+          <div className="overlay">
           <ul>
             <li>
              <a href="https://mkautomobile.at/fahrzeugdaten/579220740/">
