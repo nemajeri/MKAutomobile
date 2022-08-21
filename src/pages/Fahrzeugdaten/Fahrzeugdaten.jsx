@@ -8,7 +8,7 @@ import {
     CarPage
   } from "../../components"
 
-const AutoSeite = () => {
+const Fahrzeugdaten = () => {
   return (
     <>
     <div id="header-img-id" className="header-img-div">
@@ -33,4 +33,4 @@ const AutoSeite = () => {
   )
 }
 
-export default AutoSeite
+export default Fahrzeugdaten

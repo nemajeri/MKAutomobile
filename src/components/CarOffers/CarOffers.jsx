@@ -2,36 +2,36 @@ import "./CarOffers.css";
 import axios from "axios";
 import Cars from "./Cars";
 import CarSlider from "./CarSlider";
-import React from "react";
 import Search from "./Search";
 import FilterSideBar from "./FilterSideBar"
 import CarAlignment from "./CarAlignment";
-import { useEffect } from "react";
 import DisplayCars from "./DisplayCars";
-import { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import SortingCars from "./SortingCars";
-import ReactPaginate from 'react-paginate';
+import Pagination from "./Pagination";
 
 const CarOffers = () => {
     const [carsList, setCarsList] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [carsPerPage, setCarsPerPage] = useState(12)
     const [selectedMake, setSelectedMake] = useState();
-    const [pageCount, setPageCount] = useState(0);
+
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
-    const getCars = () => {
-      axios.get(url)
-      .then((response) => {
-        console.log(response)
-         return setCarsList(response.data)
+    const indexOfLastCar = currentPage * carsPerPage;
+    const indexOfFirstCar = indexOfLastCar - carsPerPage;
+    const currentCars = carsList.slice(indexOfFirstCar, indexOfLastCar)
 
-      })
-    }
-
-    const handlePageClick = () => {
-          console.log('clicked')
-    }
     useEffect(() => {
-      getCars()
+      const fetchCars = async () => {
+        setLoading(true);
+        const res = await axios.get(url);
+        setCarsList(res.data);
+        setLoading(false);
+      }
+
+      fetchCars()
   }, []);
 
   const getFilteredList = () => {
@@ -86,16 +86,8 @@ const CarOffers = () => {
           </div>
           </div>
           <div className="item3">
-        <Cars filteredList={filteredList}/>
-        <ReactPaginate
-          previousLabel={'previous'}
-          nextLabel={'next'}
-          pageCount={2}
-          onPageChange={handlePageClick}
-          containerClassName={'mka__pagination-car-offers'}
-          pageClassName={'mka__page-car-offers'}
-          pageLinkClassName={'mka__link-car-offers'}
-          /> 
+        <Cars currentCars={currentCars} loading={loading}/>
+        <Pagination carsPerPage={carsPerPage} totalCars={carsList.length}/>
           </div>
           </div>
         </div>

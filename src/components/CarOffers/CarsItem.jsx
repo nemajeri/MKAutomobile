@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { FaCalendarAlt, FaCog, FaLink } from "react-icons/fa";
-import { GiGasPump } from "react-icons/gi";
+import {Link} from 'react-router-dom';
 import './CarsItem.css'
 
-const CarsItem = ({car: {year,month,transmission,price,title}}) => {
+const CarsItem = ({car: {id,year,month,transmission,price,title}}) => {
    
     return (
       <Fragment>
@@ -13,9 +13,9 @@ const CarsItem = ({car: {year,month,transmission,price,title}}) => {
           <div className="overlay">
           <ul>
             <li>
-             <a href="https://mkautomobile.at/fahrzeugdaten/579220740/">
+             <Link to={`/fahrzeugdaten/${id}`}>
               <i><FaLink/></i>
-              </a> 
+              </Link> 
             </li>
           </ul>
           </div>
@@ -27,12 +27,12 @@ const CarsItem = ({car: {year,month,transmission,price,title}}) => {
         </div>
         </div>
         <div>
-          <a
+          <Link
             className="cars-item_car-title"
-            href="https://mkautomobile.at/fahrzeugdaten/577930368/"
+            to={`/fahrzeugdaten/${id}`}
           >
            <h6>{title}</h6>
-          </a>
+          </Link>
         </div>
         <div className="cars-item_separator"></div>
           <h6 className="cars-item_car-text">{price}€</h6>

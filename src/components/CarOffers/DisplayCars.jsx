@@ -37,7 +37,12 @@ export class DisplayCars extends Component {
           ...styles,
           fontSize: "14px"
         }
-      }
+      },
+      dropdownIndicator: (base, state) => ({
+        ...base,
+        transition: 'all .2s ease',
+        transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null
+      })
     };
 
     return (
@@ -48,7 +53,16 @@ components={{ IndicatorSeparator:() => null }}
 styles={colourStyles} 
 className='select-placeholder'
 placeholder='12'
-isSearchable={false}/>
+isSearchable={false}
+theme={(theme) => ({
+  ...theme,
+  borderRadius: 0,
+  colors: {
+    ...theme.colors,
+    primary25: 'grey',
+    primary: 'grey',
+  },
+})}/>
     </div>
     )
   }

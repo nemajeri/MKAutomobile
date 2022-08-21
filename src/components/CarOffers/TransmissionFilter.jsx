@@ -22,7 +22,12 @@ const colourStyles = {
       ...styles,
       backgroundColor: "black"
     }
-  }
+  },
+  dropdownIndicator: (base, state) => ({
+    ...base,
+    transition: 'all .2s ease',
+    transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null
+  })
 };
 
 
@@ -51,7 +56,17 @@ className='select-placeholder'
 styles={colourStyles} 
 options={distinctOptions} 
 onChange={handleTransmissionChange} 
-isSearchable={false}/>
+isSearchable={false}
+theme={(theme) => ({
+  ...theme,
+  borderRadius: 0,
+  colors: {
+    ...theme.colors,
+    primary25: 'grey',
+    primary: 'grey',
+  },
+})}
+/>
             </>
         )
     }

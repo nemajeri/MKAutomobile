@@ -45,6 +45,15 @@ const Search = ({ carsList }) => {
   options={carsOptions}
   styles={customStyles}
   defaultOptions
+  theme={(theme) => ({
+    ...theme,
+    borderRadius: 0,
+    colors: {
+      ...theme.colors,
+      primary25: 'red',
+      primary: 'red',
+    },
+  })}
   components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}
   formatOptionLabel={car => (
     <div className="car-option">

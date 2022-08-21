@@ -33,7 +33,12 @@ const SortingCars = () => {
           ...styles,
           fontSize: state.isSelected ? "14px" : "14px"
         }
-      }
+      },
+      dropdownIndicator: (base, state) => ({
+        ...base,
+        transition: 'all .2s ease',
+        transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null
+      })
     };
 
     return (
@@ -44,7 +49,16 @@ options={options}
 className='select-placeholder'
 styles={colourStyles} 
 placeholder='Sortieren von Daten' 
-isSearchable={false}/>
+isSearchable={false}
+theme={(theme) => ({
+  ...theme,
+  borderRadius: 0,
+  colors: {
+    ...theme.colors,
+    primary25: 'grey',
+    primary: 'grey',
+  }
+})}/>
     </div>
     )
   }

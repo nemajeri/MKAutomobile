@@ -16,8 +16,9 @@ function App() {
       <Route path='/galerie' element={<Galerie/>} />
       <Route path='/impressum' element={<Impressum/>} />
       <Route path='/kontakt' element={<Kontakt/>} />
-      <Route path='/car-page'element={<Fahrzeugdaten/>}/>
       <Route path="*" element={<Fehler404/>} />
+        <Route
+          path="/fahrzeugdaten/:id" element={<Fahrzeugdaten/>}/>
       </Routes>
     </Router>
   );
