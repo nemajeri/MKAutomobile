@@ -1,6 +1,6 @@
 .card_wrapper {
   text-align: center;
-  height: 16,375rem;
+  height: 27rem;
   background: #00000033;
   color: #363636;
   z-index: 9;
@@ -207,6 +207,9 @@ i {
   background: #db2d2e;
   padding: 5px 0;
   margin-top: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 @media (max-width: 1200px) {

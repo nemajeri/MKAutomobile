@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaCheck } from 'react-icons/fa'
 import './CarPage.css'
 
 const CarEquipment = () => {
@@ -7,7 +8,7 @@ const CarEquipment = () => {
         <ul className='mka__list-alignment__carpage'>
           <div className='mka__list-alignment__carpage inner-div'>
             <div>
-            <li>ABS</li>
+            <li><FaCheck style={{color: "red"}}/>ABS</li>
             <li>Antriebsschlupfregelung (ASR)</li>
             <li>Bordcomputer</li>
             <li>elektr. Fensterheber</li>

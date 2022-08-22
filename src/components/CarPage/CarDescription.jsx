@@ -2,12 +2,12 @@ import React from 'react'
 
 const CarDescription = () => {
   return (
-    <div>
+    <div className='mka__car-description__carpage'>
     <p>
     *Terminvereinbarung für Besichtigung und Probefahrt unbedingt erforderlich*
     </p>
     <p>
-    * 2.BESITZ - 154.000 KM SERVICEBUCH *
+    <strong>* 2.BESITZ - 154.000 KM SERVICEBUCH *</strong><br/>
     * PICKERL NEU BIS 01 / 2023 + 4 MONATE *
     </p>
     <p>
@@ -19,12 +19,12 @@ AUTOMATIKÖL ALLE FILTER , MOTORÖL ALLE UND FILTER
 NAVI , AUTOMATIK , PARKSENSOREN ( HI ) , TEMPOMAT , KLIMAAUTOMATIK , SITZHEITZUNG , SERVO , ABS , ESP , EL. FH , ZV , EL. SP , CD - RADIO , BERGANFAHRASSISTENT , ALU usw...
     </p>
     <p>
-    !!! SOFORT KREDIT !!!
+    <strong>!!! SOFORT KREDIT !!!</strong><br/>
 SCHON AB 1 MONAT BESCHÄFTIGUNG AUCH OHNE ANZAHLUNG MÖGLICH FAST ALLE GÄNGIGEN FINANZIERUNGSMODELLE, BEI PASSENDER BONITÄT ABWICKLUNG INERHALB 24h
     </p>
-    <p>
+    <strong>
     ** 50/50 FINANZIERUNG MIT 0% ZINSEN **
-    </p>
+    </strong>
     <ul>
         
         <li>Audiosystem BMW Professional (Radio/CD-Player)</li>

@@ -2,6 +2,7 @@
     aspect-ratio: 1.5 / 1;
     margin-left: auto;
     margin-right: auto;
+    transform: translate(0, 0);
   }
 
 .swiper-button-prev:before  {
@@ -18,8 +19,21 @@
     font-family: 'Rubik', sans-serif !important;
   }
 
-.swiper-button-prev,
+.swiper-button-prev {
+  position: fixed !important;
+    top: 45% !important;
+    width: 44px !important; 
+    height: 44px !important;
+    background-color: #fff !important;
+    transition: 300ms ease-out;
+    opacity: 0;
+    transform: translate(0, 0) !important;
+    outline: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
 .swiper-button-next {
+    position: fixed !important;
     top: 45% !important;
     width: 44px !important; 
     height: 44px !important;
@@ -46,18 +60,8 @@
     transform: translateX(190%);
   }
 
-.swiper-button-prev:after {
-    position: relative !important;
-    left: -1px !important;
- }
-
-.swiper-button-next:after {
-    position: relative !important;
-    left: 1px !important;
- }
-
 .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-  left: 10px !important;
+  left: 15px !important;
   right: auto !important;
 }
 

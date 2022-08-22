@@ -20,6 +20,7 @@ const CarPage = () => {
     fetch(url)
     .then(response => response.json())
     .then(cars => {
+    console.log(cars)  
     const currentCars = cars.slice(-5);
     setCars(currentCars)
   });
@@ -84,7 +85,10 @@ const CarPage = () => {
               {isActive ? <CarEquipment/> : <CarDescription/>}
               </div>
       </div>
+              <h4>ÄHNLICHE FAHRZEUGE</h4>
+              <div className='mka__home-slider-section__carpage'>
               <HomeSlider cars={cars}/>
+              </div>
     </div>
   </div>
   )

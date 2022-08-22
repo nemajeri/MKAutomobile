@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from "swiper";
 
+
  const ImageSlider = () => {
   return (
     <>

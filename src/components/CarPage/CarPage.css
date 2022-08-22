@@ -132,3 +132,44 @@
     justify-content: space-between;
     width: 70%;
 }
+
+.mka__home-slider-section__carpage {
+    padding: 40px 0;
+}
+
+.inner-div {
+    margin: 30px 0;
+}
+
+.inner-div > div li {
+    margin: 10px 0;
+    list-style: none;
+}
+
+.mka__car-description__carpage {
+    margin: 30px 0;
+}
+
+.mka__car-description__carpage > strong {
+    color: white;
+    font-family: var(--font-family);
+}
+
+.mka__car-description__carpage p {
+    margin-bottom: 15px;
+}
+
+.mka__car-description__carpage p > strong {
+    font-weight: bold;
+}
+
+.mka__car-description__carpage > ul li {
+    display: grid;
+    list-style: inside;
+}
+
+@media (max-width: 767px) {
+    .mka__description-section__carpage {
+        flex-direction: column;
+    }
+}
