@@ -1,14 +1,27 @@
+.mka__wrapper-carpage {
+    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+    background-repeat: repeat;
+    overflow: hidden;
+    background-size: auto;
+    height: auto;
+  }
+
+  .mka__content-carpage {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
 .mka__title-price-carpage {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.mka__title-price-carpage h5 {
+.mka__title-price-carpage h4 {
     color: var(--color-red);
 }
 
-.mka__title-price-carpage h4 {
+.mka__title-price-carpage h3 {
     text-align: left;
 }
 
@@ -43,6 +56,7 @@
 }
 
 .mka__comparison-carpage i p {
+    align-self: center;
     margin-top: 5px;
 }
 
@@ -53,6 +67,12 @@
 
 .mka__comparison-carpage i svg {
     margin-left: 5px;
+}
+
+.mka__description-section__carpage {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
 }
 
 .mka__description-section__carpage {
@@ -85,23 +105,34 @@
     border-bottom: 1px solid white;
 }
 
-.mka__list-content__carpage {
-    display: flex;
-    justify-content: space-between;
-    width: 40%;
+.mka__car-attributes {
+    display: block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e3e3e3;
+    margin-bottom: 5px;
 }
 
-.mka__list-content__carpage strong{
-    text-align: center;
+.mka__car-attributes span{
+    width: 150px;
+    display: table-cell;
+    text-align: left;
 }
 
-.mka__strong-alignment__carpage strong {
-    text-align: center;
+.mka__car-attributes strong{
+    display: table-cell;
+    text-align: left;
+    color: #fff!important;
+    vertical-align: top;
+}
+
+.mka__car-attributes strong{
+    width: 150px;
+    display: table-cell;
 }
 
 .mka__gallery-carpage {
     min-width: 0;
-    width: 90rem;
+    width: 100%;
     height: 20rem;
 }
 
@@ -110,7 +141,7 @@
 }
 
 .mka__gallery-carpage .mySwiper2 {
-    height: 22rem;
+    height: 25rem;
   }
 
 .mka__description-tabs__carpage {
@@ -118,10 +149,18 @@
     text-align: left;
 }
 
-.mka__description-tab--underline__carpage {
-    border-bottom: 3px solid red;
+.mka__description-tab__carpage {
     padding-bottom: 10px;
     cursor: pointer;
+}
+
+.selected {
+    border-bottom: 3px solid red;
+}
+
+.mka__description-tab__carpage:hover {
+    border-bottom: 3px solid red;
+    transition: ease 0.2s;
 }
 
 .mka__list-alignment__carpage {
@@ -134,7 +173,7 @@
 }
 
 .mka__home-slider-section__carpage {
-    padding: 40px 0;
+    padding: 30px 0;
 }
 
 .inner-div {
@@ -171,5 +210,8 @@
 @media (max-width: 767px) {
     .mka__description-section__carpage {
         flex-direction: column;
+    }
+    .mka__description-section__carpage {
+        gap: 160px;
     }
 }

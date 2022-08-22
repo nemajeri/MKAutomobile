@@ -1,6 +1,6 @@
 import React from 'react';
 import {Datenschutz, Fahrzeugangebote, Fahrzeugankauf, Finanzierung, Galerie, Home, Impressum, Kontakt, Fehler404, Fahrzeugdaten } from './pages'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 
 function App() {
