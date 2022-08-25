@@ -221,6 +221,7 @@ i {
 @media (max-width: 981px) {
   .card_wrapper {
     width: 420px;
+    height: auto;
   }
 }
 
