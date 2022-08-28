@@ -4,13 +4,13 @@ import './Cars.css';
 
 
 
-const Cars = ({ currentCars, loading }) => {
+const Cars = ({filteredCarsList, loading }) => {
     if (loading) {
         return <h2>Loading...</h2>
     }
     return (
         <div className='mka__cars-grid'>
-        {currentCars.map(car =>
+        {filteredCarsList.map(car =>
             <CarsItem key={car.id} car={car}/>)}
         </div>
     )

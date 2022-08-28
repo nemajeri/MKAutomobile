@@ -6,47 +6,43 @@ import Search from "./Search";
 import FilterSideBar from "./FilterSideBar"
 import CarAlignment from "./CarAlignment";
 import DisplayCars from "./DisplayCars";
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import SortingCars from "./SortingCars";
-import Pagination from "./Pagination";
 
 const CarOffers = () => {
-    const [carsList, setCarsList] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [carsPerPage, setCarsPerPage] = useState(12)
-    const [selectedMake, setSelectedMake] = useState();
-
+  const [carsList, setCarsList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [selectedMake, setSelectedMake] = useState();
+  const [filteredCarsList, setFilteredCarsList] = useState([]);
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
-    const indexOfLastCar = currentPage * carsPerPage;
-    const indexOfFirstCar = indexOfLastCar - carsPerPage;
-    const currentCars = carsList.slice(indexOfFirstCar, indexOfLastCar)
-
     useEffect(() => {
-      const fetchCars = async () => {
-        setLoading(true);
-        const res = await axios.get(url);
-        setCarsList(res.data);
-        setLoading(false);
-      }
-
       fetchCars()
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getFilteredList = () => {
-    if(!selectedMake) {
-      return carsList
-    }
-    return carsList.filter((car) => car.make === selectedMake)
+  useEffect(() => {
+    filterByMake()
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [selectedMake]);
+
+  const fetchCars = async () => {
+    setLoading(true);
+    const res = await axios.get(url);
+    setFilteredCarsList(res.data)
+    setCarsList(res.data);
+    setLoading(false);
   }
 
-  var filteredList = useMemo(getFilteredList, [ selectedMake, carsList ]);
-
+    const filterByMake = () => {
+    const filteredCarsList = selectedMake ? carsList.filter(car => car.make === selectedMake) : carsList;
+    setFilteredCarsList(filteredCarsList);
+    console.log(filteredCarsList)
+}
+  
   const handleMakeChange = (select) => {
     setSelectedMake(select.value) 
    }
-
 
   return (
     <div className="mka__wrapper-car-offers">
@@ -75,6 +71,7 @@ const CarOffers = () => {
             <div className="mka__sidebar-divider"></div>
           <FilterSideBar
           carsList={carsList}
+          filteredCarsList={filteredCarsList}
           handleMakeChange={handleMakeChange} />
           <button className="btn shorter left-alignment">
             <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
@@ -86,8 +83,7 @@ const CarOffers = () => {
           </div>
           </div>
           <div className="item3">
-        <Cars currentCars={currentCars} loading={loading}/>
-        <Pagination carsPerPage={carsPerPage} totalCars={carsList.length}/>
+            <Cars filteredCarsList={filteredCarsList} loading={loading}/>
           </div>
           </div>
         </div>
