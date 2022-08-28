@@ -12,8 +12,16 @@ import SortingCars from "./SortingCars";
 const CarOffers = () => {
   const [carsList, setCarsList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [selectedMake, setSelectedMake] = useState();
+  const [selectedMake, setSelectedMake] = useState(null);
+  const [selectedModel, setSelectedModel] = useState(null);
+  const [selectedYear, setSelectedYear] = useState(null);
+  const [selectedMileage, setSelectedMileage] = useState(null);
+  const [selectedFuel, setSelectedFuel] = useState(null);
+  const [selectedTransmission, setSelectedTransmission] = useState(null);
+  const [selectedDriveTrain, setSelectedDriveTrain] = useState(null);
   const [filteredCarsList, setFilteredCarsList] = useState([]);
+
+  
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
     useEffect(() => {
@@ -22,27 +30,79 @@ const CarOffers = () => {
   }, []);
 
   useEffect(() => {
-    filterByMake()
+    applyFilters()
      // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [selectedMake]);
+}, [selectedMake, selectedModel, selectedYear, selectedMileage, selectedFuel, selectedTransmission, selectedDriveTrain]);
 
   const fetchCars = async () => {
     setLoading(true);
     const res = await axios.get(url);
-    setFilteredCarsList(res.data)
     setCarsList(res.data);
+    setFilteredCarsList(res.data)
     setLoading(false);
   }
 
-    const filterByMake = () => {
-    const filteredCarsList = selectedMake ? carsList.filter(car => car.make === selectedMake) : carsList;
-    setFilteredCarsList(filteredCarsList);
-    console.log(filteredCarsList)
+    const applyFilters = () => {
+      let filteredCarsList = carsList
+
+      if(selectedMake) {
+          filteredCarsList = carsList.filter(car => car.make === selectedMake)
+      } 
+
+      if (selectedModel){
+          filteredCarsList = carsList.filter(car => car.model === selectedModel) 
+      }
+
+      if (selectedYear){
+        filteredCarsList = carsList.filter(car => car.year === selectedYear) 
+      }
+
+      if (selectedMileage){
+        filteredCarsList = carsList.filter(car => car.mileage === selectedMileage) 
+      }
+
+      if (selectedFuel){
+        filteredCarsList = carsList.filter(car => car.fuel === selectedFuel) 
+      }
+
+      if (selectedTransmission){
+        filteredCarsList = carsList.filter(car => car.transmission === selectedTransmission) 
+      }
+
+      if (selectedDriveTrain){
+        filteredCarsList = carsList.filter(car => car.drivetrain === selectedDriveTrain) 
+      }
+
+      setFilteredCarsList(filteredCarsList)   
 }
-  
+
   const handleMakeChange = (select) => {
     setSelectedMake(select.value) 
    }
+
+  const handleModelChange = (select) => {
+    setSelectedModel(select.value) 
+   }
+
+  const handleYearChange = (select) => {
+    setSelectedYear(select.value) 
+   } 
+
+   const handleFuelChange = (select) => {
+    setSelectedFuel(select.value) 
+   } 
+
+   const handleTransmissionChange = (select) => {
+    setSelectedTransmission(select.value) 
+   } 
+
+   const handleDriveTrainChange = (select) => {
+    setSelectedDriveTrain(select.value) 
+   }
+
+   const handleMileageChange = (select) => {
+    setSelectedMileage(select.value) 
+   } 
 
   return (
     <div className="mka__wrapper-car-offers">
@@ -72,7 +132,14 @@ const CarOffers = () => {
           <FilterSideBar
           carsList={carsList}
           filteredCarsList={filteredCarsList}
-          handleMakeChange={handleMakeChange} />
+          handleMakeChange={handleMakeChange}
+          handleModelChange={handleModelChange}
+          handleYearChange={handleYearChange}
+          handleMileageChange={handleMileageChange} 
+          handleFuelChange={handleFuelChange}
+          handleTransmissionChange={handleTransmissionChange}
+          handleDriveTrainChange={handleDriveTrainChange}
+          />
           <button className="btn shorter left-alignment">
             <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />

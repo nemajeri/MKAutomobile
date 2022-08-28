@@ -30,12 +30,12 @@ const colourStyles = {
 };
 
 
-const ModelFilter = ({carsList, handleModelChange}) => {
+const ModelFilter = ({filteredCarsList, handleModelChange}) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex((b) => f(a) === f(b)) === i);
   }
   
-  const options = carsList
+  const options = filteredCarsList
     .map((car) => {
       return {
         value: car.model,

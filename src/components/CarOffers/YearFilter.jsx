@@ -30,13 +30,13 @@ const colourStyles = {
 };
 
 
-const YearFilter = ({carsList, handleYearChange}) => {
+const YearFilter = ({filteredCarsList, handleYearChange}) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex((b) => f(a) === f(b)) === i);
   }
   const sortBy = (arr, f) => arr.sort((a, b) => f(b) - f(a));
   
-  const options = carsList
+  const options = filteredCarsList
     .map((car) => {
       return {
         value: car.year,

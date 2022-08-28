@@ -31,12 +31,12 @@ const colourStyles = {
 };
 
 
-const TransmissionFilter = ({carsList, handleTransmissionChange}) => {
+const TransmissionFilter = ({filteredCarsList, handleTransmissionChange}) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex((b) => f(a) === f(b)) === i);
   }
   
-  const options = carsList
+  const options = filteredCarsList
     .map((car) => {
       return {
         value: car.transmission,
