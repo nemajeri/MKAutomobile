@@ -39,8 +39,7 @@
   
   .mka__sorting-alignment {
     display: flex;
-    margin-left: 6rem;
-    gap: 15px;
+    margin-left: 0.5rem;
   }
 
   #mka__sorting-number {

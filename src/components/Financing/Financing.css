@@ -36,7 +36,7 @@
     height: 100%;
     background-repeat: repeat;
     overflow: hidden;
-    background-size: contain;
+    background-size: cover;
     min-height: 55rem;
   }
   

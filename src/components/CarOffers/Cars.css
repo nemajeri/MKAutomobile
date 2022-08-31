@@ -1,5 +1,18 @@
 .mka__cars-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
-    column-gap: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));;
+    column-gap: 30px;
+    row-gap: 30px;
 }
+
+@media (max-width: 765px) {
+    .mka__cars-grid {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .mka__cars-grid {
+      grid-template-columns: auto;
+    }
+  }  

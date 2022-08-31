@@ -19,7 +19,7 @@ const Finanzierung = () => {
         </div>
         <div className="mka__title-wrapper">
           <div className="mka__container">
-            <h1>FINANZIERUNG</h1>
+            <h1 className="mka__title">FINANZIERUNG</h1>
           </div>
         </div>
       </div>

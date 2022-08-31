@@ -12,20 +12,57 @@ export class DisplayCars extends Component {
     ]
 
     const colourStyles = {
-      control: (styles) => ({ ...styles, backgroundColor: "transparent" }),
-      option: (styles, { isDisabled }) => {
+      control: (styles) => (
+        { ...styles, 
+        backgroundColor: "transparent",
+        borderRadius: "0px"
+      }
+        ),
+      option: (styles) => {
         return {
           ...styles,
-          backgroundColor: isDisabled ? "transparent" : "grey" ,
-          color: "#FFF",
-          cursor: isDisabled ? "not-allowed" : "default"
+          backgroundColor: "black",
+          color: "grey",
+          fontSize: "14px"
         };
-      }
+      },
+      menu: (styles) => {
+        return {
+          ...styles,
+          backgroundColor: "black"
+        }
+      },
+      placeholder: (styles) => {
+        return {
+          ...styles,
+          fontSize: "14px"
+        }
+      },
+      dropdownIndicator: (base, state) => ({
+        ...base,
+        transition: 'all .2s ease',
+        transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null
+      })
     };
 
     return (
       <div className='mka__sorting-alignment'>
-<Select options={options} styles={colourStyles} isSearchable={false}/>
+<Select 
+options={options}
+components={{ IndicatorSeparator:() => null }}  
+styles={colourStyles} 
+className='select-placeholder'
+placeholder='12'
+isSearchable={false}
+theme={(theme) => ({
+  ...theme,
+  borderRadius: 0,
+  colors: {
+    ...theme.colors,
+    primary25: 'grey',
+    primary: 'grey',
+  },
+})}/>
     </div>
     )
   }

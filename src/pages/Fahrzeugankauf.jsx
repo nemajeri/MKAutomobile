@@ -19,7 +19,7 @@ const Fahrzeugankauf = () => {
         </div>
         <div className="mka__title-wrapper">
           <div className="mka__container">
-            <h1>FAHRZEUGANKAUF</h1>
+            <h1 className="mka__title">FAHRZEUGANKAUF</h1>
           </div>
         </div>
       </div>

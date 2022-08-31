@@ -11,6 +11,7 @@ class CarSlider extends Component{
 
   handleChange = sliderValues => {
     this.setState({ sliderValues });
+    console.log(sliderValues)
     };
 
   render () {

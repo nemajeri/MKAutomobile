@@ -12,53 +12,128 @@
     background-repeat: repeat;
     height: 100%;
     overflow: hidden;
-    background-size: contain;
+    background-size: auto;
   }
   
   .item1 { 
     grid-area: header;
       border: 1px solid white;
-      height: auto;
+      flex-wrap: wrap;
       margin-top: 40px;
       margin-bottom: 75px;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      position: relative;
+   }
+
+   .mka-sorting-div__offers {
+    display: flex;
    }
 
    @media (max-width: 1200px) {
     .item1 {
       flex-direction: column;
+      padding: 20px;
     }
   }
 
    .mka-responsive-item {
-    float: right;
     display: flex;
+    flex-wrap: wrap;
     border: none;
+    gap: 40px;
    }
 
    @media (max-width: 590px) {
     .mka-responsive-item {
-      flex-direction: column;
+      gap: 20px;
     }
   }
 
-  .item2 { grid-area: menu; }
-  .item3 { grid-area: main; }
+  .item2 { 
+    grid-area: menu;
+    width: 30vh;
+   }
 
   .mka__content-grid-offers {
     display: grid;
     grid-template-areas:
     'header header header header header header'
-    'menu menu main main main main'
-    'menu menu main main main main';
-     gap: 10px;
+    'menu menu menu main main main'
+    'menu menu menu main main main';
+     gap: 30px;
   }
 
   .mka__side-bar-divider {
     margin-bottom: 4rem;
+  }
+
+  .mka__side-bar-divider h6 {
+    text-align: left;
+  }
+
+  .item3 { 
+    grid-area: main;
+    max-width: 100%; 
+  }
+
+  .mka__sidebar-divider {
+    margin-left: 0;
+    width: 8%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 2px;
+    background-color: var(--color-red)
+  }
+
+  .mka__sidebar-detailed-search h6 {
+    text-align: left;
+  }
+
+  #btn-txt {
+    font-size: 14px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .left-alignment {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .mka__page-car-offers {
+    width: 40px;
+    height: 40px;
+    padding-top: 8px;
+    border: 1px solid grey;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .mka__page-car-offers:hover {
+    background-color: red;
+    border: 1px solid red;
+    transition: all 0.8s;
+  }
+
+  .mka__page-car-offers:focus {
+    background-color: red;
+    border: 1px solid red;
+  }
+
+  .mka__pagination-car-offers {
+    margin-top: 20px;
+  }
+
+  @media (max-width: 767px) {
+    .mka__content-grid-offers {
+      display: flex;
+      flex-direction: column;
+    }
+    .item2 { 
+      width: auto;
+     }
   }
 
   @media (min-width: 767px) {

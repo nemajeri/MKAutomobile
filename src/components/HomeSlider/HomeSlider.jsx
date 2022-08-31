@@ -5,23 +5,19 @@ import Card from '../Card/Card'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "./HomeSlider.css"
 
 
 import { Navigation } from "swiper";
 
-const HomeSlider = () => {
-  const slides = []
-  for(let i = 0; i < 5; i += 1) {
-    slides.push(
-      <SwiperSlide><Card/></SwiperSlide>
-    )
+const HomeSlider = ({cars}) => {
 
-  }
   return (
     <>
       <Swiper
         slidesPerView={1}
         spaceBetween={10}
+        navigation={true}
         breakpoints={{
           768: {
             slidesPerView: 2,
@@ -33,13 +29,15 @@ const HomeSlider = () => {
           },
           1200: {
             slidesPerView: 4,
-            spaceBetween: 50,
+            spaceBetween: 30,
           }
-        }}
+        }} 
         modules={[Navigation]}
-        className="mySwiper"
+        className="mka__home-slider"
       >
-        {slides}
+        { cars.map( car =>
+         <SwiperSlide><Card key={car.id} car={car}/></SwiperSlide>)
+        }
       </Swiper>
     </>
   );

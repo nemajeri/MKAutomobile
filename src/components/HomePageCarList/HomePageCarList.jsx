@@ -1,9 +1,24 @@
+import React, {useEffect, useState} from 'react'
 import "./HomePageCarList.css";
 import { FaCarAlt, FaStar, FaWallet, FaCommentDots } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import HomeSlider from "../HomeSlider/HomeSlider";
 
 const HomePageCarList = () => {
+  const [cars, setCars] = useState([]);
+
+  const url = 'http://finity.pro/clients/mkautomobile/cars/all';
+
+useEffect(() => {
+  fetch(url)
+  .then(response => response.json())
+  .then(cars => {
+  const currentCars = cars.slice(-5);
+  setCars(currentCars)
+});
+}, []);
+
+
   return (
     <div className="mka__wrapper-home-list">
       <div className="mka__container-home-list">
@@ -11,7 +26,7 @@ const HomePageCarList = () => {
           <h2 className="mka__content-home-title"> FAHRZEUGANGEBOTE </h2>
           <div className="mka__section-divider-second-divider"></div>
           <div>
-          <HomeSlider/>
+          <HomeSlider cars={cars}/>
           </div>
           <div className="mka__section-divider"></div>
           <div className="mka__shortcuts-home-list">

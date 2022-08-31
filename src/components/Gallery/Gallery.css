@@ -1,57 +1,9 @@
   .mka__wrapper-gallery {
     background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
     background-repeat: repeat;
-    height: 100%;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    position: initial;
     overflow: hidden;
-    background-size: contain;
-  }
-
-  .slick-prev, .slick-next {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .slick-slide img {
-    width: inherit;
-  }
-
-  .slick-list {
-    height: auto !important;
-  }
-
-  .slick-dots {
-    position: relative !important;
-    margin-top: 30px !important;
-    bottom: 0px !important;
-  }
-
-  @media (min-width: 767px) {
-    .mka__container-gallery {
-      width: 750px;
-    }
-    .mka__content-gallery {
-      width: 100%;
-      float: left;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .mka__container-gallery {
-      width: 970px;
-    }
-    .mka__content-gallery {
-      width: 100%;
-      float: left;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .mka__container-gallery {
-      width: 1170px;
-    }
-    .mka__content-gallery {
-      width: 100%;
-      float: left;
-    }
+    background-size: cover;
   }

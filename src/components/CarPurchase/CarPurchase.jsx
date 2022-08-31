@@ -14,7 +14,7 @@ const CarPurchase = () => {
             erfolgt direkt vor Ort und in bar. Die behördliche Abmeldung
             übernehmen wir gerne für Sie.
           </p>
-          <h2>VERMITTLUNG / KOMMISSIONSVERKAUF</h2>
+          <h4>VERMITTLUNG / KOMMISSIONSVERKAUF</h4>
           <p>
             Nutzen Sie unsere Fachkompetenz, unsere Branchenkenntnisse und unser
             Netzwerk sowie unseren Kundenkreis um Ihr Auto bestmöglich zu

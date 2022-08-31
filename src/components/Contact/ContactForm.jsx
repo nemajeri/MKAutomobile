@@ -1,32 +1,75 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 
-class ContactForm extends Component {
-      state = {
-        value: ''
-      }
+const ContactForm = () => {
+  const [name, setName] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [telephone, setTelephone] = useState('');
+  const [company, setCompany] = useState('');
+  const [message, setMessage] = useState('');
 
-      handleChange = this.handleChange.bind(this);
+  const onChangeName = (e) => {
+      setName(e.target.value)
+  }
+  const onChangeLastname = (e) => {
+      setLastname(e.target.value)
+  }
 
-      handleChange(e) {
-        this.setState({value: e.target.value});
-      }
+  const onChangeEmail = (e) => {
+    setEmail(e.target.value)
+}
 
-  render() {
+const onChangeTelephone = (e) => {
+    setTelephone(e.target.value)
+}
+
+const onChangeCompany = (e) => {
+  setCompany(e.target.value)
+}
+
+const onChangeMessage = (e) => {
+  setMessage(e.target.value)
+}
+
+  const onSubmit = (e) => {
+      e.preventDefault()
+      localStorage.setItem('name', name);
+      localStorage.setItem('lastname', lastname);
+      localStorage.setItem('email', email);
+      localStorage.setItem('telephone', telephone);
+      localStorage.setItem('company', company);
+      localStorage.setItem('message', message);
+  }
+
+  const getData = () => {
+      console.log(localStorage.getItem('name'));
+      console.log(localStorage.getItem('password'));
+      console.log(localStorage.getItem('email'));
+      console.log(localStorage.getItem('telephone'));
+      console.log(localStorage.getItem('company'));
+      console.log(localStorage.getItem('message'));
+  }
+
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
-        <input className="form-field" placeholder="VORNAME" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="NACHNAME" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="E-MAIL" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="TEL" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="FIRMA" type="text" value={this.state.value} onChange={this.handleChange} />
-        <input className="form-field" placeholder="IHRE NACHRICHT" type="text" value={this.state.value} onChange={this.handleChange} />
-
-        <div class="center">
-          <button class="btn">
-            <svg class="button" width="180px" height="60px" viewBox="0 0 180 60" className="border">
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+      <form className="form" onSubmit={onSubmit}>
+        <div>
+        <input className="form-field" placeholder="VORNAME" name="name" onChange={onChangeName} />
+        <input className="form-field" placeholder="NACHNAME" name="lastname" onChange={onChangeLastname} />
+        </div>
+        <div>
+        <input className="form-field" placeholder="E-MAIL" name="email" onChange={onChangeEmail} />
+        <input className="form-field" placeholder="TEL" name="telephone" onChange={onChangeTelephone} />
+        </div>
+        <div>
+        <input className="form-field" placeholder="FIRMA" name="company" onChange={onChangeCompany} />
+        <input className="form-field" placeholder="IHRE NACHRICHT" name="message" onChange={onChangeMessage} />
+        </div>
+        <div className="center">
+          <button onClick ={getData} className="btn">
+            <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
             </svg>
             <span>SENDEN</span>
           </button>
@@ -35,6 +78,5 @@ class ContactForm extends Component {
       </form>
     );
   }
-}
 
 export default ContactForm

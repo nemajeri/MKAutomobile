@@ -3,7 +3,7 @@
     background-repeat: repeat;
     height: 100%;
     overflow: hidden;
-    background-size: contain;
+    background-size: cover;
   }
   
   .mka__content-contact {
@@ -67,9 +67,10 @@
   
   .mka__google-api-contact {
     display: flex;
-    margin: 130px 0;
-    justify-content: space-around;
-    gap: 50px;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    justify-content: flex-start;
+    gap: 60px;
   }
   
   .mka__opening-times-divider {
@@ -83,7 +84,6 @@
   .mka__opening-times-contact {
     color: #fff;
     font-size: 14px;
-    line-height: 1.8rem;
     padding-top: 30px;
   }
   
@@ -102,8 +102,11 @@
   .mka__button-align {
     text-align: end;
   }
-  /*CSS for container and content responsivnes*/
-  
+
+  .mka__google-api-container {
+    width: 70%;
+  }
+
   @media (max-width: 340px) {
     .mka__content-contact > h1 {
       font-size: 18px;
@@ -127,6 +130,9 @@
     }
     .mka__google-api-contact {
       flex-direction: column;
+    }
+    .mka__google-api-container {
+      width: 100%;
     }
   }
 

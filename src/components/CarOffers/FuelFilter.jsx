@@ -1,6 +1,7 @@
 import React from 'react'
 import Select from 'react-select';
 
+
 const colourStyles = {
   control: (styles) => (
     { ...styles, 
@@ -30,7 +31,7 @@ const colourStyles = {
 };
 
 
-const MileageFilter = ({filteredCarsList, handleMileageChange}) => {
+const FuelFilter = ({filteredCarsList, handleFuelChange}) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex((b) => f(a) === f(b)) === i);
   }
@@ -38,8 +39,8 @@ const MileageFilter = ({filteredCarsList, handleMileageChange}) => {
   const options = filteredCarsList
     .map((car) => {
       return {
-        value: car.mileage,
-        label: car.mileage
+        value: car.fuel,
+        label: car.fuel
       };
     })
    
@@ -48,13 +49,13 @@ const MileageFilter = ({filteredCarsList, handleMileageChange}) => {
 
     return (
             <>
-<Select   
+<Select  
 components={{ IndicatorSeparator:() => null }}
-placeholder='Kilometer'
+placeholder='Treibstoff'
 className='select-placeholder'
 styles={colourStyles} 
 options={distinctOptions} 
-onChange={handleMileageChange} 
+onChange={handleFuelChange} 
 isSearchable={false}
 theme={(theme) => ({
   ...theme,
@@ -65,9 +66,8 @@ theme={(theme) => ({
     primary: 'grey',
   },
 })}/>
-
             </>
         )
     }
 
-export default MileageFilter
+export default FuelFilter

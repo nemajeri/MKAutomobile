@@ -19,9 +19,3 @@
     color: var(--color-grey);
     text-align: center;
   }
-
-  #icon {
-    color: var(--color-grey);
-    height: 30px;
-    width: 30px;
-  }

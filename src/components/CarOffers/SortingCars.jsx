@@ -8,20 +8,57 @@ const SortingCars = () => {
     ]
 
     const colourStyles = {
-      control: (styles) => ({ ...styles, backgroundColor: "transparent" }),
-      option: (styles, { isDisabled }) => {
+      control: (styles) => (
+        { ...styles, 
+        backgroundColor: "transparent",
+        borderRadius: "0px"
+      }
+        ),
+      option: (styles, state) => {
         return {
           ...styles,
-          backgroundColor: isDisabled ? "transparent" : "grey" ,
-          color: "#FFF",
-          cursor: isDisabled ? "not-allowed" : "default"
+          backgroundColor: state.isSelected ? "#393939" : "black",
+          color: "#999999",
+          fontSize: "14px"
         };
-      }
+      },
+      menu: (styles) => {
+        return {
+          ...styles,
+          backgroundColor: "black"
+        }
+      },
+      placeholder: (styles, state) => {
+        return {
+          ...styles,
+          fontSize: state.isSelected ? "14px" : "14px"
+        }
+      },
+      dropdownIndicator: (base, state) => ({
+        ...base,
+        transition: 'all .2s ease',
+        transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null
+      })
     };
 
     return (
       <div className='mka__sorting-alignment'>
-<Select options={options}  styles={colourStyles} placeholder='Sortieren von Daten' isSearchable={false}/>
+<Select
+components={{ IndicatorSeparator:() => null }} 
+options={options}  
+className='select-placeholder'
+styles={colourStyles} 
+placeholder='Sortieren von Daten' 
+isSearchable={false}
+theme={(theme) => ({
+  ...theme,
+  borderRadius: 0,
+  colors: {
+    ...theme.colors,
+    primary25: 'grey',
+    primary: 'grey',
+  }
+})}/>
     </div>
     )
   }

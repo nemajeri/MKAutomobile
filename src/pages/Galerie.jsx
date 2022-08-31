@@ -19,7 +19,7 @@ const Datenschutz = () => {
         </div>
         <div className="mka__title-wrapper">
           <div className="mka__container">
-            <h1>GALERIE</h1>
+            <h1 className="mka__title">GALERIE</h1>
           </div>
         </div>
       </div>

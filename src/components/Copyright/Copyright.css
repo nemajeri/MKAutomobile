@@ -13,6 +13,11 @@
     padding-left: 15px;
     padding-right: 15px;
     height: auto;
+    padding-top: 30px;
+  }
+
+  .mka__content-copyright {
+    margin-top: 30px;
   }
   
   .mka__content-copyright > p {

@@ -2,13 +2,20 @@
     background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
     background-repeat: repeat;
     overflow: hidden;
-    background-size: contain;
+    background-size: cover;
     height: auto;
   }
 
   .mka__content-error {
     padding: 2rem 0;
     text-align: center;
+  }
+
+  .mka__alignment-error {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-end;
   }
 
   #title {
@@ -32,3 +39,4 @@
     color: var(--color-grey);
     margin: 20px 0;
   }
+

@@ -70,22 +70,11 @@
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    left: 26rem;
+    left: 23rem;
     right: 0;
     top: 9rem;
   }
 
-  .mka__search-input {
-    border: 1px solid #fff;
-    background: #0f1215;
-    color: gray;
-    width: 300px;
-    margin-bottom: 0 !important;
-  }
-
-  .mka__search-input:focus {
-    border-color: #db2d2e;
-  }
   .mka__search_column {
     display: flex;
     flex-direction: column;
@@ -174,12 +163,7 @@
     }
 
     .mka__search-div {
-      left: 24rem;
+      left: 27rem;
     }
   }
 
-  @media (max-width: 1200px) {
-    .mka__search-div {
-      left: 20rem;
-    }
-  }
