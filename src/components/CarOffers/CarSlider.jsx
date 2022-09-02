@@ -1,21 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './CarSlider.css';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
 
 
-class CarSlider extends Component{
-  state = { sliderValues: [2900, 29000],
-            prices: [] };
-
-  handleChange = sliderValues => {
-    this.setState({ sliderValues });
-    console.log(sliderValues)
-    };
-
-  render () {
-    const {sliderValues} = this.state;
+const CarSlider = ({handleSliderChange, sliderValues}) => {
 
   return (
     <div className='mka__range-alignment'>
@@ -27,7 +17,6 @@ class CarSlider extends Component{
     <div className='mka__range-width'>
     <Slider
     range
-    onChange={this.handleChange}
     tipFormatter={(value) => `${value}`}
     tipProps={{ visible: true }}
     defaultValue={[2900, 29000]}
@@ -35,11 +24,10 @@ class CarSlider extends Component{
     max={29000}
 />
     </div>
-    <button className='mka__range-button'>Filter</button>
+    <button className='mka__range-button' onClick={handleSliderChange}>Filter</button>
     </div>
     </div>
   )
 }
- }
 
 export default CarSlider

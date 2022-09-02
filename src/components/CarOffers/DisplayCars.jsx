@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './DisplayCars.css';
 import Select from 'react-select';
 
-export class DisplayCars extends Component {
-  render() {
+const DisplayCars = ({handleDisplayedCarsChange}) => {
     const options = [
       { value: '12', label: '12' },
       { value: '24', label: '24' },
@@ -54,6 +53,7 @@ styles={colourStyles}
 className='select-placeholder'
 placeholder='12'
 isSearchable={false}
+onChange={handleDisplayedCarsChange}
 theme={(theme) => ({
   ...theme,
   borderRadius: 0,
@@ -66,6 +66,5 @@ theme={(theme) => ({
     </div>
     )
   }
-}
 
 export default DisplayCars
