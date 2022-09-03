@@ -55,13 +55,23 @@
     width: 30vh;
    }
 
-  .mka__content-grid-offers {
+  .mka__content-car-offers {
     display: grid;
+     gap: 30px;
+  }
+
+  .menu-left {
     grid-template-areas:
     'header header header header header header'
     'menu menu menu main main main'
     'menu menu menu main main main';
-     gap: 30px;
+  }
+
+  .menu-right {
+    grid-template-areas:
+    'header header header header header header'
+    'main main main menu menu menu'
+    'main main main menu menu menu';
   }
 
   .mka__side-bar-divider {

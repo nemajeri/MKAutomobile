@@ -4,14 +4,17 @@ import CarsItem from './CarsItem';
 import CarSlider from "./CarSlider";
 import Search from "./Search";
 import FilterSideBar from "./FilterSideBar"
-import CarAlignment from "./CarAlignment";
 import DisplayCars from "./DisplayCars";
 import React, { useState, useEffect } from "react";
 import SortingCars from "./SortingCars";
 import Pagination from "./Pagination"
 import './Cars.css';
-import ErrorBoundary from "../../ErrorBoundary";
 import PropTypes from 'prop-types';
+import AlignItem1 from './AlignItem1'
+import { AlignItem2 } from './AlignItem2'
+import { AlignItem3 } from './AlignItem3'
+import { AlignItem4 } from './AlignItem4'
+import './CarAlignment.css'
 
 
 const CarOffers = () => {
@@ -28,6 +31,7 @@ const CarOffers = () => {
   const [sliderValues, setSliderValues] = useState([2900,29000]);
   const [displayedCars, setDisplayedCars] = useState(12);
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
+  const [isActive, setIsActive] = useState(false);
   
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
@@ -143,12 +147,16 @@ const CarOffers = () => {
     setLoading(true);
     setFilteredCarsList(filteredCarsList)
    }
+
+   const toggleClass = () => {
+      setIsActive(!isActive);
+   }
    
   return (
     <div className="mka__wrapper-car-offers">
       <div className="mka__container">
         <div className="mka__content-car-offers">
-          <div className="mka__content-grid-offers">
+          <div className={ isActive ? "mka__content-car-offers menu-right" : "mka__content-car-offers menu-left"}>
           <div className="item1">
           < CarSlider 
           handleSliderChange={handleSliderChange}
@@ -159,12 +167,31 @@ const CarOffers = () => {
           <DisplayCars
           handleDisplayedCarsChange={handleDisplayedCarsChange}
           />
-          <ErrorBoundary>
           <SortingCars
           handleSelectedCarSortingMethod={handleSelectedCarSortingMethod}/>
-          </ErrorBoundary>
             </div>
-          <CarAlignment/>
+            <div className='mka__div-icon1'>
+            <span className='mka__span-icon1'>
+            <i className='mka__i-icon1' onClick={(prevState) => setIsActive(prevState)}>
+                <AlignItem1 className={'mka__i-icon-color'}/>
+                </i>
+                </span>
+                <span className='mka__span-icon1'>
+            <i className='mka__i-icon1' onClick={toggleClass}>
+                <AlignItem2 />
+                </i>
+                </span>
+                <span className='mka__span-icon1'>
+            <i className='mka__i-icon1'>
+                <AlignItem3 />
+                </i>
+                </span>
+                <span className='mka__span-icon1'>
+            <i className='mka__i-icon1'>
+                <AlignItem4 />
+                </i>
+                </span>
+                  </div>
           </div>
           </div>
           <div className="item2">

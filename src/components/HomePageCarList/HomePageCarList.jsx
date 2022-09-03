@@ -21,9 +21,9 @@ useEffect(() => {
 
   return (
     <div className="mka__wrapper-home-list">
-      <div className="mka__container-home-list">
+      <div className="mka__container">
         <div className="mka__content">
-          <h2 className="mka__content-home-title"> FAHRZEUGANGEBOTE </h2>
+          <h2>FAHRZEUGANGEBOTE</h2>
           <div className="mka__section-divider-second-divider"></div>
           <div>
           <HomeSlider cars={cars}/>
