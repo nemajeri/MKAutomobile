@@ -205,6 +205,12 @@ a {
   height: 40px;
 }
 
+.larger {
+  height: 100px;
+  resize: vertical;
+  font-family: var(--font-family);
+}
+
 .mka__button-carpage {
   margin-top: 0px;
   width: 150px;

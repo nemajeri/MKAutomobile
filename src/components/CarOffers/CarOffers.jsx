@@ -16,6 +16,7 @@ import { AlignItem3 } from './AlignItem3'
 import { AlignItem4 } from './AlignItem4'
 import './CarAlignment.css'
 
+const initialState = "view_1"
 
 const CarOffers = () => {
   const [carsList, setCarsList] = useState([]);
@@ -31,7 +32,7 @@ const CarOffers = () => {
   const [sliderValues, setSliderValues] = useState([2900,29000]);
   const [displayedCars, setDisplayedCars] = useState(12);
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(initialState);
   
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
@@ -104,7 +105,7 @@ const CarOffers = () => {
 }
 
   const handleSliderChange = sliderValues => {
-    setSliderValues(sliderValues)
+    setSliderValues(sliderValues);
   };
 
   const handleMakeChange = (select) => {
@@ -112,35 +113,35 @@ const CarOffers = () => {
    }
 
   const handleModelChange = (select) => {
-    setSelectedModel(select.value) 
+    setSelectedModel(select.value);
    }
 
   const handleYearChange = (select) => {
-    setSelectedYear(select.value) 
+    setSelectedYear(select.value); 
    } 
 
    const handleFuelChange = (select) => {
-    setSelectedFuel(select.value) 
+    setSelectedFuel(select.value); 
    } 
 
    const handleTransmissionChange = (select) => {
-    setSelectedTransmission(select.value) 
+    setSelectedTransmission(select.value);
    } 
 
    const handleDriveTrainChange = (select) => {
-    setSelectedDriveTrain(select.value) 
+    setSelectedDriveTrain(select.value); 
    }
 
    const handleMileageChange = (select) => {
-    setSelectedMileage(select.value) 
+    setSelectedMileage(select.value); 
    }
 
    const handleDisplayedCarsChange = (select) => {
-    setDisplayedCars(select.value) 
+    setDisplayedCars(select.value); 
    }
 
    const handleSelectedCarSortingMethod = (select) => {
-    setSelectedCarSortingMethod(select.value) 
+    setSelectedCarSortingMethod(select.value); 
    }
 
    const handleDisableFilters = () => {
@@ -148,15 +149,26 @@ const CarOffers = () => {
     setFilteredCarsList(filteredCarsList)
    }
 
-   const toggleClass = () => {
-      setIsActive(!isActive);
+   const toggleClassView2 = () => {
+    const view2 = "view_2"
+    setIsActive(view2);
+   }
+
+   const toggleClassView3 = () => {
+    const view3 = "view_3"
+    setIsActive(view3);
+   }
+
+   const toggleClassView4 = () => {
+    const view_4 = "view_4"
+    setIsActive(view_4);
    }
    
   return (
     <div className="mka__wrapper-car-offers">
       <div className="mka__container">
         <div className="mka__content-car-offers">
-          <div className={ isActive ? "mka__content-car-offers menu-right" : "mka__content-car-offers menu-left"}>
+          <div className={`mka__content-car-offers__main-grid ${isActive}`}>
           <div className="item1">
           < CarSlider 
           handleSliderChange={handleSliderChange}
@@ -171,22 +183,22 @@ const CarOffers = () => {
           handleSelectedCarSortingMethod={handleSelectedCarSortingMethod}/>
             </div>
             <div className='mka__div-icon1'>
-            <span className='mka__span-icon1'>
-            <i className='mka__i-icon1' onClick={(prevState) => setIsActive(prevState)}>
+            <span className='mka__span-icon1' onClick={() => setIsActive(initialState)}>
+            <i className='mka__i-icon1'>
                 <AlignItem1 className={'mka__i-icon-color'}/>
                 </i>
                 </span>
-                <span className='mka__span-icon1'>
-            <i className='mka__i-icon1' onClick={toggleClass}>
+                <span className='mka__span-icon1' onClick={toggleClassView2}>
+            <i className='mka__i-icon1'>
                 <AlignItem2 />
                 </i>
                 </span>
-                <span className='mka__span-icon1'>
+                <span className='mka__span-icon1' onClick={toggleClassView3}>
             <i className='mka__i-icon1'>
                 <AlignItem3 />
                 </i>
                 </span>
-                <span className='mka__span-icon1'>
+                <span className='mka__span-icon1' onClick={toggleClassView4}>
             <i className='mka__i-icon1'>
                 <AlignItem4 />
                 </i>
