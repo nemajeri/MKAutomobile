@@ -1,0 +1,178 @@
+.cars-item_wrapper-view2 {
+    height: auto;
+    z-index: 9;
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .cars-item_image-container-view2 {
+    position: relative;
+    width: 35%;
+  }
+
+  .cars-item_image-view2 {
+    width: 100%;
+  }
+  
+  .cars-item_list {
+    position: relative;
+    bottom: 0;
+    height: auto;
+    border: none;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  .cars-item_inline-list {
+    padding: 12px 0;
+    margin-left: 5px;
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .cars-item_info-upper {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cars-item_info-upper > li {
+    list-style: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  
+  .cars-item_info-lower > li {
+    list-style: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  
+  .cars-item_info-upper > li,
+  i {
+    padding-right: 6px;
+  }
+  
+  .cars-item_info-lower > li,
+  i {
+    padding-right: 6px;
+  }
+  
+  .cars-item_info-lower {
+    padding-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cars-item_info-lower > li {
+    list-style: none;
+    color: #fff;
+  }
+  
+  .cars-item_car-content {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  
+  .cars-item_car-title-view2 h5{
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-grey);
+    margin-bottom: 20px;
+    display: block;
+    text-align: left;
+    line-height: 25px;
+    font-size: 20px;
+  }
+  
+  .cars-item_car-text-view2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-red);
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .cars-item_wrapper-view2:hover .overlay {
+    bottom: 0;
+    height: 100%;
+    width: auto;
+  }
+
+  .cars-item_wrapper-view2:hover .cars-item_separator::before {
+    background: red;
+    width: 50px;
+    transition: width 0.8s ease, background-color 0.8s ease;
+  }
+
+  .cars-item_wrapper-view2:hover .cars-item_image-view2 {
+    opacity: 0.7;
+  }
+
+  .cars-item_car-title-view2:hover h5 {
+    color: var(--color-red);
+    transition: color 0.8s ease;
+  }
+
+  .cars-item_details-view2 {
+    display: flex;
+    gap: 30px;
+  }
+
+  .cars-item-car-title__price-view2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cars-item_short-divider {
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-red);
+    margin-bottom: 20px;
+  }
+
+  .cars-item_details-preview--view2 {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 5px 10px;
+  }
+
+  .cars-item_details-preview--view2 p {
+    font-size: 14px;
+    display: flex;
+    align-self: center;
+    gap: 2px;
+  }
+
+  .car-item_details-preview--grouped_view2 {
+    display: flex;
+    gap: 5px;
+    flex-wrap: nowrap;
+  }
+
+  .car-item_details-preview--container_view2 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .btn-view2 {
+    margin-top: 0 !important;
+    margin-right: 10px;
+    width: 130px !important;
+    height: 35px !important;
+  }
+
+  .btn-view2 span{
+    font-size: 14px !important;
+  }

@@ -7,14 +7,15 @@ import FilterSideBar from "./FilterSideBar"
 import DisplayCars from "./DisplayCars";
 import React, { useState, useEffect } from "react";
 import SortingCars from "./SortingCars";
-import Pagination from "./Pagination"
-import './Cars.css';
+import Pagination from "./Pagination";
 import PropTypes from 'prop-types';
-import AlignItem1 from './AlignItem1'
-import { AlignItem2 } from './AlignItem2'
-import { AlignItem3 } from './AlignItem3'
-import { AlignItem4 } from './AlignItem4'
-import './CarAlignment.css'
+import AlignItem1 from './AlignItem1';
+import { AlignItem2 } from './AlignItem2';
+import { AlignItem3 } from './AlignItem3';
+import { AlignItem4 } from './AlignItem4';
+import './CarAlignment.css';
+import './Cars.css';
+
 
 const initialState = "view_1"
 
@@ -239,9 +240,9 @@ const CarOffers = () => {
           <div className="item3">
             { loading === true 
             ? <h2>Loading...</h2>
-            :  <div className='mka__cars-grid'>
+            :  <div className={ isActive === initialState || isActive === "view_2" ? "mka__cars-grid" : "mka__cars-flex"}>
             {filteredCarsList.map(car =>
-                <CarsItem key={car.id} car={car}/>)}
+                <CarsItem key={car.id} car={car} isActive={isActive}/>)}
             </div>}
             <Pagination itemsPerPage={displayedCars} filteredCarsList={filteredCarsList}/>
           </div>
