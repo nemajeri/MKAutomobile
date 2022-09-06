@@ -1,4 +1,3 @@
-import "./CarOffers.css";
 import axios from "axios";
 import CarsItem from './CarsItem';
 import CarSlider from "./CarSlider";
@@ -13,6 +12,7 @@ import AlignItem1 from './AlignItem1';
 import { AlignItem2 } from './AlignItem2';
 import { AlignItem3 } from './AlignItem3';
 import { AlignItem4 } from './AlignItem4';
+import "./CarOffers.css";
 import './CarAlignment.css';
 import './Cars.css';
 
@@ -30,10 +30,11 @@ const CarOffers = () => {
   const [selectedTransmission, setSelectedTransmission] = useState(null);
   const [selectedDriveTrain, setSelectedDriveTrain] = useState(null);
   const [filteredCarsList, setFilteredCarsList] = useState([]);
-  const [sliderValues, setSliderValues] = useState([2900,29000]);
+  const [sliderValues, setSliderValues] = useState([2900, 29000]);
   const [displayedCars, setDisplayedCars] = useState(12);
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
   const [isActive, setIsActive] = useState(initialState);
+
   
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
@@ -59,7 +60,7 @@ const CarOffers = () => {
     }
   }
 
-    const applyFilters = ( sliderValues ) => {
+    const applyFilters = (  ) => {
       let filteredCarsList = carsList
 
       if(selectedMake) {
@@ -94,20 +95,21 @@ const CarOffers = () => {
         filteredCarsList = carsList.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)) 
       } else if (selectedCarSortingMethod === 'Sortieren nach Jahr') {
         filteredCarsList = carsList.sort((a, b) => parseFloat(a.year) - parseFloat(b.year)) 
-        console.log(filteredCarsList)
       }
 
-      console.log(sliderValues)
-     // if (sliderValues) {
-     //   filteredCarsList = carsList.filter(car => minPrice >= car.price && car.price <= maxPrice )
-     // }
+      const minPrice = sliderValues[0];
+      const maxPrice = sliderValues[1];
+
+      if (sliderValues) {
+        filteredCarsList = carsList.filter(car => minPrice < car.price && maxPrice > car.price);
+      }
 
       setFilteredCarsList(filteredCarsList)   
 }
 
-  const handleSliderChange = sliderValues => {
-    setSliderValues(sliderValues);
-  };
+  const handleSliderChange = (sliderValues) => {
+  setSliderValues(sliderValues);
+  }
 
   const handleMakeChange = (select) => {
     setSelectedMake(select.value) 
@@ -191,7 +193,7 @@ const CarOffers = () => {
                 </span>
                 <span className='mka__span-icon1' onClick={toggleClassView2}>
             <i className='mka__i-icon1'>
-                <AlignItem2 />
+                <AlignItem2 className={'mka__i-icon-color'}/>
                 </i>
                 </span>
                 <span className='mka__span-icon1' onClick={toggleClassView3}>
