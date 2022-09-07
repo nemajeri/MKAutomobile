@@ -19,8 +19,7 @@ const Home = () => {
           </div>
         </div>
         <h2 id="mka__home-subtitle">HERZLICH WILLKOMMEN</h2>
-        <div className="mka__container">
-          <div className="mka__container car-aligment">
+          <div className="car-aligment">
           <img
             id="bmw-min"
             className="mka__car-img"
@@ -39,7 +38,6 @@ const Home = () => {
           Terminvereinbarung möglich
         </p>
         </div>
-      </div>
       <HomePageCarList />
       <Jumbotrone />
     </>

@@ -1,13 +1,23 @@
-import "./CarOffers.css";
 import axios from "axios";
-import Cars from "./Cars";
+import CarsItem from './CarsItem';
 import CarSlider from "./CarSlider";
 import Search from "./Search";
 import FilterSideBar from "./FilterSideBar"
-import CarAlignment from "./CarAlignment";
 import DisplayCars from "./DisplayCars";
 import React, { useState, useEffect } from "react";
 import SortingCars from "./SortingCars";
+import Pagination from "./Pagination";
+import PropTypes from 'prop-types';
+import AlignItem1 from './AlignItem1';
+import { AlignItem2 } from './AlignItem2';
+import { AlignItem3 } from './AlignItem3';
+import { AlignItem4 } from './AlignItem4';
+import "./CarOffers.css";
+import './CarAlignment.css';
+import './Cars.css';
+
+
+const initialState = "view_1"
 
 const CarOffers = () => {
   const [carsList, setCarsList] = useState([]);
@@ -20,29 +30,37 @@ const CarOffers = () => {
   const [selectedTransmission, setSelectedTransmission] = useState(null);
   const [selectedDriveTrain, setSelectedDriveTrain] = useState(null);
   const [filteredCarsList, setFilteredCarsList] = useState([]);
+  const [sliderValues, setSliderValues] = useState([2900, 29000]);
+  const [displayedCars, setDisplayedCars] = useState(12);
+  const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
+  const [isActive, setIsActive] = useState(initialState);
 
   
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
     useEffect(() => {
       fetchCars()
-       // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      // eslint-disable-next-line
+            }, []);
 
   useEffect(() => {
     applyFilters()
-     // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [selectedMake, selectedModel, selectedYear, selectedMileage, selectedFuel, selectedTransmission, selectedDriveTrain]);
+    // eslint-disable-next-line
+          }, [selectedMake, selectedModel, selectedYear, selectedMileage, selectedFuel, selectedTransmission, selectedDriveTrain, sliderValues, selectedCarSortingMethod]);
 
   const fetchCars = async () => {
+    try {
     setLoading(true);
     const res = await axios.get(url);
     setCarsList(res.data);
     setFilteredCarsList(res.data)
-    setLoading(false);
+    setLoading(false); }
+    catch (error) {
+      console.log(error.response.data.error)
+    }
   }
 
-    const applyFilters = () => {
+    const applyFilters = (  ) => {
       let filteredCarsList = carsList
 
       if(selectedMake) {
@@ -73,50 +91,117 @@ const CarOffers = () => {
         filteredCarsList = carsList.filter(car => car.drivetrain === selectedDriveTrain) 
       }
 
+      if (selectedCarSortingMethod === 'Sortieren nach Preis'){
+        filteredCarsList = carsList.sort((a, b) => parseInt(a.price) - parseInt(b.price)) 
+      } else if (selectedCarSortingMethod === 'Sortieren nach Jahr') {
+        filteredCarsList = carsList.sort((a, b) => parseInt(a.year) - parseInt(b.year)) 
+      }
+
+      const minPrice = sliderValues[0];
+      const maxPrice = sliderValues[1];
+
+      if (sliderValues) {
+        filteredCarsList = carsList.filter(car => minPrice < car.price && maxPrice > car.price);
+      }
+
       setFilteredCarsList(filteredCarsList)   
 }
+
+  const handleSliderChange = (sliderValues) => {
+  setSliderValues(sliderValues);
+  }
 
   const handleMakeChange = (select) => {
     setSelectedMake(select.value) 
    }
 
   const handleModelChange = (select) => {
-    setSelectedModel(select.value) 
+    setSelectedModel(select.value);
    }
 
   const handleYearChange = (select) => {
-    setSelectedYear(select.value) 
+    setSelectedYear(select.value); 
    } 
 
    const handleFuelChange = (select) => {
-    setSelectedFuel(select.value) 
+    setSelectedFuel(select.value); 
    } 
 
    const handleTransmissionChange = (select) => {
-    setSelectedTransmission(select.value) 
+    setSelectedTransmission(select.value);
    } 
 
    const handleDriveTrainChange = (select) => {
-    setSelectedDriveTrain(select.value) 
+    setSelectedDriveTrain(select.value); 
    }
 
    const handleMileageChange = (select) => {
-    setSelectedMileage(select.value) 
-   } 
+    setSelectedMileage(select.value); 
+   }
 
+   const handleDisplayedCarsChange = (select) => {
+    setDisplayedCars(select.value); 
+   }
+
+   const handleSelectedCarSortingMethod = (select) => {
+    setSelectedCarSortingMethod(select.value); 
+   }
+
+   const toggleClassView2 = () => {
+    const view2 = "view_2"
+    setIsActive(view2);
+   }
+
+   const toggleClassView3 = () => {
+    const view3 = "view_3"
+    setIsActive(view3);
+   }
+
+   const toggleClassView4 = () => {
+    const view_4 = "view_4"
+    setIsActive(view_4);
+   }
+   
   return (
     <div className="mka__wrapper-car-offers">
       <div className="mka__container">
         <div className="mka__content-car-offers">
-          <div className="mka__content-grid-offers">
+          <div className={`mka__content-car-offers__main-grid ${isActive}`}>
           <div className="item1">
-          < CarSlider/>
+          < CarSlider 
+          handleSliderChange={handleSliderChange}
+          sliderValues={sliderValues} 
+          />
           <div className="mka-responsive-item">
             <div className="mka-sorting-div__offers">
-          <DisplayCars/>
-          <SortingCars/>
+          <DisplayCars
+          handleDisplayedCarsChange={handleDisplayedCarsChange}
+          />
+          <SortingCars
+          handleSelectedCarSortingMethod={handleSelectedCarSortingMethod}/>
             </div>
-          <CarAlignment/>
+            <div className='mka__div-icon1'>
+            <span className='mka__span-icon1' onClick={() => setIsActive(initialState)}>
+            <i className='mka__i-icon1'>
+                <AlignItem1 className={'mka__i-icon-color'}/>
+                </i>
+                </span>
+                <span className='mka__span-icon1' onClick={toggleClassView2}>
+            <i className='mka__i-icon1'>
+                <AlignItem2 className={'mka__i-icon-color'}/>
+                </i>
+                </span>
+                <span className='mka__span-icon1' onClick={toggleClassView3}>
+            <i className='mka__i-icon1'>
+                <AlignItem3 />
+                </i>
+                </span>
+                <span className='mka__span-icon1' onClick={toggleClassView4}>
+            <i className='mka__i-icon1'>
+                <AlignItem4 />
+                </i>
+                </span>
+                  </div>
           </div>
           </div>
           <div className="item2">
@@ -140,7 +225,7 @@ const CarOffers = () => {
           handleTransmissionChange={handleTransmissionChange}
           handleDriveTrainChange={handleDriveTrainChange}
           />
-          <button className="btn shorter left-alignment">
+          <button onClick={() => setFilteredCarsList(carsList) } className="btn shorter left-alignment">
             <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
@@ -150,7 +235,13 @@ const CarOffers = () => {
           </div>
           </div>
           <div className="item3">
-            <Cars filteredCarsList={filteredCarsList} loading={loading}/>
+            { loading === true 
+            ? <h2>Loading...</h2>
+            :  <div className={ isActive === initialState || isActive === "view_2" ? "mka__cars-grid" : "mka__cars-flex"}>
+            {filteredCarsList.map(car =>
+                <CarsItem key={car.id} car={car} isActive={isActive}/>)}
+            </div>}
+            <Pagination itemsPerPage={displayedCars} filteredCarsList={filteredCarsList}/>
           </div>
           </div>
         </div>
@@ -159,5 +250,12 @@ const CarOffers = () => {
   )
 }
 
+CarOffers.propTypes = {
+  selectedCarSortingMethod: PropTypes.string
+};
+
 
 export default CarOffers;
+
+
+

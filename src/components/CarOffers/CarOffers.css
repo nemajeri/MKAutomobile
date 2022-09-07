@@ -55,13 +55,37 @@
     width: 30vh;
    }
 
-  .mka__content-grid-offers {
+  .mka__content-car-offers__main-grid {
     display: grid;
+     gap: 30px;
+  }
+
+  .view_1 {
     grid-template-areas:
     'header header header header header header'
     'menu menu menu main main main'
     'menu menu menu main main main';
-     gap: 30px;
+  }
+
+  .view_2 {
+    grid-template-areas:
+    'header header header header header header'
+    'main main main menu menu menu'
+    'main main main menu menu menu';
+  }
+
+  .view_3 {
+    grid-template-areas:
+    'header header header header header header'
+    'menu menu main main main main'
+    'menu menu main main main main';
+  }
+
+  .view_4 {
+    grid-template-areas:
+    'header header header header header header'
+    'main main main main menu menu'
+    'main main main main menu menu';
   }
 
   .mka__side-bar-divider {

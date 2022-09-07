@@ -12,3 +12,9 @@
   width: 30px;
   height: 40px;
 }
+
+.global-class-name {
+  position: absolute;
+  top: 14px;
+  left: 255px;
+}

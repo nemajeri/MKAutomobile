@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 
-const SortingCars = () => {
+const SortingCars = ({handleSelectedCarSortingMethod}) => {
     const options = [
       { value: 'Sortieren nach Preis', label: 'Sortieren nach Preis' },
       { value: 'Sortieren nach Jahr', label: 'Sortieren nach Jahr' }
@@ -50,6 +50,7 @@ className='select-placeholder'
 styles={colourStyles} 
 placeholder='Sortieren von Daten' 
 isSearchable={false}
+onChange={handleSelectedCarSortingMethod}
 theme={(theme) => ({
   ...theme,
   borderRadius: 0,

@@ -190,7 +190,7 @@ const setData = () => {
           <option value='UNFALLFAHRZEUG'>UNFALLFAHRZEUG</option>
         </select>
         <input required className="form-field" placeholder="EZ DES FAHRZEUGS" type="text" name='registration' onChange={onChangeRegistration} />
-        <input required className="form-field" placeholder="SONDERAUSSTATTUNGEN" type="text" name='equipment' onChange={onChangeEquipment} />
+        <textarea required className="form-field larger" placeholder="SONDERAUSSTATTUNGEN" type="text" name='equipment' onChange={onChangeEquipment} />
         </div>
         </form>
         <br/>
