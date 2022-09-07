@@ -10,8 +10,8 @@ const CarSlider = ({handleSliderChange, sliderValues}) => {
   return (
     <div className='mka__range-alignment'>
       <div className='mka__range-text'>
-     <p>Preisklasse:</p>
-     <p>{sliderValues[0]}€ - {sliderValues[1]}€</p>
+     <p>Preisklasse</p>
+     <p className='mka__range-price'>{sliderValues[0]}€ - {sliderValues[1]}€</p>
      </div>
      <div className='mka__range-btn-align'>
     <div className='mka__range-width'>

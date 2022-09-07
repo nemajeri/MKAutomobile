@@ -92,9 +92,9 @@ const CarOffers = () => {
       }
 
       if (selectedCarSortingMethod === 'Sortieren nach Preis'){
-        filteredCarsList = carsList.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)) 
+        filteredCarsList = carsList.sort((a, b) => parseInt(a.price) - parseInt(b.price)) 
       } else if (selectedCarSortingMethod === 'Sortieren nach Jahr') {
-        filteredCarsList = carsList.sort((a, b) => parseFloat(a.year) - parseFloat(b.year)) 
+        filteredCarsList = carsList.sort((a, b) => parseInt(a.year) - parseInt(b.year)) 
       }
 
       const minPrice = sliderValues[0];
@@ -145,11 +145,6 @@ const CarOffers = () => {
 
    const handleSelectedCarSortingMethod = (select) => {
     setSelectedCarSortingMethod(select.value); 
-   }
-
-   const handleDisableFilters = () => {
-    setLoading(true);
-    setFilteredCarsList(filteredCarsList)
    }
 
    const toggleClassView2 = () => {
@@ -230,7 +225,7 @@ const CarOffers = () => {
           handleTransmissionChange={handleTransmissionChange}
           handleDriveTrainChange={handleDriveTrainChange}
           />
-          <button onClick={handleDisableFilters} className="btn shorter left-alignment">
+          <button onClick={() => setFilteredCarsList(carsList) } className="btn shorter left-alignment">
             <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />

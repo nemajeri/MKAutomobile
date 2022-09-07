@@ -1,6 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
-import './Search.css'
+import { FaSearch } from 'react-icons/fa'
+import { IconContext } from "react-icons";
+import './Search.css';
 
 
 const Search = ({ carsList }) => {
@@ -36,6 +38,15 @@ const Search = ({ carsList }) => {
     })
   }
 
+ // const DropdownIndicator = props => {
+  //  return (
+    //  <components.DropdownIndicator {...props}>
+    //    <FaSearch />
+  //    </components.DropdownIndicator>
+   // );
+  //};
+  
+
     return (
       <>
   <Select
@@ -54,7 +65,10 @@ const Search = ({ carsList }) => {
       primary: 'red',
     },
   })}
-  components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}
+  components={{ 
+    DropdownIndicator: 
+    () => <IconContext.Provider value={{ color: "red", className: "global-class-name" }}><FaSearch /></IconContext.Provider>
+    , IndicatorSeparator:() => null }}
   formatOptionLabel={car => (
     <div className="car-option">
       <img src={require("../../assets/bmw.jpg")} alt="car-label"/>
