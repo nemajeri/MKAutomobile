@@ -44,6 +44,7 @@ const DisplayCars = ({handleDisplayedCarsChange}) => {
       })
     };
 
+
     return (
       <div className='mka__sorting-alignment'>
 <Select 
@@ -51,7 +52,7 @@ options={options}
 components={{ IndicatorSeparator:() => null }}  
 styles={colourStyles} 
 className='select-placeholder'
-placeholder='12'
+defaultValue={options[0]}
 isSearchable={false}
 onChange={handleDisplayedCarsChange}
 theme={(theme) => ({

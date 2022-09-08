@@ -9,7 +9,7 @@
   
   .cars-item_image-container-view2 {
     position: relative;
-    width: 35%;
+    width: 200px;
   }
 
   .cars-item_image-view2 {
@@ -126,7 +126,7 @@
 
   .cars-item_details-view2 {
     display: flex;
-    gap: 30px;
+    gap: 40px;
   }
 
   .cars-item-car-title__price-view2 {

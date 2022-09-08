@@ -35,6 +35,7 @@ const CarOffers = () => {
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
   const [isActive, setIsActive] = useState(initialState);
 
+
   
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
@@ -60,7 +61,7 @@ const CarOffers = () => {
     }
   }
 
-    const applyFilters = (  ) => {
+    const applyFilters = () => {
       let filteredCarsList = carsList
 
       if(selectedMake) {
@@ -180,26 +181,26 @@ const CarOffers = () => {
           <SortingCars
           handleSelectedCarSortingMethod={handleSelectedCarSortingMethod}/>
             </div>
-            <div className='mka__div-icon1'>
-            <span className='mka__span-icon1' onClick={() => setIsActive(initialState)}>
-            <i className='mka__i-icon1'>
-                <AlignItem1 className={'mka__i-icon-color'}/>
-                </i>
+            <div className='mka__div-icon'>
+            <span className='mka__span-icon' onClick={() => setIsActive(initialState)}>
+            <i>
+                <AlignItem1 isActive={isActive}/>
+            </i>
                 </span>
-                <span className='mka__span-icon1' onClick={toggleClassView2}>
-            <i className='mka__i-icon1'>
-                <AlignItem2 className={'mka__i-icon-color'}/>
-                </i>
+                <span className='mka__span-icon' onClick={toggleClassView2}>
+            <i>
+                <AlignItem2 isActive={isActive}/>
+            </i>
                 </span>
-                <span className='mka__span-icon1' onClick={toggleClassView3}>
-            <i className='mka__i-icon1'>
-                <AlignItem3 />
-                </i>
+                <span className='mka__span-icon' onClick={toggleClassView3}>
+            <i>
+                <AlignItem3 isActive={isActive}/>
+            </i>
                 </span>
-                <span className='mka__span-icon1' onClick={toggleClassView4}>
-            <i className='mka__i-icon1'>
-                <AlignItem4 />
-                </i>
+                <span className='mka__span-icon' onClick={toggleClassView4}>
+            <i>
+                <AlignItem4 isActive={isActive}/>
+            </i>
                 </span>
                   </div>
           </div>

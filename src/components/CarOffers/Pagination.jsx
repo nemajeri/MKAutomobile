@@ -14,11 +14,8 @@ const Items = ({ filteredCarsList }) => {
 }
 
 const Pagination = ({ itemsPerPage, filteredCarsList }) => {
-  // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
@@ -30,7 +27,6 @@ const Pagination = ({ itemsPerPage, filteredCarsList }) => {
     setPageCount(Math.ceil(filteredCarsList.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
         // eslint-disable-next-line
     const newOffset = (event.selected * itemsPerPage) % filteredCarsList.length;

@@ -1,23 +1,20 @@
-.mka__div-icon1 {
+.mka__div-icon {
     display: flex;
     align-self: center;
 }
 
-.mka__span-icon1 {
+.mka__span-icon {
     width: 22px;
     height: 18px;
     margin: 0 5px;
     display: inline-block;
+    cursor: pointer;
 }
 
 .cls-1 {
     fill: #949799;
 }
 
-.cls-1:active {
-    fill: var(--color-red);
-}
-
-.mka__i-icon-color {
+.cls-2 {
     fill: var(--color-red);
 }
