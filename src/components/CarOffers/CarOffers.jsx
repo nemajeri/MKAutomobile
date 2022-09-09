@@ -3,15 +3,15 @@ import CarsItem from './CarsItem';
 import CarSlider from "./CarSlider";
 import Search from "./Search";
 import FilterSideBar from "./FilterSideBar"
-import DisplayCars from "./DisplayCars";
+import CarsPerPage from "./CarsPerPage.jsx";
 import React, { useState, useEffect } from "react";
 import SortingCars from "./SortingCars";
-import Pagination from "./Pagination";
 import PropTypes from 'prop-types';
 import AlignItem1 from './AlignItem1';
 import { AlignItem2 } from './AlignItem2';
 import { AlignItem3 } from './AlignItem3';
 import { AlignItem4 } from './AlignItem4';
+import ReactPaginate from 'react-paginate';
 import "./CarOffers.css";
 import './CarAlignment.css';
 import './Cars.css';
@@ -30,19 +30,22 @@ const CarOffers = () => {
   const [selectedTransmission, setSelectedTransmission] = useState(null);
   const [selectedDriveTrain, setSelectedDriveTrain] = useState(null);
   const [filteredCarsList, setFilteredCarsList] = useState([]);
-  const [sliderValues, setSliderValues] = useState([2900, 29000]);
-  const [displayedCars, setDisplayedCars] = useState(12);
+  const [sliderValues, setSliderValues] = useState([]);
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
   const [isActive, setIsActive] = useState(initialState);
+  const [carsPerPage, setCarsPerPage] = useState(12);
+  const [offset, setOffset] = useState(1);
+  const [pageCount, setPageCount] = useState(0);
 
 
-  
+    const minPrice = Math.min( ...carsList.map(car => car.price));
+    const maxPrice = Math.max( ...carsList.map(car => car.price));
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
     useEffect(() => {
       fetchCars()
       // eslint-disable-next-line
-            }, []);
+            }, [offset, carsPerPage]);
 
   useEffect(() => {
     applyFilters()
@@ -53,8 +56,11 @@ const CarOffers = () => {
     try {
     setLoading(true);
     const res = await axios.get(url);
-    setCarsList(res.data);
-    setFilteredCarsList(res.data)
+    const data = res.data;
+    const slice = data.slice(offset - 1, offset - 1 + carsPerPage)
+    setCarsList(slice);
+    setFilteredCarsList(slice);
+    setPageCount(Math.ceil(data.length / carsPerPage))
     setLoading(false); }
     catch (error) {
       console.log(error.response.data.error)
@@ -140,13 +146,19 @@ const CarOffers = () => {
     setSelectedMileage(select.value); 
    }
 
-   const handleDisplayedCarsChange = (select) => {
-    setDisplayedCars(select.value); 
+   const handleCarsPerPageChange = (select) => {
+    setCarsPerPage(select.value); 
    }
 
    const handleSelectedCarSortingMethod = (select) => {
     setSelectedCarSortingMethod(select.value); 
    }
+
+   const handlePageClick = (e) => {
+    const selectedPage = e.selected;
+    setOffset(selectedPage + 1)
+  };
+  
 
    const toggleClassView2 = () => {
     const view2 = "view_2"
@@ -169,14 +181,16 @@ const CarOffers = () => {
         <div className="mka__content-car-offers">
           <div className={`mka__content-car-offers__main-grid ${isActive}`}>
           <div className="item1">
-          < CarSlider 
+          <CarSlider 
           handleSliderChange={handleSliderChange}
-          sliderValues={sliderValues} 
+          sliderValues={sliderValues}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
           />
           <div className="mka-responsive-item">
             <div className="mka-sorting-div__offers">
-          <DisplayCars
-          handleDisplayedCarsChange={handleDisplayedCarsChange}
+          <CarsPerPage
+          handleCarsPerPageChange={handleCarsPerPageChange}
           />
           <SortingCars
           handleSelectedCarSortingMethod={handleSelectedCarSortingMethod}/>
@@ -242,7 +256,14 @@ const CarOffers = () => {
             {filteredCarsList.map(car =>
                 <CarsItem key={car.id} car={car} isActive={isActive}/>)}
             </div>}
-            <Pagination itemsPerPage={displayedCars} filteredCarsList={filteredCarsList}/>
+            <ReactPaginate
+            previousLabel={"← Vorherige" }
+            nextLabel={ "Weiter →" }
+            pageCount={ pageCount }
+            onPageChange={ handlePageClick }
+            containerClassName={ "pagination" }
+            subContainerClassName={ "pages pagination" }
+            activeClassName={ "active-pagination" } />
           </div>
           </div>
         </div>

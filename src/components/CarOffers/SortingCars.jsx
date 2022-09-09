@@ -11,7 +11,8 @@ const SortingCars = ({handleSelectedCarSortingMethod}) => {
       control: (styles) => (
         { ...styles, 
         backgroundColor: "transparent",
-        borderRadius: "0px"
+        borderRadius: "0px",
+        fontSize: "14px"
       }
         ),
       option: (styles, state) => {
@@ -26,12 +27,6 @@ const SortingCars = ({handleSelectedCarSortingMethod}) => {
         return {
           ...styles,
           backgroundColor: "black"
-        }
-      },
-      placeholder: (styles, state) => {
-        return {
-          ...styles,
-          fontSize: state.isSelected ? "14px" : "14px"
         }
       },
       dropdownIndicator: (base, state) => ({

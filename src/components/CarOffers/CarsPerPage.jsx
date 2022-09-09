@@ -1,8 +1,8 @@
 import React from 'react';
-import './DisplayCars.css';
+import './CarsPerPage.css';
 import Select from 'react-select';
 
-const DisplayCars = ({handleDisplayedCarsChange}) => {
+const CarsPerPage = ({ handleCarsPerPageChange }) => {
     const options = [
       { value: '12', label: '12' },
       { value: '24', label: '24' },
@@ -14,7 +14,8 @@ const DisplayCars = ({handleDisplayedCarsChange}) => {
       control: (styles) => (
         { ...styles, 
         backgroundColor: "transparent",
-        borderRadius: "0px"
+        borderRadius: "0px",
+        fontSize: "14px"
       }
         ),
       option: (styles) => {
@@ -29,12 +30,6 @@ const DisplayCars = ({handleDisplayedCarsChange}) => {
         return {
           ...styles,
           backgroundColor: "black"
-        }
-      },
-      placeholder: (styles) => {
-        return {
-          ...styles,
-          fontSize: "14px"
         }
       },
       dropdownIndicator: (base, state) => ({
@@ -52,9 +47,10 @@ options={options}
 components={{ IndicatorSeparator:() => null }}  
 styles={colourStyles} 
 className='select-placeholder'
+placeholder='12'
 defaultValue={options[0]}
 isSearchable={false}
-onChange={handleDisplayedCarsChange}
+onChange={handleCarsPerPageChange}
 theme={(theme) => ({
   ...theme,
   borderRadius: 0,
@@ -68,4 +64,4 @@ theme={(theme) => ({
     )
   }
 
-export default DisplayCars
+export default CarsPerPage

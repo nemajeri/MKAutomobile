@@ -126,29 +126,32 @@
     justify-content: flex-start;
   }
 
-  .mka__page-car-offers {
-    width: 40px;
-    height: 40px;
-    padding-top: 8px;
-    border: 1px solid grey;
-    background-color: transparent;
-    cursor: pointer;
-  }
+ .pagination {
+  margin-top: 40px;
+ }
 
-  .mka__page-car-offers:hover {
-    background-color: red;
-    border: 1px solid red;
-    transition: all 0.8s;
-  }
+ .pagination li {
+  border: 1.5px solid white;
+  padding: 7.5px 15px;
+  color: var(--color-grey);
+  cursor: pointer;
+ }
 
-  .mka__page-car-offers:focus {
-    background-color: red;
-    border: 1px solid red;
-  }
+ .pagination li:hover {
+  background-color: var(--color-red);
+  border: 1.5px solid var(--color-red);
+  color: white;
+ }
 
-  .mka__pagination-car-offers {
-    margin-top: 20px;
-  }
+ .active-pagination {
+  background-color: var(--color-red);
+  border: none !important;
+  color: white !important;
+ }
+
+ .disabled {
+  display: none;
+ }
 
   @media (max-width: 767px) {
     .mka__content-grid-offers {

@@ -21,11 +21,10 @@ const View2 = ({car: {id, month, year, transmission, title, price, mileage}}) =>
     </div>
     <div className="cars-item-car-title__price-view2">
       <Link
-        className="cars-item_car-title-view2"
         to={`/fahrzeugdaten/${id}`}
-      >
+      > 
         <h5>{title}</h5>
-      </Link>
+       </Link> 
     <div className="cars-item_short-divider"></div>  
     <h6 className="cars-item_car-text-view2">{price}€</h6>
     <div className='car-item_details-preview--container_view2'>
@@ -41,7 +40,7 @@ const View2 = ({car: {id, month, year, transmission, title, price, mileage}}) =>
             </svg>
             <span>EINZELHEITEN</span>
           </button>
-    </div>
+          </div>
     </div>
     </div>
   </div>

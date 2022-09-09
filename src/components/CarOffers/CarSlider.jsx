@@ -5,7 +5,7 @@ import 'rc-slider/assets/index.css';
 
 
 
-const CarSlider = ({handleSliderChange, sliderValues}) => {
+const CarSlider = ({handleSliderChange, sliderValues, minPrice, maxPrice}) => {
 
   return (
     <div className='mka__range-alignment'>
@@ -20,9 +20,8 @@ const CarSlider = ({handleSliderChange, sliderValues}) => {
     range
     tipFormatter={(value) => `${value}`}
     tipProps={{ visible: true }}
-    defaultValue={[2900, 29000]}
-    min={2900}
-    max={29000}
+     min={minPrice}
+     max={maxPrice}
     onChange={handleSliderChange}
 />
     </div>
