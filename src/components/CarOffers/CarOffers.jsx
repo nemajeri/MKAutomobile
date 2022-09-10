@@ -2,7 +2,7 @@ import axios from "axios";
 import CarsItem from './CarsItem';
 import CarSlider from "./CarSlider";
 import Search from "./Search";
-import FilterSideBar from "./FilterSideBar"
+import FilterSideBar from "./FilterSideBar";
 import CarsPerPage from "./CarsPerPage.jsx";
 import React, { useState, useEffect } from "react";
 import SortingCars from "./SortingCars";

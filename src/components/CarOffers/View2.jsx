@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaCalendarAlt, FaCog, FaLink } from "react-icons/fa";
+import { FaCalendarAlt, FaCog, FaLink, FaGasPump } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import './View2.css'
 
@@ -29,9 +29,9 @@ const View2 = ({car: {id, month, year, transmission, title, price, mileage}}) =>
     <h6 className="cars-item_car-text-view2">{price}€</h6>
     <div className='car-item_details-preview--container_view2'>
     <div className='car-item_details-preview--grouped_view2'>
-    <div className='cars-item_details-preview--view2'><p><FaCalendarAlt/>{month}/{year}</p></div>
-    <div className='cars-item_details-preview--view2'><p><FaCog/>{transmission}</p></div>
-    <div className='cars-item_details-preview--view2'><p>{mileage}</p></div>
+    <div className='cars-item_details-preview--view2'><p><FaCalendarAlt />{month}/{year}</p></div>
+    <div className='cars-item_details-preview--view2'><p><FaCog />{transmission}</p></div>
+    <div className='cars-item_details-preview--view2'><p><FaGasPump />{mileage}</p></div>
     </div>
     <button className="btn btn-view2">
             <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">

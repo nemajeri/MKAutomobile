@@ -9,11 +9,13 @@
   
   .cars-item_image-container-view2 {
     position: relative;
-    width: 200px;
+    max-width:  240px;
+    max-height: 240px;
   }
 
   .cars-item_image-view2 {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
   
   .cars-item_list {
@@ -152,15 +154,21 @@
     gap: 2px;
   }
 
+  .cars-item_details-preview--view2 p svg {
+    margin-top: 3.5px;
+  }
+
   .car-item_details-preview--container_view2 {
     display: flex;
-    width: 60vh;
+    /* width: 60vh; */
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
 
   .car-item_details-preview--grouped_view2 {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
   }
 
   .btn-view2 {
@@ -174,3 +182,15 @@
   .btn-view2 span{
     font-size: 14px !important;
   }
+
+  @media (max-width: 767px) {
+    .cars-item_details-view2 {
+      flex-direction: column;
+    }
+
+    .car-item_details-preview--container_view2 {
+      width: 65vh;
+    }
+  }
+
+  

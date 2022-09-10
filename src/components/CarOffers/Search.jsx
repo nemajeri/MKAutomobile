@@ -14,7 +14,7 @@ const Search = ({ carsList }) => {
   })
 
   const customStyles = {
-    option: (provided, state) => ({
+    option: (provided) => ({
       ...provided,
       padding: 20,
       backgroundColor: 'white',
@@ -37,16 +37,7 @@ const Search = ({ carsList }) => {
       width: 'auto'
     })
   }
-
- // const DropdownIndicator = props => {
-  //  return (
-    //  <components.DropdownIndicator {...props}>
-    //    <FaSearch />
-  //    </components.DropdownIndicator>
-   // );
-  //};
   
-
     return (
       <>
   <Select
@@ -67,7 +58,7 @@ const Search = ({ carsList }) => {
   })}
   components={{ 
     DropdownIndicator: 
-    () => <IconContext.Provider value={{ color: "red", className: "global-class-name" }}><FaSearch /></IconContext.Provider>
+    () => <IconContext.Provider value={{ color: "red", className: "mka__search-icon" }}><FaSearch /></IconContext.Provider>
     , IndicatorSeparator:() => null }}
   formatOptionLabel={car => (
     <div className="car-option">

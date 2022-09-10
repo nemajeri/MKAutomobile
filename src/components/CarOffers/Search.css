@@ -13,8 +13,14 @@
   height: 40px;
 }
 
-.global-class-name {
+.mka__search-icon {
   position: absolute;
   top: 14px;
   left: 255px;
+}
+
+@media (max-width: 767px) {
+  .mka__search-icon {
+  display: none;
+  }
 }
