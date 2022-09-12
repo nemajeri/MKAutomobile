@@ -1,12 +1,13 @@
-import "./Navbar.css"
-import { useState } from "react"
-import { FaSearch } from "react-icons/fa"
-import { NavLink } from "react-router-dom"
-import { IoClose } from "react-icons/io5"
-import { Fade as Hamburger } from "hamburger-react"
-import { IconContext } from "react-icons"
+import "./Navbar.css";
+import Search from "../CarOffers/Search";
+import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import { IoClose } from "react-icons/io5";
+import { Fade as Hamburger } from "hamburger-react";
+import { IconContext } from "react-icons";
 
-const Navbar = () => {
+const Navbar = ({ carsList }) => {
   const [isOpen, setOpen] = useState(false);
   const [toggleSearch, setToggleSearch] = useState(false);
   return (
@@ -46,15 +47,7 @@ const Navbar = () => {
             </p>
             {toggleSearch && (
               <div className="mka__search-div">
-                <input
-                  className="mka__input"
-                  type="text"
-                  placeholder="Suche..."
-                />
-                <IconContext.Provider value={{ className: "fa-search" }}>
-                  {" "}
-                  <FaSearch />
-                </IconContext.Provider>
+                <Search carsList={carsList}/>
               </div>
             )}
           </div>

@@ -7,12 +7,12 @@ import {
   HomePageCarList,
 } from "../../components";
 
-const Home = () => {
+const Home = ({ carsList }) => {
   return (
     <>
       <div id="home-img-id" className="home-img-div">
         <Header />
-        <Navbar />
+        <Navbar carsList= {carsList}/>
         <div className="mka__logo-img">
           <div className="mka__logo-size">
             <Logo />

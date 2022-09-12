@@ -12,15 +12,19 @@ import { AlignItem2 } from './AlignItem2';
 import { AlignItem3 } from './AlignItem3';
 import { AlignItem4 } from './AlignItem4';
 import ReactPaginate from 'react-paginate';
+import LoadingSvg from '../LoadingSvg';
 import "./CarOffers.css";
 import './CarAlignment.css';
 import './Cars.css';
+
 
 
 const initialState = "view_1"
 
 const CarOffers = () => {
   const [carsList, setCarsList] = useState([]);
+  const minPrice = Math.min( ...carsList.map(car => car.price));
+  const maxPrice = Math.max( ...carsList.map(car => car.price));
   const [loading, setLoading] = useState(false);
   const [selectedMake, setSelectedMake] = useState(null);
   const [selectedModel, setSelectedModel] = useState(null);
@@ -30,16 +34,13 @@ const CarOffers = () => {
   const [selectedTransmission, setSelectedTransmission] = useState(null);
   const [selectedDriveTrain, setSelectedDriveTrain] = useState(null);
   const [filteredCarsList, setFilteredCarsList] = useState([]);
-  const [sliderValues, setSliderValues] = useState([]);
+  const [sliderValues, setSliderValues] = useState([minPrice, maxPrice]);
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
   const [isActive, setIsActive] = useState(initialState);
   const [carsPerPage, setCarsPerPage] = useState(12);
   const [offset, setOffset] = useState(1);
   const [pageCount, setPageCount] = useState(0);
 
-
-    const minPrice = Math.min( ...carsList.map(car => car.price));
-    const maxPrice = Math.max( ...carsList.map(car => car.price));
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
     useEffect(() => {
@@ -61,7 +62,8 @@ const CarOffers = () => {
     setCarsList(slice);
     setFilteredCarsList(slice);
     setPageCount(Math.ceil(data.length / carsPerPage))
-    setLoading(false); }
+    setLoading(false); 
+  }
     catch (error) {
       console.log(error.response.data.error)
     }
@@ -251,7 +253,7 @@ const CarOffers = () => {
           </div>
           <div className="item3">
             { loading === true 
-            ? <h2>Loading...</h2>
+            ? <div className="mka__loading-svg-positioning"><LoadingSvg /></div>
             :  <div className={ isActive === initialState || isActive === "view_2" ? "mka__cars-grid" : "mka__cars-flex"}>
             {filteredCarsList.map(car =>
                 <CarsItem key={car.id} car={car} isActive={isActive}/>)}

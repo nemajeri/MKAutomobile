@@ -6,8 +6,7 @@ const CarsPerPage = ({ handleCarsPerPageChange }) => {
     const options = [
       { value: '12', label: '12' },
       { value: '24', label: '24' },
-      { value: '48', label: '48' },
-      { value: '64', label: '64'}
+      { value: '48', label: '48' }
     ]
 
     const colourStyles = {
@@ -29,7 +28,8 @@ const CarsPerPage = ({ handleCarsPerPageChange }) => {
       menu: (styles) => {
         return {
           ...styles,
-          backgroundColor: "black"
+          backgroundColor: "black",
+          zIndex: "99"
         }
       },
       dropdownIndicator: (base, state) => ({

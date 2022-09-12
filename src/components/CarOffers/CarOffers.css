@@ -140,6 +140,10 @@
   display: none;
  }
 
+ .mka__loading-svg-positioning {
+  margin: 350px 0;
+ }
+
   @media (max-width: 767px) {
     .mka__content-grid-offers {
       display: flex;

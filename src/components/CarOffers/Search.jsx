@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import { FaSearch } from 'react-icons/fa'
 import { IconContext } from "react-icons";
+import { Link } from 'react-router-dom';
 import './Search.css';
 
 
@@ -10,8 +11,9 @@ const Search = ({ carsList }) => {
     return {
       value: car.title,
       label: car.title
-    }
-  })
+    } 
+  });
+  
 
   const customStyles = {
     option: (provided) => ({
@@ -63,7 +65,9 @@ const Search = ({ carsList }) => {
   formatOptionLabel={car => (
     <div className="car-option">
       <img src={require("../../assets/bmw.jpg")} alt="car-label"/>
+      <Link to={`/fahrzeugdaten/${car.id}`}>
       <span>{car.label}</span>
+      </Link>
     </div>
   )}
     />

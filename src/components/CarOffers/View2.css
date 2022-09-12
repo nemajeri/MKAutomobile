@@ -187,10 +187,12 @@
     .cars-item_details-view2 {
       flex-direction: column;
     }
-
-    .car-item_details-preview--container_view2 {
-      width: 65vh;
-    }
   }
 
+  @media (min-width: 1200px) {
+    .car-item_details-preview--container_view2 {
+      justify-content: space-between;
+      width: 60vh;
+    }
+  }
   
