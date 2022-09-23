@@ -29,7 +29,7 @@ const View1 = ({car: {id, month, year, transmission, title, price}}) => {
         className="cars-item_car-title"
         to={`/fahrzeugdaten/${id}`}
       >
-        <h6>{title}</h6>
+        <h6>Mazda Mazda6 Sport Combi CD150 Attraction Aut. Kombi / Family Van</h6>
       </Link>
     </div>
     <div className="cars-item_separator"></div>

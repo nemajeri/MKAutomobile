@@ -23,7 +23,7 @@ const View2 = ({car: {id, month, year, transmission, title, price, mileage}}) =>
       <Link
         to={`/fahrzeugdaten/${id}`}
       > 
-        <h5>{title}</h5>
+        <h5>Mazda Mazda6 Sport Combi CD150 Attraction Aut. Kombi / Family Van</h5>
        </Link> 
     <div className="cars-item_short-divider"></div>  
     <h6 className="cars-item_car-text-view2">{price}€</h6>

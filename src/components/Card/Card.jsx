@@ -49,7 +49,7 @@ const Card = ({car: {year,month,transmission,mileage,price,title,link}}) => {
             className="card_car-title"
             href="https://mkautomobile.at/fahrzeugdaten/577930368/"
           >
-            <h6>{title}</h6>
+            <h6>Mazda Mazda6 Sport Combi CD150 Attraction Aut. Kombi / Family Van</h6>
           </a>
         </div>
         <div className="card_separator"></div>
