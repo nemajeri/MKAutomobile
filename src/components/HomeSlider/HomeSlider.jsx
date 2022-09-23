@@ -35,9 +35,7 @@ const HomeSlider = ({cars}) => {
         modules={[Navigation]}
         className="mka__home-slider"
       >
-        { cars.map( car =>
-         <SwiperSlide><Card key={car.id} car={car}/></SwiperSlide>)
-        }
+        { cars.map( car => <SwiperSlide key={car.id}><Card car={car} key={car.id}/></SwiperSlide>)}
       </Swiper>
     </>
   );

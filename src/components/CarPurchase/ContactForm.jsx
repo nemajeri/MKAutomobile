@@ -18,14 +18,16 @@ const ContactForm = () => {
   const [suggestion, setSuggestion] = useState('');
   const [mileage, setMileage] = useState('');
   const [registration, setRegistration] = useState('');
-  const [gender, setGender] = useState('');
-  const [fuel, setFuel] = useState('');
-  const [state, setState] = useState('');
+  const [gender, setGender] = useState('GESCHLECHT');
+  const [fuel, setFuel] = useState('KRAFTSTOFF');
+  const [state, setState] = useState('AKTUELLER ZUSTAND');
   const [equipment, setEquipment] = useState('');
+
 
   const onChangeName = (e) => {
       setName(e.target.value)
   }
+
   const onChangeLastname = (e) => {
       setLastname(e.target.value)
   }
@@ -150,8 +152,7 @@ const setData = () => {
         <h4>Personliche Daten</h4>
         <input required className="form-field" placeholder="VORNAME" name='name'  type="text" onChange={onChangeName} />
         <input required className="form-field" placeholder="NACHNAME" name='lastname'  type="text" onChange={onChangeLastname} />
-        <select required onChange={onChangeGender}>
-          <option value='GESCHLECHT' disabled selected hidden name='gender' >GESCHLECHT</option>
+        <select required onChange={onChangeGender} defaultValue={gender} name="gender">
           <option value='FRAU'>FRAU</option>
           <option value='HERR'>HERR</option>
           </select>
@@ -172,8 +173,7 @@ const setData = () => {
         <input required className="form-field" placeholder="MARKE" type="text" name='make' onChange={onChangeMake} />
         <input required className="form-field" placeholder="MODELL" type="text" name='model' onChange={onChangeModel} />
         <input required className="form-field" placeholder="PREISVORSTELLUNG" type="text" name='suggestion'  onChange={onChangeSuggestion} />
-        <select required onChange={onChangeFuel}>
-          <option value='KRAFTSTOFF' disabled selected hidden name='fuel' >KRAFTSTOFF</option>
+        <select required onChange={onChangeFuel} defaultValue={fuel} name="fuel">
           <option value='Benzin'>Bezin</option>
           <option value='Diesel'>Diesel</option>
           <option value='Elektro'>Elektro</option>
@@ -181,8 +181,7 @@ const setData = () => {
           <option value='Hybrid'>Hybrid</option>
           </select>
         <input className="form-field" placeholder="KILOMETERSTAND" type="text" name='mileage' onChange={onChangeMileage} />
-        <select required onChange={onChangeState}>
-          <option value='AKTUELLER ZUSTAND' disabled selected hidden name='state'>AKTUELLER ZUSTAND</option>
+        <select required onChange={onChangeState} defaultValue={state} name = "state">
           <option value='NEUWERTIG'>NEUWERTIG</option>
           <option value='ALTERSBEDINGTE ABNUTZUNG'>ALTERSBEDINGTE ABNUTZUNG</option>
           <option value='KLEINERE SCHÄDE'>KLEINERE SCHÄDE</option>
@@ -198,11 +197,11 @@ const setData = () => {
         <h6>Fahrzeugbilder</h6>
         <DropzoneElement/>
         </div>
-        <div class="end">
-          <button onClick ={setData} class="btn">
+        <div className="end">
+          <button onClick ={setData} className="btn">
             <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
             </svg>
             <span>SENDEN</span>
           </button>

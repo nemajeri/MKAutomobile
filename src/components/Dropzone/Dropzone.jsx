@@ -13,7 +13,6 @@ const DropzoneElement = () => {
     <div className="App">
       <Dropzone
         onDrop={handleDrop}
-        accept="image/*"
         minSize={1024}
         maxSize={3072000}
       >

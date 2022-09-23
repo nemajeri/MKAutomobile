@@ -8,7 +8,7 @@ const Card = ({car: {year,month,transmission,mileage,price,title,link}}) => {
         <div className="card_wrapper">
         <div className="card_image-container">
           <img className="image" src={require("../../assets/bmw.jpg")} alt="suggested-cars" />
-          <div class="overlay">
+          <div className="overlay">
           <ul>
             <li>
              <a href="https://mkautomobile.at/fahrzeugdaten/579220740/">

@@ -3,7 +3,7 @@ import CarsItem from './CarsItem';
 import CarSlider from "./CarSlider";
 import Search from "./Search";
 import FilterSideBar from "./FilterSideBar";
-import CarsPerPage from "./CarsPerPage.jsx";
+// import CarsPerPage from "./CarsPerPage.jsx";
 import React, { useState, useEffect } from "react";
 import SortingCars from "./SortingCars";
 import PropTypes from 'prop-types';
@@ -11,20 +11,20 @@ import AlignItem1 from './AlignItem1';
 import { AlignItem2 } from './AlignItem2';
 import { AlignItem3 } from './AlignItem3';
 import { AlignItem4 } from './AlignItem4';
-import ReactPaginate from 'react-paginate';
+// import ReactPaginate from 'react-paginate';
 import LoadingSvg from '../LoadingSvg';
 import "./CarOffers.css";
 import './CarAlignment.css';
 import './Cars.css';
 
-
-
 const initialState = "view_1"
 
 const CarOffers = () => {
   const [carsList, setCarsList] = useState([]);
+  console.log(carsList);
   const minPrice = Math.min( ...carsList.map(car => car.price));
   const maxPrice = Math.max( ...carsList.map(car => car.price));
+  const priceArray = [minPrice, maxPrice];
   const [loading, setLoading] = useState(false);
   const [selectedMake, setSelectedMake] = useState(null);
   const [selectedModel, setSelectedModel] = useState(null);
@@ -34,46 +34,57 @@ const CarOffers = () => {
   const [selectedTransmission, setSelectedTransmission] = useState(null);
   const [selectedDriveTrain, setSelectedDriveTrain] = useState(null);
   const [filteredCarsList, setFilteredCarsList] = useState([]);
-  const [sliderValues, setSliderValues] = useState([minPrice, maxPrice]);
+  const [sliderValues, setSliderValues] = useState(priceArray);
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
   const [isActive, setIsActive] = useState(initialState);
-  const [carsPerPage, setCarsPerPage] = useState(12);
-  const [offset, setOffset] = useState(1);
-  const [pageCount, setPageCount] = useState(0);
+  // const [carsPerPage, setCarsPerPage] = useState(12);
+  // const [offset, setOffset] = useState(1);
+  // const [pageCount, setPageCount] = useState(0);
 
     const url = "http://finity.pro/clients/mkautomobile/cars/all";
 
     useEffect(() => {
       fetchCars()
       // eslint-disable-next-line
-            }, [offset, carsPerPage]);
+            }, []);
+          // }, [offset, carsPerPage]);
 
-  useEffect(() => {
-    applyFilters()
-    // eslint-disable-next-line
-          }, [selectedMake, selectedModel, selectedYear, selectedMileage, selectedFuel, selectedTransmission, selectedDriveTrain, sliderValues, selectedCarSortingMethod]);
+  // useEffect(() => {
+  //   applyFilters()
+          // eslint-disable-next-line
+          // }, [selectedMake, selectedModel, selectedYear, selectedMileage, selectedFuel, selectedTransmission, selectedDriveTrain, sliderValues, selectedCarSortingMethod]);
 
-  const fetchCars = async () => {
-    try {
-    setLoading(true);
-    const res = await axios.get(url);
-    const data = res.data;
-    const slice = data.slice(offset - 1, offset - 1 + carsPerPage)
-    setCarsList(slice);
-    setFilteredCarsList(slice);
-    setPageCount(Math.ceil(data.length / carsPerPage))
-    setLoading(false); 
-  }
-    catch (error) {
-      console.log(error.response.data.error)
-    }
-  }
+          const fetchCars = async () => {
+            setLoading(true)
+            const response = await fetch(url)
+            const data = await response.json()
+            setCarsList(data)
+            setFilteredCarsList(data)
+            setLoading(false)
+          }
+    // try {
+    // setLoading(true);
+    // const res = await axios.get(url);
+    // const data = res.data;
+    // console.log(data);
+    // const slice = data.slice(offset - 1, offset - 1 + carsPerPage);
+    // setCarsList(data);
+    // setCarsList(slice);
+    // setFilteredCarsList(slice);
+    // setPageCount(Math.ceil(data.length / carsPerPage))
+  //   setLoading(false); 
+  // }
+  //   catch (error) {
+  //     console.log(error.response.data.error)
+  //   }
+
 
     const applyFilters = () => {
-      let filteredCarsList = carsList
+      let filteredCarsList = carsList;
 
       if(selectedMake) {
           filteredCarsList = carsList.filter(car => car.make === selectedMake)
+          console.log(filteredCarsList)
       } 
 
       if (selectedModel){
@@ -148,18 +159,18 @@ const CarOffers = () => {
     setSelectedMileage(select.value); 
    }
 
-   const handleCarsPerPageChange = (select) => {
-    setCarsPerPage(select.value); 
-   }
+  //  const handleCarsPerPageChange = (select) => {
+  //   setCarsPerPage(select.value); 
+  //  }
 
    const handleSelectedCarSortingMethod = (select) => {
     setSelectedCarSortingMethod(select.value); 
    }
 
-   const handlePageClick = (e) => {
-    const selectedPage = e.selected;
-    setOffset(selectedPage + 1)
-  };
+  //  const handlePageClick = (e) => {
+  //   const selectedPage = e.selected;
+  //   setOffset(selectedPage + 1)
+  // };
   
 
    const toggleClassView2 = () => {
@@ -191,9 +202,9 @@ const CarOffers = () => {
           />
           <div className="mka-responsive-item">
             <div className="mka-sorting-div__offers">
-          <CarsPerPage
+          {/* <CarsPerPage
           handleCarsPerPageChange={handleCarsPerPageChange}
-          />
+          /> */}
           <SortingCars
           handleSelectedCarSortingMethod={handleSelectedCarSortingMethod}/>
             </div>
@@ -258,14 +269,14 @@ const CarOffers = () => {
             {filteredCarsList.map(car =>
                 <CarsItem key={car.id} car={car} isActive={isActive}/>)}
             </div>}
-            <ReactPaginate
+            {/* <ReactPaginate
             previousLabel={"← Vorherige" }
             nextLabel={ "Weiter →" }
             pageCount={ pageCount }
             onPageChange={ handlePageClick }
             containerClassName={ "pagination" }
             subContainerClassName={ "pages pagination" }
-            activeClassName={ "active-pagination" } />
+            activeClassName={ "active-pagination" } /> */}
           </div>
           </div>
         </div>

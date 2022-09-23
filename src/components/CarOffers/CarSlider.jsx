@@ -6,7 +6,6 @@ import 'rc-slider/assets/index.css';
 
 
 const CarSlider = ({handleSliderChange, sliderValues, minPrice, maxPrice}) => {
-
   return (
     <div className='mka__range-alignment'>
       <div className='mka__range-text'>
