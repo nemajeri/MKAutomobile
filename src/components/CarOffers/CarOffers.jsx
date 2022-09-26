@@ -23,8 +23,7 @@ const CarOffers = () => {
   const minPrice = Math.min(...carsList.map(car => car.price));
   const maxPrice = Math.max(...carsList.map(car => car.price));
   const priceArray = [minPrice, maxPrice];
-  console.log(priceArray);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [selectedMake, setSelectedMake] = useState(null);
   const [selectedModel, setSelectedModel] = useState(null);
   const [selectedYear, setSelectedYear] = useState(null);
@@ -45,7 +44,6 @@ const CarOffers = () => {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        setLoading(true);
         const response = await fetch(url);
         const data = await response.json();
         const slice = data.slice(offset - 1, offset - 1 + carsPerPage);
@@ -55,6 +53,7 @@ const CarOffers = () => {
         setLoading(false);
       } catch {
         alert('An error occured during fetching');
+        setLoading(false);
       }
     };
 

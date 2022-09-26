@@ -1,14 +1,17 @@
-import React from 'react'
-import { FaCheck } from 'react-icons/fa'
-import './CarPage.css'
+import React from 'react';
+import { FaCheck } from 'react-icons/fa';
+import './CarPage.css';
 
 const CarEquipment = () => {
   return (
     <>
-        <ul className='mka__list-alignment__carpage'>
-          <div className='mka__list-alignment__carpage inner-div'>
-            <div>
-            <li><FaCheck style={{color: "red"}}/>ABS</li>
+      <ul className='mka__list-alignment__carpage'>
+        <div className='mka__list-alignment__carpage inner-div'>
+          <div>
+            <li>
+              <FaCheck style={{ color: 'red' }} />
+              ABS
+            </li>
             <li>Antriebsschlupfregelung (ASR)</li>
             <li>Bordcomputer</li>
             <li>elektr. Fensterheber</li>
@@ -22,8 +25,8 @@ const CarEquipment = () => {
             <li>Servicegepflegt</li>
             <li>Sitzheizung</li>
             <li>Tempomat</li>
-            </div>
-            <div>
+          </div>
+          <div>
             <li>Alarmanlage</li>
             <li>Beifahrerairbags</li>
             <li>CD Player</li>
@@ -38,11 +41,11 @@ const CarEquipment = () => {
             <li>Servolenkung</li>
             <li>Stabilitätsprogramme (ESP)</li>
             <li>Zentralverriegelung</li>
-            </div>
-            </div>
-        </ul>
+          </div>
+        </div>
+      </ul>
     </>
-  )
-}
+  );
+};
 
-export default CarEquipment
+export default CarEquipment;

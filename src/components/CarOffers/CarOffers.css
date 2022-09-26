@@ -1,210 +1,210 @@
 .mka__content-car-offers {
-    text-align: center;
-    position: relative;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 64px;
-    padding-bottom: 80px;
-  }
-  
-  .mka__wrapper-car-offers {
-    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-    background-repeat: repeat;
-    height: 100%;
-    overflow: hidden;
-    background-size: auto;
-  }
+  text-align: center;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
 
-  .mka-sorting-div__offers {
-    display: flex;
-   }
+.mka__wrapper-car-offers {
+  background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+  background-repeat: repeat;
+  height: 100%;
+  overflow: hidden;
+  background-size: auto;
+}
 
-  .mka-responsive-item {
-    display: flex;
-    flex-wrap: wrap;
-    border: none;
-    gap: 40px;
-   }
+.mka-sorting-div__offers {
+  display: flex;
+}
 
-  .item1 { 
-    grid-area: header;
-    border: 1px solid white;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-   } 
+.mka-responsive-item {
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+  gap: 40px;
+}
 
-  .item2 { 
-    grid-area: menu;
-    width: 30vh;
-   }
+.item1 {
+  grid-area: header;
+  border: 1px solid white;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
-  .item3 { 
-    grid-area: main;
-    max-width: 100%; 
-  } 
+.item2 {
+  grid-area: menu;
+  width: 30vh;
+}
 
-  .mka__content-car-offers__main-grid {
-    display: grid;
-     gap: 30px;
-  }
+.item3 {
+  grid-area: main;
+  max-width: 100%;
+}
 
-  .view_1 {
-    grid-template-areas:
+.mka__content-car-offers__main-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.view_1 {
+  grid-template-areas:
     'header header header header header header'
     'menu menu menu main main main'
     'menu menu menu main main main';
-  }
+}
 
-  .view_2 {
-    grid-template-areas:
+.view_2 {
+  grid-template-areas:
     'header header header header header header'
     'main main main menu menu menu'
     'main main main menu menu menu';
-  }
+}
 
-  .view_3 {
-    grid-template-areas:
+.view_3 {
+  grid-template-areas:
     'header header header header header header'
     'menu menu main main main main'
     'menu menu main main main main';
-  }
+}
 
-  .view_4 {
-    grid-template-areas:
+.view_4 {
+  grid-template-areas:
     'header header header header header header'
     'main main main main menu menu'
     'main main main main menu menu';
-  }
+}
 
-  .mka__side-bar-divider {
-    margin-bottom: 4rem;
-  }
+.mka__side-bar-divider {
+  margin-bottom: 4rem;
+}
 
-  .mka__side-bar-divider h6 {
-    text-align: left;
-  }
+.mka__side-bar-divider h6 {
+  text-align: left;
+}
 
-  .mka__sidebar-divider {
-    margin-left: 0;
-    width: 8%;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    height: 2px;
-    background-color: var(--color-red)
-  }
+.mka__sidebar-divider {
+  margin-left: 0;
+  width: 8%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 2px;
+  background-color: var(--color-red)
+}
 
-  .mka__sidebar-detailed-search h6 {
-    text-align: left;
-  }
+.mka__sidebar-detailed-search h6 {
+  text-align: left;
+}
 
-  #btn-txt {
-    font-size: 14px;
-    align-self: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
+#btn-txt {
+  font-size: 14px;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-  .left-alignment {
-    display: flex;
-    justify-content: flex-start;
-  }
+.left-alignment {
+  display: flex;
+  justify-content: flex-start;
+}
 
- .pagination {
+.pagination {
   margin-top: 40px;
- }
+}
 
- .pagination li {
+.pagination li {
   border: 1.5px solid white;
   padding: 7.5px 15px;
   color: var(--color-grey);
   cursor: pointer;
- }
+}
 
- .pagination li:hover {
+.pagination li:hover {
   background-color: var(--color-red);
   border: 1.5px solid var(--color-red);
   color: white;
- }
+}
 
- .active-pagination {
+.active-pagination {
   background-color: var(--color-red);
   border: none !important;
   color: white !important;
- }
+}
 
- .disabled {
+.disabled {
   display: none;
- }
+}
 
- .mka__loading-svg-positioning {
+.mka__loading-svg-positioning {
   margin: 350px 0;
- }
+}
 
-  @media (max-width: 767px) {
-    .mka__content-grid-offers {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mka__content-car-offers__main-grid {
-      display: flex;
-      flex-direction: column;
-    } 
+@media (max-width: 767px) {
+  .mka__content-grid-offers {
+    display: flex;
+    flex-direction: column;
   }
 
-  @media (min-width: 767px) {
-    .mka__container-car-offers {
-      width: 750px;
-    }
+  .mka__content-car-offers__main-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
-    .mka__content-car-offers {
-      width: 100%;
-      float: left;
-    }
+@media (min-width: 767px) {
+  .mka__container-car-offers {
+    width: 750px;
   }
 
-  @media (min-width: 992px) {
-    .mka__container-car-offers {
-      width: 970px;
-    }
-
-    .mka__content-car-offers {
-      width: 100%;
-      float: left;
-    }
+  .mka__content-car-offers {
+    width: 100%;
+    float: left;
   }
+}
 
-  @media (max-width: 992px) {
-    .item2 { 
-      grid-area: menu;
-      width: 100%;
-     }
-  }
-  
-  @media (min-width: 1200px) {
-    .mka__container-car-offers {
-      width: 1170px;
-    }
-    
-    .mka__content-car-offers {
-      width: 100%;
-      float: left;
-    }
+@media (min-width: 992px) {
+  .mka__container-car-offers {
+    width: 970px;
   }
 
-  @media (max-width: 1200px) {
-    .item1 {
-      flex-direction: column;
-      padding: 20px;
-    }
+  .mka__content-car-offers {
+    width: 100%;
+    float: left;
+  }
+}
+
+@media (max-width: 992px) {
+  .item2 {
+    grid-area: menu;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mka__container-car-offers {
+    width: 1170px;
   }
 
-  @media (max-width: 590px) {
-    .mka-responsive-item {
-      gap: 20px;
-    }
+  .mka__content-car-offers {
+    width: 100%;
+    float: left;
   }
+}
+
+@media (max-width: 1200px) {
+  .item1 {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 590px) {
+  .mka-responsive-item {
+    gap: 20px;
+  }
+}

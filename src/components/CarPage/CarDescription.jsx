@@ -1,32 +1,31 @@
-import React from 'react'
+import React from 'react';
 
 const CarDescription = () => {
   return (
     <div className='mka__car-description__carpage'>
-    <p>
-    *Terminvereinbarung für Besichtigung und Probefahrt unbedingt erforderlich*
-    </p>
-    <p>
-    <strong>* 2.BESITZ - 154.000 KM SERVICEBUCH *</strong><br/>
-    * PICKERL NEU BIS 01 / 2023 + 4 MONATE *
-    </p>
-    <p>
-    SERVICE NEU 05/22
-AUTOMATIKÖL ALLE FILTER , MOTORÖL ALLE UND FILTER
-    </p>
-    <p>
-    ** ALRAD **
-NAVI , AUTOMATIK , PARKSENSOREN ( HI ) , TEMPOMAT , KLIMAAUTOMATIK , SITZHEITZUNG , SERVO , ABS , ESP , EL. FH , ZV , EL. SP , CD - RADIO , BERGANFAHRASSISTENT , ALU usw...
-    </p>
-    <p>
-    <strong>!!! SOFORT KREDIT !!!</strong><br/>
-SCHON AB 1 MONAT BESCHÄFTIGUNG AUCH OHNE ANZAHLUNG MÖGLICH FAST ALLE GÄNGIGEN FINANZIERUNGSMODELLE, BEI PASSENDER BONITÄT ABWICKLUNG INERHALB 24h
-    </p>
-    <strong>
-    ** 50/50 FINANZIERUNG MIT 0% ZINSEN **
-    </strong>
-    <ul>
-        
+      <p>
+        *Terminvereinbarung für Besichtigung und Probefahrt unbedingt
+        erforderlich*
+      </p>
+      <p>
+        <strong>* 2.BESITZ - 154.000 KM SERVICEBUCH *</strong>
+        <br />* PICKERL NEU BIS 01 / 2023 + 4 MONATE *
+      </p>
+      <p>SERVICE NEU 05/22 AUTOMATIKÖL ALLE FILTER , MOTORÖL ALLE UND FILTER</p>
+      <p>
+        ** ALRAD ** NAVI , AUTOMATIK , PARKSENSOREN ( HI ) , TEMPOMAT ,
+        KLIMAAUTOMATIK , SITZHEITZUNG , SERVO , ABS , ESP , EL. FH , ZV , EL. SP
+        , CD - RADIO , BERGANFAHRASSISTENT , ALU usw...
+      </p>
+      <p>
+        <strong>!!! SOFORT KREDIT !!!</strong>
+        <br />
+        SCHON AB 1 MONAT BESCHÄFTIGUNG AUCH OHNE ANZAHLUNG MÖGLICH FAST ALLE
+        GÄNGIGEN FINANZIERUNGSMODELLE, BEI PASSENDER BONITÄT ABWICKLUNG INERHALB
+        24h
+      </p>
+      <strong>** 50/50 FINANZIERUNG MIT 0% ZINSEN **</strong>
+      <ul>
         <li>Audiosystem BMW Professional (Radio/CD-Player)</li>
         <li>Durchladeeinrichtung (Mittelarmlehne hinten)</li>
         <li>Fußmatten Velours</li>
@@ -73,12 +72,14 @@ SCHON AB 1 MONAT BESCHÄFTIGUNG AUCH OHNE ANZAHLUNG MÖGLICH FAST ALLE GÄNGIGEN
         <li>Sitze vorn mechanisch verstellbar</li>
         <li>Stoßfänger Wagenfarbe</li>
         <li>Wärmeschutzverglasung getönt</li>
-        <li>Zentralverriegelung mit Diebstahlsicherung und Crashsensor
-!!! EINTAUSCH - UND FINANZIERUNGSMÖGLICHKEIT !!!
-Irrtümer Zwischenverkauf Satz und Druckfehler vorbehalten</li>
-    </ul>
+        <li>
+          Zentralverriegelung mit Diebstahlsicherung und Crashsensor !!!
+          EINTAUSCH - UND FINANZIERUNGSMÖGLICHKEIT !!! Irrtümer Zwischenverkauf
+          Satz und Druckfehler vorbehalten
+        </li>
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default CarDescription
+export default CarDescription;
