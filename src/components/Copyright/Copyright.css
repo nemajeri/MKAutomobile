@@ -6,7 +6,7 @@
     background-size: contain;
     min-height: 67rem;
   }
-  
+
   .mka__container-copyright {
     margin-right: auto;
     margin-left: auto;
@@ -19,74 +19,73 @@
   .mka__content-copyright {
     margin-top: 30px;
   }
-  
-  .mka__content-copyright > p {
+
+  .mka__content-copyright>p {
     margin: 0 0 10px;
     line-height: 22px;
   }
-  
-  .mka__content-copyright > h4 {
+
+  .mka__content-copyright>h4 {
     margin-bottom: 10px;
   }
-  
-  .mka__content-copyright p > a {
+
+  .mka__content-copyright p>a {
     color: var(--color-red);
   }
-  
-  .mka__content-copyright p > a:hover {
+
+  .mka__content-copyright p>a:hover {
     transition: 0.9s;
     color: var(--color-grey);
   }
-  
+
   .mka__content-information {
     text-align: center;
   }
-  
-  .mka__content-information > p {
+
+  .mka__content-information>p {
     margin: 0 0 10px;
     line-height: 22px;
   }
-  
+
   .mka__content-copyright-headline {
     margin-top: 2em;
     margin-bottom: 1em;
     text-align: center;
   }
-  
-  .mka__content-information > h4 {
+
+  .mka__content-information>h4 {
     margin-bottom: 10px;
   }
-  
+
   @media (min-width: 767px) {
     .mka__container-copyright {
       width: 750px;
     }
-  
+
     .mka__content-copyright {
       width: 100%;
       float: left;
     }
   }
-  
+
   @media (min-width: 992px) {
     .mka__container-copyright {
       width: 970px;
     }
-  
+
     .mka__content-copyright {
       width: 100%;
       float: left;
     }
   }
-  
+
   @media (min-width: 1200px) {
     .mka__container-copyright {
       width: 1170px;
     }
-  
+
     .mka__content-copyright {
       width: 100%;
       float: left;
     }
   }
-  

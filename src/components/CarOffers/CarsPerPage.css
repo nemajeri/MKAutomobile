@@ -1,51 +1,51 @@
 .sorting-select {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
-  
-  .sorting-select select {
-    display: block;
-    width: 150px;
-    height: 2.5rem;
-    background: #0f1215;
-    border-radius: 3px;
-    border: 1px solid #fff;
-    outline: none;
-    padding: 0 20px 0 10px;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    color: #949799;
-  }
-  
-  .sorting-select::after {
-    content: '⌄';
-    border-top-color: rgb(255, 255, 255);
-    color: #949799;
-    display: inline-block;
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-  }
-  
-  option {
-    color: #949799;
-    width: 96%;
-    left: 2%;
-    top: 35%;
-  }
-  
-  .mka__sorting-alignment {
-    display: flex;
-    margin-left: 0.5rem;
-  }
 
-  #mka__sorting-number {
-    width: 50px;
-  }
+.sorting-select select {
+  display: block;
+  width: 150px;
+  height: 2.5rem;
+  background: #0f1215;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  outline: none;
+  padding: 0 20px 0 10px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  color: #949799;
+}
 
-  .css-qc6sy-singleValue {
-    color: #949799 !important;
-  }
+.sorting-select::after {
+  content: '⌄';
+  border-top-color: rgb(255, 255, 255);
+  color: #949799;
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+option {
+  color: #949799;
+  width: 96%;
+  left: 2%;
+  top: 35%;
+}
+
+.mka__sorting-alignment {
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+#mka__sorting-number {
+  width: 50px;
+}
+
+.css-qc6sy-singleValue {
+  color: #949799 !important;
+}

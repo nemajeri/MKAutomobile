@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
 }
+
 .rc-slider * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: var(--color-red) !important;
@@ -22,7 +23,7 @@
     background-color: #f50c0c !important;
     height: 6px !important;
     border-radius: 6px;
-    }
+}
 
 .rc-slider-track {
     position: absolute;
@@ -64,18 +65,18 @@
 .mka__range-alignment {
     flex-direction: column;
     padding: 10px;
-    }
+}
 
 .mka__range-text {
     display: flex;
     gap: 10px;
     color: white;
-    }
+}
 
 .mka__range-price {
     color: var(--color-red);
     font-weight: bold;
-}    
+}
 
 .mka__range-button {
     margin-top: -10px;
@@ -100,4 +101,4 @@
         display: flex;
         gap: 25px;
     }
-  }
+}

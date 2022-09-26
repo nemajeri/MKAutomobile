@@ -1,49 +1,48 @@
 .mka__content-impression {
-    text-align: center;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 64px;
+  text-align: center;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 64px;
+}
+
+.mka__wrapper-impression {
+  background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+  height: 100%;
+  background-repeat: repeat;
+  overflow: hidden;
+  background-size: contain;
+  min-height: 38rem;
+}
+
+.mka__content-impression>p {
+  margin: 0 0 10px;
+  color: #fff;
+  line-height: 22px;
+}
+
+.mka__content-impression>h4 {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 767px) {
+  .mka__content-impression {
+    width: 100%;
+    float: left;
   }
-  
-  .mka__wrapper-impression {
-    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-    height: 100%;
-    background-repeat: repeat;
-    overflow: hidden;
-    background-size: contain;
-    min-height: 38rem;
+}
+
+@media (min-width: 992px) {
+  .mka__content-impression {
+    width: 100%;
+    float: left;
   }
-  
-  .mka__content-impression > p {
-    margin: 0 0 10px;
-    color: #fff;
-    line-height: 22px;
+}
+
+@media (min-width: 1200px) {
+  .mka__content-impression {
+    width: 100%;
+    float: left;
   }
-  
-  .mka__content-impression > h4 {
-    margin-bottom: 10px;
-  }
-  
-  @media (min-width: 767px) {
-    .mka__content-impression {
-      width: 100%;
-      float: left;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .mka__content-impression {
-      width: 100%;
-      float: left;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .mka__content-impression {
-      width: 100%;
-      float: left;
-    }
-  }
-  
+}

@@ -1,156 +1,162 @@
  .mka__container-home-list {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: auto;
-  }
-  
-  .mka__wrapper-home-list {
-    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-    height: 100%;
-    background-repeat: repeat;
-    overflow: hidden;
-    background-size: auto;
-    min-height: 65rem;
-  }
-  
-  .mka__shortcuts-home-list {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 999;
-  }
-  
-  .mka__shortcut-home-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff;
-  }
+   margin-right: auto;
+   margin-left: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+   height: auto;
+ }
 
-  .mka__shortcut-home-list > a {
-      font-family: var(--font-family);
-  }
+ .mka__wrapper-home-list {
+   background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+   height: 100%;
+   background-repeat: repeat;
+   overflow: hidden;
+   background-size: auto;
+   min-height: 65rem;
+ }
 
-  .mka__shortcut-home-list:hover {
-    color: var(--color-red);
-    transition: 0.3s;
-  }
-  
-  .mka__icon-size {
-    height: 30px;
-    width: 30px;
-    margin-bottom: 10px;
-  }
-  
-  .mka__icon-size:hover {
-    color: var(--color-red);
-    transition: 0.1s;
-  }
+ .mka__shortcuts-home-list {
+   display: flex;
+   justify-content: space-around;
+   text-align: center;
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   z-index: 999;
+ }
 
-  .mka__section-divider-second-divider {
-    background-color: var(--color-red);
-    height: 1px;
-    width: 300px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 60px;
-  }
+ .mka__shortcut-home-list {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: #fff;
+ }
 
-  .mka__content h2 {
-    text-align: center;
-    padding: 32px 0;
-    font-weight: 400;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .mka__section-divider {
-    background-color: var(--color-red);
-    height: 1px;
-    width: 300px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 70px;
-    margin-bottom: 80px;
-}
-  
-  @media (min-width: 767px) {
-    .mka__container-home-list {
-      width: 750px;
-    }
-    .mka__content-home-list {
-      width: 100%;
-      float: left;
-    }
-    .mka__section-divider {
-      margin-top: 130px;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .mka__shortcuts-home-list {
-      flex-direction: column;
-      gap: 5rem;
-      padding-bottom: 140px;
-    }
-    .mka__content h2 {
-      font-size: 28px;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .mka__container-home-list {
-      width: 970px;
-    }
-    .mka__content-home-list {
-      width: 100%;
-      float: left;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .mka__container-home-list {
-      width: 1170px;
-    }
-    .mka__content-home-list {
-      width: 100%;
-      float: left;
-    }
-    .mka__section-divider {
-      margin-top: 80px;
-    }
-  }
-  
-  @media only screen and (min-width: 768px) and (max-width: 999px) {
-    .mka__container-home-list {
-      width: 96%;
-    }
-  }
-  
-  @media (max-width: 340px) {
-    .mka__content-home-list > h1 {
-      font-size: 18px;
-      line-height: 2;
-    }
+ .mka__shortcut-home-list>a {
+   font-family: var(--font-family);
+ }
 
-    .mka__content h2 {
-      font-size: 22px;
-    }
+ .mka__shortcut-home-list:hover {
+   color: var(--color-red);
+   transition: 0.3s;
+ }
 
-    .mka__section-divider-second-divider {
-      width: 150px;
-    }
+ .mka__icon-size {
+   height: 30px;
+   width: 30px;
+   margin-bottom: 10px;
+ }
 
-    .mka__section-divider {
-      width: 150px;
-    }
-  }
+ .mka__icon-size:hover {
+   color: var(--color-red);
+   transition: 0.1s;
+ }
+
+ .mka__section-divider-second-divider {
+   background-color: var(--color-red);
+   height: 1px;
+   width: 300px;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 0;
+   margin-bottom: 60px;
+ }
+
+ .mka__content h2 {
+   text-align: center;
+   padding: 32px 0;
+   font-weight: 400;
+   height: auto;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .mka__section-divider {
+   background-color: var(--color-red);
+   height: 1px;
+   width: 300px;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 70px;
+   margin-bottom: 80px;
+ }
+
+ @media (min-width: 767px) {
+   .mka__container-home-list {
+     width: 750px;
+   }
+
+   .mka__content-home-list {
+     width: 100%;
+     float: left;
+   }
+
+   .mka__section-divider {
+     margin-top: 130px;
+   }
+ }
+
+ @media (max-width: 767px) {
+   .mka__shortcuts-home-list {
+     flex-direction: column;
+     gap: 5rem;
+     padding-bottom: 140px;
+   }
+
+   .mka__content h2 {
+     font-size: 28px;
+   }
+ }
+
+ @media (min-width: 992px) {
+   .mka__container-home-list {
+     width: 970px;
+   }
+
+   .mka__content-home-list {
+     width: 100%;
+     float: left;
+   }
+ }
+
+ @media (min-width: 1200px) {
+   .mka__container-home-list {
+     width: 1170px;
+   }
+
+   .mka__content-home-list {
+     width: 100%;
+     float: left;
+   }
+
+   .mka__section-divider {
+     margin-top: 80px;
+   }
+ }
+
+ @media only screen and (min-width: 768px) and (max-width: 999px) {
+   .mka__container-home-list {
+     width: 96%;
+   }
+ }
+
+ @media (max-width: 340px) {
+   .mka__content-home-list>h1 {
+     font-size: 18px;
+     line-height: 2;
+   }
+
+   .mka__content h2 {
+     font-size: 22px;
+   }
+
+   .mka__section-divider-second-divider {
+     width: 150px;
+   }
+
+   .mka__section-divider {
+     width: 150px;
+   }
+ }

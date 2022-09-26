@@ -18,7 +18,7 @@
 }
 
 .mka__header-list,
-ul > li {
+ul>li {
   color: #fff;
   list-style: none;
   display: inline-block;
@@ -28,31 +28,31 @@ ul > li {
 }
 
 .mka__header-link {
-    color: #fff;
-    font-family: var(--font-family);
-    font-size: min(22px, 14px);
+  color: #fff;
+  font-family: var(--font-family);
+  font-size: min(22px, 14px);
 }
 
 
-.mka__header-link > p {
+.mka__header-link>p {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
 }
 
-.mka__header-link p > a {
+.mka__header-link p>a {
   transition: 0.5s;
 }
 
-.mka__header-link p > a:hover {
+.mka__header-link p>a:hover {
   transition: 0.5s;
-  color: var(--color-red); 
+  color: var(--color-red);
 }
 
 
-.mka__header-link p > a:active {
-  color: var(--color-red); 
+.mka__header-link p>a:active {
+  color: var(--color-red);
 }
 
 .mka__icons {

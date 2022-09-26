@@ -1,61 +1,60 @@
 .mka__content-purchase {
-    position: relative;
-    padding-top: 32px;
-  }
-  
-  .mka__wrapper-purchase {
-    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-    background-repeat: repeat;
-    min-height: 80rem;
-    background-size: cover;
-    padding-bottom: 30px;
-  } 
-  
-  .mka__content-purchase > h4 {
-    padding: 15px 0;
-  }
-  
-  .mka__content-purchase > p {
-    margin: 0 0 10px;
-    color: #fff;
-    font-size: 15px;
-    line-height: 22px;
-  }
-  
-  .mka__content-purchase ul {
-    color: #fff;
-    font-size: 15px;
-    padding: 0 0 0 15px;
-    margin-left: 40px;
-  }
-  
-  .mka__content-purchase ul > li {
-    color: #fff;
-    font-size: 15px;
-    list-style: disc outside;
-    display: list-item;
-    padding: 0;
-  }
+  position: relative;
+  padding-top: 32px;
+}
 
-  
-  @media (min-width: 767px) {
-    .mka__content-purchase {
-      width: 100%;
-      float: left;
-    }
+.mka__wrapper-purchase {
+  background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+  background-repeat: repeat;
+  min-height: 80rem;
+  background-size: cover;
+  padding-bottom: 30px;
+}
+
+.mka__content-purchase>h4 {
+  padding: 15px 0;
+}
+
+.mka__content-purchase>p {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.mka__content-purchase ul {
+  color: #fff;
+  font-size: 15px;
+  padding: 0 0 0 15px;
+  margin-left: 40px;
+}
+
+.mka__content-purchase ul>li {
+  color: #fff;
+  font-size: 15px;
+  list-style: disc outside;
+  display: list-item;
+  padding: 0;
+}
+
+
+@media (min-width: 767px) {
+  .mka__content-purchase {
+    width: 100%;
+    float: left;
   }
-  
-  @media (min-width: 992px) {
-    .mka__content-purchase {
-      width: 100%;
-      float: left;
-    }
+}
+
+@media (min-width: 992px) {
+  .mka__content-purchase {
+    width: 100%;
+    float: left;
   }
-  
-  @media (min-width: 1200px) {
-    .mka__content-purchase {
-      width: 100%;
-      float: left;
-    }
+}
+
+@media (min-width: 1200px) {
+  .mka__content-purchase {
+    width: 100%;
+    float: left;
   }
-  
+}

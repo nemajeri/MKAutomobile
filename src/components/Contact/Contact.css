@@ -5,14 +5,14 @@
     overflow: hidden;
     background-size: cover;
   }
-  
+
   .mka__content-contact {
     position: relative;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
   }
-  
+
   .mka__contact-infos-container {
     display: flex;
     justify-content: space-around;
@@ -23,16 +23,16 @@
     text-align: center;
     margin-bottom: 10px;
   }
-  
-  .mka__contact-infos-card > p {
+
+  .mka__contact-infos-card>p {
     font-size: 14px;
     line-height: 1.5;
   }
-  
+
   .mka__contact-infos-circle {
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
     background-color: #f6f6f6;
     height: 80px;
@@ -40,7 +40,7 @@
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
-    cursor:pointer;
+    cursor: pointer;
     transition: background-color 0.5s ease;
   }
 
@@ -48,13 +48,13 @@
     background-color: var(--color-red);
     transition: background-color 0.5s ease;
   }
-  
+
   .mka__icon-color {
     color: var(--color-grey);
     height: 30px;
     width: 30px;
   }
-  
+
   .mka__contact-infos-divider {
     height: 2px;
     width: 1.5rem;
@@ -64,7 +64,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .mka__google-api-contact {
     display: flex;
     margin-top: 6rem;
@@ -72,7 +72,7 @@
     justify-content: flex-start;
     gap: 60px;
   }
-  
+
   .mka__opening-times-divider {
     height: 2px;
     width: 1.5rem;
@@ -80,25 +80,26 @@
     margin-top: 10px;
     margin-bottom: 10px;
   }
-  
+
   .mka__opening-times-contact {
     color: #fff;
     font-size: 14px;
     padding-top: 30px;
   }
-  
+
   .mka__opening-times-text {
     display: flex;
     gap: 30px;
   }
-  
+
   #mka__text-red {
     color: var(--color-red);
   }
+
   strong {
     font-weight: 500;
   }
-  
+
   .mka__button-align {
     text-align: end;
   }
@@ -108,29 +109,32 @@
   }
 
   @media (max-width: 340px) {
-    .mka__content-contact > h1 {
+    .mka__content-contact>h1 {
       font-size: 18px;
       line-height: 2;
     }
   }
-  
+
   @media (min-width: 767px) {
     .mka__container-contact {
       width: 750px;
     }
+
     .mka__content-contact {
       width: 100%;
       float: left;
     }
   }
-  
+
   @media (max-width: 767px) {
     .mka__contact-infos-container {
       flex-direction: column;
     }
+
     .mka__google-api-contact {
       flex-direction: column;
     }
+
     .mka__google-api-container {
       width: 100%;
     }
@@ -140,25 +144,26 @@
     .mka__container-contact {
       width: 970px;
     }
+
     .mka__content-contact {
       width: 100%;
       float: left;
     }
   }
-  
+
   @media (min-width: 1200px) {
     .mka__container-contact {
       width: 1170px;
     }
+
     .mka__content-contact {
       width: 100%;
       float: left;
     }
   }
-  
+
   @media only screen and (min-width: 768px) and (max-width: 999px) {
     .mka__container-contact {
       width: 96%;
     }
   }
-  

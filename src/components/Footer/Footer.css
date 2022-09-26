@@ -1,79 +1,78 @@
 .mka__div-footer {
-    width: auto;
-    top: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    max-height: 105px;
-    background-color: var(--color-bg);
+  width: auto;
+  top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  max-height: 105px;
+  background-color: var(--color-bg);
+}
+
+.mka__footer {
+  display: flex;
+  color: #626262;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.mka__footer-links {
+  display: flex;
+  gap: 12px;
+}
+
+.mka__footer-links p>a {
+  color: #626262;
+  transition: 0.5s;
+}
+
+.mka__footer-links p>a:hover {
+  color: var(--color-red);
+  transition: 0.5s;
+}
+
+.mka__footer-copyright {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.mka__footer-copyright p {
+  color: #626262;
+}
+
+.mka__footer-copyright p>a {
+  color: #626262;
+  transition: 0.5s;
+}
+
+.mka__footer-copyright p>a:hover {
+  color: var(--color-red);
+  transition: 0.5s;
+}
+
+@media (min-width: 992px) {
+  .mka__container-footer {
+    width: 970px;
   }
-  
+}
+
+@media (min-width: 1200px) {
+  .mka__container-footer {
+    width: 1170px;
+  }
+}
+
+@media (max-width: 600px) {
   .mka__footer {
-    display: flex;
-    color: #626262;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    display: block;
   }
-  
+
   .mka__footer-links {
-    display: flex;
-    gap: 12px;
+    justify-content: center;
+    margin-bottom: 15px;
   }
 
-  .mka__footer-links p > a {
-    color: #626262;
-    transition: 0.5s;
-  }
-  
-  .mka__footer-links p > a:hover {
-    color: var(--color-red);
-    transition: 0.5s;
-  }
-  
   .mka__footer-copyright {
-    display: flex;
-    gap: 12px;
-    margin-left: auto;
+    justify-content: center;
   }
-
-  .mka__footer-copyright p {
-    color: #626262;
-  }
-
-  .mka__footer-copyright p > a {
-    color: #626262;
-    transition: 0.5s;
-  }
-  
-  .mka__footer-copyright p > a:hover {
-    color: var(--color-red);
-    transition: 0.5s;
-  }
-  
-  @media (min-width: 992px) {
-    .mka__container-footer {
-      width: 970px;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .mka__container-footer {
-      width: 1170px;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .mka__footer {
-      display: block;
-    }
-  
-    .mka__footer-links {
-      justify-content: center;
-      margin-bottom: 15px;
-    }
-  
-    .mka__footer-copyright {
-      justify-content: center;
-    }
-  }
-  
+}

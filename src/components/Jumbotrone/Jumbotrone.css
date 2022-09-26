@@ -1,94 +1,94 @@
 .mka__jumbotrone-bg-image {
-    width: 100%;
-    display: table;
+  width: 100%;
+  display: table;
+}
+
+.mka__jumbotrone-div {
+  display: flex;
+  gap: 28rem;
+  justify-content: flex-start;
+}
+
+.mka__jumbotrone-contact {
+  color: #fff;
+  max-width: 50%;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+.mka__jumbotrone-contact>p {
+  word-break: break-all;
+  line-height: 24px;
+  font-size: 15px;
+  color: #d2d2d2;
+}
+
+.mka__jumbotrone-contact p>a:link {
+  color: var(--color-red);
+  transition: 0.5s;
+}
+
+.mka__jumbotrone-contact p>a:hover {
+  color: white;
+  transition: 0.5s;
+}
+
+.mka__jumbotrone-red-line {
+  height: 2px;
+  width: 20px;
+  background-color: var(--color-red);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.mka__jumbotrone-opening-times {
+  color: #fff;
+  padding: 60px 0;
+}
+
+.mka__jumbotrone-opening-times>p {
+  word-break: break-all;
+  line-height: 24px;
+  font-size: 15px;
+  color: #d2d2d2;
+}
+
+.mka__footer-normal {
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(http://localhost:3000/images/background_footer.jpg);
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.9);
+}
+
+.mka__footer-normal::before {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 992px) {
+  .mka__jumbotrone-contact {
+    max-width: 100%;
+    padding-right: 16rem;
   }
 
   .mka__jumbotrone-div {
+    gap: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .mka__jumbotrone-div {
     display: flex;
-    gap: 28rem;
-    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0;
+    margin-left: -7px;
   }
 
   .mka__jumbotrone-contact {
-    color: #fff;
-    max-width: 50%;
-    padding-top: 60px;
-    padding-bottom: 100px;
-  }
-
-  .mka__jumbotrone-contact > p {
-    word-break: break-all;
-    line-height: 24px;
-    font-size: 15px;
-    color: #d2d2d2;
-  }
-
-  .mka__jumbotrone-contact p > a:link {
-    color: var(--color-red);
-    transition: 0.5s;
-  }
-
-  .mka__jumbotrone-contact p > a:hover {
-    color: white;
-    transition: 0.5s;
-  }
-
-  .mka__jumbotrone-red-line {
-    height: 2px;
-    width: 20px;
-    background-color: var(--color-red);
-    margin-top: 10px;
-    margin-bottom: 20px;
+    padding: 44px 0;
   }
 
   .mka__jumbotrone-opening-times {
-    color: #fff;
-    padding: 60px 0;
+    padding: 0;
+    padding-bottom: 60px;
   }
-
-  .mka__jumbotrone-opening-times > p {
-    word-break: break-all;
-    line-height: 24px;
-    font-size: 15px;
-    color: #d2d2d2;
-  }
-
-  .mka__footer-normal {
-    background-size: cover;
-    background-attachment: fixed;
-    background-image: url(http://localhost:3000/images/background_footer.jpg);
-    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.9);
-  }
-
-  .mka__footer-normal::before {
-    background-color: rgba(0,0,0,0.9);
-  }
-
-  @media (max-width: 992px) {
-    .mka__jumbotrone-contact {
-      max-width: 100%;
-      padding-right: 16rem;
-    }
-
-    .mka__jumbotrone-div {
-      gap: 0;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .mka__jumbotrone-div {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-left: -7px;
-    }
-    
-    .mka__jumbotrone-contact {
-      padding: 44px 0;
-    }
-
-    .mka__jumbotrone-opening-times {
-      padding: 0;
-      padding-bottom: 60px;
-    }
-  }
+}
