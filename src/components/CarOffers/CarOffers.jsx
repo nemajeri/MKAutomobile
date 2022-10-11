@@ -43,20 +43,20 @@ const CarOffers = () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
+        const minPrice = Math.min(...data.map(car => car.price));
+        const maxPrice = Math.max(...data.map(car => car.price));
+        const priceArray = [minPrice, maxPrice];
         setPageCount(Math.ceil(data.length / carsPerPage));
         const slice = data.slice(offset - 1, offset - 1 + carsPerPage);
         setCarsList(slice);
         setFilteredCarsList(slice);
+        setSliderValues(priceArray);
         setLoading(false);
       } catch {
         alert('An error occured during fetching');
         setLoading(false);
       }
     };
-    const minPrice = Math.min(...carsList.map(car => car.price));
-    const maxPrice = Math.max(...carsList.map(car => car.price));
-    console.log(minPrice);
-    const priceArray = [minPrice, maxPrice];
     fetchCars();
     // eslint-disable-next-line
   }, []);
@@ -204,8 +204,6 @@ const CarOffers = () => {
               <CarSlider
                 handleSliderChange={handleSliderChange}
                 sliderValues={sliderValues}
-                minPrice={minPrice}
-                maxPrice={maxPrice}
               />
               <div className='mka-responsive-item'>
                 <div className='mka-sorting-div__offers'>
