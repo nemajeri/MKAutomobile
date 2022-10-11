@@ -1,12 +1,13 @@
-import "./Financing.css"
-import Denzelbank from "../Denzelbank"
-import Santanderbank from "../Santanderbank"
+import './Financing.css';
+import Denzelbank from '../Denzelbank';
+import Santanderbank from '../Santanderbank';
+import React from 'react';
 
 const Financing = () => {
   return (
-    <div className="mka__wrapper-financing">
-      <div className="mka__container">
-        <div className="mka__content-financing">
+    <div className='mka__wrapper-financing'>
+      <div className='mka__container'>
+        <div className='mka__content-financing'>
           <p>
             Gerne bieten wir Ihnen über unsere Finanzierungspartner beste
             Angebote rund um Leasing und Kreditfinanzierung an.
@@ -39,18 +40,18 @@ const Financing = () => {
             Gerne nehmen wir Ihr altes Fahrzeug zu guten Konditionen in Zahlung.
           </p>
           <h1>UNSERE FINANZIERUNGSPARTNER</h1>
-          <div className="mka__logos-wrapper">
-            <div className="mka__logos-santanderbank">
+          <div className='mka__logos-wrapper'>
+            <div className='mka__logos-santanderbank'>
               <Santanderbank />
             </div>
-            <div className="mka__logos-denzelbank">
+            <div className='mka__logos-denzelbank'>
               <Denzelbank />
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Financing
+export default Financing;

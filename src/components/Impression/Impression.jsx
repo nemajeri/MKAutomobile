@@ -1,10 +1,11 @@
-import "./Impression.css"
+import './Impression.css';
+import React from 'react';
 
 const Impression = () => {
   return (
-    <div className="mka__wrapper-impression">
-      <div className="mka__container">
-        <div className="mka__content-impression">
+    <div className='mka__wrapper-impression'>
+      <div className='mka__container'>
+        <div className='mka__content-impression'>
           <h4>FIRMENBEZEICHNUNG</h4>
           <p>Milan Kuzmanovic KG</p>
           <h4>FIRMENBUCHNUMMER</h4>
@@ -20,7 +21,7 @@ const Impression = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Impression
+export default Impression;

@@ -15,11 +15,18 @@ const CarPage = ({ carsList }) => {
   const [isActive, setIsActive] = useState(true);
   const [cars, setCars] = useState([]);
 
-  useEffect(() => {
-    // getCar();
-  }, []);
+  const carId = JSON.stringify(id);
+  console.log(carId);
 
-  console.log(carsList);
+  // useEffect(() => {
+  //   fetch('http://finity.pro/clients/mkautomobile/cars/'
+  //     .then(res => {
+  //       return res.json();
+  //     })
+  //     .then(data => {
+  //       setData(data);
+  //     });
+  // }, [id]);
 
   // const getCar = () => {
   //   const filteredCar = carsList.filter(car => car.id === id);

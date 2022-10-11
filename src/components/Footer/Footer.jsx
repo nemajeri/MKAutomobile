@@ -1,27 +1,28 @@
-import "./Footer.css"
+import './Footer.css';
+import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="mka__div-footer">
-      <div className="mka__container">
-        <div className="mka__footer">
-          <div className="mka__footer-links">
+    <div className='mka__div-footer'>
+      <div className='mka__container'>
+        <div className='mka__footer'>
+          <div className='mka__footer-links'>
             <p>
-              <a href="/datenschutz">DATENSCHUTZ</a>
+              <a href='/datenschutz'>DATENSCHUTZ</a>
             </p>
             <p>
-              <a href="/impressum">IMPRESSUM</a>
+              <a href='/impressum'>IMPRESSUM</a>
             </p>
           </div>
-          <div className="mka__footer-copyright">
+          <div className='mka__footer-copyright'>
             <p>
-              ©Copyright 2022 <a href="/">MKAUTOMOBILE</a>
+              ©Copyright 2022 <a href='/'>MKAUTOMOBILE</a>
             </p>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -1,10 +1,11 @@
-import "./Copyright.css"
+import './Copyright.css';
+import React from 'react';
 
 const Copyright = () => {
   return (
-    <div className="mka__wrapper-copyright">
-      <div className="mka__container">
-        <div className="mka__content-copyright">
+    <div className='mka__wrapper-copyright'>
+      <div className='mka__container'>
+        <div className='mka__content-copyright'>
           <p>
             <strong>
               Erklärung zur Informationspflicht
@@ -52,20 +53,20 @@ const Copyright = () => {
             gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen
             Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich
             bei der Aufsichtsbehörde beschweren. In Österreich ist dies die
-            Datenschutzbehörde. (Wickenburggasse 8 – 10, 1080 Wien, E-Mail:{" "}
+            Datenschutzbehörde. (Wickenburggasse 8 – 10, 1080 Wien, E-Mail:{' '}
             <a
-              href="https://playfield-media.codebasehq.com/redirect?dsb@dsb.gv.at"
-              target="_blank"
-              rel="noreferrer"
+              href='https://playfield-media.codebasehq.com/redirect?dsb@dsb.gv.at'
+              target='_blank'
+              rel='noreferrer'
             >
               dsb@dsb.gv.at
             </a>
             ).
           </p>
-          <h3 className="mka__content-copyright-headline">
+          <h3 className='mka__content-copyright-headline'>
             Sie erreichen uns unter folgenden Kontaktdaten:
           </h3>
-          <div className="mka__content-information">
+          <div className='mka__content-information'>
             <h4>FIRMENBEZEICHNUNG</h4>
             <p>Milan Kuzmanovic KG</p>
             <h4>FIRMENBUCHNUMMER</h4>
@@ -80,8 +81,8 @@ const Copyright = () => {
             <p>T: +43 680 3149332</p>
             <p>
               E:
-              <a href="mailto:office@mkautomobile.at">
-                {" "}
+              <a href='mailto:office@mkautomobile.at'>
+                {' '}
                 office@mkautomobile.at
               </a>
             </p>
@@ -89,7 +90,7 @@ const Copyright = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Copyright
+export default Copyright;

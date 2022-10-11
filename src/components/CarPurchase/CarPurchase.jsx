@@ -1,11 +1,12 @@
-import "./CarPurchase.css"
-import ContactForm from "./ContactForm"
+import './CarPurchase.css';
+import ContactForm from './ContactForm';
+import React from 'react';
 
 const CarPurchase = () => {
   return (
-    <div className="mka__wrapper-purchase">
-      <div className="mka__container">
-        <div className="mka__content-purchase">
+    <div className='mka__wrapper-purchase'>
+      <div className='mka__container'>
+        <div className='mka__content-purchase'>
           <p>
             Wir kaufen laufend Gebrauchtwagen unterschiedlicher Marken und
             Fahrzeugtypen. Wenn Sie Ihr altes Fahrzeug verkaufen möchten, würden
@@ -34,12 +35,12 @@ const CarPurchase = () => {
             </li>
           </ul>
           <div>
-          <ContactForm/>
+            <ContactForm />
           </div>
-         </div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CarPurchase
+export default CarPurchase;

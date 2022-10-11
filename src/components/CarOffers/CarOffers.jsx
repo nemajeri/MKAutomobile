@@ -20,9 +20,11 @@ const initialState = 'view_1';
 
 const CarOffers = () => {
   const [carsList, setCarsList] = useState([]);
+
   const minPrice = Math.min(...carsList.map(car => car.price));
   const maxPrice = Math.max(...carsList.map(car => car.price));
   const priceArray = [minPrice, maxPrice];
+
   const [loading, setLoading] = useState(true);
   const [selectedMake, setSelectedMake] = useState(null);
   const [selectedModel, setSelectedModel] = useState(null);
@@ -46,10 +48,10 @@ const CarOffers = () => {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        const slice = data.slice(offset - 1, offset - 1 + carsPerPage);
-        setCarsList(slice);
-        setFilteredCarsList(slice);
-        setPageCount(Math.ceil(data.length / carsPerPage));
+        // setPageCount(Math.ceil(data.length / carsPerPage));
+        // const slice = data.slice(offset - 1, offset - 1 + carsPerPage);
+        setCarsList(data);
+        setFilteredCarsList(data);
         setLoading(false);
       } catch {
         alert('An error occured during fetching');

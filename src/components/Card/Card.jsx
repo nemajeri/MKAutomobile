@@ -1,6 +1,7 @@
 import './Card.css';
 import { FaCalendarAlt, FaCog, FaLink } from 'react-icons/fa';
 import { GiGasPump } from 'react-icons/gi';
+import React from 'react';
 
 const Card = ({
   car: { year, month, transmission, mileage, price, title, link },
