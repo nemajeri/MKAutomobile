@@ -5,38 +5,26 @@ import CarEquipment from './CarEquipment';
 import CarDescription from './CarDescription';
 import { FaExchangeAlt, FaSlidersH } from 'react-icons/fa';
 import MainProductPageSlider from '../MainProductPageSlider/MainProductPageSlider';
-import HomeSlider from '../HomeSlider/HomeSlider';
+// import HomeSlider from '../HomeSlider/HomeSlider';
 
-const url = 'http://finity.pro/clients/mkautomobile/cars/all';
 
-const CarPage = ({ carsList }) => {
+
+const CarPage = () => {
   const id = useParams();
-  const [data, setData] = useState([]);
+  const [car, setCar] = useState(null);
   const [isActive, setIsActive] = useState(true);
-  const [cars, setCars] = useState([]);
+  // const url = `http://finity.pro/clients/mkautomobile/cars/${id}`;
+  console.log(id);
 
-  const carId = JSON.stringify(id);
-  console.log(carId);
-
-  // useEffect(() => {
-  //   fetch('http://finity.pro/clients/mkautomobile/cars/'
-  //     .then(res => {
-  //       return res.json();
-  //     })
-  //     .then(data => {
-  //       setData(data);
-  //     });
-  // }, [id]);
-
-  // const getCar = () => {
-  //   const filteredCar = carsList.filter(car => car.id === id);
-  //   console.log(filteredCar);
-  // };
-
+  useEffect(() => {
+    fetch(url)
+    .then(res => res.json()) 
+    .then(car => setCar(car))
+  }, []);
+  console.log(car);
   const handleClick = () => {
     setIsActive(false);
   };
-  const url = 'http://finity.pro/clients/mkautomobile/cars/all';
 
   return (
     <div className='mka__wrapper-carpage'>
@@ -164,7 +152,7 @@ const CarPage = ({ carsList }) => {
         </div>
         <h4>ÄHNLICHE FAHRZEUGE</h4>
         <div className='mka__home-slider-section__carpage'>
-          <HomeSlider cars={cars} />
+          {/* <HomeSlider cars={cars} /> */}
         </div>
       </div>
     </div>
