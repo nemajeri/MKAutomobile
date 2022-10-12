@@ -208,6 +208,9 @@
 }
 
 @media (max-width: 767px) {
+    .mka__description-carpage {
+        padding-top: 55px;
+    }
     .mka__description-section__carpage {
         flex-direction: column;
     }

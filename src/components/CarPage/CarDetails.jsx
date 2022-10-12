@@ -1,8 +1,7 @@
 import React from 'react';
+import './CarPage.css';
 
 const CarDetails = ({ car }) => {
-  console.log(car);
-
   return (
     <div className='mka__description-carpage'>
       <h6>BESCHREIBUNG</h6>

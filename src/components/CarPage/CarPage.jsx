@@ -3,29 +3,36 @@ import { useParams } from 'react-router-dom';
 import './CarPage.css';
 import CarEquipment from './CarEquipment';
 import CarDescription from './CarDescription';
-import { FaExchangeAlt, FaSlidersH } from 'react-icons/fa';
+import { FaSlidersH } from 'react-icons/fa';
 import MainProductPageSlider from '../MainProductPageSlider/MainProductPageSlider';
 import CarDetails from './CarDetails';
-// import HomeSlider from '../HomeSlider/HomeSlider';
+import CarPageHeaderSection from './CarPageHeaderSection';
+import HomeSlider from '../HomeSlider/HomeSlider';
 
-const CarPage = () => {
+const CarPage = ({ carsList }) => {
   const { id } = useParams();
   const [isActive, setIsActive] = useState(true);
   const [car, setCar] = useState();
   const [loading, setLoading] = useState(true);
+  const [cars, setCars] = useState([]);
 
   const url = `http://finity.pro/clients/mkautomobile/cars/${id}`;
+  const currentCars = carsList.slice(-5);
 
   useEffect(() => {
     const fetchCar = async () => {
       const response = await fetch(url);
-      const data = await response.json();
-      setCar(data);
+      const singleCar = await response.json();
+      setCar(singleCar);
       setLoading(false);
     };
-
+    getCars(currentCars);
     fetchCar();
   }, []);
+
+  const getCars = arr => {
+    setCars(arr);
+  };
 
   const handleClick = () => {
     setIsActive(false);
@@ -35,41 +42,12 @@ const CarPage = () => {
     <div className='mka__wrapper-carpage'>
       <div className='mka__container'>
         <div className='mka__content-carpage'>
-          <div className='mka__title-price-carpage'>
-            {/* <h3>{car.title}</h3>
-            <h4>{car.price}€</h4> */}
-          </div>
-          <div className='mka__email-filed-carpage'>
-            <a className='mka__comparison-carpage'>
-              <i>
-                <FaExchangeAlt color='white' />
-              </i>
-              <p>Hinzufügen zum vergleichen</p>
-            </a>
-            <button className='btn mka__button-carpage'>
-              <svg
-                className='button'
-                width='180px'
-                height='60px'
-                viewBox='0 0 180 60'
-              >
-                <polyline
-                  points='179,1 179,59 1,59 1,1 179,1'
-                  className='bg-line'
-                />
-                <polyline
-                  points='179,1 179,59 1,59 1,1 179,1'
-                  className='hl-line'
-                />
-              </svg>
-              <span>Email</span>
-            </button>
-          </div>
+          {loading === false && <CarPageHeaderSection car={car} />}
           <div className='mka__description-section__carpage'>
             <div className='mka__gallery-carpage'>
               <MainProductPageSlider />
             </div>
-            {loading == false && <CarDetails car={car} />}
+            {loading === false && <CarDetails car={car} />}
           </div>
           <div className='mka__description-tabs__carpage'>
             <ul>
@@ -96,12 +74,16 @@ const CarPage = () => {
                 ZUSATZINFORMATION
               </li>
             </ul>
-            {isActive ? <CarEquipment /> : <CarDescription />}
+            {isActive ? (
+              <CarEquipment car={car} />
+            ) : (
+              <CarDescription car={car} />
+            )}
           </div>
         </div>
         <h4>ÄHNLICHE FAHRZEUGE</h4>
         <div className='mka__home-slider-section__carpage'>
-          {/* <HomeSlider cars={cars} /> */}
+          <HomeSlider cars={cars} />
         </div>
       </div>
     </div>
