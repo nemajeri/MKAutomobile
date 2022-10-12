@@ -1,12 +1,12 @@
 import { Header, Navbar, Jumbotrone, Logo, CarPurchase } from '../components';
 import React from 'react';
 
-const Fahrzeugankauf = () => {
+const Fahrzeugankauf = ({ carsList }) => {
   return (
     <>
       <div id='header-img-id' className='header-img-div'>
         <Header />
-        <Navbar />
+        <Navbar carsList={carsList} />
         <div className='mka__logo-img'>
           <div className='mka__logo-size'>
             <Logo />

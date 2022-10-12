@@ -7,21 +7,13 @@ import { FaExchangeAlt, FaSlidersH } from 'react-icons/fa';
 import MainProductPageSlider from '../MainProductPageSlider/MainProductPageSlider';
 // import HomeSlider from '../HomeSlider/HomeSlider';
 
-
-
-const CarPage = () => {
-  const id = useParams();
-  const [car, setCar] = useState(null);
+const CarPage = ({ carsList }) => {
+  const { id } = useParams();
   const [isActive, setIsActive] = useState(true);
-  // const url = `http://finity.pro/clients/mkautomobile/cars/${id}`;
-  console.log(id);
 
-  useEffect(() => {
-    fetch(url)
-    .then(res => res.json()) 
-    .then(car => setCar(car))
-  }, []);
-  console.log(car);
+  const singleCar = carsList.find(car => car.id === id) || {};
+  console.log(singleCar);
+
   const handleClick = () => {
     setIsActive(false);
   };
@@ -35,7 +27,7 @@ const CarPage = () => {
               BMW 3ER-REIHE 325 I XDRIVE (E90) ** ALLRAD - AUTOMATIK** <br />
               LIMOUSINE
             </h3>
-            <h4>8.490€</h4>
+            <h4>{singleCar.price}€</h4>
           </div>
           <div className='mka__email-filed-carpage'>
             <a className='mka__comparison-carpage'>
@@ -73,43 +65,45 @@ const CarPage = () => {
               <ul className='mka__list-carpage'>
                 <li className='mka__car-attributes'>
                   <span>Erstzulassung</span>
-                  <strong>01/2006</strong>
+                  <strong>
+                    {singleCar.month}/{singleCar.year}
+                  </strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Marke</span>
-                  <strong>BMW</strong>
+                  <strong>{singleCar.make}</strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Modell</span>
-                  <strong>3er-Reihe</strong>
+                  <strong>{singleCar.model}</strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Fahrzeugtype</span>
-                  <strong>Limousine</strong>
+                  <strong>{singleCar.body}</strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Zustand</span>
-                  <strong>Gebrauchtwagen</strong>
+                  <strong>{singleCar.condition}</strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Kilometer</span>
-                  <strong>154.000</strong>
+                  <strong>{singleCar.mileage}</strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Getriebeart</span>
-                  <strong>Automatik</strong>
+                  <strong>{singleCar.transmission}</strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Antrieb</span>
-                  <strong>Hinterrad</strong>
+                  <strong>{singleCar.drivetrain}</strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Hubraum</span>
-                  <strong>2.497 cm³</strong>
+                  <strong>{singleCar.engine} cm³</strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Treibstoff</span>
-                  <strong>Benzin</strong>
+                  <strong>{singleCar.fuel}</strong>
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Leistung</span>
@@ -117,7 +111,7 @@ const CarPage = () => {
                 </li>
                 <li className='mka__car-attributes'>
                   <span>Farbe</span>
-                  <strong>Silber</strong>
+                  <strong>{singleCar.exterior}</strong>
                 </li>
               </ul>
             </div>
