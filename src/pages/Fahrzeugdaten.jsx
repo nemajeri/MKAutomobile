@@ -5,8 +5,8 @@ const Fahrzeugdaten = ({ carsList }) => {
   return (
     <>
       <div id='header-img-id' className='header-img-div'>
-        <Header carsList={carsList} />
-        <Navbar />
+        <Header />
+        <Navbar carsList={carsList} />
         <div className='mka__logo-img'>
           <div className='mka__logo-size'>
             <Logo />

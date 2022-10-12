@@ -5,14 +5,27 @@ import CarEquipment from './CarEquipment';
 import CarDescription from './CarDescription';
 import { FaExchangeAlt, FaSlidersH } from 'react-icons/fa';
 import MainProductPageSlider from '../MainProductPageSlider/MainProductPageSlider';
+import CarDetails from './CarDetails';
 // import HomeSlider from '../HomeSlider/HomeSlider';
 
-const CarPage = ({ carsList }) => {
+const CarPage = () => {
   const { id } = useParams();
   const [isActive, setIsActive] = useState(true);
+  const [car, setCar] = useState();
+  const [loading, setLoading] = useState(true);
 
-  const singleCar = carsList.find(car => car.id === id) || {};
-  console.log(singleCar);
+  const url = `http://finity.pro/clients/mkautomobile/cars/${id}`;
+
+  useEffect(() => {
+    const fetchCar = async () => {
+      const response = await fetch(url);
+      const data = await response.json();
+      setCar(data);
+      setLoading(false);
+    };
+
+    fetchCar();
+  }, []);
 
   const handleClick = () => {
     setIsActive(false);
@@ -23,11 +36,8 @@ const CarPage = ({ carsList }) => {
       <div className='mka__container'>
         <div className='mka__content-carpage'>
           <div className='mka__title-price-carpage'>
-            <h3>
-              BMW 3ER-REIHE 325 I XDRIVE (E90) ** ALLRAD - AUTOMATIK** <br />
-              LIMOUSINE
-            </h3>
-            <h4>{singleCar.price}€</h4>
+            {/* <h3>{car.title}</h3>
+            <h4>{car.price}€</h4> */}
           </div>
           <div className='mka__email-filed-carpage'>
             <a className='mka__comparison-carpage'>
@@ -59,62 +69,7 @@ const CarPage = ({ carsList }) => {
             <div className='mka__gallery-carpage'>
               <MainProductPageSlider />
             </div>
-            <div className='mka__description-carpage'>
-              <h6>BESCHREIBUNG</h6>
-              <div className='mka__section-divider short-carpage'></div>
-              <ul className='mka__list-carpage'>
-                <li className='mka__car-attributes'>
-                  <span>Erstzulassung</span>
-                  <strong>
-                    {singleCar.month}/{singleCar.year}
-                  </strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Marke</span>
-                  <strong>{singleCar.make}</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Modell</span>
-                  <strong>{singleCar.model}</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Fahrzeugtype</span>
-                  <strong>{singleCar.body}</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Zustand</span>
-                  <strong>{singleCar.condition}</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Kilometer</span>
-                  <strong>{singleCar.mileage}</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Getriebeart</span>
-                  <strong>{singleCar.transmission}</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Antrieb</span>
-                  <strong>{singleCar.drivetrain}</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Hubraum</span>
-                  <strong>{singleCar.engine} cm³</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Treibstoff</span>
-                  <strong>{singleCar.fuel}</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Leistung</span>
-                  <strong>160kw /218 PS</strong>
-                </li>
-                <li className='mka__car-attributes'>
-                  <span>Farbe</span>
-                  <strong>{singleCar.exterior}</strong>
-                </li>
-              </ul>
-            </div>
+            {loading == false && <CarDetails car={car} />}
           </div>
           <div className='mka__description-tabs__carpage'>
             <ul>

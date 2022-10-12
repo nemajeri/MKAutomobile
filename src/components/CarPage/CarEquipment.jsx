@@ -2,7 +2,7 @@ import React from 'react';
 import { FaCheck } from 'react-icons/fa';
 import './CarPage.css';
 
-const CarEquipment = () => {
+const CarEquipment = ({ car }) => {
   return (
     <>
       <ul className='mka__list-alignment__carpage'>
