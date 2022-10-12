@@ -2,12 +2,12 @@ import './Kontakt.css';
 import { Header, Navbar, Jumbotrone, Logo, Contact } from '../../components';
 import React from 'react';
 
-const Kontakt = () => {
+const Kontakt = ({ carsList }) => {
   return (
     <>
       <div id='header-img-id' className='header-img-div'>
         <Header />
-        <Navbar />
+        <Navbar carsList={carsList} />
         <div className='mka__logo-img'>
           <div className='mka__logo-size mka__logo-size-kontakt'>
             <Logo />
