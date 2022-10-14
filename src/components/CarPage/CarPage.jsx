@@ -15,6 +15,7 @@ const CarPage = ({ carsList }) => {
   const [car, setCar] = useState();
   const [loading, setLoading] = useState(true);
   const [cars, setCars] = useState([]);
+  const [halfOfFeatures, setHalfOfFeatures] = useState();
 
   const url = `http://finity.pro/clients/mkautomobile/cars/${id}`;
   const currentCars = carsList.slice(-5);
@@ -23,6 +24,8 @@ const CarPage = ({ carsList }) => {
     const fetchCar = async () => {
       const response = await fetch(url);
       const singleCar = await response.json();
+      const secondColumnStart = Math.floor(singleCar.features.length / 2);
+      setHalfOfFeatures(secondColumnStart);
       setCar(singleCar);
       setLoading(false);
     };
@@ -75,7 +78,7 @@ const CarPage = ({ carsList }) => {
               </li>
             </ul>
             {isActive ? (
-              <CarEquipment car={car} />
+              <CarEquipment car={car} halfOfFeatures={halfOfFeatures} />
             ) : (
               <CarDescription car={car} />
             )}
