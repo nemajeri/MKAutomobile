@@ -64,7 +64,7 @@ const Search = ({ carsList }) => {
     , IndicatorSeparator:() => null }}
   formatOptionLabel={car => (
     <div className="car-option">
-      <img src={require("../../assets/bmw.jpg")} alt="car-label"/>
+      <img src={require("../../../assets/bmw.jpg")} alt="car-label"/>
       <Link to={`/fahrzeugdaten/${car.id}`}>
       <span>{car.label}</span>
       </Link>

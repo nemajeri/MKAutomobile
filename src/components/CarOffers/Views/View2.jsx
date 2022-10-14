@@ -8,7 +8,7 @@ const View2 = ({car: {id, month, year, transmission, title, price, mileage}}) =>
     <div className="cars-item_wrapper-view2">
         <div className="cars-item_details-view2">
     <div className="cars-item_image-container-view2">
-      <img src={require("../../assets/bmw.jpg")} alt="car" className='cars-item_image-view2' />
+      <img src={require("../../../assets/bmw.jpg")} alt="car" className='cars-item_image-view2' />
       <div className="overlay">
         <ul>
           <li>

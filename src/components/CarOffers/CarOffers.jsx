@@ -1,19 +1,18 @@
-import CarsItem from './CarsItem';
-import CarSlider from './CarSlider';
-import Search from './Search';
-import FilterSideBar from './FilterSideBar';
-import CarsPerPage from './CarsPerPage.jsx';
 import React, { useState, useEffect } from 'react';
-import SortingCars from './SortingCars';
-import PropTypes from 'prop-types';
-import AlignItem1 from './AlignItem1';
-import { AlignItem2 } from './AlignItem2';
-import { AlignItem3 } from './AlignItem3';
-import { AlignItem4 } from './AlignItem4';
+import CarsItem from './CarsItem';
+import CarSlider from './TopBarWithFiltersAndSlider/CarSlider';
+import Search from './SearchInput/Search';
+import FilterSideBar from './SideBarWithFilters/FilterSideBar';
+import CarsPerPage from './TopBarWithFiltersAndSlider/CarsPerPage.jsx';
+import SortingCars from './TopBarWithFiltersAndSlider/SortingCars';
+import { AlignItem1 } from './AlignmentIcons/AlignItem1';
+import { AlignItem2 } from './AlignmentIcons/AlignItem2';
+import { AlignItem3 } from './AlignmentIcons/AlignItem3';
+import { AlignItem4 } from './AlignmentIcons/AlignItem4';
 import ReactPaginate from 'react-paginate';
 import LoadingSvg from '../LoadingSvg';
 import './CarOffers.css';
-import './CarAlignment.css';
+import './AlignmentIcons/CarAlignment.css';
 import './Cars.css';
 
 const initialState = 'view_1';
@@ -319,10 +318,6 @@ const CarOffers = () => {
       </div>
     </div>
   );
-};
-
-CarOffers.propTypes = {
-  selectedCarSortingMethod: PropTypes.string,
 };
 
 export default CarOffers;

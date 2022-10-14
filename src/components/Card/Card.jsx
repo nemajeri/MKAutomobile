@@ -1,10 +1,11 @@
 import './Card.css';
 import { FaCalendarAlt, FaCog, FaLink } from 'react-icons/fa';
 import { GiGasPump } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 import React from 'react';
 
 const Card = ({
-  car: { year, month, transmission, mileage, price, title, link },
+  car: { id, year, month, transmission, mileage, price, title, link }
 }) => {
   return (
     <>
@@ -18,11 +19,9 @@ const Card = ({
           <div className='overlay'>
             <ul>
               <li>
-                <a href='https://mkautomobile.at/fahrzeugdaten/579220740/'>
-                  <i>
-                    <FaLink />
-                  </i>
-                </a>
+              <Link to={`/fahrzeugdaten/${id}`}>
+              <i><FaLink /></i>
+            </Link>
               </li>
             </ul>
           </div>
@@ -54,14 +53,13 @@ const Card = ({
           </ul>
         </div>
         <div className='card_car-content'>
-          <a
+          <Link to={`/fahrzeugdaten/${id}`}
             className='card_car-title'
-            href='https://mkautomobile.at/fahrzeugdaten/577930368/'
           >
             <h6>
               Mazda Mazda6 Sport Combi CD150 Attraction Aut. Kombi / Family Van
             </h6>
-          </a>
+          </Link>
         </div>
         <div className='card_separator'></div>
         <div className='card_car-price'>

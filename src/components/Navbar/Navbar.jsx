@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import Search from "../CarOffers/Search";
+import Search from "../CarOffers/SearchInput/Search";
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
