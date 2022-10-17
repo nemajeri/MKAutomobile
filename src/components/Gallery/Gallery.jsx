@@ -1,6 +1,5 @@
-import './Gallery.css';
-import ImageSlider from '../ImageSlider/ImageSlider';
 import React from 'react';
+import ImageSlider from '../ImageSlider/ImageSlider';
 
 const Gallery = () => {
   return (

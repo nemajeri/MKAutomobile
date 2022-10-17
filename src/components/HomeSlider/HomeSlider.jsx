@@ -1,17 +1,14 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Card from '../Card/Card'
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Card from '../Card/Card';
 
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "./HomeSlider.css"
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
+import { Navigation } from 'swiper';
 
-import { Navigation } from "swiper";
-
-const HomeSlider = ({cars}) => {
-
+const HomeSlider = ({ cars }) => {
   return (
     <>
       <Swiper
@@ -30,15 +27,19 @@ const HomeSlider = ({cars}) => {
           1200: {
             slidesPerView: 4,
             spaceBetween: 30,
-          }
-        }} 
+          },
+        }}
         modules={[Navigation]}
-        className="mka__home-slider"
+        className='mka__home-slider'
       >
-        { cars.map( car => <SwiperSlide key={car.id}><Card car={car} key={car.id}/></SwiperSlide>)}
+        {cars.map(car => (
+          <SwiperSlide key={car.id}>
+            <Card car={car} key={car.id} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
-}
+};
 
-export default HomeSlider
+export default HomeSlider;

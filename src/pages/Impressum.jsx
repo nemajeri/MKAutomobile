@@ -1,5 +1,5 @@
-import { Header, Navbar, Jumbotrone, Logo, Impression } from '../components';
 import React from 'react';
+import { Header, Navbar, Jumbotrone, Logo, Impression } from '../components';
 
 const Impressum = ({ carsList }) => {
   return (

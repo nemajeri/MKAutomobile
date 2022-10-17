@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
-import './Dropzone.css'
-import { IconContext } from "react-icons";
-import Dropzone from "react-dropzone";
-import { VscInbox } from 'react-icons/vsc'
+import React, { useState } from 'react';
+import './Dropzone.css';
+import { IconContext } from 'react-icons';
+import Dropzone from 'react-dropzone';
+import { VscInbox } from 'react-icons/vsc';
 
 const DropzoneElement = () => {
   const [fileNames, setFileNames] = useState([]);
@@ -10,38 +10,32 @@ const DropzoneElement = () => {
     setFileNames(acceptedFiles.map(file => file.name));
 
   return (
-    <div className="App">
-      <Dropzone
-        onDrop={handleDrop}
-        minSize={1024}
-        maxSize={3072000}
-      >
-        {({
-          getRootProps,
-          getInputProps,
-          isDragAccept,
-          isDragReject
-        }) => {
+    <div className='App'>
+      <Dropzone onDrop={handleDrop} minSize={1024} maxSize={3072000}>
+        {({ getRootProps, getInputProps, isDragAccept, isDragReject }) => {
           const additionalClass = isDragAccept
-            ? "accept"
+            ? 'accept'
             : isDragReject
-            ? "reject"
-            : "";
+            ? 'reject'
+            : '';
 
           return (
             <div
               {...getRootProps({
-                className: `dropzone ${additionalClass}`
+                className: `dropzone ${additionalClass}`,
               })}
             >
               <input {...getInputProps()} />
               <span>
-              <IconContext.Provider  value={{ size: '30px' }}>
-                <VscInbox/>
-               </IconContext.Provider>
-                </span>
-              <p id='text'>Klicken oder ziehen Sie Dateien in diesen Bereich, um sie hochzuladen. <br/>
-Sie können bis zu 3 Dateien hochladen.</p>
+                <IconContext.Provider value={{ size: '30px' }}>
+                  <VscInbox />
+                </IconContext.Provider>
+              </span>
+              <p id='text'>
+                Klicken oder ziehen Sie Dateien in diesen Bereich, um sie
+                hochzuladen. <br />
+                Sie können bis zu 3 Dateien hochladen.
+              </p>
             </div>
           );
         }}
@@ -56,6 +50,6 @@ Sie können bis zu 3 Dateien hochladen.</p>
       </div>
     </div>
   );
-}
+};
 
-export default DropzoneElement
+export default DropzoneElement;

@@ -1,6 +1,6 @@
-import './Jumbotrone.css';
-import { Footer } from '../../components';
 import React from 'react';
+import { Footer } from '../../components';
+import './Jumbotrone.css';
 
 const Jumbotrone = () => {
   return (

@@ -1,4 +1,4 @@
-import './Home.css';
+import React from 'react';
 import {
   Header,
   Navbar,
@@ -6,7 +6,7 @@ import {
   Logo,
   HomePageCarList,
 } from '../../components';
-import React from 'react';
+import './Home.css';
 
 const Home = ({ carsList }) => {
   return (

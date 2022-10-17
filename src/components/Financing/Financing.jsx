@@ -1,7 +1,7 @@
-import './Financing.css';
+import React from 'react';
 import Denzelbank from '../Denzelbank';
 import Santanderbank from '../Santanderbank';
-import React from 'react';
+import './Financing.css';
 
 const Financing = () => {
   return (

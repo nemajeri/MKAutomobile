@@ -1,6 +1,6 @@
-import './Header.css';
-import { FaPhoneAlt, FaRegEnvelope, FaMobileAlt } from 'react-icons/fa';
 import React from 'react';
+import { FaPhoneAlt, FaRegEnvelope, FaMobileAlt } from 'react-icons/fa';
+import './Header.css';
 
 const Header = () => {
   return (

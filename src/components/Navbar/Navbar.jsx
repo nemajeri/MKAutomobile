@@ -1,43 +1,43 @@
-import "./Navbar.css";
-import Search from "../CarOffers/SearchInput/Search";
-import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-import { IoClose } from "react-icons/io5";
-import { Fade as Hamburger } from "hamburger-react";
-import { IconContext } from "react-icons";
+import React, { useState } from 'react';
+import Search from '../CarOffers/SearchInput/Search';
+import { FaSearch } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
+import { IoClose } from 'react-icons/io5';
+import { Fade as Hamburger } from 'hamburger-react';
+import { IconContext } from 'react-icons';
+import './Navbar.css';
 
 const Navbar = ({ carsList }) => {
   const [isOpen, setOpen] = useState(false);
   const [toggleSearch, setToggleSearch] = useState(false);
   return (
-    <div className="mka__navbar">
-      <div className="mka__navbar-links">
-        <div className="mka__navbar-links_container">
+    <div className='mka__navbar'>
+      <div className='mka__navbar-links'>
+        <div className='mka__navbar-links_container'>
           <p>
-            <NavLink to="/">HOME</NavLink>
+            <NavLink to='/'>HOME</NavLink>
           </p>
           <p>
-            <NavLink to="/fahrzeugangebote">FAHRZEUGANGEBOTE</NavLink>
+            <NavLink to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink>
           </p>
           <p>
-            <NavLink to="/finanzierung">FINANZIERUNG</NavLink>
+            <NavLink to='/finanzierung'>FINANZIERUNG</NavLink>
           </p>
           <p>
-            <NavLink to="/fahrzeugankauf">FAHRZEUGANKAUF</NavLink>
+            <NavLink to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink>
           </p>
           <p>
-            <NavLink to="/galerie">GALERIE</NavLink>
+            <NavLink to='/galerie'>GALERIE</NavLink>
           </p>
           <p>
-            <NavLink to="/kontakt">KONTAKT</NavLink>
+            <NavLink to='/kontakt'>KONTAKT</NavLink>
           </p>
-          <div className="mka__search_column">
+          <div className='mka__search_column'>
             <p>
               <i>
                 {toggleSearch ? (
-                  <IconContext.Provider value={{ className: "io-close" }}>
-                    {" "}
+                  <IconContext.Provider value={{ className: 'io-close' }}>
+                    {' '}
                     <IoClose onClick={() => setToggleSearch(false)} />
                   </IconContext.Provider>
                 ) : (
@@ -46,17 +46,17 @@ const Navbar = ({ carsList }) => {
               </i>
             </p>
             {toggleSearch && (
-              <div className="mka__search-div">
-                <Search carsList={carsList}/>
+              <div className='mka__search-div'>
+                <Search carsList={carsList} />
               </div>
             )}
           </div>
         </div>
         {
-          <div className="mka___hamburger-menu">
+          <div className='mka___hamburger-menu'>
             <Hamburger
-              color="#fff"
-              className=""
+              color='#fff'
+              className=''
               size={27}
               toggled={isOpen}
               toggle={setOpen}
@@ -64,26 +64,26 @@ const Navbar = ({ carsList }) => {
           </div>
         }
         {isOpen && (
-          <div className="mka__navbar-menu-margins">
-            <div className="mka__navbar-menu_container">
-              <div className="mka__navbar-menu_container-links">
+          <div className='mka__navbar-menu-margins'>
+            <div className='mka__navbar-menu_container'>
+              <div className='mka__navbar-menu_container-links'>
                 <p>
-                  <NavLink to="/">HOME</NavLink>
+                  <NavLink to='/'>HOME</NavLink>
                 </p>
                 <p>
-                  <NavLink to="/fahrzeugangebote">FAHRZEUGANGEBOTE</NavLink>
+                  <NavLink to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink>
                 </p>
                 <p>
-                  <NavLink to="/finanzierung">FINANZIERUNG</NavLink>
+                  <NavLink to='/finanzierung'>FINANZIERUNG</NavLink>
                 </p>
                 <p>
-                  <NavLink to="/fahrzeugankauf">FAHRZEUGANKAUF</NavLink>
+                  <NavLink to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink>
                 </p>
                 <p>
-                  <NavLink to="/galerie">GALERIE</NavLink>
+                  <NavLink to='/galerie'>GALERIE</NavLink>
                 </p>
                 <p>
-                  <NavLink to="/kontakt">KONTAKT</NavLink>
+                  <NavLink to='/kontakt'>KONTAKT</NavLink>
                 </p>
               </div>
             </div>
@@ -91,7 +91,7 @@ const Navbar = ({ carsList }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -217,6 +217,74 @@ select {
   height: 45px;
 }
 
+/* Css ikona na Fahrzeugangebote stranici */
+
+.mka__div-icon {
+  display: flex;
+  align-self: center;
+}
+
+.mka__span-icon {
+  width: 22px;
+  height: 18px;
+  margin: 0 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cls-1 {
+  fill: #949799;
+}
+
+.cls-2 {
+  fill: var(--color-red);
+}
+/* Css Drop zone */
+
+.dropzone {
+  text-align: center;
+  padding: 20px;
+  border: 1px dashed #eeeeee;
+  background-color: transparent;
+  color: #bdbdbd;
+  margin-bottom: 20px;
+}
+
+.accept {
+  border-color: #107c10 !important;
+}
+
+.reject {
+  border-color: #d83b01 !important;
+}
+
+#text {
+  color: var(--color-grey);
+  text-align: center;
+}
+
+/* Css vrapera galerije */
+
+.mka__wrapper-gallery {
+  background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+  background-repeat: repeat;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  position: initial;
+  overflow: hidden;
+  background-size: cover;
+}
+
+/* Css home image slajdera */
+
+.mka__home-slider {
+  aspect-ratio: 0 !important;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  overflow: visible;
+}
+
 @media (max-width: 767px) {
   .form {
     display: flex;

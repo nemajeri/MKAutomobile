@@ -1,5 +1,5 @@
-import { Header, Navbar, Jumbotrone, Logo, Financing } from '../components';
 import React from 'react';
+import { Header, Navbar, Jumbotrone, Logo, Financing } from '../components';
 
 const Finanzierung = ({ carsList }) => {
   return (

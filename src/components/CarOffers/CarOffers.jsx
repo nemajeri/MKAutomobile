@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import CarsItem from './CarsItem';
-import CarSlider from './TopBarWithFiltersAndSlider/CarSlider';
-import Search from './SearchInput/Search';
-import FilterSideBar from './SideBarWithFilters/FilterSideBar';
-import CarsPerPage from './TopBarWithFiltersAndSlider/CarsPerPage.jsx';
-import SortingCars from './TopBarWithFiltersAndSlider/SortingCars';
-import { AlignItem1 } from './AlignmentIcons/AlignItem1';
-import { AlignItem2 } from './AlignmentIcons/AlignItem2';
-import { AlignItem3 } from './AlignmentIcons/AlignItem3';
-import { AlignItem4 } from './AlignmentIcons/AlignItem4';
+import {
+  CarSlider,
+  Search,
+  FilterSideBar,
+  CarsPerPage,
+  SortingCars,
+} from './index';
+import {
+  AlignItem1,
+  AlignItem2,
+  AlignItem3,
+  AlignItem4,
+} from './AlignmentIcons/index';
 import ReactPaginate from 'react-paginate';
 import LoadingSvg from '../LoadingSvg';
 import './CarOffers.css';
-import './AlignmentIcons/CarAlignment.css';
-import './Cars.css';
 
 const initialState = 'view_1';
 

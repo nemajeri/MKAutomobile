@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './CarPage.css';
-import CarEquipment from './CarEquipment';
-import CarDescription from './CarDescription';
 import { FaSlidersH } from 'react-icons/fa';
-import MainProductPageSlider from '../MainProductPageSlider/MainProductPageSlider';
-import CarDetails from './CarDetails';
-import CarPageHeaderSection from './CarPageHeaderSection';
+import {
+  CarEquipment,
+  CarDescription,
+  MainProductPageSlider,
+  CarDetails,
+  CarPageHeaderSection,
+} from './index';
 import HomeSlider from '../HomeSlider/HomeSlider';
+import './CarPage.css';
 
 const CarPage = ({ carsList }) => {
   const { id } = useParams();
@@ -31,6 +33,7 @@ const CarPage = ({ carsList }) => {
     };
     getCars(currentCars);
     fetchCar();
+    // eslint-disable-next-line
   }, []);
 
   const getCars = arr => {

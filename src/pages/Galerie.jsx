@@ -1,5 +1,5 @@
-import { Header, Navbar, Jumbotrone, Logo, Gallery } from '../components';
 import React from 'react';
+import { Header, Navbar, Jumbotrone, Logo, Gallery } from '../components';
 
 const Datenschutz = ({ carsList }) => {
   return (

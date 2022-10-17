@@ -1,6 +1,6 @@
-import './Kontakt.css';
-import { Header, Navbar, Jumbotrone, Logo, Contact } from '../../components';
 import React from 'react';
+import { Header, Navbar, Jumbotrone, Logo, Contact } from '../../components';
+import './Kontakt.css';
 
 const Kontakt = ({ carsList }) => {
   return (
