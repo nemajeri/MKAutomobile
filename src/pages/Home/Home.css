@@ -39,17 +39,14 @@
 #mercedes-min {
     height: auto;
     position: relative;
-    width: 100vh;
     transform: translate(-60px, 0px);
-    ;
 }
 
 #bmw-min {
     z-index: 2;
     height: auto;
     position: relative;
-    width: 100vh;
-    transform: translate(60px, 0px);
+    transform: translate(75px, 0px);
 }
 
 .car-aligment {
@@ -57,6 +54,16 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
+    width: 35%;
     aspect-ratio: 1 / 0.6;
+}
+
+@media (max-width: 787px) {
+    #bmw-min {
+        transform: translate(50px, 0px);
+    }
+
+    #mercedes-min {
+        transform: translate(-20px, 0px);
+    }
 }
