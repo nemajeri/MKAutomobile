@@ -11,7 +11,7 @@ import './Home.css';
 const Home = ({ carsList }) => {
   return (
     <>
-      <div className='home-background-image'>
+      <div className='mka__home-background-image'>
         <Header />
         <Navbar carsList={carsList} />
         <div className='mka__logo-img'>
