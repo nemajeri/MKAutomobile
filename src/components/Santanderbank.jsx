@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Icon = () => {
+const Santanderbank = () => {
   return (
     <svg
       className='mka__responsive-svg'
@@ -17,4 +17,4 @@ const Icon = () => {
   );
 };
 
-export default Icon;
+export default Santanderbank;

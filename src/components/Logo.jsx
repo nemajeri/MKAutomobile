@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Icon = () => {
+const Logo = () => {
   return (
+    <div className='mka__logo-img'>
+    <div className='mka__logo-size'>
     <svg
       xmlns='http://www.w3.org/2000/svg'
       version='1.1'
@@ -132,7 +134,9 @@ const Icon = () => {
         ></path>
       </g>
     </svg>
+    </div>
+        </div>
   );
 };
 
-export default Icon;
+export default Logo;

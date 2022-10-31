@@ -10,7 +10,7 @@ const Jumbotrone = () => {
           <div className='mka__jumbotrone-div'>
             <div className='mka__jumbotrone-contact'>
               <h6>KONTAKT</h6>
-              <div className='mka__jumbotrone-red-line'></div>
+              <div className='mka__contact-infos-divider'></div>
               <p>
                 Im Trenkenschuh 15-17<br></br>
                 2100 Korneuburg<br></br>
@@ -25,7 +25,7 @@ const Jumbotrone = () => {
             </div>
             <div className='mka__jumbotrone-opening-times'>
               <h6>ÖFFNUNGSZEITEN</h6>
-              <div className='mka__jumbotrone-red-line'></div>
+              <div className='mka__contact-infos-divider'></div>
               <p>
                 Probefahrt und Besichtigung sind<br></br>
                 ausschließlich nach Terminvereinbarung möglich.

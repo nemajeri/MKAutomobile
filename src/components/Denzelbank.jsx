@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Icon = () => {
+const Denzelbank = () => {
   return (
     <svg
       className='mka__responsive-svg'
@@ -26,4 +26,4 @@ const Icon = () => {
   );
 };
 
-export default Icon;
+export default Denzelbank;

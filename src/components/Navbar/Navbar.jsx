@@ -14,26 +14,15 @@ const Navbar = ({ carsList }) => {
     <div className='mka__navbar'>
       <div className='mka__navbar-links'>
         <div className='mka__navbar-links_container'>
-          <p>
-            <NavLink to='/'>HOME</NavLink>
-          </p>
-          <p>
-            <NavLink to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink>
-          </p>
-          <p>
-            <NavLink to='/finanzierung'>FINANZIERUNG</NavLink>
-          </p>
-          <p>
-            <NavLink to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink>
-          </p>
-          <p>
-            <NavLink to='/galerie'>GALERIE</NavLink>
-          </p>
-          <p>
-            <NavLink to='/kontakt'>KONTAKT</NavLink>
-          </p>
+            <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/' end>HOME</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/finanzierung'>FINANZIERUNG</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/galerie'>GALERIE</NavLink>
+            <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/kontakt'>KONTAKT</NavLink>
           <div className='mka__search_column'>
-            <p>
+           {/* eslint-disable-next-line */}
+            <a>
               <i>
                 {toggleSearch ? (
                   <IconContext.Provider value={{ className: 'io-close' }}>
@@ -44,7 +33,7 @@ const Navbar = ({ carsList }) => {
                   <FaSearch onClick={() => setToggleSearch(true)} />
                 )}
               </i>
-            </p>
+            </a>
             {toggleSearch && (
               <div className='mka__search-div'>
                 <Search carsList={carsList} />
@@ -67,24 +56,12 @@ const Navbar = ({ carsList }) => {
           <div className='mka__navbar-menu-margins'>
             <div className='mka__navbar-menu_container'>
               <div className='mka__navbar-menu_container-links'>
-                <p>
-                  <NavLink to='/'>HOME</NavLink>
-                </p>
-                <p>
-                  <NavLink to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink>
-                </p>
-                <p>
-                  <NavLink to='/finanzierung'>FINANZIERUNG</NavLink>
-                </p>
-                <p>
-                  <NavLink to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink>
-                </p>
-                <p>
-                  <NavLink to='/galerie'>GALERIE</NavLink>
-                </p>
-                <p>
-                  <NavLink to='/kontakt'>KONTAKT</NavLink>
-                </p>
+                  <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/' >HOME</NavLink>
+                  <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/fahrzeugangebote'>FAHRZEUGANGEBOTE</NavLink>
+                  <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/finanzierung'>FINANZIERUNG</NavLink>
+                  <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/fahrzeugankauf'>FAHRZEUGANKAUF</NavLink>
+                  <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/galerie'>GALERIE</NavLink>
+                  <NavLink className={({ isActive }) => (isActive ? 'mka__link-active' : 'mka__link-inactive')} to='/kontakt'>KONTAKT</NavLink>
               </div>
             </div>
           </div>
