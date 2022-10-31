@@ -11,30 +11,28 @@ import './Home.css';
 const Home = ({ carsList }) => {
   return (
     <>
-      <div id='home-img-id' className='home-img-div'>
+      <div className='home-background-image'>
         <Header />
         <Navbar carsList={carsList} />
         <div className='mka__logo-img'>
-          <div className='mka__logo-size'>
+          <div className='mka__logo-size_home'>
             <Logo />
           </div>
         </div>
-        <h2 id='mka__home-subtitle'>HERZLICH WILLKOMMEN</h2>
-        <div className='car-aligment'>
+        <h2>HERZLICH WILLKOMMEN</h2>
+        <div className='mka__home-car-aligment'>
           <img
-            id='bmw-min'
-            className='mka__car-img'
+            className='mka__home-car-bmw'
             src={require('../../assets/bmw-min.png')}
             alt='bmw-min'
           />
           <img
-            id='mercedes-min'
-            className='mka__car-img'
+            className='mka__home-car-mercedes'
             src={require('../../assets/mercedes-min.png')}
             alt='mercedes-min'
           />
         </div>
-        <p id='mka__home-description'>
+        <p className='mka__home-description'>
           Probefahrt und Besichtigung sind ausschließlich nach
           Terminvereinbarung möglich
         </p>

@@ -1,24 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-.home-img-div {
+.home-background-image {
     position: relative;
     z-index: 1;
     height: 780px;
-}
-
-#mka__home-subtitle {
-    text-align: center;
-    padding-top: 8rem;
-    font-family: 'Raleway', sans-serif;
-}
-
-#home-img-id {
     background-image: url(http://mkautomobile.at/wp-content/uploads/2021/04/dark-min.jpg?id=492);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-#mka__home-description {
+.home-background-image h2 {
+    text-align: center;
+    padding-top: 8rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.mka__home-description {
     text-align: center;
     color: white;
     padding-top: 0.5rem;
@@ -26,7 +23,7 @@
     font-size: x-large;
 }
 
-.mka__logo-size {
+.mka__logo-size_home {
     width: 28%;
     position: absolute;
     margin-left: auto;
@@ -36,20 +33,20 @@
     text-align: center;
 }
 
-#mercedes-min {
+.mka__home-car-mercedes {
     height: auto;
     position: relative;
     transform: translate(-60px, 0px);
 }
 
-#bmw-min {
+.mka__home-car-bmw {
     z-index: 2;
     height: auto;
     position: relative;
     transform: translate(75px, 0px);
 }
 
-.car-aligment {
+.mka__home-car-aligment {
     display: flex;
     justify-content: center;
     margin-left: auto;
@@ -59,11 +56,11 @@
 }
 
 @media (max-width: 787px) {
-    #bmw-min {
+    .mka__home-car-bmw {
         transform: translate(50px, 0px);
     }
 
-    #mercedes-min {
+    .mka__home-car-mercedes {
         transform: translate(-20px, 0px);
     }
 }
