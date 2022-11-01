@@ -2,6 +2,7 @@ import React from 'react';
 
 const Denzelbank = () => {
   return (
+    <div className='mka__logos-santanderbank'>
     <svg
       className='mka__responsive-svg'
       xmlns='http://www.w3.org/2000/svg'
@@ -23,6 +24,7 @@ const Denzelbank = () => {
         display='inline'
       ></path>
     </svg>
+    </div>
   );
 };
 

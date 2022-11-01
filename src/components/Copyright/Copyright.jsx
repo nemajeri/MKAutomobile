@@ -3,7 +3,7 @@ import React from 'react';
 
 const Copyright = () => {
   return (
-    <div className='mka__wrapper-copyright'>
+    <div className='mka__wrapper copyright'>
       <div className='mka__container'>
         <div className='mka__content-copyright'>
           <p>

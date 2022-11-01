@@ -31,15 +31,6 @@
   padding: 0;
 }
 
-.mka__wrapper-financing {
-  background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-  height: 100%;
-  background-repeat: repeat;
-  overflow: hidden;
-  background-size: cover;
-  min-height: 55rem;
-}
-
 .mka__content-financing {
   position: relative;
   margin-top: 32px;
@@ -61,7 +52,6 @@
 
 .mka__logos-denzelbank {
   display: inline-block;
-  margin-left: -60px;
   margin-right: auto;
 }
 

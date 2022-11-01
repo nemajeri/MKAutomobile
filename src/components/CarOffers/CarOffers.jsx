@@ -197,11 +197,11 @@ const CarOffers = () => {
   };
 
   return (
-    <div className='mka__wrapper-car-offers'>
+    <div className='mka__wrapper car-offers'>
       <div className='mka__container'>
         <div className='mka__content-car-offers'>
           <div className={`mka__content-car-offers__main-grid ${isActive}`}>
-            <div className='item1'>
+            <div className='mka__filters-and-views'>
               <CarSlider
                 handleSliderChange={handleSliderChange}
                 sliderValues={sliderValues}
@@ -244,7 +244,7 @@ const CarOffers = () => {
                 </div>
               </div>
             </div>
-            <div className='item2'>
+            <div className='mka__search-and-filters'>
               <div className='mka__side-bar-divider'>
                 <h6>FAHRZEUGSUCHE</h6>
                 <div className='mka__sidebar-divider'></div>
@@ -287,7 +287,7 @@ const CarOffers = () => {
                 </button>
               </div>
             </div>
-            <div className='item3'>
+            <div className='mka__list-of-cars'>
               {loading === true ? (
                 <div className='mka__loading-svg-positioning'>
                   <LoadingSvg />

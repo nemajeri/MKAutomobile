@@ -4,7 +4,7 @@ import React from 'react';
 
 const CarPurchase = () => {
   return (
-    <div className='mka__wrapper-purchase'>
+    <div className='mka__wrapper purchase'>
       <div className='mka__container'>
         <div className='mka__content-purchase'>
           <p>

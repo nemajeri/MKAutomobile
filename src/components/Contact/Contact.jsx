@@ -6,7 +6,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <div className='mka__wrapper-contact'>
+    <div className='mka__wrapper contact'>
       <div className='mka__container'>
         <div className='mka__content-contact'>
           <div className='mka__contact-infos-container'>

@@ -5,7 +5,7 @@ import './Financing.css';
 
 const Financing = () => {
   return (
-    <div className='mka__wrapper-financing'>
+    <div className='mka__wrapper financing'>
       <div className='mka__container'>
         <div className='mka__content-financing'>
           <p>
@@ -41,12 +41,8 @@ const Financing = () => {
           </p>
           <h1>UNSERE FINANZIERUNGSPARTNER</h1>
           <div className='mka__logos-wrapper'>
-            <div className='mka__logos-santanderbank'>
               <Santanderbank />
-            </div>
-            <div className='mka__logos-denzelbank'>
               <Denzelbank />
-            </div>
           </div>
         </div>
       </div>

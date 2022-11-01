@@ -3,19 +3,11 @@
   padding-top: 32px;
 }
 
-.mka__wrapper-purchase {
-  background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-  background-repeat: repeat;
-  min-height: 80rem;
-  background-size: cover;
-  padding-bottom: 30px;
-}
-
-.mka__content-purchase>h4 {
+.mka__content-purchase h4 {
   padding: 15px 0;
 }
 
-.mka__content-purchase>p {
+.mka__content-purchase p {
   margin: 0 0 10px;
   color: #fff;
   font-size: 15px;
@@ -29,7 +21,7 @@
   margin-left: 40px;
 }
 
-.mka__content-purchase ul>li {
+.mka__content-purchase ul li {
   color: #fff;
   font-size: 15px;
   list-style: disc outside;

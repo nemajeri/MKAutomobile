@@ -229,6 +229,7 @@ select {
 .cls-2 {
   fill: var(--color-red);
 }
+
 /* Css Drop zone */
 
 .dropzone {
@@ -253,16 +254,69 @@ select {
   text-align: center;
 }
 
-/* Css vrapera galerije */
-
-.mka__wrapper-gallery {
+/* Css vraperi stranica */
+.mka__wrapper {
   background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
   background-repeat: repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.gallery {
   padding-top: 3rem;
   padding-bottom: 5rem;
   position: initial;
-  overflow: hidden;
   background-size: cover;
+}
+
+.car-offers {
+  height: 100%;
+  background-size: auto;
+}
+
+.carpage {
+  background-size: auto;
+  height: auto;
+}
+
+.purchase {
+  min-height: 80rem;
+  background-size: cover;
+  padding-bottom: 30px;
+}
+
+.contact {
+  height: 100%;
+  background-size: cover;
+}
+
+.copyright {
+  height: 100%;
+  background-size: contain;
+  min-height: 67rem;
+}
+
+.home-list {
+  height: 100%;
+  background-size: auto;
+  min-height: 65rem;
+}
+
+.error {
+  background-size: cover;
+  height: auto;
+}
+
+.impression {
+  height: 100%;
+  background-size: contain;
+  min-height: 38rem;
+}
+
+.financing {
+  height: 100%;
+  background-size: cover;
+  min-height: 55rem;
 }
 
 /* Css home image slajdera */

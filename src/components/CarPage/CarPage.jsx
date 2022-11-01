@@ -45,7 +45,7 @@ const CarPage = ({ carsList }) => {
   };
 
   return (
-    <div className='mka__wrapper-carpage'>
+    <div className='mka__wrapper carpage'>
       <div className='mka__container'>
         <div className='mka__content-carpage'>
           {loading === false && <CarPageHeaderSection car={car} />}

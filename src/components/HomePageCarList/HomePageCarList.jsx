@@ -23,7 +23,7 @@ const HomePageCarList = () => {
   }, []);
 
   return (
-    <div className='mka__wrapper-home-list'>
+    <div className='mka__wrapper home-list'>
       <div className='mka__container'>
         <div className='mka__content'>
           <h2>FAHRZEUGANGEBOTE</h2>

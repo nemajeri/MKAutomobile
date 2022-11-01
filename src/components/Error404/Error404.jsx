@@ -3,17 +3,17 @@ import './Error404.css';
 
 const Error404 = () => {
   return (
-    <div className='mka__wrapper-error'>
+    <div className='mka__wrapper error'>
       <div className='mka__container'>
         <div className='mka__content-error'>
-          <h1 id='title'>OOOPPS...</h1>
-          <h3 id='subtitle'>
+          <h1>OOOPPS...</h1>
+          <h3>
             Die von Ihnen gesuchte Seite wurde nicht gefunden.
           </h3>
-          <p id='text'>
+          <p>
             Sie können nicht finden, wonach Sie suchen? Nehmen Sie sich einen
             Moment Zeit und suchen Sie unten oder starten Sie auf unserer{' '}
-            <a id='link' href='/'>
+            <a href='/'>
               Homepage
             </a>
           </p>

@@ -1,12 +1,4 @@
-  .mka__wrapper-contact {
-    background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
-    background-repeat: repeat;
-    height: 100%;
-    overflow: hidden;
-    background-size: cover;
-  }
-
-  .mka__content-contact {
+.mka__content-contact {
     position: relative;
     min-height: 1px;
     padding-left: 15px;
@@ -24,7 +16,7 @@
     margin-bottom: 10px;
   }
 
-  .mka__contact-infos-card>p {
+  .mka__contact-infos-card p {
     font-size: 14px;
     line-height: 1.5;
   }
