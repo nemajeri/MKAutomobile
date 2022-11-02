@@ -4,7 +4,7 @@ export { default as Footer } from './Footer/Footer';
 export { default as Header } from './Header/Header';
 export { default as Jumbotrone } from './Jumbotrone/Jumbotrone';
 export { default as Navbar } from './Navbar/Navbar';
-export { default as Logo } from './Logo';
+export { default as Logo } from './utils/Logo';
 export { default as Impression } from './Impression/Impression';
 export { default as Copyright } from './Copyright/Copyright';
 export { default as Gallery } from './Gallery/Gallery';

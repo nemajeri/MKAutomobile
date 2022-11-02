@@ -43,7 +43,7 @@ const Search = ({ carsList }) => {
     return (
       <>
   <Select
-  className='select-placeholder'
+  className='mka__search-placeholder'
   cacheOptions
   placeholder='Suche...'
   options={carsOptions}
@@ -63,7 +63,7 @@ const Search = ({ carsList }) => {
     () => <IconContext.Provider value={{ color: "red", className: "mka__search-icon" }}><FaSearch /></IconContext.Provider>
     , IndicatorSeparator:() => null }}
   formatOptionLabel={car => (
-    <div className="car-option">
+    <div className="mka__individual-car-option">
       <img src={require("../../../assets/bmw.jpg")} alt="car-label"/>
       <Link to={`/fahrzeugdaten/${car.id}`}>
       <span>{car.label}</span>

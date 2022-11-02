@@ -9,14 +9,14 @@ const Card = ({
 }) => {
   return (
     <>
-      <div className='card_wrapper'>
-        <div className='card_image-container'>
+      <div className='mka__card-wrapper'>
+        <div className='mka__card_image-container'>
           <img
-            className='image'
+            className='mka__card-image-content'
             src={require('../../assets/bmw.jpg')}
             alt='suggested-cars'
           />
-          <div className='overlay'>
+          <div className='mka__card-overlay-content'>
             <ul>
               <li>
                 <Link to={`/fahrzeugdaten/${id}`}>
@@ -28,9 +28,9 @@ const Card = ({
             </ul>
           </div>
         </div>
-        <div className='card_list'>
-          <ul className='card_inline-list'>
-            <div className='card_info-upper'>
+        <div className='mka__card-car_specs'>
+          <ul className='mka__card-inline-car_specs'>
+            <div className='mka__card-car-info_upper'>
               <li>
                 <i>
                   <FaCalendarAlt />
@@ -44,7 +44,7 @@ const Card = ({
                 {transmission}
               </li>
             </div>
-            <div className='card_info-lower'>
+            <div className='mka__card-car-info_lower'>
               <li>
                 <i>
                   <GiGasPump />
@@ -54,15 +54,15 @@ const Card = ({
             </div>
           </ul>
         </div>
-        <div className='card_car-content'>
-          <Link to={`/fahrzeugdaten/${id}`} className='card_car-title'>
+        <div className='mka__card-car-content'>
+          <Link to={`/fahrzeugdaten/${id}`} className='mka__card-car-title'>
             <h6>
               Mazda Mazda6 Sport Combi CD150 Attraction Aut. Kombi / Family Van
             </h6>
           </Link>
         </div>
-        <div className='card_separator'></div>
-        <div className='card_car-price'>
+        <div className='mka__card-separator'></div>
+        <div className='mka__card-car-price'>
           <h6>{price}€</h6>
         </div>
       </div>

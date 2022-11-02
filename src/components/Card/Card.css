@@ -1,4 +1,4 @@
-.card_wrapper {
+.mka__card-wrapper {
   text-align: center;
   height: 27rem;
   background: #00000033;
@@ -7,18 +7,18 @@
   max-width: 100%;
 }
 
-.card_image-container {
+.mka__card_image-container {
   position: relative;
   width: 100%;
 }
 
-.image {
+.mka__card-image-content {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.overlay {
+.mka__card-overlay-content {
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -31,12 +31,12 @@
   transition: .5s ease;
 }
 
-.card_wrapper:hover .overlay {
+.mka__card-wrapper:hover .mka__card-overlay-content {
   bottom: 0;
   height: 100%;
 }
 
-.overlay ul {
+.mka__card-overlay-content ul {
   left: 0;
   position: absolute;
   right: 0;
@@ -51,14 +51,14 @@
   margin: 0;
 }
 
-.overlay ul li {
+.mka__card-overlay-content ul li {
   display: inline-block;
   margin: 0 3px;
 }
 
-.overlay ul li a {
+.mka__card-overlay-content ul li a {
   background: 0 0;
-  border: 2px solid #fff;
+  border: 2px solid var(--color-white);
   color: #fff;
   width: 36px;
   height: 36px;
@@ -68,28 +68,28 @@
   border-radius: 50%;
 }
 
-.overlay ul li a i {
+.mka__card-overlay-content ul li a i {
   position: initial;
   margin-left: 5px;
 }
 
-.overlay ul li a:hover {
-  background: #fff;
+.mka__card-overlay-content ul li a:hover {
+  background: var(--color-white);
 }
 
-.overlay ul li a:hover>i {
+.mka__card-overlay-content ul li a:hover>i {
   color: var(--color-red);
 }
 
-.card_list {
+.mka__card-car_specs {
   position: relative;
   bottom: 0;
   height: auto;
   border: none;
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid var(--color-white);
 }
 
-.card_inline-list {
+.mka__card-inline-car_specs {
   padding: 12px 0;
   margin-left: 5px;
   max-width: 95%;
@@ -98,63 +98,63 @@
   justify-content: center;
 }
 
-.card_info-upper {
+.mka__card-car-info_upper {
   display: flex;
   gap: 1.5rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.card_info-upper>li {
+.mka__card-car-info_upper>li {
   list-style: none;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 400;
   font-size: 15px;
 }
 
-.card_info-lower>li {
+.mka__card-car-info_lower>li {
   list-style: none;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 400;
   font-size: 15px;
 }
 
-.card_info-upper>li,
+.mka__card-car-info_upper>li,
 i {
   padding-right: 6px;
 }
 
-.card_info-lower>li,
+.mka__card-car-info_lower>li,
 i {
   padding-right: 6px;
 }
 
-.card_info-lower {
+.mka__card-car-info_lower {
   padding-top: 16px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.card_info-lower>li {
+.mka__card-car-info_lower>li {
   list-style: none;
-  color: #fff;
+  color: var(--color-white);
 }
 
-.card_car-content {
+.mka__card-car-content {
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 10px;
   display: block;
 }
 
-.card_separator {
+.mka__card-separator {
   margin-bottom: 15px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.card_separator::before {
+.mka__card-separator::before {
   content: "";
   display: block;
   margin: auto;
@@ -162,49 +162,49 @@ i {
   height: 1px;
   width: 30px;
   bottom: -10px;
-  background: #000;
+  background: var(--color-bg);
   margin-bottom: 4px;
 }
 
-.card_separator::after {
+.mka__card-separator::after {
   width: 50px;
   display: block;
   margin: auto;
   content: "";
   height: 1px;
-  background: #000;
+  background: var(--color-bg);
   bottom: 0;
   left: 50%;
   transition: width 0.8s ease, background-color 0.8s ease;
 }
 
-.card_wrapper:hover .card_separator::before {
-  background: red;
+.mka__card-wrapper:hover .mka__card-separator::before {
+  background: var(--color-red);
   width: 50px;
   transition: width 0.8s ease, background-color 0.8s ease;
 }
 
-.card_wrapper:hover .card_separator::after {
-  background: red;
+.mka__card-wrapper:hover .mka__card-separator::after {
+  background: var(--color-red);
   width: 30px;
   transition: width 0.8s ease, background-color 0.8s ease;
 }
 
-.card_car-title {
+.mka__card-car-title {
   font-size: 16px;
   font-weight: 500;
-  color: #fff;
+  color: var(--color-white);
   margin: 20px 0;
   display: block;
 }
 
-.card_car-title h6:hover {
+.mka__card-car-title h6:hover {
   color: #363636;
   transition: color 0.8s ease;
 }
 
-.card_car-price {
-  background: #db2d2e;
+.mka__card-car-price {
+  background: var(--color-red);
   padding: 5px 0;
   margin-top: 20px;
   position: absolute;
@@ -213,20 +213,20 @@ i {
 }
 
 @media (max-width: 1200px) {
-  .card_wrapper {
+  .mka__card-wrapper {
     width: 210px;
   }
 }
 
 @media (max-width: 981px) {
-  .card_wrapper {
+  .mka__card-wrapper {
     width: 420px;
     height: auto;
   }
 }
 
 @media (max-width: 767px) {
-  .card_wrapper {
+  .mka__card-wrapper {
     width: 700px;
   }
 }

@@ -1,15 +1,15 @@
 import React from 'react'
 import { FaCalendarAlt, FaCog, FaLink, FaGasPump } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import './View2.css'
+import './FullCardWidth.css'
 
 const View2 = ({car: {id, month, year, transmission, title, price, mileage}}) => {
   return (
-    <div className="cars-item_wrapper-view2">
-        <div className="cars-item_details-view2">
-    <div className="cars-item_image-container-view2">
-      <img src={require("../../../assets/bmw.jpg")} alt="car" className='cars-item_image-view2' />
-      <div className="overlay">
+    <div className="mka__cars-item_wrapper-fullwidth">
+        <div className="cars-item_details details-fullwidth">
+    <div className="cars-item_image-container container-fullwidth">
+      <img src={require("../../../assets/bmw.jpg")} alt="car" className='cars-item_image image-fullwidth' />
+      <div className="mka__card-overlay-content">
         <ul>
           <li>
             <Link to={`/fahrzeugdaten/${id}`}>

@@ -1,19 +1,19 @@
-.cars-item_wrapper-view2 {
+.mka__cars-item_wrapper-fullwidth {
   height: auto;
   z-index: 9;
   width: 100%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--color-white);
   padding-bottom: 20px;
   margin-bottom: 50px;
 }
 
-.cars-item_image-container-view2 {
+.details-fullwidth {
   position: relative;
   max-width: 240px;
   max-height: 240px;
 }
 
-.cars-item_image-view2 {
+.image-fullwidth {
   max-width: 100%;
   height: auto;
 }
@@ -23,7 +23,7 @@
   bottom: 0;
   height: auto;
   border: none;
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid var(--color-white);
 }
 
 .cars-item_inline-list {
@@ -44,14 +44,14 @@
 
 .cars-item_info-upper>li {
   list-style: none;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 400;
   font-size: 15px;
 }
 
 .cars-item_info-lower>li {
   list-style: none;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 400;
   font-size: 15px;
 }
@@ -74,13 +74,13 @@ i {
 
 .cars-item_info-lower>li {
   list-style: none;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .cars-item_car-content {
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 10px;
   display: block;
 }
@@ -88,24 +88,24 @@ i {
 .cars-item_car-text-view2 {
   font-size: 20px;
   font-weight: 500;
-  color: var(--color-red);
+  color: var(--color-var(--color-red));
   text-align: left;
   margin-bottom: 20px;
 }
 
-.cars-item_wrapper-view2:hover .overlay {
+.view2:hover .overlay {
   bottom: 0;
   height: 100%;
   width: auto;
 }
 
-.cars-item_wrapper-view2:hover .cars-item_separator::before {
-  background: red;
+.view2:hover .cars-item_separator::before {
+  background: var(--color-red);
   width: 50px;
   transition: width 0.8s ease, background-color 0.8s ease;
 }
 
-.cars-item_wrapper-view2:hover .cars-item_image-view2 {
+.view2:hover .cars-item_image-view2 {
   opacity: 0.7;
 }
 
@@ -130,7 +130,7 @@ i {
 }
 
 .cars-item-car-title__price-view2:hover h5 {
-  color: var(--color-red);
+  color: var(--color-var);
   transition: color 0.8s ease;
 }
 
@@ -143,7 +143,7 @@ i {
 
 .cars-item_details-preview--view2 {
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid var(--color-white);
   padding: 5px 10px;
 }
 

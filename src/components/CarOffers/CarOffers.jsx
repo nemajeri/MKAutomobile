@@ -12,9 +12,9 @@ import {
   AlignItem2,
   AlignItem3,
   AlignItem4,
-} from './AlignmentIcons/index';
+} from '../utils/AlignmentIcons/index';
 import ReactPaginate from 'react-paginate';
-import LoadingSvg from '../LoadingSvg';
+import LoadingSvg from '../utils/LoadingSvg';
 import './CarOffers.css';
 
 const initialState = 'view_1';

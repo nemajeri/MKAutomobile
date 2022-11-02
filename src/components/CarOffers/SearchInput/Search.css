@@ -1,14 +1,14 @@
-.select-placeholder {
+.mka__search-placeholder {
   text-align: left;
   font-family: var(--font-family);
 }
 
-.car-option {
+.mka__individual-car-option {
   display: flex;
   gap: 15px;
 }
 
-.car-option img {
+.mka__individual-car-option  img {
   width: 30px;
   height: 40px;
 }
