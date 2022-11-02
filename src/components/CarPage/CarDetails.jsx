@@ -7,6 +7,7 @@ const CarDetails = ({ car }) => {
       <h6>BESCHREIBUNG</h6>
       <div className='mka__section-divider short-carpage'></div>
       <ul className='mka__list-carpage'>
+        {/* Mapovati li elemente iz niza */}
         <li className='mka__car-attributes'>
           <span>Erstzulassung</span>
           <strong>

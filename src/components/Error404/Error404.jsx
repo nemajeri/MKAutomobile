@@ -19,6 +19,7 @@ const Error404 = () => {
           </p>
           <div className='mka__alignment-error'>
             <input className='mka__input longer' placeholder='Suche...' />
+            {/* Dugme komponenta */}
             <button className='btn shorter'>
               <svg
                 class='button'

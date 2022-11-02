@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Contact.css';
 
 const ContactForm = () => {
+  //Prepisati sa Formikom i Yupom
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');

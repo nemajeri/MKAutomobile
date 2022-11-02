@@ -10,6 +10,7 @@ const Contact = () => {
       <div className='mka__container'>
         <div className='mka__content-contact'>
           <div className='mka__contact-infos-container'>
+            {/* Za adresu, telefon i email napraviti jednu komponentu koja prima props */}
             <div className='mka__contact-infos-card'>
               <div className='mka__contact-infos-circle'>
                 <IconContext.Provider value={{ className: 'mka__icon-color' }}>
@@ -61,6 +62,7 @@ const Contact = () => {
                 height={450}
               ></iframe>
             </div>
+            {/* Dane otvaranja i vrijeme odvojiti u posebnu komponentu */}
             <div className='mka__opening-times-contact'>
               <h6>ÖFFNUNGSZEITEN</h6>
               <div className='mka__opening-times-divider'></div>

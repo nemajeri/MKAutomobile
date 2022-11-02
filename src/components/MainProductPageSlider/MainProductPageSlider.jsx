@@ -26,6 +26,7 @@ export default function MainProductPageSlider() {
         modules={[FreeMode, Navigation, Thumbs]}
         className='mySwiper2'
       >
+        {/* Probati svrstati u jednu komponentu i mapovati */}
         <SwiperSlide>
           <img src='https://swiperjs.com/demos/images/nature-1.jpg' />
         </SwiperSlide>

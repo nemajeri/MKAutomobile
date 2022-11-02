@@ -33,6 +33,7 @@ const HomePageCarList = () => {
           </div>
           <div className='mka__section-divider'></div>
           <div className='mka__shortcuts-home-list'>
+            {/* Linkove sve prepisati u jednu komponentu i mapovati */}
             <CarsLink />
             <FinancePageLink />
             <CarPurchaseLink />

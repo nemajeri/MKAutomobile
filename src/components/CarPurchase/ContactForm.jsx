@@ -3,6 +3,7 @@ import DropzoneElement from "../Dropzone/Dropzone";
 
 
 const ContactForm = () => {
+  // Komplet formu prepisati sa Formikom i Yupom
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
@@ -198,6 +199,7 @@ const setData = () => {
         <DropzoneElement/>
         </div>
         <div className="end">
+          {/* Button komponenta */}
           <button onClick ={setData} className="btn">
             <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
               <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
