@@ -15,8 +15,6 @@ import {
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-const url = 'http://finity.pro/clients/mkautomobile/cars/all';
-
 const App = () => {
   const [carsList, setCarsList] = useState([]);
   useEffect(() => {
@@ -25,14 +23,13 @@ const App = () => {
 
   const fetchCars = async () => {
     try {
-      const res = await axios.get(url);
+      const res = await axios.get(process.env.REACT_APP_MY_API_KEY);
       const data = res.data;
       setCarsList(data);
     } catch (error) {
       console.log(error.response.data.error);
     }
   };
-
   return (
     <Router>
       <Routes>
