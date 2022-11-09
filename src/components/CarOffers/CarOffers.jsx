@@ -17,7 +17,7 @@ import ReactPaginate from 'react-paginate';
 import LoadingSvg from '../utils/LoadingSvg';
 import './CarOffers.css';
 
-const initialState = 'view_1';
+const initialState = 'mka__default-layout-right__sidebar';
 
 const CarOffers = () => {
   const [carsList, setCarsList] = useState([]);
@@ -182,17 +182,17 @@ const CarOffers = () => {
   };
 
   const toggleClassView2 = () => {
-    const view2 = 'view_2';
+    const view2 = 'mka__default-layout-left__sidebar';
     setIsActive(view2);
   };
 
   const toggleClassView3 = () => {
-    const view3 = 'view_3';
+    const view3 = 'mka__full-width-layout-right__sidebar';
     setIsActive(view3);
   };
 
   const toggleClassView4 = () => {
-    const view_4 = 'view_4';
+    const view_4 = 'mka__full-width-layout-left__sidebar';
     setIsActive(view_4);
   };
 
@@ -217,26 +217,27 @@ const CarOffers = () => {
                     }
                   />
                 </div>
-                <div className='mka__div-icon'>
+                <div className='mka__icons-container'>
+                  {/* Preorganizovati ikone u komponente */}
                   <span
-                    className='mka__span-icon'
+                    className='mka__individual-icon'
                     onClick={() => setIsActive(initialState)}
                   >
                     <i>
                       <AlignItem1 isActive={isActive} />
                     </i>
                   </span>
-                  <span className='mka__span-icon' onClick={toggleClassView2}>
+                  <span className='mka__individual-icon' onClick={toggleClassView2}>
                     <i>
                       <AlignItem2 isActive={isActive} />
                     </i>
                   </span>
-                  <span className='mka__span-icon' onClick={toggleClassView3}>
+                  <span className='mka__individual-icon' onClick={toggleClassView3}>
                     <i>
                       <AlignItem3 isActive={isActive} />
                     </i>
                   </span>
-                  <span className='mka__span-icon' onClick={toggleClassView4}>
+                  <span className='mka__individual-icon' onClick={toggleClassView4}>
                     <i>
                       <AlignItem4 isActive={isActive} />
                     </i>
@@ -264,6 +265,7 @@ const CarOffers = () => {
                   handleTransmissionChange={handleTransmissionChange}
                   handleDriveTrainChange={handleDriveTrainChange}
                 />
+                {/* Dugme komponenta */}
                 <button
                   onClick={() => setFilteredCarsList(carsList)}
                   className='btn shorter left-alignment'
@@ -295,7 +297,7 @@ const CarOffers = () => {
               ) : (
                 <div
                   className={
-                    isActive === initialState || isActive === 'view_2'
+                    isActive === initialState || isActive === 'mka__default-layout-left__sidebar'
                       ? 'mka__cars-grid'
                       : 'mka__cars-flex'
                   }

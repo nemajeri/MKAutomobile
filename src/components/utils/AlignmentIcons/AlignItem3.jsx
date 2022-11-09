@@ -9,7 +9,7 @@ const AlignItem3 = ({ isActive }) => {
           <g
             id='Layer_1-2'
             data-name='Layer 1'
-            className={isActive === 'view_3' ? 'cls-2' : 'cls-1'}
+            className={isActive === 'mka__full-width-layout-right__sidebar' ? 'mka__icon-selected' : 'mka__icon-unselected'}
           >
             <rect width='1.74' height='8.77' />
             <rect x='2.42' y='4.88' width='8.49' height='1.47' />

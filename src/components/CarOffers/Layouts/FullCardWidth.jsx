@@ -29,9 +29,9 @@ const FullCardWidth = ({car: {id, month, year, transmission, title, price, milea
     <h6 className="mka__cars-item_car-text-view2">{price}€</h6>
     <div className='mka__car-item_details-preview--container_view2'>
     <div className='mka__car-item_details-preview--grouped_view2'>
-    <div className='cars-item_details-preview--view2'><p><FaCalendarAlt />{month}/{year}</p></div>
-    <div className='cars-item_details-preview--view2'><p><FaCog />{transmission}</p></div>
-    <div className='cars-item_details-preview--view2'><p><FaGasPump />{mileage}</p></div>
+    <div className='mka__cars-item_details-preview--view2'><p><FaCalendarAlt />{month}/{year}</p></div>
+    <div className='mka__cars-item_details-preview--view2'><p><FaCog />{transmission}</p></div>
+    <div className='mka__cars-item_details-preview--view2'><p><FaGasPump />{mileage}</p></div>
     </div>
     {/* Napraviti zasebnu komponentu za dugme */}
     <button className="btn btn-view2">

@@ -57,6 +57,7 @@ const CarPage = ({ carsList }) => {
           </div>
           <div className='mka__description-tabs__carpage'>
             <ul>
+              {/* Napraviti komponente od li elemenata */}
               <li
                 className={`mka__description-tab__carpage ${
                   isActive ? 'selected' : ''
