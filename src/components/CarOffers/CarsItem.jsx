@@ -6,7 +6,7 @@ import FullCardWidth from './Layouts/FullCardWidth';
 const CarsItem = ({car, isActive}) => {
     return (
       <>
-      { isActive === "view_3" || isActive === "view_4" 
+      { isActive === "mka__full-width-layout-right__sidebar" || isActive === "mka__full-width-layout-left__sidebar" 
       ? <FullCardWidth car = {car}/>
       : <DefaultCardWidth car = {car}/>}
     </>

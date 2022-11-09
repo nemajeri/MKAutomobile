@@ -3,7 +3,7 @@ import { FaCalendarAlt, FaCog, FaLink } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import './DefaultCardWidth.css'
 
-const View1 = ({car: {id, month, year, transmission, title, price}}) => {
+const DefaultCardWidth = ({car: {id, month, year, transmission, title, price}}) => {
   return (
     <div className="mka__cars-item_wrapper">
     <div className="mka__cars-item_image-container">
@@ -38,4 +38,4 @@ const View1 = ({car: {id, month, year, transmission, title, price}}) => {
   )
 }
 
-export default View1
+export default DefaultCardWidth

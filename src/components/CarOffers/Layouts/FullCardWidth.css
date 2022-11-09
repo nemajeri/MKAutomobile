@@ -1,91 +1,24 @@
-.mka__cars-item_wrapper-fullwidth {
+.cars-item_wrapper-view2 {
   height: auto;
   z-index: 9;
   width: 100%;
-  border-bottom: 1px solid var(--color-white);
+  border-bottom: 1px solid white;
   padding-bottom: 20px;
   margin-bottom: 50px;
 }
 
-.details-fullwidth {
+.mka__cars-item_image-container-view2 {
   position: relative;
   max-width: 240px;
   max-height: 240px;
 }
 
-.image-fullwidth {
+.mka__cars-item_image-view2 {
   max-width: 100%;
   height: auto;
 }
 
-.cars-item_list {
-  position: relative;
-  bottom: 0;
-  height: auto;
-  border: none;
-  border-bottom: 1px solid var(--color-white);
-}
-
-.cars-item_inline-list {
-  padding: 12px 0;
-  margin-left: 5px;
-  max-width: 95%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.cars-item_info-upper {
-  display: flex;
-  gap: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cars-item_info-upper>li {
-  list-style: none;
-  color: var(--color-white);
-  font-weight: 400;
-  font-size: 15px;
-}
-
-.cars-item_info-lower>li {
-  list-style: none;
-  color: var(--color-white);
-  font-weight: 400;
-  font-size: 15px;
-}
-
-.cars-item_info-upper>li,
-i {
-  padding-right: 6px;
-}
-
-.cars-item_info-lower>li,
-i {
-  padding-right: 6px;
-}
-
-.cars-item_info-lower {
-  padding-top: 16px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cars-item_info-lower>li {
-  list-style: none;
-  color: var(--color-white);
-}
-
-.cars-item_car-content {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--color-white);
-  margin-bottom: 10px;
-  display: block;
-}
-
-.cars-item_car-text-view2 {
+.mka__cars-item_car-text-view2 {
   font-size: 20px;
   font-weight: 500;
   color: var(--color-var(--color-red));
@@ -93,33 +26,33 @@ i {
   margin-bottom: 20px;
 }
 
-.view2:hover .overlay {
+.mka__cars-item_wrapper-view2:hover .mka__card-overlay-content {
   bottom: 0;
   height: 100%;
   width: auto;
 }
 
-.view2:hover .cars-item_separator::before {
+.mka__cars-item_wrapper-view2:hover .cars-item_separator::before {
   background: var(--color-red);
   width: 50px;
   transition: width 0.8s ease, background-color 0.8s ease;
 }
 
-.view2:hover .cars-item_image-view2 {
+.mka__cars-item_wrapper-view2:hover .mka__cars-item_image-view2 {
   opacity: 0.7;
 }
 
-.cars-item_details-view2 {
+.mka__cars-item_details-view2 {
   display: flex;
   gap: 40px;
 }
 
-.cars-item-car-title__price-view2 {
+.mka__cars-item-car-title__price-view2 {
   display: flex;
   flex-direction: column;
 }
 
-.cars-item-car-title__price-view2 h5 {
+.mka__cars-item-car-title__price-view2 h5 {
   font-weight: 500;
   /* text-transform: uppercase; */
   color: var(--color-grey);
@@ -129,48 +62,49 @@ i {
   line-height: 25px;
 }
 
-.cars-item-car-title__price-view2:hover h5 {
+.mka__cars-item-car-title__price-view2:hover h5 {
   color: var(--color-var);
   transition: color 0.8s ease;
 }
 
-.cars-item_short-divider {
+.mka__cars-item_short-divider {
   width: 40px;
   height: 2px;
   background-color: var(--color-red);
   margin-bottom: 20px;
 }
 
-.cars-item_details-preview--view2 {
+.mka__cars-item_details-preview--view2 {
   background-color: transparent;
   border: 1px solid var(--color-white);
   padding: 5px 10px;
 }
 
-.cars-item_details-preview--view2 p {
+.mka__cars-item_details-preview--view2 p {
   font-size: 14px;
   display: flex;
   align-self: center;
   gap: 2px;
 }
 
-.cars-item_details-preview--view2 p svg {
+.mka__cars-item_details-preview--view2 p svg {
   margin-top: 3.5px;
 }
 
-.car-item_details-preview--container_view2 {
+.mka__car-item_details-preview--container_view2 {
   display: flex;
   /* width: 60vh; */
   justify-content: space-between;
   flex-wrap: nowrap;
 }
 
-.car-item_details-preview--grouped_view2 {
+.mka__car-item_details-preview--grouped_view2 {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
+/* Rijesiti se CSSa dugmeta */
 .btn-view2 {
   margin-top: 0 !important;
   margin-right: 10px;
@@ -184,13 +118,13 @@ i {
 }
 
 @media (max-width: 767px) {
-  .cars-item_details-view2 {
+  .mka__cars-item_details-view2 {
     flex-direction: column;
   }
 }
 
 @media (min-width: 1200px) {
-  .car-item_details-preview--container_view2 {
+  .mka__car-item_details-preview--container_view2 {
     justify-content: space-between;
     width: 60vh;
   }

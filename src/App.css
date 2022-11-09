@@ -207,29 +207,6 @@ select {
   height: 45px;
 }
 
-/* Css ikona na Fahrzeugangebote stranici */
-
-.mka__div-icon {
-  display: flex;
-  align-self: center;
-}
-
-.mka__span-icon {
-  width: 22px;
-  height: 18px;
-  margin: 0 5px;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.cls-1 {
-  fill: #949799;
-}
-
-.cls-2 {
-  fill: var(--color-red);
-}
-
 /* Css Drop zone */
 
 .dropzone {
@@ -318,6 +295,115 @@ select {
   background-size: cover;
   min-height: 55rem;
 }
+
+/*Css dropdowna za sortiranje */
+
+.sorting-select {
+  position: relative;
+  display: inline-block;
+}
+
+.sorting-select select {
+  display: block;
+  width: 150px;
+  height: 2.5rem;
+  background: #0f1215;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  outline: none;
+  padding: 0 20px 0 10px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  color: #949799;
+}
+
+.sorting-select::after {
+  content: '⌄';
+  border-top-color: rgb(255, 255, 255);
+  color: #949799;
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+option {
+  color: #949799;
+  width: 96%;
+  left: 2%;
+  top: 35%;
+}
+
+/* Pogledati sta overidujem i dokumentovati*/
+.css-qc6sy-singleValue {
+  color: #949799 !important;
+}
+
+/*Css slajdera na stranici ponuda auta - Provjeriti zasto mijenja velicinu
+raila kada promijenim lokaciju css-a
+
+.rc-slider {
+  position: relative;
+  height: 16px;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 6px;
+  touch-action: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: var(--color-red) !important;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.rc-slider * {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: var(--color-red) !important;
+}
+
+.rc-slider-rail {
+  position: absolute;
+  width: 100%;
+  background-color: #f50c0c !important;
+  height: 6px !important;
+  border-radius: 6px;
+}
+
+.rc-slider-track {
+  position: absolute;
+  height: 100%;
+  border-radius: 6px;
+  background-color: var(--color-red) !important;
+  opacity: 100% !important;
+}
+
+.rc-slider-handle {
+  opacity: 1 !important;
+  position: absolute;
+  width: 18px !important;
+  height: 18px !important;
+  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 0% !important;
+  background-color: white !important;
+  touch-action: pan-x;
+  border: solid 1px var(--color-red) !important
+}
+
+.rc-slider-handle-1 {
+  transform: translateX(0) !important;
+
+}
+
+.rc-slider-handle-2 {
+  transform: translateX(-100%) !important;
+
+}
+*/
 
 /* Css home image slajdera */
 

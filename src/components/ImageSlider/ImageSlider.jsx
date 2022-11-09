@@ -19,6 +19,7 @@ const ImageSlider = () => {
         modules={[Pagination, Navigation]}
         className='mka__home-slider'
       >
+        {/* Probati svrstati u jednu komponentu i mapovati */}
         <SwiperSlide>
           <div className='mka__img-slider-size'>
             <img src={require('../../assets/1.jpg')} alt='gallery-image_1' />

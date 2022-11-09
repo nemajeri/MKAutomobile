@@ -1,5 +1,4 @@
 import React from 'react';
-import './FilterSideBar.css';
 import MakeFilter from './MakeFilter';
 import ModelFilter from './ModelFilter';
 import YearFilter from './YearFilter';
