@@ -37,12 +37,11 @@ const CarOffers = () => {
   const [offset, setOffset] = useState(1);
   const [pageCount, setPageCount] = useState(0);
 
-  const url = 'http://finity.pro/clients/mkautomobile/cars/all';
-
+  console.log(process.env.REACT_APP_MY_API_KEY);
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(process.env.REACT_APP_MY_API_KEY);
         const data = await response.json();
         const minPrice = Math.min(...data.map(car => car.price));
         const maxPrice = Math.max(...data.map(car => car.price));

@@ -19,7 +19,7 @@ const CarPage = ({ carsList }) => {
   const [cars, setCars] = useState([]);
   const [halfOfFeatures, setHalfOfFeatures] = useState();
 
-  const url = `http://finity.pro/clients/mkautomobile/cars/${id}`;
+  const url = `${process.env.REACT_APP_MY_API_KEY_WITH_ID + id}`;
   const currentCars = carsList.slice(-5);
 
   useEffect(() => {
