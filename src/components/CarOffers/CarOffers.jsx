@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import CarsItem from './CarsItem';
 import {
   CarSlider,
@@ -15,11 +15,13 @@ import {
 } from '../utils/AlignmentIcons/index';
 import ReactPaginate from 'react-paginate';
 import LoadingSvg from '../utils/LoadingSvg';
+import { carsReducer, INITIAL_STATE } from '../utils/CarsReducer';
 import './CarOffers.css';
 
 const initialState = 'view_1';
 
 const CarOffers = () => {
+  const [state, dispatch] = useReducer(carsReducer, INITIAL_STATE);
   const [carsList, setCarsList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedMake, setSelectedMake] = useState(null);
@@ -37,7 +39,6 @@ const CarOffers = () => {
   const [offset, setOffset] = useState(1);
   const [pageCount, setPageCount] = useState(0);
 
-  console.log(process.env.REACT_APP_MY_API_KEY);
   useEffect(() => {
     const fetchCars = async () => {
       try {

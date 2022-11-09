@@ -1,7 +1,7 @@
 import './Contact.css';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import ContactForm from './ContactForm';
+import ContactForm from '../forms/ContactForm';
 import React from 'react';
 
 const Contact = () => {

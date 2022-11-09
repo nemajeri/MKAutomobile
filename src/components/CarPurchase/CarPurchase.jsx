@@ -1,5 +1,5 @@
 import './CarPurchase.css';
-import ContactForm from './ContactForm';
+import PurchaseForm from '../forms/PurchaseForm';
 import React from 'react';
 
 const CarPurchase = () => {
@@ -35,7 +35,7 @@ const CarPurchase = () => {
             </li>
           </ul>
           <div>
-            <ContactForm />
+            <PurchaseForm />
           </div>
         </div>
       </div>
