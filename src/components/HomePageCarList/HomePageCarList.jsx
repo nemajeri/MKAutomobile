@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import HomeSlider from '../HomeSlider/HomeSlider';
 import './HomePageCarList.css';
 import {
@@ -7,30 +7,18 @@ import {
   FinancePageLink,
   CarsLink,
 } from './index';
+import { CarsProvider } from '../utils/CarsContext';
 
 const HomePageCarList = () => {
-  const [cars, setCars] = useState([]);
-
-  const url = 'http://finity.pro/clients/mkautomobile/cars/all';
-
-  useEffect(() => {
-    fetch(url)
-      .then(response => response.json())
-      .then(cars => {
-        const currentCars = cars.slice(-5);
-        setCars(currentCars);
-      });
-  }, []);
-
   return (
     <div className='mka__wrapper home-list'>
       <div className='mka__container'>
         <div className='mka__content'>
           <h2>FAHRZEUGANGEBOTE</h2>
           <div className='mka__section-divider-second-divider'></div>
-          <div>
-            <HomeSlider cars={cars} />
-          </div>
+          <CarsProvider>
+            <HomeSlider />
+          </CarsProvider>
           <div className='mka__section-divider'></div>
           <div className='mka__shortcuts-home-list'>
             {/* Linkove sve prepisati u jednu komponentu i mapovati */}

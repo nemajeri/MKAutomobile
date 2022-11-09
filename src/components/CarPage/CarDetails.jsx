@@ -1,7 +1,41 @@
 import React from 'react';
 import './CarPage.css';
+import { CarDetail } from './CarDetail';
 
-const CarDetails = ({ car }) => {
+const CarDetails = car => {
+  // const {
+  //   make,
+  //   model,
+  //   body,
+  //   condition,
+  //   mileage,
+  //   transmission,
+  //   drivetrain,
+  //   engine,
+  //   fuel,
+  //   exterior,
+  // } = car;
+
+  // const arrayOfSubtitlesAndValues = [
+  //   {subtitle: 'Marke',value: make},
+  //   {subtitle: 'Model',value: model},
+  //   {subtitle:'Fahrzeugtype', value: body},
+  //   {subtitle:'Zustand', value: condition},
+  //   {subtitle:'Kilometerstand', value: mileage},
+  //   {subtitle:'Getriebeart', value: transmission},
+  //   {subtitle:'Antrieb', value: drivetrain},
+  //   {subtitle:'Hubraum', value: engine},
+  //   {subtitle:'Treibstoff', value: fuel},
+  //   {subtitle:'Farbe', value: exterior},
+  // ];
+
+  // var links = [];
+  // for (var i = 0; i < data.length; i++) {
+  //     var item = arrayOfSubtitlesAndValues[i];
+  //     links.push(<><CarDetail/></>);
+  // }
+  //}
+
   return (
     <div className='mka__description-carpage'>
       <h6>BESCHREIBUNG</h6>
@@ -19,7 +53,7 @@ const CarDetails = ({ car }) => {
           <strong>{car.make}</strong>
         </li>
         <li className='mka__car-attributes'>
-          <span>Modell</span>
+          <span>Model</span>
           <strong>{car.model}</strong>
         </li>
         <li className='mka__car-attributes'>
