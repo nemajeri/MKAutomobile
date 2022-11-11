@@ -28,34 +28,64 @@ export default function MainProductPageSlider() {
       >
         {/* Probati svrstati u jednu komponentu i mapovati */}
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-1.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-1.jpg'
+            alt='demo-1'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-2.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-2.jpg'
+            alt='demo-2'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-3.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-3.jpg'
+            alt='demo-3'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-4.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-4.jpg'
+            alt='demo-4'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-5.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-5.jpg'
+            alt='demo-5'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-6.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-6.jpg'
+            alt='demo-6'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-7.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-7.jpg'
+            alt='demo-7'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-8.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-8.jpg'
+            alt='demo-8'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-9.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-9.jpg'
+            alt='demo-9'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-10.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-10.jpg'
+            alt='demo-10'
+          />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -69,34 +99,64 @@ export default function MainProductPageSlider() {
         className='mySwiper'
       >
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-1.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-1.jpg'
+            alt='demo walking'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-2.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-2.jpg'
+            alt='demo running'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-3.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-3.jpg'
+            alt='demo ne znam'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-4.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-4.jpg'
+            alt='demo stav'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-5.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-5.jpg'
+            alt='demo stareci'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-6.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-6.jpg'
+            alt='demo nemasta'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-7.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-7.jpg'
+            alt='demo zekonja'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-8.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-8.jpg'
+            alt='demo papir'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-9.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-9.jpg'
+            alt='demo ljepilo'
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <img src='https://swiperjs.com/demos/images/nature-10.jpg' />
+          <img
+            src='https://swiperjs.com/demos/images/nature-10.jpg'
+            alt='demo austrija'
+          />
         </SwiperSlide>
       </Swiper>
     </>

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useReducer } from 'react';
-import CarsItem from './CarsItem';
+import React, { useState, useReducer } from 'react';
+import CarOffersCard from './CarOffersCard';
 import {
   CarSlider,
   Search,
@@ -15,157 +15,54 @@ import {
 } from '../utils/AlignmentIcons/index';
 import ReactPaginate from 'react-paginate';
 import LoadingSvg from '../utils/LoadingSvg';
-import { carsReducer, INITIAL_STATE } from '../utils/CarsReducer';
+import Button from '../utils/Button';
+import { carsReducer } from '../utils/CarsReducer';
+import { useAPI } from '../utils/CarsContext';
 import './CarOffers.css';
 
 const initialState = 'mka__default-layout-right__sidebar';
 
 const CarOffers = () => {
-  const [state, dispatch] = useReducer(carsReducer, INITIAL_STATE);
-  const [carsList, setCarsList] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedMake, setSelectedMake] = useState(null);
-  const [selectedModel, setSelectedModel] = useState(null);
-  const [selectedYear, setSelectedYear] = useState(null);
-  const [selectedMileage, setSelectedMileage] = useState(null);
-  const [selectedFuel, setSelectedFuel] = useState(null);
-  const [selectedTransmission, setSelectedTransmission] = useState(null);
-  const [selectedDriveTrain, setSelectedDriveTrain] = useState(null);
-  const [filteredCarsList, setFilteredCarsList] = useState([]);
+  const { array, loader } = useAPI();
+  const [isLoading] = loader;
   const [sliderValues, setSliderValues] = useState([2900, 24990]);
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
   const [isActive, setIsActive] = useState(initialState);
   const [carsPerPage, setCarsPerPage] = useState(12);
   const [offset, setOffset] = useState(1);
   const [pageCount, setPageCount] = useState(0);
-
-  useEffect(() => {
-    const fetchCars = async () => {
-      try {
-        const response = await fetch(process.env.REACT_APP_MY_API_KEY);
-        const data = await response.json();
-        const minPrice = Math.min(...data.map(car => car.price));
-        const maxPrice = Math.max(...data.map(car => car.price));
-        const priceArray = [minPrice, maxPrice];
-        setPageCount(Math.ceil(data.length / carsPerPage));
-        const slice = data.slice(offset - 1, offset - 1 + carsPerPage);
-        setCarsList(slice);
-        setFilteredCarsList(slice);
-        setSliderValues(priceArray);
-        setLoading(false);
-      } catch {
-        alert('An error occured during fetching');
-        setLoading(false);
-      }
-    };
-    fetchCars();
-    // eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
-    applyFilters();
-    // eslint-disable-next-line
-  }, [
-    selectedMake,
-    selectedModel,
-    selectedYear,
-    selectedMileage,
-    selectedFuel,
-    selectedTransmission,
-    selectedDriveTrain,
-    sliderValues,
-    selectedCarSortingMethod,
-  ]);
-
-  const applyFilters = () => {
-    let filteredCarsList = carsList;
-
-    if (selectedMake) {
-      filteredCarsList = carsList.filter(car => car.make === selectedMake);
-    }
-
-    if (selectedModel) {
-      filteredCarsList = carsList.filter(car => car.model === selectedModel);
-    }
-
-    if (selectedYear) {
-      filteredCarsList = carsList.filter(car => car.year === selectedYear);
-    }
-
-    if (selectedMileage) {
-      filteredCarsList = carsList.filter(
-        car => car.mileage === selectedMileage
-      );
-    }
-
-    if (selectedFuel) {
-      filteredCarsList = carsList.filter(car => car.fuel === selectedFuel);
-    }
-
-    if (selectedTransmission) {
-      filteredCarsList = carsList.filter(
-        car => car.transmission === selectedTransmission
-      );
-    }
-
-    if (selectedDriveTrain) {
-      filteredCarsList = carsList.filter(
-        car => car.drivetrain === selectedDriveTrain
-      );
-    }
-
-    if (selectedCarSortingMethod === 'Sortieren nach Preis') {
-      filteredCarsList = carsList.sort(
-        (a, b) => parseInt(a.price) - parseInt(b.price)
-      );
-    } else if (selectedCarSortingMethod === 'Sortieren nach Jahr') {
-      filteredCarsList = carsList.sort(
-        (a, b) => parseInt(a.year) - parseInt(b.year)
-      );
-    }
-
-    const minPrice = sliderValues[0];
-    const maxPrice = sliderValues[1];
-
-    if (sliderValues) {
-      filteredCarsList = carsList.filter(
-        car => minPrice < car.price && maxPrice > car.price
-      );
-    }
-
-    setFilteredCarsList(filteredCarsList);
-  };
+  const [INITIAL_STATE, dispatch] = useReducer(carsReducer);
 
   const handleSliderChange = priceArray => {
     setSliderValues(priceArray);
   };
 
   const handleMakeChange = select => {
-    setSelectedMake(select.value);
+    dispatch({ type: 'CHANGE_MAKE', select });
   };
 
   const handleModelChange = select => {
-    setSelectedModel(select.value);
+    dispatch({ type: 'CHANGE_MODEL', select });
   };
 
   const handleYearChange = select => {
-    setSelectedYear(select.value);
-  };
-
-  const handleFuelChange = select => {
-    setSelectedFuel(select.value);
-  };
-
-  const handleTransmissionChange = select => {
-    setSelectedTransmission(select.value);
-  };
-
-  const handleDriveTrainChange = select => {
-    setSelectedDriveTrain(select.value);
+    dispatch({ type: 'CHANGE_YEAR', select });
   };
 
   const handleMileageChange = select => {
-    setSelectedMileage(select.value);
+    dispatch({ type: 'CHANGE_MILEAGE', select });
+  };
+
+  const handleFuelChange = select => {
+    dispatch({ type: 'CHANGE_FUEL', select });
+  };
+
+  const handleTransmissionChange = select => {
+    dispatch({ type: 'CHANGE_TRANSMISSION', select });
+  };
+
+  const handleDriveTrainChange = select => {
+    dispatch({ type: 'CHANGE_DRIVETRAIN', select });
   };
 
   const handleCarsPerPageChange = select => {
@@ -227,17 +124,26 @@ const CarOffers = () => {
                       <AlignItem1 isActive={isActive} />
                     </i>
                   </span>
-                  <span className='mka__individual-icon' onClick={toggleClassView2}>
+                  <span
+                    className='mka__individual-icon'
+                    onClick={toggleClassView2}
+                  >
                     <i>
                       <AlignItem2 isActive={isActive} />
                     </i>
                   </span>
-                  <span className='mka__individual-icon' onClick={toggleClassView3}>
+                  <span
+                    className='mka__individual-icon'
+                    onClick={toggleClassView3}
+                  >
                     <i>
                       <AlignItem3 isActive={isActive} />
                     </i>
                   </span>
-                  <span className='mka__individual-icon' onClick={toggleClassView4}>
+                  <span
+                    className='mka__individual-icon'
+                    onClick={toggleClassView4}
+                  >
                     <i>
                       <AlignItem4 isActive={isActive} />
                     </i>
@@ -249,14 +155,13 @@ const CarOffers = () => {
               <div className='mka__side-bar-divider'>
                 <h6>FAHRZEUGSUCHE</h6>
                 <div className='mka__sidebar-divider'></div>
-                <Search carsList={carsList} />
+                <Search array={array} />
               </div>
               <div className='mka__sidebar-detailed-search'>
                 <h6>DETAILSUCHE</h6>
                 <div className='mka__sidebar-divider'></div>
                 <FilterSideBar
-                  carsList={carsList}
-                  filteredCarsList={filteredCarsList}
+                  array={array}
                   handleMakeChange={handleMakeChange}
                   handleModelChange={handleModelChange}
                   handleYearChange={handleYearChange}
@@ -265,47 +170,23 @@ const CarOffers = () => {
                   handleTransmissionChange={handleTransmissionChange}
                   handleDriveTrainChange={handleDriveTrainChange}
                 />
-                {/* Dugme komponenta */}
-                <button
-                  onClick={() => setFilteredCarsList(carsList)}
-                  className='btn shorter left-alignment'
-                >
-                  <svg
-                    width='180px'
-                    height='60px'
-                    viewBox='0 0 180 60'
-                    className='border'
-                  >
-                    <polyline
-                      points='179,1 179,59 1,59 1,1 179,1'
-                      className='bg-line'
-                    />
-                    <polyline
-                      points='179,1 179,59 1,59 1,1 179,1'
-                      className='hl-line'
-                    />
-                  </svg>
-                  <span id='btn-txt'>Zurucksetzen</span>
-                </button>
+                <Button />
               </div>
             </div>
             <div className='mka__list-of-cars'>
-              {loading === true ? (
-                <div className='mka__loading-svg-positioning'>
-                  <LoadingSvg />
-                </div>
+              {isLoading ? (
+                <LoadingSvg />
               ) : (
-                <div
-                  className={
-                    isActive === initialState || isActive === 'mka__default-layout-left__sidebar'
-                      ? 'mka__cars-grid'
-                      : 'mka__cars-flex'
-                  }
-                >
-                  {filteredCarsList.map(car => (
-                    <CarsItem key={car.id} car={car} isActive={isActive} />
+                <>
+                  {array.map(car => (
+                    <CarOffersCard
+                      key={car.id}
+                      car={car}
+                      isActive={isActive}
+                      initialState={initialState}
+                    />
                   ))}
-                </div>
+                </>
               )}
               <ReactPaginate
                 previousLabel={'← Vorherige'}

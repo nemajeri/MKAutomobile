@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -7,17 +8,11 @@ const Footer = () => {
       <div className='mka__container'>
         <div className='mka__footer'>
           <div className='mka__footer-links'>
-            <p>
-              <a href='/datenschutz'>DATENSCHUTZ</a>
-            </p>
-            <p>
-              <a href='/impressum'>IMPRESSUM</a>
-            </p>
+            <Link to='/datenschutz'>DATENSCHUTZ</Link>
+            <Link to='/impressum'>IMPRESSUM</Link>
           </div>
           <div className='mka__footer-copyright'>
-            <p>
-              ©Copyright 2022 <a href='/'>MKAUTOMOBILE</a>
-            </p>
+            ©Copyright 2022 <Link to='/'>MKAUTOMOBILE</Link>
           </div>
         </div>
       </div>

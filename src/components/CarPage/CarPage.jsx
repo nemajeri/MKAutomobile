@@ -11,7 +11,7 @@ import {
 import HomeSlider from '../HomeSlider/HomeSlider';
 import './CarPage.css';
 
-const CarPage = ({ carsList }) => {
+const CarPage = () => {
   const { id } = useParams();
   const [isActive, setIsActive] = useState(true);
   const [car, setCar] = useState();
@@ -20,7 +20,6 @@ const CarPage = ({ carsList }) => {
   const [halfOfFeatures, setHalfOfFeatures] = useState();
 
   const url = `${process.env.REACT_APP_MY_API_KEY_WITH_ID + id}`;
-  const currentCars = carsList.slice(-5);
 
   useEffect(() => {
     const fetchCar = async () => {
@@ -31,14 +30,9 @@ const CarPage = ({ carsList }) => {
       setCar(singleCar);
       setLoading(false);
     };
-    getCars(currentCars);
     fetchCar();
     // eslint-disable-next-line
   }, []);
-
-  const getCars = arr => {
-    setCars(arr);
-  };
 
   const handleClick = () => {
     setIsActive(false);
@@ -90,7 +84,7 @@ const CarPage = ({ carsList }) => {
         </div>
         <h4>ÄHNLICHE FAHRZEUGE</h4>
         <div className='mka__home-slider-section__carpage'>
-          <HomeSlider cars={cars} />
+          {/* <HomeSlider cars={cars} /> */}
         </div>
       </div>
     </div>

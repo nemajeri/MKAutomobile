@@ -1,15 +1,16 @@
 import React from 'react';
 import HomeSlider from '../HomeSlider/HomeSlider';
 import './HomePageCarList.css';
-import {
-  ContactPageLink,
-  CarPurchaseLink,
-  FinancePageLink,
-  CarsLink,
-} from './index';
 import { CarsProvider } from '../utils/CarsContext';
+import HomePageLinks from './HomePageLinks';
 
 const HomePageCarList = () => {
+  const titles = [
+    'fahrzeugangebote',
+    'finanzierung',
+    'fahrzeugankauf',
+    'kontakt',
+  ];
   return (
     <div className='mka__wrapper home-list'>
       <div className='mka__container'>
@@ -21,11 +22,9 @@ const HomePageCarList = () => {
           </CarsProvider>
           <div className='mka__section-divider'></div>
           <div className='mka__shortcuts-home-list'>
-            {/* Linkove sve prepisati u jednu komponentu i mapovati */}
-            <CarsLink />
-            <FinancePageLink />
-            <CarPurchaseLink />
-            <ContactPageLink />
+            {titles.map((title, index) => (
+              <HomePageLinks title={title} index={index} />
+            ))}
           </div>
         </div>
       </div>

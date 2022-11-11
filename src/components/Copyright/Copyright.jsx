@@ -1,5 +1,6 @@
 import './Copyright.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Copyright = () => {
   return (
@@ -54,13 +55,13 @@ const Copyright = () => {
             Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich
             bei der Aufsichtsbehörde beschweren. In Österreich ist dies die
             Datenschutzbehörde. (Wickenburggasse 8 – 10, 1080 Wien, E-Mail:{' '}
-            <a
-              href='https://playfield-media.codebasehq.com/redirect?dsb@dsb.gv.at'
+            <Link
+              to='https://playfield-media.codebasehq.com/redirect?dsb@dsb.gv.at'
               target='_blank'
               rel='noreferrer'
             >
               dsb@dsb.gv.at
-            </a>
+            </Link>
             ).
           </p>
           <h3 className='mka__content-copyright-headline'>

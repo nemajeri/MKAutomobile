@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from '../Card/Card';
 
@@ -8,22 +8,11 @@ import 'swiper/css/navigation';
 
 import { Navigation } from 'swiper';
 
-import CarsContext from '../utils/CarsContext';
+import { useAPI } from '../utils/CarsContext';
 
 const HomeSlider = () => {
-  const [slicedCars, setSlicedCars] = useState([]);
-  const { array, loader } = useContext(CarsContext);
-  const [isLoading, setIsLoading] = loader;
-
-  useEffect(() => {
-    implemetCars();
-  }, []);
-
-  const implemetCars = async () => {
-    const highlightedCars = array.slice(-5);
-    setIsLoading(false);
-    setSlicedCars(highlightedCars);
-  };
+  const { array, loader } = useAPI();
+  const [isLoading] = loader;
 
   return !isLoading ? (
     <>
@@ -48,16 +37,14 @@ const HomeSlider = () => {
         modules={[Navigation]}
         className='mka__home-slider'
       >
-        {slicedCars.map(car => (
+        {array.slice(-5).map(car => (
           <SwiperSlide key={car.id}>
             <Card car={car} key={car.id} />
           </SwiperSlide>
         ))}
       </Swiper>
     </>
-  ) : (
-    alert('Loading...')
-  );
+  ) : null;
 };
 
 export default HomeSlider;

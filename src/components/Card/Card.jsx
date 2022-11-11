@@ -13,7 +13,7 @@ const Card = ({
         <div className='mka__card_image-container'>
           <img
             className='mka__card-image-content'
-            src={require('../../assets/bmw.jpg')}
+            src={link}
             alt='suggested-cars'
           />
           <div className='mka__card-overlay-content'>
@@ -56,9 +56,7 @@ const Card = ({
         </div>
         <div className='mka__card-car-content'>
           <Link to={`/fahrzeugdaten/${id}`} className='mka__card-car-title'>
-            <h6>
-              Mazda Mazda6 Sport Combi CD150 Attraction Aut. Kombi / Family Van
-            </h6>
+            <h6>{title}</h6>
           </Link>
         </div>
         <div className='mka__card-separator'></div>

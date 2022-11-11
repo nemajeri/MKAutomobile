@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LoadingSvg = () => (
-  <>
+  <div className='mka__loading-svg-positioning'>
     <svg
       version='1.1'
       id='Layer_1'
@@ -66,7 +66,7 @@ const LoadingSvg = () => (
         </rect>
       </g>
     </svg>
-  </>
+  </div>
 );
 
 export default LoadingSvg;

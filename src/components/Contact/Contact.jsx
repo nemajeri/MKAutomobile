@@ -1,56 +1,26 @@
 import './Contact.css';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import { IconContext } from 'react-icons';
 import ContactForm from '../forms/ContactForm';
 import React from 'react';
+import ContactLinks from './ContactLinks';
+import OpeningTimes from './OpeningTimes';
 
 const Contact = () => {
+  const contacts = [
+    {
+      title: 'ADRESSE',
+      description: 'Im Trenkenschuh 15-17 \n 2100 Korneuburg',
+    },
+    { title: 'TELEFON', description: '+43 680 3149332 \n +43 2262 20413' },
+    { title: 'Email', description: 'office@mkautomobile.at' },
+  ];
   return (
     <div className='mka__wrapper contact'>
       <div className='mka__container'>
         <div className='mka__content-contact'>
           <div className='mka__contact-infos-container'>
-            {/* Za adresu, telefon i email napraviti jednu komponentu koja prima props */}
-            <div className='mka__contact-infos-card'>
-              <div className='mka__contact-infos-circle'>
-                <IconContext.Provider value={{ className: 'mka__icon-color' }}>
-                  <FaMapMarkerAlt />
-                </IconContext.Provider>
-              </div>
-              <h6>ADRESSE</h6>
-              <div className='mka__contact-infos-divider'></div>
-              <p className='mka__contact-infos-description'>
-                Im Trenkenschuh 15-17
-                <br />
-                2100 Korneuburg
-              </p>
-            </div>
-            <div className='mka__contact-infos-card'>
-              <div className='mka__contact-infos-circle'>
-                <IconContext.Provider value={{ className: 'mka__icon-color' }}>
-                  <FaPhoneAlt />
-                </IconContext.Provider>
-              </div>
-              <h6>TELEFON</h6>
-              <div className='mka__contact-infos-divider'></div>
-              <p className='mka__contact-infos-description'>
-                +43 680 3149332
-                <br />
-                +43 2262 20413
-              </p>
-            </div>
-            <div className='mka__contact-infos-card'>
-              <div className='mka__contact-infos-circle'>
-                <IconContext.Provider value={{ className: 'mka__icon-color' }}>
-                  <FaEnvelope />
-                </IconContext.Provider>
-              </div>
-              <h6>EMAIL</h6>
-              <div className='mka__contact-infos-divider'></div>
-              <p className='mka__contact-infos-description'>
-                office@mkautomobile.at
-              </p>
-            </div>
+            {contacts.map((contact, index) => (
+              <ContactLinks contact={contact} index={index} />
+            ))}
           </div>
           <ContactForm />
           <div className='mka__google-api-contact'>
@@ -62,45 +32,7 @@ const Contact = () => {
                 height={450}
               ></iframe>
             </div>
-            {/* Dane otvaranja i vrijeme odvojiti u posebnu komponentu */}
-            <div className='mka__opening-times-contact'>
-              <h6>ÖFFNUNGSZEITEN</h6>
-              <div className='mka__opening-times-divider'></div>
-              <div className='mka__opening-times-text'>
-                <div>
-                  <p>
-                    <strong>Montag</strong>
-                  </p>
-                  <p>
-                    <strong>Dienstag</strong>
-                  </p>
-                  <p>
-                    <strong>Mittwoch</strong>
-                  </p>
-                  <p>
-                    <strong>Donnerstag </strong>
-                  </p>
-                  <p>
-                    <strong>Freitag </strong>
-                  </p>
-                  <p>
-                    <strong>Samstag</strong>
-                  </p>
-                  <p>
-                    <strong>Sonntag</strong>
-                  </p>
-                </div>
-                <div>
-                  <p>10:00h - 18:00h</p>
-                  <p>10:00h - 18:00h</p>
-                  <p>10:00h - 18:00h</p>
-                  <p>10:00h - 18:00h</p>
-                  <p>10:00h - 18:00h</p>
-                  <p>10:00h - 12:00h</p>
-                  <p id='mka__text-red'>Geschlossen</p>
-                </div>
-              </div>
-            </div>
+            <OpeningTimes />
           </div>
         </div>
       </div>

@@ -1,16 +1,11 @@
 import React from 'react';
 
-const CarDetail = ({ car }) => {
+const CarDetail = ({ descritpionRow }) => {
   return (
-    <>
-      <h1>Mock Component</h1>
-      {/* {car.map(
-        <li className='mka__car-attributes'>
-          <span>{subtitles}</span>
-          <strong>{car}</strong>
-        </li> */}
-      {/* )} */}
-    </>
+    <li className='mka__car-attributes'>
+      <span>{descritpionRow.description}</span>
+      <strong>{descritpionRow.value}</strong>
+    </li>
   );
 };
 

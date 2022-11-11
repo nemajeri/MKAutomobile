@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
 const CarsContext = createContext();
@@ -12,14 +12,18 @@ export const CarsProvider = ({ children }) => {
   }, []);
 
   const fetchCars = async () => {
-    try {
-      const res = await axios.get(process.env.REACT_APP_MY_API_KEY);
-      const data = res.data;
-      setAllCars(data);
-    } catch (error) {
-      console.log(error.response.data.error);
-    }
+    axios
+      .get(process.env.REACT_APP_MY_API_KEY)
+      .then(res => {
+        const data = res.data;
+        setAllCars(data);
+        setIsLoading(false);
+      })
+      .catch(error => {
+        console.log(error.response.data);
+      });
   };
+
   return (
     <CarsContext.Provider
       value={{ array: allCars, loader: [isLoading, setIsLoading] }}
@@ -29,4 +33,10 @@ export const CarsProvider = ({ children }) => {
   );
 };
 
-export default CarsContext;
+export const useAPI = () => {
+  const context = useContext(CarsContext);
+  if (context === undefined) {
+    throw new Error('Context muss mit dem Provider gentzt werden');
+  }
+  return context;
+};

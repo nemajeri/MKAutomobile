@@ -1,6 +1,7 @@
 import React from 'react';
 import './CarPage.css';
 import { FaExchangeAlt } from 'react-icons/fa';
+import Button from '../utils/Button';
 
 const CarPageHeaderSection = ({ car }) => {
   return (
@@ -16,24 +17,7 @@ const CarPageHeaderSection = ({ car }) => {
           </i>
           <p>Hinzufügen zum vergleichen</p>
         </a>
-        <button className='btn mka__button-carpage'>
-          <svg
-            className='button'
-            width='180px'
-            height='60px'
-            viewBox='0 0 180 60'
-          >
-            <polyline
-              points='179,1 179,59 1,59 1,1 179,1'
-              className='bg-line'
-            />
-            <polyline
-              points='179,1 179,59 1,59 1,1 179,1'
-              className='hl-line'
-            />
-          </svg>
-          <span>Email</span>
-        </button>
+        <Button />
       </div>
     </>
   );

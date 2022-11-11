@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 
 const TransmissionFilter = ({
-  filteredCarsList,
+  array,
   handleTransmissionChange,
   colourStyles,
 }) => {
@@ -10,7 +10,7 @@ const TransmissionFilter = ({
     return arr.filter((a, i) => arr.findIndex(b => f(a) === f(b)) === i);
   };
 
-  const options = filteredCarsList.map(car => {
+  const options = array.map(car => {
     return {
       value: car.transmission,
       label: car.transmission,

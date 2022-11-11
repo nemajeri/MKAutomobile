@@ -1,16 +1,12 @@
 import React from 'react';
 import Select from 'react-select';
 
-const MileageFilter = ({
-  filteredCarsList,
-  handleMileageChange,
-  colourStyles,
-}) => {
+const MileageFilter = ({ array, handleMileageChange, colourStyles }) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex(b => f(a) === f(b)) === i);
   };
 
-  const options = filteredCarsList.map(car => {
+  const options = array.map(car => {
     return {
       value: car.mileage,
       label: car.mileage,

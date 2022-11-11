@@ -1,6 +1,4 @@
 export const INITIAL_STATE = {
-  cars: [],
-  loading: 'true',
   make: null,
   model: null,
   year: null,
@@ -15,59 +13,93 @@ export const INITIAL_STATE = {
   slidervalues: [2900, 24990],
   offset: 1,
   page: 1,
+  error: '',
 };
 
-export const carsReducer = (state, action) => {
+export const carsReducer = (INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'SET_CARS':
+    case 'CHANGE_MAKE':
       return {
-        ...state,
-        cars: action.payload,
-        loading: false,
+        ...INITIAL_STATE,
+        [action.select]: action.select.value,
       };
-    case 'SET_CAR':
+    case 'CHANGE_MODEL':
       return {
-        ...state,
-        make: action.payload.make,
-        model: action.payload.model,
-        year: action.payload.year,
-        price: action.payload.price,
-        mileage: action.payload.mileage,
-        fuel: action.payload.fuel,
-        transmission: action.payload.transmission,
-        drivetrain: action.payload.drivetrain,
+        ...INITIAL_STATE,
+        [action.select]: action.select.value,
       };
-    case 'SET_FILTERED_CARS':
+    case 'CHANGE_YEAR':
       return {
-        ...state,
-        filteredcars: action.payload,
+        ...INITIAL_STATE,
+        [action.select]: action.select.value,
       };
-    case 'SET_ACTIVE':
+    case 'CHANGE_MILEAGE':
       return {
-        ...state,
-        active: action.payload,
+        ...INITIAL_STATE,
+        [action.select]: action.select.value,
       };
-    case 'SET_CAR_PER_PAGE':
+    case 'CHANGE_FUEL':
       return {
-        ...state,
-        carperpage: action.payload,
+        ...INITIAL_STATE,
+        [action.select]: action.select.value,
       };
-    case 'SET_SLIDER_VALUES':
+    case 'CHANGE_TRANSMISSION':
       return {
-        ...state,
-        slidervalues: action.payload,
+        ...INITIAL_STATE,
+        [action.select]: action.select.value,
       };
-    case 'SET_OFFSET':
+    case 'CHANGE_DRIVETRAIN':
       return {
-        ...state,
-        offset: action.payload,
-      };
-    case 'SET_PAGE':
-      return {
-        ...state,
-        page: action.payload,
+        ...INITIAL_STATE,
+        [action.select]: action.select.value,
       };
     default:
-      return state;
+      throw new Error(`Unknown action type: ${action.type}`);
   }
+  // switch (action.type) {
+  //   case 'SET_CAR':
+  //     return {
+  //       ...state,
+  //       make: action.payload,
+  //       model: action.payload.model,
+  //       year: action.payload.year,
+  //       price: action.payload.price,
+  //       mileage: action.payload.mileage,
+  //       fuel: action.payload.fuel,
+  //       transmission: action.payload.transmission,
+  //       drivetrain: action.payload.drivetrain,
+  //     };
+  //   case 'SET_FILTERED_CARS':
+  //     return {
+  //       ...state,
+  //       filteredcars: action.payload,
+  //     };
+  //   case 'SET_ACTIVE':
+  //     return {
+  //       ...state,
+  //       active: action.payload,
+  //     };
+  //   case 'SET_CAR_PER_PAGE':
+  //     return {
+  //       ...state,
+  //       carperpage: action.payload,
+  //     };
+  //   case 'SET_SLIDER_VALUES':
+  //     return {
+  //       ...state,
+  //       slidervalues: action.payload,
+  //     };
+  //   case 'SET_OFFSET':
+  //     return {
+  //       ...state,
+  //       offset: action.payload,
+  //     };
+  //   case 'SET_PAGE':
+  //     return {
+  //       ...state,
+  //       page: action.payload,
+  //     };
+  //   default:
+  //     throw new Error(`Unknown action type: ${action.type}`);
+  // }
 };

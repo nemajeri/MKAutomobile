@@ -8,8 +8,7 @@ import FuelFilter from './FuelFilter';
 import DriveTrainFilter from './DriveTrainFilter';
 
 const FilterSideBar = ({
-  carsList,
-  filteredCarsList,
+  array,
   handleMakeChange,
   handleModelChange,
   handleYearChange,
@@ -48,38 +47,38 @@ const FilterSideBar = ({
   return (
     <>
       <MakeFilter
-        carsList={carsList}
+        array={array}
         handleMakeChange={handleMakeChange}
         colourStyles={colourStyles}
       />
       <ModelFilter
         handleModelChange={handleModelChange}
-        filteredCarsList={filteredCarsList}
+        array={array}
         colourStyles={colourStyles}
       />
       <YearFilter
         handleYearChange={handleYearChange}
-        filteredCarsList={filteredCarsList}
+        array={array}
         colourStyles={colourStyles}
       />
       <MileageFilter
         handleMileageChange={handleMileageChange}
-        filteredCarsList={filteredCarsList}
+        array={array}
         colourStyles={colourStyles}
       />
       <FuelFilter
         handleFuelChange={handleFuelChange}
-        filteredCarsList={filteredCarsList}
+        array={array}
         colourStyles={colourStyles}
       />
       <TransmissionFilter
         handleTransmissionChange={handleTransmissionChange}
-        filteredCarsList={filteredCarsList}
+        array={array}
         colourStyles={colourStyles}
       />
       <DriveTrainFilter
         handleDriveTrainChange={handleDriveTrainChange}
-        filteredCarsList={filteredCarsList}
+        array={array}
         colourStyles={colourStyles}
       />
     </>

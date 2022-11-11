@@ -1,6 +1,7 @@
 import React from 'react';
 import { Footer } from '../../components';
 import './Jumbotrone.css';
+import { Link } from 'react-router-dom';
 
 const Jumbotrone = () => {
   return (
@@ -14,13 +15,13 @@ const Jumbotrone = () => {
               <p>
                 Im Trenkenschuh 15-17<br></br>
                 2100 Korneuburg<br></br>
-                <a href='tel:+43 680 3149332'>+43 680 3149332</a>
+                <Link to='tel:+43 680 3149332'>+43 680 3149332</Link>
                 <br></br>
-                <a href='+43 2262 20413'>+43 2262 20413</a>
+                <Link to='+43 2262 20413'>+43 2262 20413</Link>
                 <br></br>
-                <a href='mailto:office@mkautomobile.at'>
+                <Link to='mLinkilto:office@mkautomobile.at'>
                   office@mkautomobile.at
-                </a>
+                </Link>
               </p>
             </div>
             <div className='mka__jumbotrone-opening-times'>
