@@ -8,7 +8,7 @@ import {
   CarDetails,
   CarPageHeaderSection,
 } from './index';
-import HomeSlider from '../HomeSlider/HomeSlider';
+import HomePageCarousel from '../HomePageLinkAndCarousel/HomePageCarousel';
 import './CarPage.css';
 
 const CarPage = () => {
@@ -51,7 +51,6 @@ const CarPage = () => {
           </div>
           <div className='mka__description-tabs__carpage'>
             <ul>
-              {/* Napraviti komponente od li elemenata */}
               <li
                 className={`mka__description-tab__carpage ${
                   isActive ? 'selected' : ''

@@ -1,14 +1,18 @@
 import React from 'react';
 
-const AlignItem1 = ({ isActive }) => {
+const DefaultRightSideBarAlignmentIcon = ({ isActive }) => {
   return (
-    <div>
+    <i>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10.91 8.77'>
         <g id='Layer_2' data-name='Layer 2'>
           <g
             id='Layer_1-2'
             data-name='Layer 1'
-            className={isActive === 'mka__default-layout-right__sidebar' ? 'mka__icon-selected' : 'mka__icon-unselected'}
+            className={
+              isActive === 'mka__default-layout-right__sidebar'
+                ? 'mka__icon-selected'
+                : 'mka__icon-unselected'
+            }
           >
             <rect width='1.74' height='8.77' />
             <rect x='3.09' y='4.88' width='1.96' height='1.47' />
@@ -26,8 +30,8 @@ const AlignItem1 = ({ isActive }) => {
           </g>
         </g>
       </svg>
-    </div>
+    </i>
   );
 };
 
-export default AlignItem1;
+export default DefaultRightSideBarAlignmentIcon;

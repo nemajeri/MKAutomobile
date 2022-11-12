@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeSlider from '../HomeSlider/HomeSlider';
-import './HomePageCarList.css';
+import './HomePageCarousel.css';
 import { CarsProvider } from '../utils/CarsContext';
 import HomePageLinks from './HomePageLinks';
 
@@ -23,7 +23,7 @@ const HomePageCarList = () => {
           <div className='mka__section-divider'></div>
           <div className='mka__shortcuts-home-list'>
             {titles.map((title, index) => (
-              <HomePageLinks title={title} index={index} />
+              <HomePageLinks title={title} index={index} key={index} />
             ))}
           </div>
         </div>

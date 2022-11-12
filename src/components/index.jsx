@@ -9,7 +9,7 @@ export { default as Impression } from './Impression/Impression';
 export { default as Copyright } from './Copyright/Copyright';
 export { default as Gallery } from './Gallery/Gallery';
 export { default as CarPurchase } from './CarPurchase/CarPurchase';
-export { default as HomePageCarList } from './HomePageCarList/HomePageCarList';
+export { default as HomePageCarousel } from './HomePageLinkAndCarousel/HomePageCarousel';
 export { default as CarOffers } from './CarOffers/CarOffers';
 export { default as Error404 } from './Error404/Error404';
 export { default as CarPage } from './CarPage/CarPage';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './CarPage.css';
+import '../CarPage.css';
 import CarDetail from './CarDetail';
 
 const CarDetails = ({ car }) => {

@@ -4,7 +4,7 @@ import {
   Navbar,
   Jumbotrone,
   Logo,
-  HomePageCarList,
+  HomePageCarousel,
 } from '../../components';
 import './Home.css';
 
@@ -33,7 +33,7 @@ const Home = () => {
           Terminvereinbarung möglich
         </p>
       </div>
-      <HomePageCarList />
+      <HomePageCarousel />
       <Jumbotrone />
     </>
   );

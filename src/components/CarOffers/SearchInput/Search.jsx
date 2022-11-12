@@ -5,8 +5,13 @@ import { IconContext } from 'react-icons';
 import { Link } from 'react-router-dom';
 import './Search.css';
 
-const Search = ({ array }) => {
-  const carsOptions = array.map(car => {
+import { useAPI } from '../../utils/CarsContext';
+
+const Search = () => {
+  const { array, loader } = useAPI();
+  const [isLoading] = loader;
+
+  const carsOptions = array?.map(car => {
     return {
       value: car.title,
       label: car.title,
@@ -38,7 +43,7 @@ const Search = ({ array }) => {
     }),
   };
 
-  return (
+  return !isLoading ? (
     <>
       <Select
         className='mka__search-placeholder'
@@ -69,6 +74,7 @@ const Search = ({ array }) => {
         formatOptionLabel={car => (
           <div className='mka__individual-car-option'>
             <img src={require('../../../assets/bmw.jpg')} alt='car-label' />
+            {console.log(car.id)}
             <Link to={`/fahrzeugdaten/${car.id}`}>
               <span>{car.label}</span>
             </Link>
@@ -76,7 +82,7 @@ const Search = ({ array }) => {
         )}
       />
     </>
-  );
+  ) : null;
 };
 
 export default Search;
