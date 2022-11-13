@@ -6,7 +6,7 @@ import * as yup from 'yup';
 const ContactForm = () => {
   const phoneRegExp = /^\+4[139] \(0\d+\) \d{9,}$/;
 
-  let schema = yup.object().shape({
+  const schema = yup.object().shape({
     name: yup.string().required(),
     lastname: yup.string().required(),
     email: yup.string().email().required(),

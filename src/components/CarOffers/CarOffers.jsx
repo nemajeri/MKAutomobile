@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import CarOffersCard from './CarOffersCard';
+import React, { useState, useEffect } from 'react';
 import { TopBarWithFilters, SideBar } from './index';
-import ReactPaginate from 'react-paginate';
-import LoadingSvg from '../utils/LoadingSvg';
+import PaginatedCars from './PaginatedCars';
 import { useAPI } from '../utils/CarsContext';
 import './CarOffers.css';
 
-const initiallCarAttributes = {
+const initiallCarsAttributes = {
   make: null,
   model: null,
   year: null,
@@ -20,14 +18,17 @@ const initialState = 'mka__default-layout-right__sidebar';
 
 const CarOffers = () => {
   const [isActive, setIsActive] = useState(initialState);
-  const { array, loader } = useAPI();
+  const { array, loader, filteredArray } = useAPI();
   const [isLoading] = loader;
-  const [state, setState] = useState(initiallCarAttributes);
+  const [filteredCarsList, setFilteredCarsList] = filteredArray;
+  const [state, setState] = useState(initiallCarsAttributes);
   const [sliderValues, setSliderValues] = useState([2900, 24990]);
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
   const [carsPerPage, setCarsPerPage] = useState(12);
-  const [offset, setOffset] = useState(1);
-  const [pageCount, setPageCount] = useState(0);
+
+  useEffect(() => {
+    applyFilters();
+  }, [state]);
 
   const handleSliderChange = priceArray => {
     setSliderValues(priceArray);
@@ -64,10 +65,44 @@ const CarOffers = () => {
   const toggleFullWidthRightSidebarLayout = toggleClass(view3);
   const toggleFullWidthLeftSidebarLayout = toggleClass(view4);
 
-  const handlePageClick = e => {
-    const selectedPage = e.selected;
-    setOffset(selectedPage + 1);
+  const applyFilters = () => {
+    var allFilteredCars = array;
+
+    if (state.make) {
+      allFilteredCars = array.filter(car => car.make === state.make);
+    }
+
+    if (state.model) {
+      allFilteredCars = array.filter(car => car.model === state.model);
+    }
+
+    if (state.year) {
+      allFilteredCars = array.filter(car => car.year === state.year);
+    }
+
+    if (state.mileage) {
+      allFilteredCars = array.filter(car => car.mileage === state.mileage);
+    }
+
+    if (state.fuel) {
+      allFilteredCars = array.filter(car => car.fuel === state.fuel);
+    }
+
+    if (state.transmission) {
+      allFilteredCars = array.filter(
+        car => car.transmission === state.transmission
+      );
+    }
+
+    if (state.driveTrain) {
+      allFilteredCars = array.filter(
+        car => car.drivetrain === state.driveTrain
+      );
+    }
+
+    setFilteredCarsList(allFilteredCars);
   };
+
   return (
     <div className='mka__wrapper car-offers'>
       <div className='mka__container'>
@@ -91,6 +126,7 @@ const CarOffers = () => {
             />
             <SideBar
               array={array}
+              filteredCarsList={filteredCarsList}
               handleMakeChange={handleMakeChange}
               handleModelChange={handleModelChange}
               handleYearChange={handleYearChange}
@@ -99,31 +135,13 @@ const CarOffers = () => {
               handleTransmissionChange={handleTransmissionChange}
               handleDriveTrainChange={handleDriveTrainChange}
             />
-            <div className='mka__list-of-cars'>
-              {isLoading ? (
-                <LoadingSvg />
-              ) : (
-                <>
-                  {array.map(car => (
-                    <CarOffersCard
-                      key={car.id}
-                      car={car}
-                      isActive={isActive}
-                      initialState={initialState}
-                    />
-                  ))}
-                </>
-              )}
-              <ReactPaginate
-                previousLabel={'← Vorherige'}
-                nextLabel={'Weiter →'}
-                pageCount={pageCount}
-                onPageChange={handlePageClick}
-                containerClassName={'pagination'}
-                subContainerClassName={'pages pagination'}
-                activeClassName={'active-pagination'}
-              />
-            </div>
+            <PaginatedCars
+              isLoading={isLoading}
+              isActive={isActive}
+              initialState={initialState}
+              filteredCarsList={filteredCarsList}
+              carsPerPage={carsPerPage}
+            />
           </div>
         </div>
       </div>

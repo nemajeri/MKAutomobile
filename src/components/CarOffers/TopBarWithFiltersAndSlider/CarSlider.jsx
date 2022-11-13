@@ -3,10 +3,7 @@ import './CarSlider.css';
 import Range from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
-const CarSlider = ({
-  handleSliderChange,
-  sliderValues
-}) => {
+const CarSlider = ({ handleSliderChange, sliderValues }) => {
   return (
     <div className='mka__range-alignment'>
       <div className='mka__range-text'>

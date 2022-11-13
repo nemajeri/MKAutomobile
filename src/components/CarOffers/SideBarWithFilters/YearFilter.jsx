@@ -1,13 +1,13 @@
 import React from 'react';
 import Select from 'react-select';
 
-const YearFilter = ({ array, handleYearChange, colourStyles }) => {
+const YearFilter = ({ filteredCarsList, handleYearChange, colourStyles }) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex(b => f(a) === f(b)) === i);
   };
   const sortBy = (arr, f) => arr.sort((a, b) => f(b) - f(a));
 
-  const options = array.map(car => {
+  const options = filteredCarsList.map(car => {
     return {
       value: car.year,
       label: car.year,

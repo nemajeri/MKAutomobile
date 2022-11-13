@@ -9,6 +9,7 @@ import DriveTrainFilter from './DriveTrainFilter';
 
 const FilterSideBar = ({
   array,
+  filteredCarsList,
   handleMakeChange,
   handleModelChange,
   handleYearChange,
@@ -53,32 +54,32 @@ const FilterSideBar = ({
       />
       <ModelFilter
         handleModelChange={handleModelChange}
-        array={array}
+        filteredCarsList={filteredCarsList}
         colourStyles={colourStyles}
       />
       <YearFilter
         handleYearChange={handleYearChange}
-        array={array}
+        filteredCarsList={filteredCarsList}
         colourStyles={colourStyles}
       />
       <MileageFilter
         handleMileageChange={handleMileageChange}
-        array={array}
+        filteredCarsList={filteredCarsList}
         colourStyles={colourStyles}
       />
       <FuelFilter
         handleFuelChange={handleFuelChange}
-        array={array}
+        filteredCarsList={filteredCarsList}
         colourStyles={colourStyles}
       />
       <TransmissionFilter
         handleTransmissionChange={handleTransmissionChange}
-        array={array}
+        filteredCarsList={filteredCarsList}
         colourStyles={colourStyles}
       />
       <DriveTrainFilter
         handleDriveTrainChange={handleDriveTrainChange}
-        array={array}
+        filteredCarsList={filteredCarsList}
         colourStyles={colourStyles}
       />
     </>

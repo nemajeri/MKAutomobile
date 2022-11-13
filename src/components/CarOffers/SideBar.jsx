@@ -4,6 +4,7 @@ import { Search, FilterSideBar } from './index';
 
 const SideBar = ({
   array,
+  filteredCarsList,
   handleMakeChange,
   handleModelChange,
   handleYearChange,
@@ -23,7 +24,9 @@ const SideBar = ({
         <h6>DETAILSUCHE</h6>
         <div className='mka__sidebar-divider'></div>
         <FilterSideBar
+          filter
           array={array}
+          filteredCarsList={filteredCarsList}
           handleMakeChange={handleMakeChange}
           handleModelChange={handleModelChange}
           handleYearChange={handleYearChange}

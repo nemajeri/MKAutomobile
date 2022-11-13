@@ -1,12 +1,16 @@
 import React from 'react';
 import Select from 'react-select';
 
-const DriveTrainFilter = ({ array, handleDriveTrainChange, colourStyles }) => {
+const DriveTrainFilter = ({
+  filteredCarsList,
+  handleDriveTrainChange,
+  colourStyles,
+}) => {
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex(b => f(a) === f(b)) === i);
   };
 
-  const options = array.map(car => {
+  const options = filteredCarsList.map(car => {
     return {
       value: car.drivetrain,
       label: car.drivetrain,
