@@ -13,6 +13,11 @@
     text-align: center;
     padding-top: 8rem;
     font-family: 'Raleway', sans-serif;
+    animation: fadeIn 5s;
+}
+
+.mka__home-background-image .mka__logo-size{
+    width: 20%;
 }
 
 .mka__home-description {
@@ -21,6 +26,16 @@
     padding-top: 0.5rem;
     font-family: 'Raleway', sans-serif;
     font-size: x-large;
+    animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .mka__home-car-mercedes {
@@ -41,7 +56,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 35%;
+    width: 25%;
     aspect-ratio: 1 / 0.6;
 }
 

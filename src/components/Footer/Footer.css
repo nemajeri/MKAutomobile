@@ -18,14 +18,15 @@
 .mka__footer-links {
   display: flex;
   gap: 12px;
+  font-family: var(--font-family);
 }
 
-.mka__footer-links p>a {
+.mka__footer-links .mka__footer-link {
   color: #626262;
   transition: 0.5s;
 }
 
-.mka__footer-links p>a:hover {
+.mka__footer-links .mka__footer-link:hover {
   color: var(--color-red);
   transition: 0.5s;
 }
@@ -34,18 +35,15 @@
   display: flex;
   gap: 12px;
   margin-left: auto;
+  font-family: var(--font-family);
 }
 
-.mka__footer-copyright p {
-  color: #626262;
-}
-
-.mka__footer-copyright p>a {
+.mka__footer-copyright .mka__footer-link {
   color: #626262;
   transition: 0.5s;
 }
 
-.mka__footer-copyright p>a:hover {
+.mka__footer-copyright .mka__footer-link:hover {
   color: var(--color-red);
   transition: 0.5s;
 }

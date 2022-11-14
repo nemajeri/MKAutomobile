@@ -20,11 +20,10 @@ export const CarsProvider = ({ children }) => {
         const data = res.data;
         setAllCars(data);
         setFilteredCarsList(data);
-        // Ovdje odrediti pocetne vrijednosti rc slidera
-        // const firstSliderValue = Math.max(...[] ]);
-        // const secondSliderValue = Math.min.apply(...[data]);
-        // console.log(firstSliderValue, secondSliderValue);
-        // setSliderValues([firstSliderValue, secondSliderValue])
+        const sortedCars = data.sort((a, b) => a.price - b.price);
+        const firstSliderValue = sortedCars[0].price;
+        const secondSliderValue = sortedCars[sortedCars.length - 1].price;
+        setSliderValues([firstSliderValue, secondSliderValue]);
         setIsLoading(false);
       })
       .catch(error => {
@@ -38,6 +37,7 @@ export const CarsProvider = ({ children }) => {
         array: allCars,
         loader: [isLoading, setIsLoading],
         filteredArray: [filteredCarsList, setFilteredCarsList],
+        priceRangeSliderValues: [sliderValues, setSliderValues],
       }}
     >
       {children}

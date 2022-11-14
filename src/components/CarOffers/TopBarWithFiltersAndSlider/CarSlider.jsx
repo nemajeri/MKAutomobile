@@ -1,33 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CarSlider.css';
 import Range from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
-const CarSlider = ({ handleSliderChange, sliderValues }) => {
+const CarSlider = (
+  {
+    // handleSliderChange,
+    // sliderValues
+  }
+) => {
+  const [defaultValues, setDefaultValues] = useState([800, 1000]);
+
+  const onChange = defaultValues => {
+    setDefaultValues(defaultValues);
+  };
+
   return (
     <div className='mka__range-alignment'>
       <div className='mka__range-text'>
         <p>Preisklasse</p>
         <p className='mka__range-price'>
-          {sliderValues[0]}€ - {sliderValues[1]}€
+          {defaultValues[0]}€ - {defaultValues[1]}€
         </p>
       </div>
       <div className='mka__range-btn-align'>
         <div className='mka__range-width'>
           <Range
-            defaultValue={[2900, 24900]}
+            value={[defaultValues[0], defaultValues[1]]}
             allowCross={false}
             range
             tipFormatter={value => `${value}`}
             tipProps={{ visible: true }}
-            min={2900}
-            max={24900}
-            onChange={handleSliderChange}
+            min={defaultValues[0]}
+            max={defaultValues[1]}
+            onChange={onChange}
           />
         </div>
-        <button className='mka__range-button' onClick={handleSliderChange}>
-          Filter
-        </button>
+        <button className='mka__range-button'>Filter</button>
       </div>
     </div>
   );

@@ -22,16 +22,18 @@ const PaginatedCars = ({
   };
 
   return (
-    <div className='mka__list-of-cars'>
-      {isLoading ? (
-        <LoadingSvg />
-      ) : (
-        <ListedCars
-          isActive={isActive}
-          initialState={initialState}
-          currentCars={currentCars}
-        />
-      )}
+    <div className='mka__cars-and-pagination_to-center'>
+      <div className='mka__list-of-cars'>
+        {isLoading ? (
+          <LoadingSvg />
+        ) : (
+          <ListedCars
+            isActive={isActive}
+            initialState={initialState}
+            currentCars={currentCars}
+          />
+        )}
+      </div>
       <ReactPaginate
         previousLabel={'← Vorherige'}
         nextLabel={'Weiter →'}

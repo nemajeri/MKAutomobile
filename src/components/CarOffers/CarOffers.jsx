@@ -18,11 +18,11 @@ const initialState = 'mka__default-layout-right__sidebar';
 
 const CarOffers = () => {
   const [isActive, setIsActive] = useState(initialState);
-  const { array, loader, filteredArray } = useAPI();
+  const { array, loader, filteredArray, priceRangeSliderValues } = useAPI();
   const [isLoading] = loader;
   const [filteredCarsList, setFilteredCarsList] = filteredArray;
   const [state, setState] = useState(initiallCarsAttributes);
-  const [sliderValues, setSliderValues] = useState([2900, 24990]);
+  const [sliderValues, setSliderValues] = priceRangeSliderValues;
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
   const [carsPerPage, setCarsPerPage] = useState(12);
 
@@ -30,9 +30,11 @@ const CarOffers = () => {
     applyFilters();
   }, [state]);
 
-  const handleSliderChange = priceArray => {
-    setSliderValues(priceArray);
+  const handleSliderChange = sliderValues => {
+    setSliderValues(sliderValues);
   };
+
+  console.log('selectedCarSortingMethod', selectedCarSortingMethod);
 
   const onChangeValue = field => select => {
     setState({ [field]: select.value });
@@ -99,6 +101,27 @@ const CarOffers = () => {
         car => car.drivetrain === state.driveTrain
       );
     }
+
+    if (selectedCarSortingMethod === 'Sortieren nach Preis') {
+      allFilteredCars = array.sort(
+        (a, b) => parseInt(a.price) - parseInt(b.price)
+      );
+    }
+
+    if (selectedCarSortingMethod === 'Sortieren nach Jahr') {
+      allFilteredCars = array.sort(
+        (a, b) => parseInt(a.year) - parseInt(b.year)
+      );
+    }
+
+    // const minPrice = sliderValues[0];
+    // const maxPrice = sliderValues[1];
+
+    // if (sliderValues) {
+    //   allFilteredCars = array.filter(
+    //     car => minPrice < car.price && maxPrice > car.price
+    //   );
+    // }
 
     setFilteredCarsList(allFilteredCars);
   };
