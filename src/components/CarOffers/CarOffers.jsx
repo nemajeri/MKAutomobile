@@ -34,8 +34,6 @@ const CarOffers = () => {
     setSliderValues(sliderValues);
   };
 
-  console.log('selectedCarSortingMethod', selectedCarSortingMethod);
-
   const onChangeValue = field => select => {
     setState({ [field]: select.value });
   };

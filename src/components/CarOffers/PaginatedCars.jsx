@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import LoadingSvg from '../utils/LoadingSvg';
-import ListedCars from './ListedCars';
+import DefaultCardWidth from './Layouts/DefaultCardWidth';
+import FullCardWidth from './Layouts/FullCardWidth';
 
 const PaginatedCars = ({
   isLoading,
   isActive,
-  initialState,
   filteredCarsList,
   carsPerPage,
 }) => {
@@ -22,29 +22,57 @@ const PaginatedCars = ({
   };
 
   return (
-    <div className='mka__cars-and-pagination_to-center'>
-      <div className='mka__list-of-cars'>
-        {isLoading ? (
-          <LoadingSvg />
-        ) : (
-          <ListedCars
-            isActive={isActive}
-            initialState={initialState}
-            currentCars={currentCars}
+    <>
+      {isLoading ? (
+        <LoadingSvg />
+      ) : (
+        <>
+          {isActive === 'mka__full-width-layout-right__sidebar' ||
+          isActive === 'mka__full-width-layout-left__sidebar' ? (
+            filteredCarsList.map(car => <FullCardWidth car={car} />)
+          ) : (
+            <div className='mka__list-of-cars'>
+              {filteredCarsList.map(car => (
+                <DefaultCardWidth car={car} />
+              ))}
+            </div>
+          )}
+          <ReactPaginate
+            previousLabel={'← Vorherige'}
+            nextLabel={'Weiter →'}
+            pageCount={pageCount}
+            onPageChange={handlePageClick}
+            containerClassName={'pagination'}
+            subContainerClassName={'pages pagination'}
+            activeClassName={'active-pagination'}
           />
-        )}
-      </div>
-      <ReactPaginate
-        previousLabel={'← Vorherige'}
-        nextLabel={'Weiter →'}
-        pageCount={pageCount}
-        onPageChange={handlePageClick}
-        containerClassName={'pagination'}
-        subContainerClassName={'pages pagination'}
-        activeClassName={'active-pagination'}
-      />
-    </div>
+        </>
+      )}
+    </>
   );
 };
 
 export default PaginatedCars;
+
+// import React from 'react';
+// import DefaultCardWidth from './Layouts/DefaultCardWidth';
+// import FullCardWidth from './Layouts/FullCardWidth';
+
+// const ListedCars = ({ currentCars, isActive }) => {
+//   return (
+//     <>
+//       {isActive === 'mka__full-width-layout-right__sidebar' ||
+//       isActive === 'mka__full-width-layout-left__sidebar' ? (
+//         currentCars.map(car => <FullCardWidth car={car} />)
+//       ) : (
+//         <div className='mka__list-of-cars'>
+//           {currentCars.map(car => (
+//             <DefaultCardWidth car={car} />
+//           ))}
+//         </div>
+//       )}
+//     </>
+//   );
+// };
+
+// export default ListedCars;

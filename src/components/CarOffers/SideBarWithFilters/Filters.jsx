@@ -24,6 +24,7 @@ const FilterSideBar = ({
       backgroundColor: 'transparent',
       borderRadius: '0px',
       marginBottom: '10px',
+      fontFamily: 'Roboto',
     }),
     option: styles => {
       return {
@@ -36,6 +37,7 @@ const FilterSideBar = ({
       return {
         ...styles,
         backgroundColor: 'black',
+        fontFamily: 'Roboto',
       };
     },
     dropdownIndicator: (base, state) => ({

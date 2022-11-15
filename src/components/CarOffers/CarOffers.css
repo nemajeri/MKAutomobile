@@ -31,7 +31,7 @@
 
 .mka__search-and-filters {
   grid-area: menu;
-  width: 30vh;
+  min-width: 30vh;
 }
 
 .mka__list-of-cars {
@@ -198,12 +198,6 @@
   .mka__content-car-offers {
     width: 100%;
     float: left;
-  }
-
-  .mka__cars-and-pagination_to-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 }
 

@@ -1,17 +1,20 @@
 import React from 'react';
-import CarOffersCard from './CarOffersCard';
+import DefaultCardWidth from './Layouts/DefaultCardWidth';
+import FullCardWidth from './Layouts/FullCardWidth';
 
-const ListedCars = ({ currentCars, isActive, initialState }) => {
+const ListedCars = ({ currentCars, isActive }) => {
   return (
     <>
-      {currentCars.map(car => (
-        <CarOffersCard
-          key={car.id}
-          car={car}
-          isActive={isActive}
-          initialState={initialState}
-        />
-      ))}
+      {isActive === 'mka__full-width-layout-right__sidebar' ||
+      isActive === 'mka__full-width-layout-left__sidebar' ? (
+        currentCars.map(car => <FullCardWidth car={car} />)
+      ) : (
+        <div className='mka__list-of-cars'>
+          {currentCars.map(car => (
+            <DefaultCardWidth car={car} />
+          ))}
+        </div>
+      )}
     </>
   );
 };
