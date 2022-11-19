@@ -2,7 +2,7 @@ import './Copyright.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Copyright = () => {
+const CopyrightPageContent = () => {
   return (
     <div className='mka__wrapper copyright'>
       <div className='mka__container'>
@@ -94,4 +94,4 @@ const Copyright = () => {
   );
 };
 
-export default Copyright;
+export default CopyrightPageContent;

@@ -23,12 +23,13 @@ const CarOffers = () => {
   const [filteredCarsList, setFilteredCarsList] = filteredArray;
   const [state, setState] = useState(initiallCarsAttributes);
   const [sliderValues, setSliderValues] = priceRangeSliderValues;
-  const [selectedCarSortingMethod, setSelectedCarSortingMethod] = useState('');
+  const [selectedCarSortingMethod, setSelectedCarSortingMethod] =
+    useState(null);
   const [carsPerPage, setCarsPerPage] = useState(12);
 
   useEffect(() => {
     applyFilters();
-  }, [state]);
+  }, [state, selectedCarSortingMethod]);
 
   const handleSliderChange = sliderValues => {
     setSliderValues(sliderValues);
@@ -100,13 +101,19 @@ const CarOffers = () => {
       );
     }
 
-    if (selectedCarSortingMethod === 'Sortieren nach Preis') {
+    if (
+      selectedCarSortingMethod != null &&
+      selectedCarSortingMethod === 'Sortieren nach Preis'
+    ) {
       allFilteredCars = array.sort(
         (a, b) => parseInt(a.price) - parseInt(b.price)
       );
     }
 
-    if (selectedCarSortingMethod === 'Sortieren nach Jahr') {
+    if (
+      selectedCarSortingMethod != null &&
+      selectedCarSortingMethod === 'Sortieren nach Jahr'
+    ) {
       allFilteredCars = array.sort(
         (a, b) => parseInt(a.year) - parseInt(b.year)
       );

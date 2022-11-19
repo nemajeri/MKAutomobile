@@ -29,7 +29,11 @@ const PaginatedCars = ({
         <>
           {isActive === 'mka__full-width-layout-right__sidebar' ||
           isActive === 'mka__full-width-layout-left__sidebar' ? (
-            filteredCarsList.map(car => <FullCardWidth car={car} />)
+            <div>
+              {filteredCarsList.map(car => (
+                <FullCardWidth car={car} />
+              ))}
+            </div>
           ) : (
             <div className='mka__list-of-cars'>
               {filteredCarsList.map(car => (

@@ -14,9 +14,9 @@
 }
 
 .mka__search-icon {
-  position: absolute;
-  top: 14px;
-  left: 255px;
+  position: relative;
+  top: -32px;
+  left: 313px;
 }
 
 @media (max-width: 992px) {

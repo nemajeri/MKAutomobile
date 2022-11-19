@@ -212,6 +212,7 @@
   }
 }
 
+/* Promijeniti css i postaviti css auta u siroko horizontalnom vizualu da bude responzivan */
 @media (max-width: 992px) {
   .item2 {
     grid-area: menu;

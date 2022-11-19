@@ -1,5 +1,11 @@
 import React from 'react';
-import { Header, Navbar, Jumbotrone, Logo, Contact } from '../../components';
+import {
+  Header,
+  Navbar,
+  Jumbotrone,
+  Logo,
+  ContactPageContent,
+} from '../../components';
 import './Kontakt.css';
 
 const Kontakt = ({ carsList }) => {
@@ -8,7 +14,7 @@ const Kontakt = ({ carsList }) => {
       <div className='mka__header-background-img'>
         <Header />
         <Navbar carsList={carsList} />
-            <Logo />
+        <Logo />
         <p className='mka__contact-description'>
           Probefahrt und Besichtigung sind ausschließlich nach
           Terminvereinbarung möglich
@@ -19,7 +25,7 @@ const Kontakt = ({ carsList }) => {
           </div>
         </div>
       </div>
-      <Contact />
+      <ContactPageContent />
       <Jumbotrone />
     </>
   );

@@ -64,51 +64,6 @@ const ContactForm = () => {
     validationSchema: schema,
   });
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   localStorage.setItem('name', name);
-  //   localStorage.setItem('lastname', lastname);
-  //   localStorage.setItem('email', email);
-  //   localStorage.setItem('telephone', telephone);
-  //   localStorage.setItem('company', company);
-  //   localStorage.setItem('street', street);
-  //   localStorage.setItem('plz', plz);
-  //   localStorage.setItem('city', city);
-  //   localStorage.setItem('fax', fax);
-  //   localStorage.setItem('phone', phone);
-  //   localStorage.setItem('make', make);
-  //   localStorage.setItem('model', model);
-  //   localStorage.setItem('suggestion', suggestion);
-  //   localStorage.setItem('mileage', mileage);
-  //   localStorage.setItem('registration', registration);
-  //   localStorage.setItem('gender', gender);
-  //   localStorage.setItem('fuel', fuel);
-  //   localStorage.setItem('state', state);
-  //   localStorage.setItem('equipment', equipment);
-  // };
-
-  // const setData = () => {
-  //   console.log(localStorage.getItem('name'));
-  //   console.log(localStorage.getItem('password'));
-  //   console.log(localStorage.getItem('email'));
-  //   console.log(localStorage.getItem('telephone'));
-  //   console.log(localStorage.getItem('company'));
-  //   console.log(localStorage.setItem('street'));
-  //   console.log(localStorage.setItem('plz'));
-  //   console.log(localStorage.setItem('city'));
-  //   console.log(localStorage.setItem('fax'));
-  //   console.log(localStorage.setItem('phone'));
-  //   console.log(localStorage.setItem('make'));
-  //   console.log(localStorage.setItem('model'));
-  //   console.log(localStorage.setItem('suggestion'));
-  //   console.log(localStorage.setItem('mileage'));
-  //   console.log(localStorage.setItem('registration'));
-  //   console.log(localStorage.setItem('gender'));
-  //   console.log(localStorage.setItem('fuel'));
-  //   console.log(localStorage.setItem('state'));
-  //   console.log(localStorage.setItem('equipment'));
-  // };
-
   return (
     <>
       <form className='form' onSubmit={formik.handleSubmit}>

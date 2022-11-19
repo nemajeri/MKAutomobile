@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Button = () => {
+const Button = props => {
+  const buttonClass = `btn ${props.className}`;
   return (
     <>
-      <button type='submit' className='btn'>
+      <button type='submit' className={buttonClass}>
         <svg
           width='180px'
           height='60px'
@@ -13,7 +14,7 @@ const Button = () => {
           <polyline points='179,1 179,59 1,59 1,1 179,1' className='bg-line' />
           <polyline points='179,1 179,59 1,59 1,1 179,1' className='hl-line' />
         </svg>
-        <span>SENDEN</span>
+        <span>{props.children}</span>
       </button>
     </>
   );

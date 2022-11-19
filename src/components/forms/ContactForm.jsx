@@ -25,7 +25,7 @@ const ContactForm = () => {
       message: '',
     },
     onSubmit: values => {
-      console.log('posted', values);
+      console.log(values);
     },
     validationSchema: schema,
   });

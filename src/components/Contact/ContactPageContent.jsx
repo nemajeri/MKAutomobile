@@ -4,15 +4,22 @@ import React from 'react';
 import ContactLinks from './ContactLinks';
 import OpeningTimes from './OpeningTimes';
 
-const Contact = () => {
+const ContactPageContent = () => {
   const contacts = [
     {
       title: 'ADRESSE',
       description: 'Im Trenkenschuh 15-17 \n 2100 Korneuburg',
     },
-    { title: 'TELEFON', description: '+43 680 3149332 \n +43 2262 20413' },
-    { title: 'Email', description: 'office@mkautomobile.at' },
+    {
+      title: 'TELEFON',
+      description: '+43 680 3149332 \n +43 2262 20413',
+    },
+    {
+      title: 'Email',
+      description: 'office@mkautomobile.at',
+    },
   ];
+
   return (
     <div className='mka__wrapper contact'>
       <div className='mka__container'>
@@ -40,4 +47,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPageContent;
