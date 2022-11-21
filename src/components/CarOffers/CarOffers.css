@@ -166,6 +166,135 @@
   fill: var(--color-red);
 }
 
+.mka__siderbar-button {
+  margin-top: 5px;
+  max-width: 170px;
+  max-height: 50px;
+  margin-left: 0;
+}
+
+.mka__sidebar-button--and-filters_alignment {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.mka__sorting-alignment {
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+#mka__sorting-number {
+  width: 50px;
+}
+
+.rc-slider {
+  position: relative;
+  height: 16px;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 6px;
+  touch-action: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: var(--color-red) !important;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.rc-slider * {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: var(--color-red) !important;
+}
+
+.rc-slider-rail {
+  position: absolute;
+  width: 100%;
+  background-color: #f50c0c !important;
+  height: 6px !important;
+  border-radius: 6px;
+}
+
+.rc-slider-track {
+  position: absolute;
+  height: 40%;
+  border-radius: 6px;
+  background-color: var(--color-red) !important;
+  opacity: 100% !important;
+}
+
+.rc-slider-handle {
+  opacity: 1 !important;
+  position: absolute;
+  width: 18px !important;
+  height: 18px !important;
+  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 0% !important;
+  background-color: white !important;
+  touch-action: pan-x;
+  border: solid 1px var(--color-red) !important
+}
+
+.rc-slider-handle-1 {
+  transform: translateX(0) !important;
+
+}
+
+.rc-slider-handle-2 {
+  transform: translateX(-100%) !important;
+
+}
+
+.mka__range-width {
+  width: 15rem;
+  margin-right: 10px;
+}
+
+.mka__range-alignment {
+  flex-direction: column;
+  padding: 10px;
+}
+
+.mka__range-text {
+  display: flex;
+  gap: 10px;
+  color: white;
+}
+
+.mka__range-price {
+  color: var(--color-red);
+  font-weight: bold;
+}
+
+.mka__range-button {
+  margin-top: 0 !important;
+  display: inline-block;
+  max-width: 100px;
+  max-height: 40px;
+}
+
+.mka__range-btn-align {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mka__list-of-cars_fullwidth {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 767px) {
+  .mka__range-btn-align {
+      display: flex;
+      gap: 25px;
+  }
+}
+
 @media (max-width: 765px) {
   .mka__list-of-cars {
     grid-template-columns: auto auto;
@@ -212,7 +341,6 @@
   }
 }
 
-/* Promijeniti css i postaviti css auta u siroko horizontalnom vizualu da bude responzivan */
 @media (max-width: 992px) {
   .item2 {
     grid-area: menu;

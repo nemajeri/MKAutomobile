@@ -29,27 +29,36 @@ const PaginatedCars = ({
         <>
           {isActive === 'mka__full-width-layout-right__sidebar' ||
           isActive === 'mka__full-width-layout-left__sidebar' ? (
-            <div>
+            <div className='mka__list-of-cars_fullwidth'>
               {filteredCarsList.map(car => (
                 <FullCardWidth car={car} />
               ))}
+              <ReactPaginate
+                previousLabel={'← Vorherige'}
+                nextLabel={'Weiter →'}
+                pageCount={pageCount}
+                onPageChange={handlePageClick}
+                containerClassName={'pagination'}
+                subContainerClassName={'pages pagination'}
+                activeClassName={'active-pagination'}
+              />
             </div>
           ) : (
             <div className='mka__list-of-cars'>
               {filteredCarsList.map(car => (
                 <DefaultCardWidth car={car} />
               ))}
+              <ReactPaginate
+                previousLabel={'← Vorherige'}
+                nextLabel={'Weiter →'}
+                pageCount={pageCount}
+                onPageChange={handlePageClick}
+                containerClassName={'pagination'}
+                subContainerClassName={'pages pagination'}
+                activeClassName={'active-pagination'}
+              />
             </div>
           )}
-          <ReactPaginate
-            previousLabel={'← Vorherige'}
-            nextLabel={'Weiter →'}
-            pageCount={pageCount}
-            onPageChange={handlePageClick}
-            containerClassName={'pagination'}
-            subContainerClassName={'pages pagination'}
-            activeClassName={'active-pagination'}
-          />
         </>
       )}
     </>
@@ -57,26 +66,3 @@ const PaginatedCars = ({
 };
 
 export default PaginatedCars;
-
-// import React from 'react';
-// import DefaultCardWidth from './Layouts/DefaultCardWidth';
-// import FullCardWidth from './Layouts/FullCardWidth';
-
-// const ListedCars = ({ currentCars, isActive }) => {
-//   return (
-//     <>
-//       {isActive === 'mka__full-width-layout-right__sidebar' ||
-//       isActive === 'mka__full-width-layout-left__sidebar' ? (
-//         currentCars.map(car => <FullCardWidth car={car} />)
-//       ) : (
-//         <div className='mka__list-of-cars'>
-//           {currentCars.map(car => (
-//             <DefaultCardWidth car={car} />
-//           ))}
-//         </div>
-//       )}
-//     </>
-//   );
-// };
-
-// export default ListedCars;

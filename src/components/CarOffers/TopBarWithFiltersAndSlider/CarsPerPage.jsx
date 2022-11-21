@@ -1,5 +1,4 @@
 import React from 'react';
-import './CarsPerPage.css';
 import Select from 'react-select';
 
 const CarsPerPage = ({ handleCarsPerPageChange, colourStyles }) => {
