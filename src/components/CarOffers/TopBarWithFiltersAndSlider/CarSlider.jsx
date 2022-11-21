@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './CarSlider.css';
 import Range from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import Button from '../../utils/Button';
 
 const CarSlider = (
   {
@@ -32,11 +32,11 @@ const CarSlider = (
             tipFormatter={value => `${value}`}
             tipProps={{ visible: true }}
             min={defaultValues[0]}
-            max={defaultValues[1]}
+            max={1000}
             onChange={onChange}
           />
         </div>
-        <button className='mka__range-button'>Filter</button>
+        <Button className={'mka__range-button'}>Filter</Button>
       </div>
     </div>
   );
