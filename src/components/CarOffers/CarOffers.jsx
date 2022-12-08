@@ -62,43 +62,60 @@ const CarOffers = () => {
   const view3 = 'mka__full-width-layout-right__sidebar';
   const view4 = 'mka__full-width-layout-left__sidebar';
 
+  const filterCars = (key, value, cars) => {
+    switch (key) {
+      case 'make':
+        return cars.filter(car => car.make === value);
+      case 'model':
+        return cars.filter(car => car.model === value);
+      case 'year':
+        return cars.filter(car => car.year === value);
+      case 'mileage':
+        return cars.filter(car => car.mileage === value);
+      case 'fuel':
+        return cars.filter(car => car.fuel === value);
+      case 'transmission':
+        return cars.filter(car => car.transmission === value);
+      case 'driveTrain':
+        return cars.filter(car => car.drivetrain === value);
+      default:
+        return cars;
+    }
+  }
+
   const toggleDefaultLeftSidebarLayout = toggleClass(view2);
   const toggleFullWidthRightSidebarLayout = toggleClass(view3);
   const toggleFullWidthLeftSidebarLayout = toggleClass(view4);
 
   const applyFilters = () => {
     var allFilteredCars = array;
-
+  
     if (state.make) {
-      allFilteredCars = array.filter(car => car.make === state.make);
+      allFilteredCars = filterCars('make', state.make, allFilteredCars);
     }
-
+  
     if (state.model) {
-      allFilteredCars = array.filter(car => car.model === state.model);
+      allFilteredCars = filterCars('model', state.model, allFilteredCars);
     }
-
+  
     if (state.year) {
-      allFilteredCars = array.filter(car => car.year === state.year);
+      allFilteredCars = filterCars('year', state.year, allFilteredCars);
     }
-
+  
     if (state.mileage) {
-      allFilteredCars = array.filter(car => car.mileage === state.mileage);
+      allFilteredCars = filterCars('mileage', state.mileage, allFilteredCars);
     }
-
+  
     if (state.fuel) {
-      allFilteredCars = array.filter(car => car.fuel === state.fuel);
+      allFilteredCars = filterCars('fuel', state.fuel, allFilteredCars);
     }
-
+  
     if (state.transmission) {
-      allFilteredCars = array.filter(
-        car => car.transmission === state.transmission
-      );
+      allFilteredCars = filterCars('transmission', state.transmission, allFilteredCars);
     }
-
+  
     if (state.driveTrain) {
-      allFilteredCars = array.filter(
-        car => car.drivetrain === state.driveTrain
-      );
+      allFilteredCars = filterCars('driveTrain', state.driveTrain, allFilteredCars);
     }
 
     if (
@@ -119,14 +136,14 @@ const CarOffers = () => {
       );
     }
 
-    // const minPrice = sliderValues[0];
-    // const maxPrice = sliderValues[1];
+     const minPrice = sliderValues[0];
+     const maxPrice = sliderValues[1];
 
-    // if (sliderValues) {
-    //   allFilteredCars = array.filter(
-    //     car => minPrice < car.price && maxPrice > car.price
-    //   );
-    // }
+     if (sliderValues) {
+       allFilteredCars = array.filter(
+         car => minPrice < car.price && maxPrice > car.price
+       );
+     }
 
     setFilteredCarsList(allFilteredCars);
   };
