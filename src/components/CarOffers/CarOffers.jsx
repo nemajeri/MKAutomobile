@@ -4,7 +4,7 @@ import PaginatedCars from './PaginatedCars';
 import { useAPI } from '../utils/CarsContext';
 import './CarOffers.css';
 
-const initiallCarsAttributes = {
+const initialCarsAttributes = {
   make: null,
   model: null,
   year: null,
@@ -21,12 +21,11 @@ const CarOffers = () => {
   const { array, loader, filteredArray, priceRangeSliderValues } = useAPI();
   const [isLoading] = loader;
   const [filteredCarsList, setFilteredCarsList] = filteredArray;
-  const [state, setState] = useState(initiallCarsAttributes);
+  const [state, setState] = useState(initialCarsAttributes);
   const [sliderValues, setSliderValues] = priceRangeSliderValues;
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] =
     useState(null);
   const [carsPerPage, setCarsPerPage] = useState(12);
-
   useEffect(() => {
     applyFilters();
   }, [state, selectedCarSortingMethod]);
@@ -83,12 +82,16 @@ const CarOffers = () => {
     }
   }
 
+
   const toggleDefaultLeftSidebarLayout = toggleClass(view2);
   const toggleFullWidthRightSidebarLayout = toggleClass(view3);
   const toggleFullWidthLeftSidebarLayout = toggleClass(view4);
 
+  var allFilteredCars = array;
+
+
+
   const applyFilters = () => {
-    var allFilteredCars = array;
   
     if (state.make) {
       allFilteredCars = filterCars('make', state.make, allFilteredCars);
@@ -118,32 +121,32 @@ const CarOffers = () => {
       allFilteredCars = filterCars('driveTrain', state.driveTrain, allFilteredCars);
     }
 
-    if (
-      selectedCarSortingMethod != null &&
-      selectedCarSortingMethod === 'Sortieren nach Preis'
-    ) {
-      allFilteredCars = array.sort(
-        (a, b) => parseInt(a.price) - parseInt(b.price)
-      );
-    }
-
-    if (
-      selectedCarSortingMethod != null &&
-      selectedCarSortingMethod === 'Sortieren nach Jahr'
-    ) {
-      allFilteredCars = array.sort(
-        (a, b) => parseInt(a.year) - parseInt(b.year)
-      );
-    }
-
-     const minPrice = sliderValues[0];
-     const maxPrice = sliderValues[1];
-
-     if (sliderValues) {
-       allFilteredCars = array.filter(
-         car => minPrice < car.price && maxPrice > car.price
+     if (
+       selectedCarSortingMethod != null &&
+       selectedCarSortingMethod === 'Sortieren nach Preis'
+     ) {
+       allFilteredCars = allFilteredCars.sort(
+         (a, b) => parseInt(a.price) - parseInt(b.price)
        );
      }
+
+     if (
+       selectedCarSortingMethod != null &&
+       selectedCarSortingMethod === 'Sortieren nach Jahr'
+     ) {
+       allFilteredCars = allFilteredCars.sort(
+         (a, b) => parseInt(a.year) - parseInt(b.year)
+       );
+     }
+
+
+      const[min, max] = sliderValues;
+      
+       if (sliderValues) {
+         allFilteredCars = allFilteredCars.filter(
+           car => min < car.price && max > car.price
+         );
+       }
 
     setFilteredCarsList(allFilteredCars);
   };
@@ -154,6 +157,7 @@ const CarOffers = () => {
         <div className='mka__content-car-offers'>
           <div className={`mka__content-car-offers__main-grid ${isActive}`}>
             <TopBarWithFilters
+              isLoading={isLoading}
               handleSliderChange={handleSliderChange}
               sliderValues={sliderValues}
               handleCarsPerPageChange={handleCarsPerPageChange}

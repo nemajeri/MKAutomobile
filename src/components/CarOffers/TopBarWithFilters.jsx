@@ -8,7 +8,7 @@ import {
 } from '../utils/AlignmentIcons/index';
 
 const TopBarWithFilters = ({
-  handleSliderChange,
+  sliderValueChanged,
   sliderValues,
   handleCarsPerPageChange,
   handleSelectedCarSortingMethod,
@@ -18,6 +18,7 @@ const TopBarWithFilters = ({
   toggleDefaultLeftSidebarLayout,
   toggleFullWidthRightSidebarLayout,
   toggleFullWidthLeftSidebarLayout,
+  isLoading,
 }) => {
   const colourStyles = {
     control: styles => ({
@@ -40,6 +41,7 @@ const TopBarWithFilters = ({
         ...styles,
         backgroundColor: 'black',
         fontFamily: 'Roboto',
+        zIndex: 100
       };
     },
     dropdownIndicator: (base, state) => ({
@@ -52,7 +54,8 @@ const TopBarWithFilters = ({
   return (
     <div className='mka__filters-and-views'>
       <CarSlider
-        handleSliderChange={handleSliderChange}
+        isLoading={isLoading}
+        sliderValueChanged={sliderValueChanged}
         sliderValues={sliderValues}
       />
       <div className='mka-responsive-item'>

@@ -12,11 +12,13 @@ import {
   Fahrzeugdaten,
 } from './pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import  ScrollToTopWrapper  from './components/utils/ScrollToTopWrapper';
 import './App.css';
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTopWrapper>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/datenschutz' element={<Datenschutz />} />
@@ -29,6 +31,7 @@ const App = () => {
         <Route path='*' element={<Fehler404 />} />
         <Route path='/fahrzeugdaten/:id' element={<Fahrzeugdaten />} />
       </Routes>
+      </ScrollToTopWrapper>
     </Router>
   );
 };

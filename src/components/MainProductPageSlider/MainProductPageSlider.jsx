@@ -10,6 +10,7 @@ import { FreeMode, Navigation, Thumbs } from 'swiper';
 export default function MainProductPageSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+
   return (
     <>
       <Swiper
@@ -24,9 +25,8 @@ export default function MainProductPageSlider() {
           swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
         }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className='mySwiper2'
+        className='mka__productPageSwiper'
       >
-        {/* Probati svrstati u jednu komponentu i mapovati */}
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-1.jpg'
@@ -101,61 +101,61 @@ export default function MainProductPageSlider() {
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-1.jpg'
-            alt='demo walking'
+            alt='demo nature'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-2.jpg'
-            alt='demo running'
+            alt='demo nature'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-3.jpg'
-            alt='demo ne znam'
+            alt='demo nature'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-4.jpg'
-            alt='demo stav'
+            alt='demo nature'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-5.jpg'
-            alt='demo stareci'
+            alt='demo nature'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-6.jpg'
-            alt='demo nemasta'
+            alt='demo nature'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-7.jpg'
-            alt='demo zekonja'
+            alt='demo nature'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-8.jpg'
-            alt='demo papir'
+            alt='demo nature'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-9.jpg'
-            alt='demo ljepilo'
+            alt='demo nature'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src='https://swiperjs.com/demos/images/nature-10.jpg'
-            alt='demo austrija'
+            alt='demo nature'
           />
         </SwiperSlide>
       </Swiper>

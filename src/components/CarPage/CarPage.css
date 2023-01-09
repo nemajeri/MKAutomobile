@@ -133,9 +133,22 @@
     height: 7rem;
 }
 
-.mka__gallery-carpage .mySwiper2 {
+.mka__gallery-carpage .mka__productPageSwiper {
     height: 25rem;
 }
+
+.mka__productPageSwiper .swiper-button-next {
+    position: fixed;
+    top: 45%;
+    right: 50%;
+}
+
+.mka__productPageSwiper .swiper-button-prev {
+    position: fixed;
+    left: 19%;
+    top: 45%;
+}
+
 
 .mka__description-tabs__carpage {
     margin-top: 60px;

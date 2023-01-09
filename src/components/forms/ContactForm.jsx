@@ -2,6 +2,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import Button from '../utils/Button';
 import * as yup from 'yup';
+import axios from 'axios';
 
 const ContactForm = () => {
   const phoneRegExp = /^\+4[139] \(0\d+\) \d{9,}$/;
@@ -25,7 +26,11 @@ const ContactForm = () => {
       message: '',
     },
     onSubmit: values => {
-      console.log(values);
+      try {
+        axios.post('url placeholder', values)
+      } catch (error) {
+        console.log(error)
+      }
     },
     validationSchema: schema,
   });

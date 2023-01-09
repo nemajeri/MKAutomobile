@@ -4,7 +4,7 @@ const Button = props => {
   const buttonClass = `btn ${props.className}`;
   return (
     <>
-      <button type='submit' className={buttonClass}>
+      <button type='submit' className={buttonClass} onClick={props.onClick}>
         <svg
           width='180px'
           height='60px'

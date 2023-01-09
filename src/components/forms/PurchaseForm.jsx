@@ -2,6 +2,7 @@ import React from 'react';
 import DropzoneElement from '../Dropzone/Dropzone';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import axios from 'axios';
 
 const ContactForm = () => {
   let schema = yup.object().shape({
@@ -59,7 +60,11 @@ const ContactForm = () => {
       equipment: '',
     },
     onSubmit: values => {
-      console.log('posted', values);
+      try {
+        axios.post('url placeholder', values)
+      } catch (error) {
+        console.log(error)
+      }
     },
     validationSchema: schema,
   });
