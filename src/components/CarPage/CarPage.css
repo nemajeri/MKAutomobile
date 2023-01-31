@@ -9,6 +9,13 @@
     flex-wrap: wrap;
 }
 
+
+.mka__send-email {
+    max-width: 120px;
+    max-height: 50px;
+    margin-top: 0 !important;
+}
+
 .mka__title-price-carpage h4 {
     color: var(--color-red);
 }

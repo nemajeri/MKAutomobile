@@ -26,15 +26,17 @@ const CarOffers = () => {
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] =
     useState(null);
   const [carsPerPage, setCarsPerPage] = useState(12);
+
   useEffect(() => {
     applyFilters();
+    // eslint-disable-line react-hooks/exhaustive-deps
   }, [state, selectedCarSortingMethod]);
 
-  const handleSliderChange = sliderValues => {
+  const handleSliderChange = (sliderValues) => {
     setSliderValues(sliderValues);
   };
 
-  const onChangeValue = field => select => {
+  const onChangeValue = (field) => (select) => {
     setState({ [field]: select.value });
   };
   const handleMakeChange = onChangeValue('make');
@@ -45,15 +47,15 @@ const CarOffers = () => {
   const handleTransmissionChange = onChangeValue('transmission');
   const handleDriveTrainChange = onChangeValue('driveTrain');
 
-  const handleCarsPerPageChange = select => {
+  const handleCarsPerPageChange = (select) => {
     setCarsPerPage(select.value);
   };
 
-  const handleSelectedCarSortingMethod = select => {
+  const handleSelectedCarSortingMethod = (select) => {
     setSelectedCarSortingMethod(select.value);
   };
 
-  const toggleClass = view => e => {
+  const toggleClass = (view) => (e) => {
     setIsActive(view);
   };
 
@@ -64,24 +66,23 @@ const CarOffers = () => {
   const filterCars = (key, value, cars) => {
     switch (key) {
       case 'make':
-        return cars.filter(car => car.make === value);
+        return cars.filter((car) => car.make === value);
       case 'model':
-        return cars.filter(car => car.model === value);
+        return cars.filter((car) => car.model === value);
       case 'year':
-        return cars.filter(car => car.year === value);
+        return cars.filter((car) => car.year === value);
       case 'mileage':
-        return cars.filter(car => car.mileage === value);
+        return cars.filter((car) => car.mileage === value);
       case 'fuel':
-        return cars.filter(car => car.fuel === value);
+        return cars.filter((car) => car.fuel === value);
       case 'transmission':
-        return cars.filter(car => car.transmission === value);
+        return cars.filter((car) => car.transmission === value);
       case 'driveTrain':
-        return cars.filter(car => car.drivetrain === value);
+        return cars.filter((car) => car.drivetrain === value);
       default:
         return cars;
     }
-  }
-
+  };
 
   const toggleDefaultLeftSidebarLayout = toggleClass(view2);
   const toggleFullWidthRightSidebarLayout = toggleClass(view3);
@@ -89,66 +90,79 @@ const CarOffers = () => {
 
   var allFilteredCars = array;
 
-
-
   const applyFilters = () => {
-  
     if (state.make) {
       allFilteredCars = filterCars('make', state.make, allFilteredCars);
     }
-  
+
     if (state.model) {
       allFilteredCars = filterCars('model', state.model, allFilteredCars);
     }
-  
+
     if (state.year) {
       allFilteredCars = filterCars('year', state.year, allFilteredCars);
     }
-  
+
     if (state.mileage) {
       allFilteredCars = filterCars('mileage', state.mileage, allFilteredCars);
     }
-  
+
     if (state.fuel) {
       allFilteredCars = filterCars('fuel', state.fuel, allFilteredCars);
     }
-  
+
     if (state.transmission) {
-      allFilteredCars = filterCars('transmission', state.transmission, allFilteredCars);
+      allFilteredCars = filterCars(
+        'transmission',
+        state.transmission,
+        allFilteredCars
+      );
     }
-  
+
     if (state.driveTrain) {
-      allFilteredCars = filterCars('driveTrain', state.driveTrain, allFilteredCars);
+      allFilteredCars = filterCars(
+        'driveTrain',
+        state.driveTrain,
+        allFilteredCars
+      );
     }
 
-     if (
-       selectedCarSortingMethod != null &&
-       selectedCarSortingMethod === 'Sortieren nach Preis'
-     ) {
-       allFilteredCars = allFilteredCars.sort(
-         (a, b) => parseInt(a.price) - parseInt(b.price)
-       );
-     }
+    if (
+      selectedCarSortingMethod != null &&
+      selectedCarSortingMethod === 'Sortieren nach Preis'
+    ) {
+      allFilteredCars = allFilteredCars.sort(
+        (a, b) => parseInt(a.price) - parseInt(b.price)
+      );
+    }
 
-     if (
-       selectedCarSortingMethod != null &&
-       selectedCarSortingMethod === 'Sortieren nach Jahr'
-     ) {
-       allFilteredCars = allFilteredCars.sort(
-         (a, b) => parseInt(a.year) - parseInt(b.year)
-       );
-     }
-
-
-      const[min, max] = sliderValues;
-      
-       if (sliderValues) {
-         allFilteredCars = allFilteredCars.filter(
-           car => min < car.price && max > car.price
-         );
-       }
+    if (
+      selectedCarSortingMethod != null &&
+      selectedCarSortingMethod === 'Sortieren nach Jahr'
+    ) {
+      allFilteredCars = allFilteredCars.sort(
+        (a, b) => parseInt(a.year) - parseInt(b.year)
+      );
+    }
 
     setFilteredCarsList(allFilteredCars);
+  };
+
+  const resetFiltersOnClick = (e) => {
+    e.preventDefault();
+    setCarsPerPage(12);
+    setSelectedCarSortingMethod('Sortieren von Date');
+    setState(initialCarsAttributes);
+  };
+
+  const filterOnSubmittedSliderValuesChange = () => {
+    const [min, max] = sliderValues;
+    if (sliderValues) {
+      debugger;
+      allFilteredCars = allFilteredCars.filter(
+        (car) => min < car.price && max > car.price
+      );
+    }
   };
 
   return (
@@ -172,6 +186,9 @@ const CarOffers = () => {
               toggleFullWidthLeftSidebarLayout={
                 toggleFullWidthLeftSidebarLayout
               }
+              filterOnSubmittedSliderValuesChange={
+                filterOnSubmittedSliderValuesChange
+              }
             />
             <SideBar
               array={array}
@@ -183,6 +200,7 @@ const CarOffers = () => {
               handleFuelChange={handleFuelChange}
               handleTransmissionChange={handleTransmissionChange}
               handleDriveTrainChange={handleDriveTrainChange}
+              resetFiltersOnClick={resetFiltersOnClick}
             />
             <PaginatedCars
               isLoading={isLoading}

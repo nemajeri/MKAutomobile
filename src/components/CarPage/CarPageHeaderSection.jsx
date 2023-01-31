@@ -17,7 +17,7 @@ const CarPageHeaderSection = ({ car }) => {
           </i>
           <p>Hinzufügen zum vergleichen</p>
         </a>
-        <Button />
+        <Button className='mka__send-email' >Email</Button>
       </div>
     </>
   );

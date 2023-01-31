@@ -12,6 +12,7 @@ const SideBar = ({
   handleFuelChange,
   handleTransmissionChange,
   handleDriveTrainChange,
+  resetFiltersOnClick,
 }) => {
   return (
     <div className='mka__search-and-filters'>
@@ -36,7 +37,12 @@ const SideBar = ({
             handleTransmissionChange={handleTransmissionChange}
             handleDriveTrainChange={handleDriveTrainChange}
           />
-          <Button className={'mka__siderbar-button'}>Zurücksetzen</Button>
+          <Button
+            className={'mka__siderbar-button'}
+            onClick={resetFiltersOnClick}
+          >
+            Zurücksetzen
+          </Button>
         </div>
       </div>
     </div>

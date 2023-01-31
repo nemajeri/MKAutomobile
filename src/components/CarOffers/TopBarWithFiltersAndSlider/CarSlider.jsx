@@ -3,7 +3,12 @@ import 'rc-slider/assets/index.css';
 import Button from '../../utils/Button';
 import '../CarOffers.css';
 
-const CarSlider = ({ sliderValues, isLoading, sliderValueChanged }) => {
+const CarSlider = ({
+  sliderValues,
+  isLoading,
+  filterOnSubmittedSliderValuesChange,
+  handleSliderChange,
+}) => {
   const [min, max] = sliderValues ?? [2900, 32990];
   const thumbsize = 14;
 
@@ -35,6 +40,7 @@ const CarSlider = ({ sliderValues, isLoading, sliderValueChanged }) => {
 
   useLayoutEffect(() => {
     setAvg((maxVal + minVal) / 2);
+    handleSliderChange([minVal, maxVal]);
   }, [minVal, maxVal]);
 
   return isLoading ? null : (
@@ -80,7 +86,12 @@ const CarSlider = ({ sliderValues, isLoading, sliderValueChanged }) => {
           />
         </div>
       </div>
-      <Button className={'mka__filter-btn'}>Filter</Button>
+      <Button
+        className={'mka__filter-btn'}
+        onClick={filterOnSubmittedSliderValuesChange}
+      >
+        Filter
+      </Button>
     </div>
   );
 };

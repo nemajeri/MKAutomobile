@@ -13,10 +13,10 @@ const PaginatedCars = ({
   const [carsOffset, setCarsOffset] = useState(0);
   const endOffset = carsOffset + carsPerPage;
 
-  const currentCars = filteredCarsList.slice(carsOffset, endOffset);
-  const pageCount = Math.ceil(filteredCarsList.length / carsPerPage);
+  const currentCars = filteredCarsList?.slice(carsOffset, endOffset);
+  const pageCount = Math.ceil(filteredCarsList?.length / carsPerPage);
 
-  const handlePageClick = event => {
+  const handlePageClick = (event) => {
     const newOffset = (event.selected * carsPerPage) % filteredCarsList.length;
     setCarsOffset(newOffset);
   };
@@ -30,12 +30,12 @@ const PaginatedCars = ({
           {isActive === 'mka__full-width-layout-right__sidebar' ||
           isActive === 'mka__full-width-layout-left__sidebar' ? (
             <div className='main'>
-            <div className='mka__list-of-cars_fullwidth'>
-              {filteredCarsList.map(car => (
-                <FullCardWidth car={car} />
-              ))}
-            </div>
-            <ReactPaginate
+              <div className='mka__list-of-cars_fullwidth'>
+                {currentCars.map((car) => (
+                  <FullCardWidth car={car} />
+                ))}
+              </div>
+              <ReactPaginate
                 previousLabel={'← Vorherige'}
                 nextLabel={'Weiter →'}
                 pageCount={pageCount}
@@ -47,12 +47,12 @@ const PaginatedCars = ({
             </div>
           ) : (
             <div className='main'>
-            <div className='mka__list-of-cars'>
-              {filteredCarsList.map(car => (
-                <DefaultCardWidth car={car} />
-              ))}
-            </div>
-            <ReactPaginate
+              <div className='mka__list-of-cars'>
+                {currentCars.map((car) => (
+                  <DefaultCardWidth car={car} />
+                ))}
+              </div>
+              <ReactPaginate
                 previousLabel={'← Vorherige'}
                 nextLabel={'Weiter →'}
                 pageCount={pageCount}

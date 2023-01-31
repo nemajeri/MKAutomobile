@@ -44,7 +44,7 @@ const Navbar = ({ carsList }) => {
             {toggleSearch && (
               <div className='mka__search-div'>
                 <CarsProvider>
-                  <Search carsList={carsList} />
+                  <Search/>
                 </CarsProvider>
               </div>
             )}

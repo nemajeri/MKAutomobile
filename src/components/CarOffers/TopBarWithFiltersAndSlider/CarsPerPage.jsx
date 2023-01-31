@@ -19,7 +19,7 @@ const CarsPerPage = ({ handleCarsPerPageChange, colourStyles }) => {
         defaultValue={options[0]}
         isSearchable={false}
         onChange={handleCarsPerPageChange}
-        theme={theme => ({
+        theme={(theme) => ({
           ...theme,
           borderRadius: 0,
           colors: {
