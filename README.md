@@ -9,4 +9,4 @@ Things to be done:
 
 > Implement React Portal to open slider images in car page
 
-> Add cars to comparison table 
+> Make it so that user can add cars to a comparison table  
