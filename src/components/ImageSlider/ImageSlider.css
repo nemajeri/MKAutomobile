@@ -52,12 +52,10 @@
 
 .swiper:hover .swiper-button-prev {
   opacity: 1;
-  transform: translateX(-190%);
 }
 
 .swiper:hover .swiper-button-next {
   opacity: 1;
-  transform: translateX(190%);
 }
 
 .swiper-button-prev,

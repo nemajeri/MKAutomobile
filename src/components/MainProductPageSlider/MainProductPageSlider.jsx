@@ -7,9 +7,10 @@ import 'swiper/css/thumbs';
 
 import { FreeMode, Navigation, Thumbs } from 'swiper';
 
-export default function MainProductPageSlider() {
+export default function MainProductPageSlider({ car: { images } }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+  console.error(images)
 
   return (
     <>
@@ -27,66 +28,11 @@ export default function MainProductPageSlider() {
         modules={[FreeMode, Navigation, Thumbs]}
         className='mka__productPageSwiper'
       >
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-1.jpg'
-            alt='demo-1'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-2.jpg'
-            alt='demo-2'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-3.jpg'
-            alt='demo-3'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-4.jpg'
-            alt='demo-4'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-5.jpg'
-            alt='demo-5'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-6.jpg'
-            alt='demo-6'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-7.jpg'
-            alt='demo-7'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-8.jpg'
-            alt='demo-8'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-9.jpg'
-            alt='demo-9'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-10.jpg'
-            alt='demo-10'
-          />
-        </SwiperSlide>
+        {images?.map((image) => (
+          <SwiperSlide>
+            <img src={require(`../../assets/${image}`)} alt='main' className='mka__individual-car__images'/>
+          </SwiperSlide>
+        ))}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -98,66 +44,11 @@ export default function MainProductPageSlider() {
         modules={[FreeMode, Navigation, Thumbs]}
         className='mySwiper'
       >
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-1.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-2.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-3.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-4.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-5.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-6.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-7.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-8.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-9.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='https://swiperjs.com/demos/images/nature-10.jpg'
-            alt='demo nature'
-          />
-        </SwiperSlide>
+        {images?.map((image) => (
+          <SwiperSlide>
+            <img src={require(`../../assets/${image}`)} alt='subs' className='mka__individual-car__carousel-images'/>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

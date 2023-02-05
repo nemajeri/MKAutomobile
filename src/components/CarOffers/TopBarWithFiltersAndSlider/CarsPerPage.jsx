@@ -1,12 +1,17 @@
 import React from 'react';
 import Select from 'react-select';
 
-const CarsPerPage = ({ handleCarsPerPageChange, colourStyles }) => {
+const CarsPerPage = ({ handleCarsPerPageChange, colourStyles, setSelectedValue, selectedValue }) => {
   const options = [
     { value: '12', label: '12' },
     { value: '24', label: '24' },
     { value: '48', label: '48' },
   ];
+
+  const handleChange = (value) => {
+    setSelectedValue(value);
+    handleCarsPerPageChange(value);
+  };
 
   return (
     <div className='mka__sorting-alignment'>
@@ -16,9 +21,9 @@ const CarsPerPage = ({ handleCarsPerPageChange, colourStyles }) => {
         styles={colourStyles}
         className='select-placeholder'
         placeholder='12'
-        defaultValue={options[0]}
+        value={selectedValue}
         isSearchable={false}
-        onChange={handleCarsPerPageChange}
+        onChange={handleChange}
         theme={(theme) => ({
           ...theme,
           borderRadius: 0,

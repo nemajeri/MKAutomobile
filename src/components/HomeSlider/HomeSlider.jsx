@@ -7,12 +7,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { Navigation } from 'swiper';
+import { useState } from 'react';
 
-import { useAPI } from '../utils/CarsContext';
+import { cars } from '../utils/cars'
+
+// import { useAPI } from '../utils/CarsContext';
 
 const HomeSlider = () => {
-  const { array, loader } = useAPI();
-  const [isLoading] = loader;
+  // const { array, loader } = useAPI();
+  // const [isLoading] = loader;
+  const[ isLoading, setIsLoading ] = useState(false);
 
   return !isLoading ? (
     <>
@@ -37,7 +41,7 @@ const HomeSlider = () => {
         modules={[Navigation]}
         className='mka__home-slider'
       >
-        {array.slice(-5).map(car => (
+        {cars.map(car => (
           <SwiperSlide key={car.id}>
             <Card car={car} key={car.id} />
           </SwiperSlide>

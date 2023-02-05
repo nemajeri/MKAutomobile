@@ -3,7 +3,7 @@ import Button from '../utils/Button';
 import { Search, FilterSideBar } from './index';
 
 const SideBar = ({
-  array,
+  allCars,
   filteredCarsList,
   handleMakeChange,
   handleModelChange,
@@ -19,7 +19,7 @@ const SideBar = ({
       <div className='mka__side-bar-divider'>
         <h6>FAHRZEUGSUCHE</h6>
         <div className='mka__sidebar-divider'></div>
-        <Search array={array} />
+        <Search />
       </div>
       <div className='mka__sidebar-detailed-search'>
         <h6>DETAILSUCHE</h6>
@@ -27,7 +27,7 @@ const SideBar = ({
         <div className='mka__sidebar-button--and-filters_alignment'>
           <FilterSideBar
             filter
-            array={array}
+            allCars={allCars}
             filteredCarsList={filteredCarsList}
             handleMakeChange={handleMakeChange}
             handleModelChange={handleModelChange}

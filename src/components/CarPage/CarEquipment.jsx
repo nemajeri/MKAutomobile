@@ -8,16 +8,16 @@ const CarEquipment = ({ car, halfOfFeatures }) => {
       <ul className='mka__list-alignment__carpage'>
         <div className='mka__list-alignment__carpage inner-div'>
           <div>
-            {car.features.slice(0, halfOfFeatures).map(string => (
+            {car.features.slice(0, halfOfFeatures).map(ferature => (
               <li key={car.id}>
-                <FaCheck style={{ color: 'red' }} /> {string}
+                <FaCheck style={{ color: 'red' }} /> {ferature}
               </li>
             ))}
           </div>
           <div>
-            {car.features.slice(halfOfFeatures).map(string => (
+            {car.features.slice(halfOfFeatures).map(ferature => (
               <li key={car.id}>
-                <FaCheck style={{ color: 'red' }} /> {string}
+                <FaCheck style={{ color: 'red' }} /> {ferature}
               </li>
             ))}
           </div>

@@ -13,12 +13,16 @@ import {
 } from './pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import  ScrollToTopWrapper  from './components/utils/ScrollToTopWrapper';
+import { Provider } from 'react-redux';
+import { store } from './components/utils/store'
 import './App.css';
 
 const App = () => {
+
   return (
     <Router>
       <ScrollToTopWrapper>
+      <Provider store={store}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/datenschutz' element={<Datenschutz />} />
@@ -31,6 +35,7 @@ const App = () => {
         <Route path='*' element={<Fehler404 />} />
         <Route path='/fahrzeugdaten/:id' element={<Fahrzeugdaten />} />
       </Routes>
+      </Provider>
       </ScrollToTopWrapper>
     </Router>
   );

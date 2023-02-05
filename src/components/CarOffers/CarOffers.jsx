@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { TopBarWithFilters, SideBar } from './index';
+import { useSelector, useDispatch } from 'react-redux';
 import PaginatedCars from './PaginatedCars';
-import { useAPI } from '../utils/CarsContext';
+import {
+  setSliderValues,
+  setFilteredCarsList,
+  setIsLoading,
+} from '../utils/store';
+
 import './CarOffers.css';
 
 const initialCarsAttributes = {
@@ -17,20 +23,29 @@ const initialCarsAttributes = {
 const initialState = 'mka__default-layout-right__sidebar';
 
 const CarOffers = () => {
+  const dispatch = useDispatch();
   const [isActive, setIsActive] = useState(initialState);
-  const { array, loader, filteredArray, priceRangeSliderValues } = useAPI();
-  const [isLoading] = loader;
-  const [filteredCarsList, setFilteredCarsList] = filteredArray;
-  const [state, setState] = useState(initialCarsAttributes);
-  const [sliderValues, setSliderValues] = priceRangeSliderValues;
+  const { allCars, isLoading, filteredCarsList, sliderValues } = useSelector(
+    (state) => ({
+      allCars: state.allCars,
+      isLoading: state.isLoading,
+      filteredCarsList: state.filteredCarsList,
+      sliderValues: state.sliderValues,
+      carsToCompare: state.carsToCompare,
+    })
+  );
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] =
     useState(null);
   const [carsPerPage, setCarsPerPage] = useState(12);
+  const [state, setState] = useState(initialCarsAttributes);
+  const [selectedValue, setSelectedValue] = useState({ value: '12', label: '12' });
+  const [selectedSortingMethod, setSelectedSortingMethod] = useState({ value: 'Sortieren nach Preis', label: 'Sortieren nach Preis' });
 
   useEffect(() => {
+    dispatch(setIsLoading(false));
     applyFilters();
     // eslint-disable-line react-hooks/exhaustive-deps
-  }, [state, selectedCarSortingMethod]);
+  }, [state, selectedCarSortingMethod, isLoading]);
 
   const handleSliderChange = (sliderValues) => {
     setSliderValues(sliderValues);
@@ -88,7 +103,7 @@ const CarOffers = () => {
   const toggleFullWidthRightSidebarLayout = toggleClass(view3);
   const toggleFullWidthLeftSidebarLayout = toggleClass(view4);
 
-  var allFilteredCars = array;
+  var allFilteredCars = allCars;
 
   const applyFilters = () => {
     if (state.make) {
@@ -145,24 +160,23 @@ const CarOffers = () => {
       );
     }
 
-    setFilteredCarsList(allFilteredCars);
+    dispatch(setFilteredCarsList(allFilteredCars));
   };
 
-  const resetFiltersOnClick = (e) => {
-    e.preventDefault();
+  const resetFiltersOnClick = () => {
     setCarsPerPage(12);
     setSelectedCarSortingMethod('Sortieren von Date');
     setState(initialCarsAttributes);
+    setSelectedValue({ value: '12', label: '12' });
+    setSelectedSortingMethod({ value: 'Sortieren nach Preis', label: 'Sortieren nach Preis' });
   };
 
-  const filterOnSubmittedSliderValuesChange = () => {
-    const [min, max] = sliderValues;
-    if (sliderValues) {
-      debugger;
+  const filterOnSubmittedSliderValuesChange = defaultValues => {
+    const [min, max] = defaultValues;
       allFilteredCars = allFilteredCars.filter(
-        (car) => min < car.price && max > car.price
+        (car) => min <= car.price && max >= car.price
       );
-    }
+      dispatch(setFilteredCarsList(allFilteredCars));
   };
 
   return (
@@ -189,9 +203,13 @@ const CarOffers = () => {
               filterOnSubmittedSliderValuesChange={
                 filterOnSubmittedSliderValuesChange
               }
+              setSelectedValue={setSelectedValue}
+              selectedValue={selectedValue}
+              selectedSortingMethod={selectedSortingMethod} 
+              setSelectedSortingMethod={setSelectedSortingMethod}
             />
             <SideBar
-              array={array}
+              allCars={allCars}
               filteredCarsList={filteredCarsList}
               handleMakeChange={handleMakeChange}
               handleModelChange={handleModelChange}

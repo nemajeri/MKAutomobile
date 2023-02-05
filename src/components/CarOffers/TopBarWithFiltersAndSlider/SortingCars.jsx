@@ -1,11 +1,21 @@
 import React from 'react';
 import Select from 'react-select';
 
-const SortingCars = ({ handleSelectedCarSortingMethod, colourStyles }) => {
+const SortingCars = ({
+  handleSelectedCarSortingMethod,
+  colourStyles,
+  setSelectedSortingMethod,
+  selectedSortingMethod,
+}) => {
   const options = [
     { value: 'Sortieren nach Preis', label: 'Sortieren nach Preis' },
     { value: 'Sortieren nach Jahr', label: 'Sortieren nach Jahr' },
   ];
+
+  const onChange = (value) => {
+    handleSelectedCarSortingMethod(value);
+    setSelectedSortingMethod(value);
+  };
 
   return (
     <div className='mka__sorting-alignment'>
@@ -14,10 +24,10 @@ const SortingCars = ({ handleSelectedCarSortingMethod, colourStyles }) => {
         options={options}
         className='select-placeholder'
         styles={colourStyles}
-        placeholder='Sortieren von Daten'
+        value={selectedSortingMethod}
         isSearchable={false}
-        onChange={handleSelectedCarSortingMethod}
-        theme={theme => ({
+        onChange={onChange}
+        theme={(theme) => ({
           ...theme,
           borderRadius: 0,
           colors: {

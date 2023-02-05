@@ -1,12 +1,12 @@
 import React from 'react';
 import { Header, Navbar, Jumbotrone, Logo, Error404 } from '../components';
 
-const Fehler404 = ({ carsList }) => {
+const Fehler404 = () => {
   return (
     <>
       <div className='mka__header-background-img'>
         <Header />
-        <Navbar carsList={carsList} />
+        <Navbar />
             <Logo />
         <div className='mka__title-wrapper'>
           <div className='mka__container'>

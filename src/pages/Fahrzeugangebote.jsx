@@ -1,13 +1,12 @@
 import React from 'react';
 import { Header, Navbar, Jumbotrone, Logo, CarOffers } from '../components';
-import { CarsProvider } from '../components/utils/CarsContext';
 
-const Fahrzeugangebote = ({ carsList }) => {
+const Fahrzeugangebote = () => {
   return (
     <>
       <div className='mka__header-background-img'>
         <Header />
-        <Navbar carsList={carsList} />
+        <Navbar />
         <Logo />
         <div className='mka__title-wrapper'>
           <div className='mka__container'>
@@ -15,9 +14,7 @@ const Fahrzeugangebote = ({ carsList }) => {
           </div>
         </div>
       </div>
-      <CarsProvider>
-        <CarOffers />
-      </CarsProvider>
+      <CarOffers />
       <Jumbotrone />
     </>
   );

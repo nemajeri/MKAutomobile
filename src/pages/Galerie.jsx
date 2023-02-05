@@ -1,12 +1,12 @@
 import React from 'react';
 import { Header, Navbar, Jumbotrone, Logo, Gallery } from '../components';
 
-const Datenschutz = ({ carsList }) => {
+const Datenschutz = () => {
   return (
     <>
       <div className='mka__header-background-img'>
         <Header />
-        <Navbar carsList={carsList} />
+        <Navbar />
             <Logo />
         <div className='mka__title-wrapper'>
           <div className='mka__container'>

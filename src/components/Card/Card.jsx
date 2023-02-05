@@ -11,11 +11,7 @@ const Card = ({
     <>
       <div className='mka__card-wrapper'>
         <div className='mka__card_image-container'>
-          <img
-            className='mka__card-image-content'
-            src={link}
-            alt='suggested-cars'
-          />
+        {link && <img src={require(`../../assets/${link}`)} alt='suggested-cars' className='mka__card-image-content' />}
           <div className='mka__card-overlay-content'>
             <ul>
               <li>

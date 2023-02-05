@@ -4,16 +4,12 @@ import { Link } from 'react-router-dom';
 import './DefaultCardWidth.css';
 
 const DefaultCardWidth = ({
-  car: { id, month, year, transmission, title, price },
+  car: { id, month, year, transmission, title, price, link },
 }) => {
   return (
     <div className='mka__cars-item_wrapper'>
       <div className='mka__cars-item_image-container'>
-        <img
-          src={require('../../../assets/bmw.jpg')}
-          alt='car'
-          className='mka__cars-item_image'
-        />
+      {link && <img src={require(`../../../assets/${link}`)} alt='default-card-width-car' className='mka__cars-item_image' />}
         <div className='mka__card-overlay-content'>
           <ul>
             <li>

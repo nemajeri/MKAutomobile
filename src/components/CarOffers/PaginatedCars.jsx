@@ -21,6 +21,8 @@ const PaginatedCars = ({
     setCarsOffset(newOffset);
   };
 
+  var keyIncrement = 0;
+  
   return (
     <>
       {isLoading ? (
@@ -32,7 +34,7 @@ const PaginatedCars = ({
             <div className='main'>
               <div className='mka__list-of-cars_fullwidth'>
                 {currentCars.map((car) => (
-                  <FullCardWidth car={car} />
+                  <FullCardWidth key={keyIncrement++} car={car} />
                 ))}
               </div>
               <ReactPaginate
@@ -49,7 +51,7 @@ const PaginatedCars = ({
             <div className='main'>
               <div className='mka__list-of-cars'>
                 {currentCars.map((car) => (
-                  <DefaultCardWidth car={car} />
+                  <DefaultCardWidth key={keyIncrement++}  car={car} />
                 ))}
               </div>
               <ReactPaginate

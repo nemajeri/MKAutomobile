@@ -4,17 +4,13 @@ import { Link } from 'react-router-dom';
 import './FullCardWidth.css';
 
 const FullCardWidth = ({
-  car: { id, month, year, transmission, title, price, mileage },
+  car: { id, month, year, transmission, title, price, mileage, link },
 }) => {
   return (
     <div className='mka__cars-item_wrapper-view2'>
       <div className='mka__cars-item_details-view2'>
         <div className='mka__cars-item_image-container-view2'>
-          <img
-            src={require('../../../assets/bmw.jpg')}
-            alt='car'
-            className='mka__cars-item_image-view2'
-          />
+        {link && <img src={require(`../../../assets/${link}`)} alt='full-card-width-car' className='mka__cars-item_image-view2' />}
           <div className='mka__card-overlay-content'>
             <ul>
               <li>

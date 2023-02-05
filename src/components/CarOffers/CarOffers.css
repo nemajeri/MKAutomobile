@@ -24,7 +24,7 @@
   flex-wrap: wrap;
   margin-top: 40px;
   margin-bottom: 40px;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -205,6 +205,100 @@
   width: 50px;
 }
 
+.rc-slider {
+  position: relative;
+  height: 16px;
+  padding: 5px 0;
+  width: 100%;
+  border-radius: 6px;
+  touch-action: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: var(--color-red) !important;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.rc-slider * {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: var(--color-red) !important;
+}
+
+.rc-slider-rail {
+  position: absolute;
+  width: 100%;
+  background-color: var(--color-white) !important;
+  height: 6px !important;
+  border-radius: 6px;
+}
+
+.rc-slider-track {
+  position: absolute;
+  height: 40%;
+  border-radius: 6px;
+  background-color: var(--color-red) !important;
+  opacity: 100% !important;
+}
+
+.rc-slider-handle {
+  opacity: 1 !important;
+  position: absolute;
+  width: 18px !important;
+  height: 18px !important;
+  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 0% !important;
+  background-color: white !important;
+  touch-action: pan-x;
+  border: solid 1px var(--color-red) !important
+}
+
+.rc-slider-handle-1 {
+  transform: translateX(0) !important;
+
+}
+
+.rc-slider-handle-2 {
+  transform: translateX(-100%) !important;
+
+}
+
+.mka__range-width {
+  width: 15rem;
+  margin-right: 10px;
+}
+
+.mka__range-alignment {
+  flex-direction: column;
+  padding: 10px;
+}
+
+.mka__range-text {
+  display: flex;
+  gap: 10px;
+  color: white;
+}
+
+.mka__range-price {
+  color: var(--color-red);
+  font-weight: bold;
+}
+
+.mka__range-button {
+  margin-top: 0 !important;
+  display: inline-block;
+  max-width: 100px;
+  max-height: 40px;
+}
+
+.mka__range-btn-align {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 input[type="range"] {
   --minRangePercent: 0%;
   --maxRangePercent: 0%;
@@ -346,8 +440,17 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .mka__filter-btn {
+  margin-top: 0 !important;
   max-width: 100px;
   max-height: 40px;
+}
+
+.mka__individual-car__images {
+  width: 37rem;
+}
+
+.mka__individual-car__carousel-images {
+  width: 150px;
 }
 
 @media (max-width: 767px) {

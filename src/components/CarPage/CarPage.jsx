@@ -1,38 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FaSlidersH } from 'react-icons/fa';
 import {
-  CarEquipment,
-  CarDescription,
+  // CarEquipment,
+  // CarDescription,
   MainProductPageSlider,
   CarDetails,
   CarPageHeaderSection,
 } from './index';
-import HomePageCarousel from '../HomePageLinkAndCarousel/HomePageCarousel';
+// import HomePageCarousel from '../HomePageLinkAndCarousel/HomePageCarousel';
 import './CarPage.css';
+import { cars } from '../utils/cars';
+
+
+
 
 const CarPage = () => {
   const { id } = useParams();
   const [isActive, setIsActive] = useState(true);
-  const [car, setCar] = useState();
-  const [loading, setLoading] = useState(true);
-  const [cars, setCars] = useState([]);
-  const [halfOfFeatures, setHalfOfFeatures] = useState();
+  // const [car, setCar] = useState();
+  const [loading, setLoading] = useState(false);
+  // const [cars, setCars] = useState([]);
+  // const [halfOfFeatures, setHalfOfFeatures] = useState();
 
-  const url = `${process.env.REACT_APP_MY_API_KEY_WITH_ID + id}`;
+  const car = cars.find(car => car.id == id)
 
-  useEffect(() => {
-    const fetchCar = async () => {
-      const response = await fetch(url);
-      const singleCar = await response.json();
-      const secondColumnStart = Math.floor(singleCar.features.length / 2);
-      setHalfOfFeatures(secondColumnStart);
-      setCar(singleCar);
-      setLoading(false);
-    };
-    fetchCar();
+  // const url = `${process.env.REACT_APP_MY_API_KEY_WITH_ID + id}`;
+
+  // useEffect(() => {
+    // const fetchCar = async () => {
+    //   const response = await fetch(url);
+    //   const singleCar = await response.json();
+    //   const secondColumnStart = Math.floor(singleCar.features.length / 2);
+    //   setHalfOfFeatures(secondColumnStart);
+    //   setCar(singleCar);
+    //   setLoading(false);
+    // };
+    // fetchCar();
     // eslint-disable-next-line
-  }, []);
+  // }, []);
 
   const handleClick = () => {
     setIsActive(false);
@@ -42,12 +48,12 @@ const CarPage = () => {
     <div className='mka__wrapper carpage'>
       <div className='mka__container'>
         <div className='mka__content-carpage'>
-          {loading === false && <CarPageHeaderSection car={car} />}
+          {!loading && <CarPageHeaderSection car={car}/>}
           <div className='mka__description-section__carpage'>
             <div className='mka__gallery-carpage'>
-              <MainProductPageSlider />
+              <MainProductPageSlider car={car} />
             </div>
-            {loading === false && <CarDetails car={car} />}
+            {!loading && <CarDetails car={car} />}
           </div>
           <div className='mka__description-tabs__carpage'>
             <ul>
@@ -74,11 +80,11 @@ const CarPage = () => {
                 ZUSATZINFORMATION
               </li>
             </ul>
-            {isActive ? (
+            {/* {isActive ? (
               <CarEquipment car={car} halfOfFeatures={halfOfFeatures} />
             ) : (
               <CarDescription car={car} />
-            )}
+            )} */}
           </div>
         </div>
         <h4>ÄHNLICHE FAHRZEUGE</h4>

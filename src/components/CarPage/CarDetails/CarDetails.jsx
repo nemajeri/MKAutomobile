@@ -2,8 +2,8 @@ import React from 'react';
 import '../CarPage.css';
 import CarDetail from './CarDetail';
 
-const CarDetails = ({ car }) => {
-  const {
+const CarDetails = ({
+  car: {
     make,
     model,
     body,
@@ -16,8 +16,8 @@ const CarDetails = ({ car }) => {
     exterior,
     month,
     year,
-  } = car;
-
+  },
+}) => {
   const arrayOfDescriptionAndValues = [
     { description: 'Erstzulassung', value: month + '/' + year },
     { description: 'Marke', value: make },

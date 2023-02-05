@@ -1,14 +1,15 @@
 import React, { useRef } from 'react';
 import Select from 'react-select';
+import { cars } from '../../utils/cars';
 
-const MakeFilter = ({ array, handleMakeChange, colourStyles }) => {
+const MakeFilter = ({ handleMakeChange, colourStyles }) => {
   const selectRef = useRef(null);
 
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex((b) => f(a) === f(b)) === i);
   };
 
-  const options = array.map((car) => {
+  const options = cars.map((car) => {
     return {
       value: car.make,
       label: car.make,

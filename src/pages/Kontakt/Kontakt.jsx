@@ -8,12 +8,12 @@ import {
 } from '../../components';
 import './Kontakt.css';
 
-const Kontakt = ({ carsList }) => {
+const Kontakt = () => {
   return (
     <>
       <div className='mka__header-background-img'>
         <Header />
-        <Navbar carsList={carsList} />
+        <Navbar />
         <Logo />
         <p className='mka__contact-description'>
           Probefahrt und Besichtigung sind ausschließlich nach

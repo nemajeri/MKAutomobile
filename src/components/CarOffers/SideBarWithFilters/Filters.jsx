@@ -8,7 +8,6 @@ import FuelFilter from './FuelFilter';
 import DriveTrainFilter from './DriveTrainFilter';
 
 const FilterSideBar = ({
-  array,
   filteredCarsList,
   handleMakeChange,
   handleModelChange,
@@ -50,7 +49,6 @@ const FilterSideBar = ({
   return (
     <>
       <MakeFilter
-        array={array}
         handleMakeChange={handleMakeChange}
         colourStyles={colourStyles}
       />

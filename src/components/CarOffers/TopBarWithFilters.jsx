@@ -20,6 +20,10 @@ const TopBarWithFilters = ({
   toggleFullWidthLeftSidebarLayout,
   isLoading,
   filterOnSubmittedSliderValuesChange,
+  setSelectedValue,
+  selectedValue,
+  setSelectedSortingMethod,
+  selectedSortingMethod
 }) => {
   const colourStyles = {
     control: (styles) => ({
@@ -67,10 +71,14 @@ const TopBarWithFilters = ({
           <CarsPerPage
             handleCarsPerPageChange={handleCarsPerPageChange}
             colourStyles={colourStyles}
+            setSelectedValue={setSelectedValue}
+            selectedValue={selectedValue}
           />
           <SortingCars
             handleSelectedCarSortingMethod={handleSelectedCarSortingMethod}
             colourStyles={colourStyles}
+            selectedSortingMethod={selectedSortingMethod}
+            setSelectedSortingMethod={setSelectedSortingMethod}
           />
         </div>
         <div className='mka__icons-container'>
