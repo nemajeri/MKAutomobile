@@ -7,7 +7,9 @@ import { IconContext } from 'react-icons';
 import './Navbar.css';
 import NavbarLink from './NavbarLink';
 import ReactDOM from 'react-dom';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
+
+import  CarPropertiesColumn  from './CarPropertiesColumn';
+import IndividualCarColumn from './IndividualCarColumn'
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setCarsToCompare } from '../utils/store';
@@ -108,111 +110,10 @@ const Navbar = () => {
                 <h3>COMPARE CARS</h3>
               </div>
               <div className='mka__table-body'>
-                <div>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td id='mka__delete-car--row'></td>
-                      </tr>
-                      <tr>
-                        <td id='mka__price-and--image'>Price</td>
-                      </tr>
-                      <tr>
-                        <td>Year</td>
-                      </tr>
-                      <tr>
-                        <td>Make</td>
-                      </tr>
-                      <tr>
-                        <td>Model</td>
-                      </tr>
-                      <tr>
-                        <td>Body Style</td>
-                      </tr>
-                      <tr>
-                        <td>Mileage</td>
-                      </tr>
-                      <tr>
-                        <td>Fuel Economy</td>
-                      </tr>
-                      <tr>
-                        <td>Transmission</td>
-                      </tr>
-                      <tr>
-                        <td>Condition</td>
-                      </tr>
-                      <tr>
-                        <td>Drivetrain</td>
-                      </tr>
-                      <tr>
-                        <td>Engine</td>
-                      </tr>
-                      <tr>
-                        <td>Exterior Color</td>
-                      </tr>
-                      <tr>
-                        <td>Features & Options</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+               <CarPropertiesColumn />
                 <div className='mka__place-for-cars_table'>
                 {Array.from(carsToCompare).map(car => (
-                <div key={car.id} className='mka__place-for-car_table'>
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td id='mka__delete-car--row' onClick={() => onClickDeleteCarHandler(car)}>
-                        <IconContext.Provider value={{ className: 'ai-close' }}>
-                          <AiOutlineCloseCircle/>
-                          </IconContext.Provider>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td id='mka__price-and--image'>
-                        {car.link && <img src={require(`../../assets/${car.link}`)} alt='suggested-cars' className='car-in-comparison' />}
-                          <p>{car.price}</p>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td>{car.year}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.make}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.model}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.exteriror}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.mileage}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.link}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.transmission}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.condition}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.drivetrain}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.engine}</td>
-                      </tr>
-                      <tr>
-                        <td>{car.exteriror}</td>
-                      </tr>
-                      <tr>
-                        <td>Features & Options</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                <IndividualCarColumn car={car} onClickDeleteCarHandler={onClickDeleteCarHandler}/>
                 ))}
                 </div>
               </div>
