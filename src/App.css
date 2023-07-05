@@ -17,7 +17,7 @@ html::-webkit-scrollbar-track {
   position: relative;
   z-index: 1;
   height: 470px;
-  background-image: url(C:\Users\pk\Desktop\Dokumenti\Programiranje\MKautomobile\src\assets\dark-min.jpg);
+  background-image: url('./assets/dark-min.jpg');
   background-size: auto;
   background-repeat: no-repeat;
 }
@@ -231,7 +231,7 @@ select {
 }
 
 .mka__wrapper {
-  background-image: url(https://mkautomobile.at/wp-content/uploads/2021/04/dark.jpg);
+  background-image: url('./assets/dark.jpg');
   background-repeat: repeat;
   background-size: cover;
   overflow: hidden;
