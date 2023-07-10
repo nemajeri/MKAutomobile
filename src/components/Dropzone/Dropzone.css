@@ -1,0 +1,29 @@
+.dropzone {
+    text-align: center;
+    padding: 20px;
+    border: 1px dashed #eeeeee;
+    background-color: transparent;
+    color: #bdbdbd;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.dropzone ul, li {
+    list-style: none;
+}
+
+.dropzone>strong {
+    color: white;
+}
+
+#text {
+    color: var(--color-grey);
+    text-align: center;
+}
+
+.modal {
+    position: fixed;
+    top: 450px;
+    right: 50%;
+    transform: translate(870px, 50px);
+}

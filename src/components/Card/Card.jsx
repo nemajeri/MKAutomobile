@@ -11,7 +11,13 @@ const Card = ({
     <>
       <div className='mka__card-wrapper'>
         <div className='mka__card_image-container'>
-        {link && <img src={require(`../../assets/${link}`)} alt='suggested-cars' className='mka__card-image-content' />}
+          {link && (
+            <img
+              src={require(`../../assets/${link}`)}
+              alt='suggested-cars'
+              className='mka__card-image-content'
+            />
+          )}
           <div className='mka__card-overlay-content'>
             <ul>
               <li>

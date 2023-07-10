@@ -4,7 +4,7 @@ import 'rc-slider/assets/index.css';
 import '../CarOffers.css';
 import Button from '../../utils/Button';
 
-const CarSlider = ({ sliderValues, filterOnSubmittedSliderValuesChange }) => {
+const CarSlider = ({ sliderValues, applyFilters }) => {
   const [defaultValues, setDefaultValues] = useState(sliderValues);
 
   const onChange = (values) => {
@@ -34,7 +34,7 @@ const CarSlider = ({ sliderValues, filterOnSubmittedSliderValuesChange }) => {
         </div>
         <Button
         className={'mka__filter-btn'}
-        onClick={() => filterOnSubmittedSliderValuesChange(defaultValues)}
+        onClick={() => applyFilters(defaultValues)}
       >
         Filter
       </Button>

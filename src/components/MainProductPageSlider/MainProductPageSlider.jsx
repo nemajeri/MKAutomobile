@@ -7,11 +7,8 @@ import 'swiper/css/thumbs';
 
 import { FreeMode, Navigation, Thumbs } from 'swiper';
 
-export default function MainProductPageSlider({ car: { images } }) {
+const MainProductPageSlider = ({ car: { images } }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
-  console.error(images)
-
   return (
     <>
       <Swiper
@@ -28,9 +25,13 @@ export default function MainProductPageSlider({ car: { images } }) {
         modules={[FreeMode, Navigation, Thumbs]}
         className='mka__productPageSwiper'
       >
-        {images?.map((image) => (
-          <SwiperSlide>
-            <img src={require(`../../assets/${image}`)} alt='main' className='mka__individual-car__images'/>
+        {images?.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={require(`../../assets/${image}`)}
+              alt='main'
+              className='mka__individual-car__images'
+            />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -45,11 +46,17 @@ export default function MainProductPageSlider({ car: { images } }) {
         className='mySwiper'
       >
         {images?.map((image) => (
-          <SwiperSlide>
-            <img src={require(`../../assets/${image}`)} alt='subs' className='mka__individual-car__carousel-images'/>
+          <SwiperSlide key={image}>
+            <img
+              src={require(`../../assets/${image}`)}
+              alt='subs'
+              className='mka__individual-car__carousel-images'
+            />
           </SwiperSlide>
         ))}
       </Swiper>
     </>
   );
-}
+};
+
+export default MainProductPageSlider;

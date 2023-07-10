@@ -4,7 +4,7 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <div className='mka__div'>
+    <div className='mka__header-wrappper'>
       <div className='mka__container'>
         <div className='mka__header'>
           <div className='mka__header-list'>
@@ -19,7 +19,7 @@ const Header = () => {
           </div>
           <div className='mka__header-link'>
             <p>
-              <FaRegEnvelope />{' '}
+              <FaRegEnvelope />
               <a href='mailto:office@mkautomobile.at'>office@mkautomobile.at</a>
             </p>
           </div>

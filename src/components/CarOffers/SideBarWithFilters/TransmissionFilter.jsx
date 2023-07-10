@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
 const TransmissionFilter = ({
   filteredCarsList,
   handleTransmissionChange,
   colourStyles,
+  isResetting,
+  setIsResetting,
+  state
 }) => {
+  const [selectedValue, setSelectedValue] = useState(null);
+
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex(b => f(a) === f(b)) === i);
   };
+
+  useEffect(() => {
+    if (isResetting) {
+      setSelectedValue(null);
+      setIsResetting(false)
+    }
+  }, [isResetting, setIsResetting]);
 
   const options = filteredCarsList.map(car => {
     return {
@@ -16,6 +28,11 @@ const TransmissionFilter = ({
       label: car.transmission,
     };
   });
+
+  const handleSelectChange = (selectedOption) => {
+    setSelectedValue(selectedOption);
+    handleTransmissionChange(selectedOption);
+  };
 
   const distinctOptions = distinctBy(options, car => car.value);
 
@@ -27,7 +44,9 @@ const TransmissionFilter = ({
         className='select-placeholder'
         styles={colourStyles}
         options={distinctOptions}
-        onChange={handleTransmissionChange}
+        isDisabled={!state.fuel}
+        value={selectedValue}
+        onChange={handleSelectChange}
         isSearchable={false}
         theme={theme => ({
           ...theme,

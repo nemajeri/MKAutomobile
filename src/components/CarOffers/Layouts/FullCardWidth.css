@@ -14,8 +14,8 @@
 }
 
 .mka__cars-item_image-view2 {
-  max-width: 100%;
-  height: auto;
+  width: 12rem;
+  height: 100%;
 }
 
 .mka__cars-item_car-text-view2 {
@@ -54,7 +54,6 @@
 
 .mka__cars-item-car-title__price-view2 h5 {
   font-weight: 500;
-  /* text-transform: uppercase; */
   color: var(--color-grey);
   margin-bottom: 20px;
   display: block;
@@ -93,7 +92,6 @@
 
 .mka__car-item_details-preview--container_view2 {
   display: flex;
-  /* width: 60vh; */
   justify-content: space-between;
   flex-wrap: nowrap;
 }
@@ -104,8 +102,7 @@
   flex-wrap: wrap;
 }
 
-/* Rijesiti se CSSa dugmeta */
-.btn-view2 {
+.mka__cars-item_details-preview--view2-btn {
   margin-top: 0 !important;
   margin-right: 10px;
   width: 130px !important;
@@ -126,6 +123,6 @@
 @media (min-width: 1200px) {
   .mka__car-item_details-preview--container_view2 {
     justify-content: space-between;
-    width: 60vh;
+    width: 50vh;
   }
 }

@@ -8,18 +8,23 @@
   gap: 15px;
 }
 
-.mka__individual-car-option  img {
+.mka__individual-car-option img {
   width: 30px;
   height: 40px;
 }
 
-.mka__search-icon {
-  position: absolute;
-  top: 13px;
-  left: 251px;
+.mka__search-container .mka__search-icon {
+  left: 258px;
 }
 
-@media (max-width: 992px) {
+.mka__search-icon {
+  position: absolute;
+  top: 16px;
+  left: 283px;
+  color: red;
+}
+
+@media (max-width: 1280px) {
   .mka__search-icon {
     display: none;
   }

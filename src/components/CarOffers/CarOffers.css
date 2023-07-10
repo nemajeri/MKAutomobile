@@ -453,6 +453,10 @@ input[type="range"]::-moz-range-thumb {
   width: 150px;
 }
 
+.mka__full-width-no-carsfound__container {
+  min-width: 45rem;
+}
+
 @media (max-width: 767px) {
   .mka__range-btn-align {
       display: flex;
@@ -514,6 +518,10 @@ input[type="range"]::-moz-range-thumb {
 
   .min-max-slider {
     width: 300px;
+  }
+
+  .mka__full-width-no-carsfound__container {
+    min-width: 0rem;
   }
 }
 

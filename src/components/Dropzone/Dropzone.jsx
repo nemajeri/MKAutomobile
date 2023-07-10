@@ -1,54 +1,81 @@
 import React, { useState } from 'react';
-import './Dropzone.css';
-import { IconContext } from 'react-icons';
-import Dropzone from 'react-dropzone';
+import { useDropzone } from 'react-dropzone';
 import { VscInbox } from 'react-icons/vsc';
+import Modal from '../Modal/Modal';
+import Button from '../utils/Button';
+import './Dropzone.css';
+import { useEffect } from 'react';
 
 const DropzoneElement = () => {
-  const [fileNames, setFileNames] = useState([]);
-  const handleDrop = acceptedFiles =>
-    setFileNames(acceptedFiles.map(file => file.name));
+  const [isOpen, setIsOpen] = useState(false);
+  const { acceptedFiles, fileRejections, getRootProps, getInputProps } =
+    useDropzone({
+      maxFiles: 3,
+      accept: {
+        'image/jpeg': ['.jpeg', '.jpg'],
+        'image/png': ['.png'],
+      },
+    });
 
-  return (
-    <div className='App'>
-      <Dropzone onDrop={handleDrop} minSize={1024} maxSize={3072000}>
-        {({ getRootProps, getInputProps, isDragAccept, isDragReject }) => {
-          const additionalClass = isDragAccept
-            ? 'accept'
-            : isDragReject
-            ? 'reject'
-            : '';
+  const handleOnModalClose = () => {
+    setIsOpen(false);
+  };
 
-          return (
-            <div
-              {...getRootProps({
-                className: `dropzone ${additionalClass}`,
-              })}
-            >
-              <input {...getInputProps()} />
-              <span>
-                <IconContext.Provider value={{ size: '30px' }}>
-                  <VscInbox />
-                </IconContext.Provider>
-              </span>
-              <p id='text'>
-                Klicken oder ziehen Sie Dateien in diesen Bereich, um sie
-                hochzuladen. <br />
-                Sie können bis zu 3 Dateien hochladen.
-              </p>
-            </div>
-          );
-        }}
-      </Dropzone>
-      <div>
-        <strong>Files:</strong>
+  const acceptedFileItems = acceptedFiles.map((file) => (
+    <li key={file.path}>
+      {file.path} - {file.size} bytes
+    </li>
+  ));
+
+  useEffect(() => {
+    if (fileRejections.length > 0) {
+      setIsOpen(true);
+    }
+  }, [fileRejections]);
+
+  const fileRejectionItems = fileRejections.map(({ file, errors }) => {
+    return (
+      <li key={file.path}>
         <ul>
-          {fileNames.map(fileName => (
-            <li key={fileName}>{fileName}</li>
+          {errors.map((e) => (
+            <li key={e.code}>
+              {file.name} - {e.message}
+            </li>
           ))}
         </ul>
+      </li>
+    );
+  });
+
+  return (
+    <>
+      <div
+        {...getRootProps({
+          className: 'dropzone',
+        })}
+      >
+        <input {...getInputProps()} />
+        <span>
+          <VscInbox style={{ size: '30px' }} />
+        </span>
+        <p id='text'>
+          Klicken oder ziehen Sie Dateien in diesen Bereich, um sie hochzuladen.
+          <br />
+          Sie können bis zu 3 Dateien hochladen.
+        </p>
       </div>
-    </div>
+      <div>
+        <h3>Akzeptierte Dateien:</h3>
+        <ul>{acceptedFileItems}</ul>
+      </div>
+      {isOpen && (
+        <Modal onClose={handleOnModalClose} isOpen={isOpen}>
+          <h3>Abgelehnte Dateien:</h3>
+          <ul>{fileRejectionItems}</ul>
+          <Button onClick={handleOnModalClose}>ERNEUT VERSUCHEN</Button>
+        </Modal>
+      )}
+    </>
   );
 };
 

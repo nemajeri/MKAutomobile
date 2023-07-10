@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
-const YearFilter = ({ filteredCarsList, handleYearChange, colourStyles }) => {
+const YearFilter = ({ filteredCarsList, handleYearChange, colourStyles, isResetting, setIsResetting, state }) => {
+  const [selectedValue, setSelectedValue] = useState(null);
+
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex(b => f(a) === f(b)) === i);
   };
   const sortBy = (arr, f) => arr.sort((a, b) => f(b) - f(a));
+
+  useEffect(() => {
+    if (isResetting) {
+      setSelectedValue(null);
+      setIsResetting(false)
+    }
+  }, [isResetting, setIsResetting]);
 
   const options = filteredCarsList.map(car => {
     return {
@@ -13,6 +22,11 @@ const YearFilter = ({ filteredCarsList, handleYearChange, colourStyles }) => {
       label: car.year,
     };
   });
+
+  const handleSelectChange = (selectedOption) => {
+    setSelectedValue(selectedOption);
+    handleYearChange(selectedOption);
+  };
 
   const distinctOptions = distinctBy(options, car => car.value);
   const sortedOptions = sortBy(distinctOptions, car => car.value);
@@ -24,8 +38,10 @@ const YearFilter = ({ filteredCarsList, handleYearChange, colourStyles }) => {
         placeholder='Erstzulassung'
         className='select-placeholder'
         styles={colourStyles}
+        isDisabled={!state.model}
         options={sortedOptions}
-        onChange={handleYearChange}
+        value={selectedValue}
+        onChange={handleSelectChange}
         isSearchable={false}
         theme={theme => ({
           ...theme,

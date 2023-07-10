@@ -135,11 +135,6 @@ i {
   margin-right: auto;
 }
 
-.mka__card-car-info_lower>li {
-  list-style: none;
-  color: var(--color-white);
-}
-
 .mka__card-car-content {
   font-size: 16px;
   font-weight: 600;
@@ -210,6 +205,14 @@ i {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.mka__loading-svg-container {
+  height: 27rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 @media (max-width: 1200px) {

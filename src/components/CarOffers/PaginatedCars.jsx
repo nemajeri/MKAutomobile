@@ -6,7 +6,7 @@ import FullCardWidth from './Layouts/FullCardWidth';
 
 const PaginatedCars = ({
   isLoading,
-  isActive,
+  isActiveClass,
   filteredCarsList,
   carsPerPage,
 }) => {
@@ -21,38 +21,40 @@ const PaginatedCars = ({
     setCarsOffset(newOffset);
   };
 
-  var keyIncrement = 0;
-  
+  let keyIncrement = 0;
+
+  const carCardComponent = (car) => {
+    if (
+      isActiveClass === 'mka__full-width-layout-right__sidebar' ||
+      isActiveClass === 'mka__full-width-layout-left__sidebar'
+    ) {
+      return <FullCardWidth key={keyIncrement++} car={car} />;
+    } else {
+      return <DefaultCardWidth key={keyIncrement++} car={car} />;
+    }
+  };
+
   return (
     <>
       {isLoading ? (
         <LoadingSvg />
       ) : (
-        <>
-          {isActive === 'mka__full-width-layout-right__sidebar' ||
-          isActive === 'mka__full-width-layout-left__sidebar' ? (
-            <div className='main'>
-              <div className='mka__list-of-cars_fullwidth'>
-                {currentCars.map((car) => (
-                  <FullCardWidth key={keyIncrement++} car={car} />
-                ))}
-              </div>
-              <ReactPaginate
-                previousLabel={'← Vorherige'}
-                nextLabel={'Weiter →'}
-                pageCount={pageCount}
-                onPageChange={handlePageClick}
-                containerClassName={'pagination'}
-                subContainerClassName={'pages pagination'}
-                activeClassName={'active-pagination'}
-              />
+        <div className='main'>
+          {filteredCarsList.length === 0 ? (
+            <div className='mka__full-width-no-carsfound__container'>
+              <h1>Kein fahrzeug gefunden</h1>
             </div>
           ) : (
-            <div className='main'>
-              <div className='mka__list-of-cars'>
-                {currentCars.map((car) => (
-                  <DefaultCardWidth key={keyIncrement++}  car={car} />
-                ))}
+            <>
+              <div
+                className={
+                  isActiveClass === 'mka__full-width-layout-right__sidebar' ||
+                  isActiveClass === 'mka__full-width-layout-left__sidebar'
+                    ? 'mka__list-of-cars_fullwidth'
+                    : 'mka__list-of-cars'
+                }
+              >
+                {currentCars.map((car) => carCardComponent(car))}
               </div>
               <ReactPaginate
                 previousLabel={'← Vorherige'}
@@ -63,9 +65,9 @@ const PaginatedCars = ({
                 subContainerClassName={'pages pagination'}
                 activeClassName={'active-pagination'}
               />
-            </div>
+            </>
           )}
-        </>
+        </div>
       )}
     </>
   );

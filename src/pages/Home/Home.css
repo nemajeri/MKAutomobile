@@ -4,7 +4,7 @@
     position: relative;
     z-index: 1;
     height: 780px;
-    background-image: url(http://mkautomobile.at/wp-content/uploads/2021/04/dark-min.jpg?id=492);
+    background-image: url('../../assets/dark-min.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
