@@ -16,9 +16,7 @@ const HomePageCarList = () => {
         <div className='mka__content'>
           <h2>FAHRZEUGANGEBOTE</h2>
           <div className='mka__section-divider-second-divider'></div>
-
-            <HomeSlider />
-
+          <HomeSlider />
           <div className='mka__section-divider'></div>
           <div className='mka__shortcuts-home-list'>
             {titles.map((title, index) => (

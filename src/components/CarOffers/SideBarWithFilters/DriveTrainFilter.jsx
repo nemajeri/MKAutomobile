@@ -1,23 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
 const DriveTrainFilter = ({
   filteredCarsList,
   handleDriveTrainChange,
   colourStyles,
+  isResetting,
+  setIsResetting,
+  state
 }) => {
+  const [selectedValue, setSelectedValue] = useState(null);
+
   const distinctBy = (arr, f) => {
-    return arr.filter((a, i) => arr.findIndex(b => f(a) === f(b)) === i);
+    return arr.filter((a, i) => arr.findIndex((b) => f(a) === f(b)) === i);
   };
 
-  const options = filteredCarsList.map(car => {
+  useEffect(() => {
+    if (isResetting) {
+      setSelectedValue(null);
+      setIsResetting(false);
+    }
+  }, [isResetting, setIsResetting]);
+
+  const options = filteredCarsList.map((car) => {
     return {
       value: car.drivetrain,
       label: car.drivetrain,
     };
   });
 
-  const distinctOptions = distinctBy(options, car => car.value);
+  const handleSelectChange = (selectedOption) => {
+    setSelectedValue(selectedOption);
+    handleDriveTrainChange(selectedOption);
+  };
+
+  const distinctOptions = distinctBy(options, (car) => car.value);
 
   return (
     <>
@@ -26,10 +43,12 @@ const DriveTrainFilter = ({
         placeholder='Antrieb'
         className='select-placeholder'
         styles={colourStyles}
+        isDisabled={!state.transmission}
         options={distinctOptions}
-        onChange={handleDriveTrainChange}
+        value={selectedValue}
+        onChange={handleSelectChange}
         isSearchable={false}
-        theme={theme => ({
+        theme={(theme) => ({
           ...theme,
           borderRadius: 0,
           colors: {

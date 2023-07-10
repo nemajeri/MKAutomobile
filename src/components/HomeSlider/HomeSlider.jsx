@@ -1,24 +1,14 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Card from '../Card/Card';
-
+import { Navigation } from 'swiper';
+import { cars } from '../utils/cars';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Navigation } from 'swiper';
-import { useState } from 'react';
-
-import { cars } from '../utils/cars'
-
-// import { useAPI } from '../utils/CarsContext';
-
 const HomeSlider = () => {
-  // const { array, loader } = useAPI();
-  // const [isLoading] = loader;
-  const[ isLoading, setIsLoading ] = useState(false);
-
-  return !isLoading ? (
+  return (
     <>
       <Swiper
         slidesPerView={1}
@@ -41,14 +31,14 @@ const HomeSlider = () => {
         modules={[Navigation]}
         className='mka__home-slider'
       >
-        {cars.map(car => (
+        {cars.map((car) => (
           <SwiperSlide key={car.id}>
-            <Card car={car} key={car.id} />
+            <Card car={car} />
           </SwiperSlide>
         ))}
       </Swiper>
     </>
-  ) : null;
+  );
 };
 
 export default HomeSlider;

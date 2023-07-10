@@ -1,16 +1,24 @@
 import React from 'react';
 import { FaCalendarAlt, FaCog, FaLink, FaGasPump } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './FullCardWidth.css';
+import Button from '../../utils/Button';
 
 const FullCardWidth = ({
   car: { id, month, year, transmission, title, price, mileage, link },
 }) => {
+  const navigate = useNavigate();
   return (
     <div className='mka__cars-item_wrapper-view2'>
       <div className='mka__cars-item_details-view2'>
         <div className='mka__cars-item_image-container-view2'>
-        {link && <img src={require(`../../../assets/${link}`)} alt='full-card-width-car' className='mka__cars-item_image-view2' />}
+          {link && (
+            <img
+              src={require(`../../../assets/${link}`)}
+              alt='full-card-width-car'
+              className='mka__cars-item_image-view2'
+            />
+          )}
           <div className='mka__card-overlay-content'>
             <ul>
               <li>
@@ -50,25 +58,12 @@ const FullCardWidth = ({
                 </p>
               </div>
             </div>
-            {/* Napraviti zasebnu komponentu za dugme */}
-            <button className='btn btn-view2'>
-              <svg
-                width='180px'
-                height='60px'
-                viewBox='0 0 180 60'
-                className='border'
-              >
-                <polyline
-                  points='179,1 179,59 1,59 1,1 179,1'
-                  className='bg-line'
-                />
-                <polyline
-                  points='179,1 179,59 1,59 1,1 179,1'
-                  className='hl-line'
-                />
-              </svg>
-              <span>EINZELHEITEN</span>
-            </button>
+            <Button
+              className='mka__cars-item_details-preview--view2-btn'
+              onClick={() => navigate(`/fahrzeugdaten/${id}`)}
+            >
+              Einzelheiten
+            </Button>
           </div>
         </div>
       </div>

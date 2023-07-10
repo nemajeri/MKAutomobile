@@ -5,16 +5,14 @@ import Button from '../utils/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCarsToCompare } from '../utils/store';
 
-const CarPageHeaderSection = ({ car, car: { 
-  title, 
-  price } }) => {
+const CarPageHeaderSection = ({ car, car: { title, price } }) => {
   const carsToCompare = useSelector((state) => state.carsToCompare);
   const dispatch = useDispatch();
 
   const handleCompareButtonClick = () => {
     dispatch(setCarsToCompare(new Set(carsToCompare).add(car)));
   };
-
+  const email = 'office@mkautomobile.at';
   return (
     <>
       <div className='mka__title-price-carpage'>
@@ -22,7 +20,7 @@ const CarPageHeaderSection = ({ car, car: {
         <h4>{price}€</h4>
       </div>
       <div className='mka__email-filed-carpage'>
-        <a
+        <div
           className='mka__comparison-carpage'
           onClick={handleCompareButtonClick}
         >
@@ -30,8 +28,13 @@ const CarPageHeaderSection = ({ car, car: {
             <FaExchangeAlt color='white' />
           </i>
           <p>Hinzufügen zum vergleichen</p>
-        </a>
-        <Button className='mka__send-email'>Email</Button>
+        </div>
+        <Button
+          className='mka__send-email'
+          onClick={() => (window.location.href = `mailto:${email}`)}
+        >
+          Email
+        </Button>
       </div>
     </>
   );

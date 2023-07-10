@@ -1,37 +1,32 @@
 import React from 'react';
 import Select from 'react-select';
 import { FaSearch } from 'react-icons/fa';
-import { IconContext } from 'react-icons';
 import { Link } from 'react-router-dom';
 import './Search.css';
 
 import { cars } from '../../utils/cars';
-import { useSelector } from 'react-redux';
 
 const Search = () => {
-  const isLoading = useSelector(state => state.isLoading)
 
-  const carsOptions = cars?.map(car => {
+  const carsOptions = cars?.map((car) => {
     return {
       value: car.title,
       label: car.title,
       id: car.id,
-      link: car.link
+      link: car.link,
     };
   });
 
   const customStyles = {
-    option: provided => ({
+    option: (provided) => ({
       ...provided,
       padding: 20,
       backgroundColor: 'white',
       '&:hover': {
         backgroundColor: 'white',
-      },
-      color: 'grey',
-      '&:hover': {
         color: 'red',
       },
+      color: 'grey',
     }),
     valueContainer: (provided, state) => ({
       ...provided,
@@ -45,7 +40,7 @@ const Search = () => {
     }),
   };
 
-  return !isLoading ? (
+  return (
     <>
       <Select
         className='mka__search-placeholder'
@@ -54,7 +49,7 @@ const Search = () => {
         options={carsOptions}
         styles={customStyles}
         defaultOptions
-        theme={theme => ({
+        theme={(theme) => ({
           ...theme,
           borderRadius: 0,
           colors: {
@@ -64,18 +59,17 @@ const Search = () => {
           },
         })}
         components={{
-          DropdownIndicator: () => (
-            <IconContext.Provider
-              value={{ color: 'red', className: 'mka__search-icon' }}
-            >
-              <FaSearch />
-            </IconContext.Provider>
-          ),
+          DropdownIndicator: () => <FaSearch className='mka__search-icon' />,
           IndicatorSeparator: () => null,
         }}
-        formatOptionLabel={car => (
+        formatOptionLabel={(car) => (
           <div className='mka__individual-car-option'>
-            {car.link && <img src={require(`../../../assets/${car.link}`)} alt='searched-cars' />}
+            {car.link && (
+              <img
+                src={require(`../../../assets/${car.link}`)}
+                alt='searched-cars'
+              />
+            )}
             <Link to={`/fahrzeugdaten/${car.id}`}>
               <span>{car.label}</span>
             </Link>
@@ -83,7 +77,7 @@ const Search = () => {
         )}
       />
     </>
-  ) : null;
+  );
 };
 
 export default Search;

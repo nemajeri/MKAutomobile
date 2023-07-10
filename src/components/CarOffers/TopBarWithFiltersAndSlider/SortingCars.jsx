@@ -4,7 +4,6 @@ import Select from 'react-select';
 const SortingCars = ({
   handleSelectedCarSortingMethod,
   colourStyles,
-  setSelectedSortingMethod,
   selectedSortingMethod,
 }) => {
   const options = [
@@ -14,7 +13,6 @@ const SortingCars = ({
 
   const onChange = (value) => {
     handleSelectedCarSortingMethod(value);
-    setSelectedSortingMethod(value);
   };
 
   return (

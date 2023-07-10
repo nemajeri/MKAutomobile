@@ -7,24 +7,14 @@ import {
   setFilteredCarsList,
   setIsLoading,
 } from '../utils/store';
-
 import './CarOffers.css';
 
-const initialCarsAttributes = {
-  make: null,
-  model: null,
-  year: null,
-  mileage: null,
-  fuel: null,
-  transmission: null,
-  driveTrain: null,
-};
-
-const initialState = 'mka__default-layout-right__sidebar';
+const initialClass = 'mka__default-layout-right__sidebar';
 
 const CarOffers = () => {
   const dispatch = useDispatch();
-  const [isActive, setIsActive] = useState(initialState);
+  const [isActiveClass, setIsActiveClass] = useState(initialClass);
+  const [isResetting, setIsResetting] = useState(false);
   const { allCars, isLoading, filteredCarsList, sliderValues } = useSelector(
     (state) => ({
       allCars: state.allCars,
@@ -37,15 +27,17 @@ const CarOffers = () => {
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] =
     useState(null);
   const [carsPerPage, setCarsPerPage] = useState(12);
-  const [state, setState] = useState(initialCarsAttributes);
-  const [selectedValue, setSelectedValue] = useState({ value: '12', label: '12' });
-  const [selectedSortingMethod, setSelectedSortingMethod] = useState({ value: 'Sortieren nach Preis', label: 'Sortieren nach Preis' });
+  const [state, setState] = useState({});
+  const [selectedValue, setSelectedValue] = useState({
+    value: '12',
+    label: '12',
+  });
 
   useEffect(() => {
     dispatch(setIsLoading(false));
     applyFilters();
-    // eslint-disable-line react-hooks/exhaustive-deps
-  }, [state, selectedCarSortingMethod, isLoading]);
+    // eslint-disable-next-line
+  }, [state, selectedCarSortingMethod, isLoading, sliderValues]);
 
   const handleSliderChange = (sliderValues) => {
     setSliderValues(sliderValues);
@@ -54,6 +46,7 @@ const CarOffers = () => {
   const onChangeValue = (field) => (select) => {
     setState({ [field]: select.value });
   };
+
   const handleMakeChange = onChangeValue('make');
   const handleModelChange = onChangeValue('model');
   const handleYearChange = onChangeValue('year');
@@ -70,8 +63,8 @@ const CarOffers = () => {
     setSelectedCarSortingMethod(select.value);
   };
 
-  const toggleClass = (view) => (e) => {
-    setIsActive(view);
+  const toggleClass = (view) => () => {
+    setIsActiveClass(view);
   };
 
   const view2 = 'mka__default-layout-left__sidebar';
@@ -103,96 +96,88 @@ const CarOffers = () => {
   const toggleFullWidthRightSidebarLayout = toggleClass(view3);
   const toggleFullWidthLeftSidebarLayout = toggleClass(view4);
 
-  var allFilteredCars = allCars;
-
-  const applyFilters = () => {
+  const applyFilters = (sliderValues) => {
+    let filteredCars = allCars;
+    
     if (state.make) {
-      allFilteredCars = filterCars('make', state.make, allFilteredCars);
+      filteredCars = filterCars('make', state.make, allCars);
     }
 
     if (state.model) {
-      allFilteredCars = filterCars('model', state.model, allFilteredCars);
+      filteredCars = filterCars('model', state.model, filteredCars);
     }
 
     if (state.year) {
-      allFilteredCars = filterCars('year', state.year, allFilteredCars);
+      filteredCars = filterCars('year', state.year, filteredCars);
     }
 
     if (state.mileage) {
-      allFilteredCars = filterCars('mileage', state.mileage, allFilteredCars);
+      filteredCars = filterCars('mileage', state.mileage, filteredCars);
     }
 
     if (state.fuel) {
-      allFilteredCars = filterCars('fuel', state.fuel, allFilteredCars);
+      filteredCars = filterCars('fuel', state.fuel, filteredCars);
     }
 
     if (state.transmission) {
-      allFilteredCars = filterCars(
-        'transmission',
-        state.transmission,
-        allFilteredCars
-      );
+      filteredCars = filterCars('transmission', state.transmission, filteredCars);
     }
 
     if (state.driveTrain) {
-      allFilteredCars = filterCars(
-        'driveTrain',
-        state.driveTrain,
-        allFilteredCars
+      filteredCars = filterCars('driveTrain', state.driveTrain, filteredCars);
+    }
+
+    if (sliderValues) {
+      const [minPrice, maxPrice] = sliderValues;
+      filteredCars = filteredCars.filter(
+        (car) => car.price >= minPrice && car.price <= maxPrice
       );
     }
 
     if (
-      selectedCarSortingMethod != null &&
       selectedCarSortingMethod === 'Sortieren nach Preis'
     ) {
-      allFilteredCars = allFilteredCars.sort(
+      filteredCars.sort(
         (a, b) => parseInt(a.price) - parseInt(b.price)
       );
     }
 
     if (
-      selectedCarSortingMethod != null &&
       selectedCarSortingMethod === 'Sortieren nach Jahr'
     ) {
-      allFilteredCars = allFilteredCars.sort(
+      filteredCars.sort(
         (a, b) => parseInt(a.year) - parseInt(b.year)
       );
     }
 
-    dispatch(setFilteredCarsList(allFilteredCars));
+
+    dispatch(setFilteredCarsList(filteredCars));
   };
 
   const resetFiltersOnClick = () => {
     setCarsPerPage(12);
-    setSelectedCarSortingMethod('Sortieren von Date');
-    setState(initialCarsAttributes);
+    setSelectedCarSortingMethod('Sortieren nach Preis');
+    setState({});
     setSelectedValue({ value: '12', label: '12' });
-    setSelectedSortingMethod({ value: 'Sortieren nach Preis', label: 'Sortieren nach Preis' });
-  };
-
-  const filterOnSubmittedSliderValuesChange = defaultValues => {
-    const [min, max] = defaultValues;
-      allFilteredCars = allFilteredCars.filter(
-        (car) => min <= car.price && max >= car.price
-      );
-      dispatch(setFilteredCarsList(allFilteredCars));
+    setIsResetting(true);
   };
 
   return (
     <div className='mka__wrapper car-offers'>
       <div className='mka__container'>
         <div className='mka__content-car-offers'>
-          <div className={`mka__content-car-offers__main-grid ${isActive}`}>
+          <div
+            className={`mka__content-car-offers__main-grid ${isActiveClass}`}
+          >
             <TopBarWithFilters
               isLoading={isLoading}
               handleSliderChange={handleSliderChange}
               sliderValues={sliderValues}
               handleCarsPerPageChange={handleCarsPerPageChange}
               handleSelectedCarSortingMethod={handleSelectedCarSortingMethod}
-              setIsActive={setIsActive}
-              initialState={initialState}
-              isActive={isActive}
+              setIsActiveClass={setIsActiveClass}
+              initialClass={initialClass}
+              isActiveClass={isActiveClass}
               toggleDefaultLeftSidebarLayout={toggleDefaultLeftSidebarLayout}
               toggleFullWidthRightSidebarLayout={
                 toggleFullWidthRightSidebarLayout
@@ -200,13 +185,9 @@ const CarOffers = () => {
               toggleFullWidthLeftSidebarLayout={
                 toggleFullWidthLeftSidebarLayout
               }
-              filterOnSubmittedSliderValuesChange={
-                filterOnSubmittedSliderValuesChange
-              }
+              applyFilters={applyFilters}
               setSelectedValue={setSelectedValue}
               selectedValue={selectedValue}
-              selectedSortingMethod={selectedSortingMethod} 
-              setSelectedSortingMethod={setSelectedSortingMethod}
             />
             <SideBar
               allCars={allCars}
@@ -219,11 +200,13 @@ const CarOffers = () => {
               handleTransmissionChange={handleTransmissionChange}
               handleDriveTrainChange={handleDriveTrainChange}
               resetFiltersOnClick={resetFiltersOnClick}
+              isResetting={isResetting}
+              setIsResetting={setIsResetting}
+              state={state}
             />
             <PaginatedCars
               isLoading={isLoading}
-              isActive={isActive}
-              initialState={initialState}
+              isActiveClass={isActiveClass}
               filteredCarsList={filteredCarsList}
               carsPerPage={carsPerPage}
             />

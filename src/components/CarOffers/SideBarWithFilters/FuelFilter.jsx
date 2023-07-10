@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
-const FuelFilter = ({ filteredCarsList, handleFuelChange, colourStyles }) => {
+const FuelFilter = ({ filteredCarsList, handleFuelChange, colourStyles, isResetting, setIsResetting, state }) => {
+  const [selectedValue, setSelectedValue] = useState(null);
+
   const distinctBy = (arr, f) => {
     return arr.filter((a, i) => arr.findIndex(b => f(a) === f(b)) === i);
   };
+
+  useEffect(() => {
+    if (isResetting) {
+      setSelectedValue(null);
+      setIsResetting(false)
+    }
+  }, [isResetting, setIsResetting]);
 
   const options = filteredCarsList.map(car => {
     return {
@@ -12,6 +21,12 @@ const FuelFilter = ({ filteredCarsList, handleFuelChange, colourStyles }) => {
       label: car.fuel,
     };
   });
+
+  const handleSelectChange = (selectedOption) => {
+    setSelectedValue(selectedOption);
+    handleFuelChange(selectedOption);
+  };
+
 
   const distinctOptions = distinctBy(options, car => car.value);
 
@@ -23,8 +38,10 @@ const FuelFilter = ({ filteredCarsList, handleFuelChange, colourStyles }) => {
         className='select-placeholder'
         styles={colourStyles}
         options={distinctOptions}
-        onChange={handleFuelChange}
+        onChange={handleSelectChange}
         isSearchable={false}
+        value={selectedValue}
+        isDisabled={!state.mileage}
         theme={theme => ({
           ...theme,
           borderRadius: 0,

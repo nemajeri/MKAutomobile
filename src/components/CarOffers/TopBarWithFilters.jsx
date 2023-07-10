@@ -12,18 +12,16 @@ const TopBarWithFilters = ({
   sliderValues,
   handleCarsPerPageChange,
   handleSelectedCarSortingMethod,
-  setIsActive,
-  initialState,
-  isActive,
+  setIsActiveClass,
+  initialClass,
+  isActiveClass,
   toggleDefaultLeftSidebarLayout,
   toggleFullWidthRightSidebarLayout,
   toggleFullWidthLeftSidebarLayout,
   isLoading,
-  filterOnSubmittedSliderValuesChange,
+  applyFilters,
   setSelectedValue,
   selectedValue,
-  setSelectedSortingMethod,
-  selectedSortingMethod
 }) => {
   const colourStyles = {
     control: (styles) => ({
@@ -55,16 +53,13 @@ const TopBarWithFilters = ({
       transform: state.selectProps.menuIsOpen ? 'rotate(180deg)' : null,
     }),
   };
-
   return (
     <div className='mka__filters-and-views'>
       <CarSlider
         isLoading={isLoading}
         handleSliderChange={handleSliderChange}
         sliderValues={sliderValues}
-        filterOnSubmittedSliderValuesChange={
-          filterOnSubmittedSliderValuesChange
-        }
+        applyFilters={applyFilters}
       />
       <div className='mka-responsive-item'>
         <div className='mka-sorting-div__offers'>
@@ -77,34 +72,32 @@ const TopBarWithFilters = ({
           <SortingCars
             handleSelectedCarSortingMethod={handleSelectedCarSortingMethod}
             colourStyles={colourStyles}
-            selectedSortingMethod={selectedSortingMethod}
-            setSelectedSortingMethod={setSelectedSortingMethod}
           />
         </div>
         <div className='mka__icons-container'>
           <span
             className='mka__individual-icon'
-            onClick={() => setIsActive(initialState)}
+            onClick={() => setIsActiveClass(initialClass)}
           >
-            <DefaultRightSideBarAlignmentIcon isActive={isActive} />
+            <DefaultRightSideBarAlignmentIcon isActiveClass={isActiveClass} />
           </span>
           <span
             className='mka__individual-icon'
             onClick={toggleDefaultLeftSidebarLayout}
           >
-            <DefaultLeftSideBarAlignmentIcon isActive={isActive} />
+            <DefaultLeftSideBarAlignmentIcon isActiveClass={isActiveClass} />
           </span>
           <span
             className='mka__individual-icon'
             onClick={toggleFullWidthRightSidebarLayout}
           >
-            <FullWidthRightSideBarAlignmentIcon isActive={isActive} />
+            <FullWidthRightSideBarAlignmentIcon isActiveClass={isActiveClass} />
           </span>
           <span
             className='mka__individual-icon'
             onClick={toggleFullWidthLeftSidebarLayout}
           >
-            <FullWidthLeftSideBarAlignmentIcon isActive={isActive} />
+            <FullWidthLeftSideBarAlignmentIcon isActiveClass={isActiveClass} />
           </span>
         </div>
       </div>
