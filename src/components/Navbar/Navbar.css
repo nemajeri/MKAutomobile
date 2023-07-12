@@ -16,7 +16,7 @@
   justify-content: center;
 }
 
- .mka__navbar-links_container a {
+.mka__navbar-links_container a {
   font-size: 14px;
   line-height: 66px;
   font-family: var(--font-family);
@@ -25,7 +25,7 @@
   transition: padding 0.25s linear;
   padding: 0 0.5rem;
   cursor: pointer;
-} 
+}
 
 .mka__link-active {
   color: #db2d2e;
@@ -56,32 +56,22 @@
   top: 9rem;
 }
 
-.mka__search_column a {
-  position: relative;
-}
-
-.mka__search_column a i {
-  color: #fff;
-}
-
-.mka__search_column a i:hover {
-  color: var(--color-red);
-}
-
 .mka__search_column {
   color: white;
-  margin: 22.5px 0 0 10px;
+  margin: 0 0 0 10px;
   cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.mka__search_column i {
+  position: relative;
 }
 
 .mka__search_column svg:hover {
   color: red;
   transition: color 0.25s linear;
-}
-
-.mka__navbar-search_icon {
-  color: white;
-  cursor: pointer;
 }
 
 .mka__navbar-search_icon:hover {
@@ -93,7 +83,6 @@
   color: #fff;
   width: 21px;
   height: 21px;
-  margin-top: 20px;
   padding-right: 5px;
 }
 
@@ -131,8 +120,8 @@
   border-radius: 50%;
   background-color: red;
   position: absolute;
-  top: 15px;
-  right: 12px;
+  top: -13px;
+  right: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,7 +172,7 @@ tr {
   height: 8px;
 }
 
-tbody > tr, td {
+tbody>tr, td {
   width: 300px;
   padding: 10px;
   text-align: right;
@@ -243,10 +232,10 @@ tbody > tr, td {
   padding: 1em;
 }
 
- .mka__navbar-menu_container-links a:hover {
+.mka__navbar-menu_container-links a:hover {
   transition: 0.5s;
   color: #db2d2e;
-} 
+}
 
 .mka__navbar-menu_container-links a {
   margin: 1em;

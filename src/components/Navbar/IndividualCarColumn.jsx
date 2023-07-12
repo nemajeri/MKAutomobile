@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { IconContext } from 'react-icons';
 import './Navbar.css';
 
 const IndividualCarColumn = ({
@@ -22,7 +21,7 @@ const IndividualCarColumn = ({
   onClickDeleteCarHandler,
 }) => {
   return (
-    <div key={id} className='mka__place-for-car_table'>
+    <div className='mka__place-for-car_table'>
       <table>
         <tbody>
           <tr>
@@ -30,9 +29,7 @@ const IndividualCarColumn = ({
               id='mka__delete-car--row'
               onClick={() => onClickDeleteCarHandler(car)}
             >
-              <IconContext.Provider value={{ className: 'ai-close' }}>
-                <AiOutlineCloseCircle />
-              </IconContext.Provider>
+                <AiOutlineCloseCircle className='ai-close'/>
             </td>
           </tr>
           <tr>

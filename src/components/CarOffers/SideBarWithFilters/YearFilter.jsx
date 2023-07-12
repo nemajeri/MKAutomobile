@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
-const YearFilter = ({ filteredCarsList, handleYearChange, colourStyles, isResetting, setIsResetting, state }) => {
+const YearFilter = ({ filteredCarsList, handleYearChange, colourStyles, isResetting, setIsResetting, carFilteringAttributes }) => {
   const [selectedValue, setSelectedValue] = useState(null);
 
   const distinctBy = (arr, f) => {
@@ -38,7 +38,7 @@ const YearFilter = ({ filteredCarsList, handleYearChange, colourStyles, isResett
         placeholder='Erstzulassung'
         className='select-placeholder'
         styles={colourStyles}
-        isDisabled={!state.model}
+        isDisabled={!carFilteringAttributes.make}
         options={sortedOptions}
         value={selectedValue}
         onChange={handleSelectChange}

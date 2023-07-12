@@ -18,7 +18,7 @@ const FilterSideBar = ({
   handleDriveTrainChange,
   isResetting,
   setIsResetting,
-  state
+  carFilteringAttributes
 }) => {
   const colourStyles = {
     control: (styles, { isDisabled }) => ({
@@ -64,7 +64,7 @@ const FilterSideBar = ({
         colourStyles={colourStyles}
         isResetting={isResetting}
         setIsResetting={setIsResetting}
-        state={state}
+        carFilteringAttributes={carFilteringAttributes}
       />
       <YearFilter
         handleYearChange={handleYearChange}
@@ -72,7 +72,7 @@ const FilterSideBar = ({
         colourStyles={colourStyles}
         isResetting={isResetting}
         setIsResetting={setIsResetting}
-        state={state}
+        carFilteringAttributes={carFilteringAttributes}
       />
       <MileageFilter
         handleMileageChange={handleMileageChange}
@@ -80,7 +80,7 @@ const FilterSideBar = ({
         colourStyles={colourStyles}
         isResetting={isResetting}
         setIsResetting={setIsResetting}
-        state={state}
+        carFilteringAttributes={carFilteringAttributes}
       />
       <FuelFilter
         handleFuelChange={handleFuelChange}
@@ -88,7 +88,7 @@ const FilterSideBar = ({
         colourStyles={colourStyles}
         isResetting={isResetting}
         setIsResetting={setIsResetting}
-        state={state}
+        carFilteringAttributes={carFilteringAttributes}
       />
       <TransmissionFilter
         handleTransmissionChange={handleTransmissionChange}
@@ -96,7 +96,7 @@ const FilterSideBar = ({
         colourStyles={colourStyles}
         isResetting={isResetting}
         setIsResetting={setIsResetting}
-        state={state}
+        carFilteringAttributes={carFilteringAttributes}
       />
       <DriveTrainFilter
         handleDriveTrainChange={handleDriveTrainChange}
@@ -104,7 +104,7 @@ const FilterSideBar = ({
         colourStyles={colourStyles}
         isResetting={isResetting}
         setIsResetting={setIsResetting}
-        state={state}
+        carFilteringAttributes={carFilteringAttributes}
       />
     </>
   );

@@ -3,9 +3,17 @@
   font-family: var(--font-family);
 }
 
+.mka__search-container .mka__individual-car-option {
+  margin: -45px 0 -45px 0;
+}
+
 .mka__individual-car-option {
   display: flex;
-  gap: 15px;
+  gap: 13px;
+}
+
+.mka__individual-car-option span {
+  line-height: 20px;
 }
 
 .mka__individual-car-option img {
@@ -13,14 +21,10 @@
   height: 40px;
 }
 
-.mka__search-container .mka__search-icon {
-  left: 258px;
-}
-
 .mka__search-icon {
   position: absolute;
   top: 16px;
-  left: 283px;
+  left: 257px;
   color: red;
 }
 

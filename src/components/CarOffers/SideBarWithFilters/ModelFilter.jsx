@@ -7,7 +7,7 @@ const ModelFilter = ({
   colourStyles,
   isResetting,
   setIsResetting,
-  state
+  carFilteringAttributes
 }) => {
   const [selectedValue, setSelectedValue] = useState(null);
 
@@ -46,7 +46,7 @@ const ModelFilter = ({
         value={selectedValue}
         options={distinctOptions}
         onChange={handleSelectChange}
-        isDisabled={!state.make}
+        isDisabled={!carFilteringAttributes.make}
         isSearchable={false}
         theme={(theme) => ({
           ...theme,

@@ -13,3 +13,8 @@
     right: 0;
 }
 
+@media (max-width: 767px) {
+    .mka__contact-description {
+        padding-top: 8rem;
+    }
+}

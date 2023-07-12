@@ -7,7 +7,7 @@ const MileageFilter = ({
   colourStyles,
   isResetting,
   setIsResetting,
-  state
+  carFilteringAttributes
 }) => {
   const [selectedValue, setSelectedValue] = useState(null);
 
@@ -43,7 +43,7 @@ const MileageFilter = ({
         placeholder='Kilometer'
         className='select-placeholder'
         styles={colourStyles}
-        isDisabled={!state.year}
+        isDisabled={!carFilteringAttributes.make}
         options={distinctOptions}
         value={selectedValue}
         onChange={handleSelectChange}
