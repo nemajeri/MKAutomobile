@@ -21,14 +21,10 @@
   height: 40px;
 }
 
-.mka__search-container .mka__search-icon {
-  left: 258px;
-}
-
 .mka__search-icon {
   position: absolute;
   top: 16px;
-  left: 283px;
+  left: 257px;
   color: red;
 }
 
