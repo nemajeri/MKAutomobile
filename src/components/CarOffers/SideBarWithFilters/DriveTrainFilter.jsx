@@ -7,7 +7,7 @@ const DriveTrainFilter = ({
   colourStyles,
   isResetting,
   setIsResetting,
-  state
+  carFilteringAttributes,
 }) => {
   const [selectedValue, setSelectedValue] = useState(null);
 
@@ -43,7 +43,7 @@ const DriveTrainFilter = ({
         placeholder='Antrieb'
         className='select-placeholder'
         styles={colourStyles}
-        isDisabled={!state.transmission}
+        isDisabled={!carFilteringAttributes.make}
         options={distinctOptions}
         value={selectedValue}
         onChange={handleSelectChange}

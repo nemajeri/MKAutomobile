@@ -7,7 +7,7 @@ const TransmissionFilter = ({
   colourStyles,
   isResetting,
   setIsResetting,
-  state
+  carFilteringAttributes
 }) => {
   const [selectedValue, setSelectedValue] = useState(null);
 
@@ -44,7 +44,7 @@ const TransmissionFilter = ({
         className='select-placeholder'
         styles={colourStyles}
         options={distinctOptions}
-        isDisabled={!state.fuel}
+        isDisabled={!carFilteringAttributes.make}
         value={selectedValue}
         onChange={handleSelectChange}
         isSearchable={false}

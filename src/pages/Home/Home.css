@@ -62,10 +62,16 @@
 
 @media (max-width: 787px) {
     .mka__home-car-bmw {
-        transform: translate(50px, 0px);
+        transform: translate(10px, 0px);
     }
 
     .mka__home-car-mercedes {
         transform: translate(-20px, 0px);
     }
 }
+
+@media (min-width: 787px) and (max-width: 1024px) {
+    .mka__home-car-mercedes {
+        transform: translate(-45px, 0px);
+    }
+  }

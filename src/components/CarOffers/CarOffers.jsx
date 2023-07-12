@@ -10,6 +10,19 @@ import {
 import './CarOffers.css';
 
 const initialClass = 'mka__default-layout-right__sidebar';
+const view2 = 'mka__default-layout-left__sidebar';
+const view3 = 'mka__full-width-layout-right__sidebar';
+const view4 = 'mka__full-width-layout-left__sidebar';
+
+const carAttributes = Object.freeze({
+  MAKE: 'make',
+  MODEL: 'model',
+  YEAR: 'year',
+  MILEAGE: 'mileage',
+  FUEL: 'fuel',
+  TRANSMISSION: 'transmission',
+  DRIVE_TRAIN: 'driveTrain',
+});
 
 const CarOffers = () => {
   const dispatch = useDispatch();
@@ -27,7 +40,7 @@ const CarOffers = () => {
   const [selectedCarSortingMethod, setSelectedCarSortingMethod] =
     useState(null);
   const [carsPerPage, setCarsPerPage] = useState(12);
-  const [state, setState] = useState({});
+  const [carFilteringAttributes, setCarFilteringAttributes] = useState({});
   const [selectedValue, setSelectedValue] = useState({
     value: '12',
     label: '12',
@@ -37,23 +50,31 @@ const CarOffers = () => {
     dispatch(setIsLoading(false));
     applyFilters();
     // eslint-disable-next-line
-  }, [state, selectedCarSortingMethod, isLoading, sliderValues]);
+  }, [
+    carFilteringAttributes,
+    selectedCarSortingMethod,
+    isLoading,
+    sliderValues,
+  ]);
 
   const handleSliderChange = (sliderValues) => {
     setSliderValues(sliderValues);
   };
 
   const onChangeValue = (field) => (select) => {
-    setState({ [field]: select.value });
+    setCarFilteringAttributes((prevState) => ({
+      ...prevState,
+      [field]: select.value,
+    }));
   };
 
-  const handleMakeChange = onChangeValue('make');
-  const handleModelChange = onChangeValue('model');
-  const handleYearChange = onChangeValue('year');
-  const handleMileageChange = onChangeValue('mileage');
-  const handleFuelChange = onChangeValue('fuel');
-  const handleTransmissionChange = onChangeValue('transmission');
-  const handleDriveTrainChange = onChangeValue('driveTrain');
+  const handleMakeChange = onChangeValue(carAttributes.MAKE);
+  const handleModelChange = onChangeValue(carAttributes.MODEL);
+  const handleYearChange = onChangeValue(carAttributes.YEAR);
+  const handleMileageChange = onChangeValue(carAttributes.MILEAGE);
+  const handleFuelChange = onChangeValue(carAttributes.FUEL);
+  const handleTransmissionChange = onChangeValue(carAttributes.TRANSMISSION);
+  const handleDriveTrainChange = onChangeValue(carAttributes.DRIVE_TRAIN);
 
   const handleCarsPerPageChange = (select) => {
     setCarsPerPage(select.value);
@@ -67,25 +88,21 @@ const CarOffers = () => {
     setIsActiveClass(view);
   };
 
-  const view2 = 'mka__default-layout-left__sidebar';
-  const view3 = 'mka__full-width-layout-right__sidebar';
-  const view4 = 'mka__full-width-layout-left__sidebar';
-
   const filterCars = (key, value, cars) => {
     switch (key) {
-      case 'make':
+      case carAttributes.MAKE:
         return cars.filter((car) => car.make === value);
-      case 'model':
+      case carAttributes.MODEL:
         return cars.filter((car) => car.model === value);
-      case 'year':
+      case carAttributes.YEAR:
         return cars.filter((car) => car.year === value);
-      case 'mileage':
+      case carAttributes.MILEAGE:
         return cars.filter((car) => car.mileage === value);
-      case 'fuel':
+      case carAttributes.FUEL:
         return cars.filter((car) => car.fuel === value);
-      case 'transmission':
+      case carAttributes.TRANSMISSION:
         return cars.filter((car) => car.transmission === value);
-      case 'driveTrain':
+      case carAttributes.DRIVE_TRAIN:
         return cars.filter((car) => car.drivetrain === value);
       default:
         return cars;
@@ -96,35 +113,63 @@ const CarOffers = () => {
   const toggleFullWidthRightSidebarLayout = toggleClass(view3);
   const toggleFullWidthLeftSidebarLayout = toggleClass(view4);
 
+  let filteredCars = allCars;
+
   const applyFilters = (sliderValues) => {
-    let filteredCars = allCars;
-    
-    if (state.make) {
-      filteredCars = filterCars('make', state.make, allCars);
+    if (carFilteringAttributes.make) {
+      filteredCars = filterCars(
+        carAttributes.MAKE,
+        carFilteringAttributes.make,
+        filteredCars
+      );
     }
 
-    if (state.model) {
-      filteredCars = filterCars('model', state.model, filteredCars);
+    if (carFilteringAttributes.model) {
+      filteredCars = filterCars(
+        carAttributes.MODEL,
+        carFilteringAttributes.model,
+        filteredCars
+      );
     }
 
-    if (state.year) {
-      filteredCars = filterCars('year', state.year, filteredCars);
+    if (carFilteringAttributes.year) {
+      filteredCars = filterCars(
+        carAttributes.YEAR,
+        carFilteringAttributes.year,
+        filteredCars
+      );
     }
 
-    if (state.mileage) {
-      filteredCars = filterCars('mileage', state.mileage, filteredCars);
+    if (carFilteringAttributes.mileage) {
+      filteredCars = filterCars(
+        carAttributes.MILEAGE,
+        carFilteringAttributes.mileage,
+        filteredCars
+      );
     }
 
-    if (state.fuel) {
-      filteredCars = filterCars('fuel', state.fuel, filteredCars);
+    if (carFilteringAttributes.fuel) {
+      filteredCars = filterCars(
+        carAttributes.FUEL,
+        carFilteringAttributes.fuel,
+        filteredCars
+      );
     }
 
-    if (state.transmission) {
-      filteredCars = filterCars('transmission', state.transmission, filteredCars);
+    if (carFilteringAttributes.transmission) {
+      filteredCars = filterCars(
+        carAttributes.TRANSMISSION,
+        carFilteringAttributes.transmission,
+        filteredCars
+      );
     }
 
-    if (state.driveTrain) {
-      filteredCars = filterCars('driveTrain', state.driveTrain, filteredCars);
+    if (carFilteringAttributes.driveTrain) {
+      filteredCars = filterCars(
+        carAttributes.DRIVE_TRAIN,
+        carFilteringAttributes.driveTrain,
+        filteredCars
+      );
     }
 
     if (sliderValues) {
@@ -134,22 +179,17 @@ const CarOffers = () => {
       );
     }
 
-    if (
-      selectedCarSortingMethod === 'Sortieren nach Preis'
-    ) {
-      filteredCars.sort(
+    if (selectedCarSortingMethod === 'Sortieren nach Preis') {
+      filteredCars = filteredCars.sort(
         (a, b) => parseInt(a.price) - parseInt(b.price)
       );
     }
 
-    if (
-      selectedCarSortingMethod === 'Sortieren nach Jahr'
-    ) {
-      filteredCars.sort(
+    if (selectedCarSortingMethod === 'Sortieren nach Jahr') {
+      filteredCars = filteredCars.sort(
         (a, b) => parseInt(a.year) - parseInt(b.year)
       );
     }
-
 
     dispatch(setFilteredCarsList(filteredCars));
   };
@@ -157,9 +197,10 @@ const CarOffers = () => {
   const resetFiltersOnClick = () => {
     setCarsPerPage(12);
     setSelectedCarSortingMethod('Sortieren nach Preis');
-    setState({});
+    setCarFilteringAttributes({});
     setSelectedValue({ value: '12', label: '12' });
     setIsResetting(true);
+    dispatch(setFilteredCarsList(filteredCars));
   };
 
   return (
@@ -202,7 +243,7 @@ const CarOffers = () => {
               resetFiltersOnClick={resetFiltersOnClick}
               isResetting={isResetting}
               setIsResetting={setIsResetting}
-              state={state}
+              carFilteringAttributes={carFilteringAttributes}
             />
             <PaginatedCars
               isLoading={isLoading}

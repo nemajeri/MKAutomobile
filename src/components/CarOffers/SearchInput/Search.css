@@ -3,9 +3,17 @@
   font-family: var(--font-family);
 }
 
+.mka__search-container .mka__individual-car-option {
+  margin: -45px 0 -45px 0;
+}
+
 .mka__individual-car-option {
   display: flex;
-  gap: 15px;
+  gap: 13px;
+}
+
+.mka__individual-car-option span {
+  line-height: 20px;
 }
 
 .mka__individual-car-option img {

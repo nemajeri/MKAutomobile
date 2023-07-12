@@ -15,7 +15,7 @@ const SideBar = ({
   resetFiltersOnClick,
   isResetting,
   setIsResetting,
-  state
+  carFilteringAttributes
 }) => {
   return (
     <div className='mka__search-and-filters'>
@@ -29,7 +29,6 @@ const SideBar = ({
         <div className='mka__sidebar-divider'></div>
         <div className='mka__sidebar-button--and-filters_alignment'>
           <FilterSideBar
-            filter
             allCars={allCars}
             filteredCarsList={filteredCarsList}
             handleMakeChange={handleMakeChange}
@@ -41,7 +40,7 @@ const SideBar = ({
             handleDriveTrainChange={handleDriveTrainChange}
             isResetting={isResetting}
             setIsResetting={setIsResetting}
-            state={state}
+            carFilteringAttributes={carFilteringAttributes}
           />
           <Button
             className={'mka__siderbar-button'}

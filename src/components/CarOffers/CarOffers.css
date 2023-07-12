@@ -303,7 +303,7 @@ input[type="range"] {
   --minRangePercent: 0%;
   --maxRangePercent: 0%;
   height: .3rem;
-  }
+}
 
 input[type="range"]:invalid {
   box-shadow: none;
@@ -336,44 +336,39 @@ input::focus {
   outline: none;
 }
 
-.min-max-slider > label {
+.min-max-slider>label {
   display: none;
 }
 
-.min-max-slider > input {
+.min-max-slider>input {
   cursor: pointer;
   position: absolute;
 }
 
-.min-max-slider > input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+.min-max-slider>input {
   outline: none !important;
   background: transparent;
 }
-.min-max-slider > input.min {
-  background-image: linear-gradient(
-    to right,
-    white 0%,
-    white var(--minRangePercent),
-    red var(--minRangePercent),
-    red 100%
-  );
+
+.min-max-slider>input.min {
+  background-image: linear-gradient(to right,
+      white 0%,
+      white var(--minRangePercent),
+      red var(--minRangePercent),
+      red 100%);
 }
 
-.min-max-slider > input.max {
-  background-image: linear-gradient(
-    to right,
-    red 0%,
-    red var(--maxRangePercent),
-    white var(--maxRangePercent),
-    white 100%
-  );
+.min-max-slider>input.max {
+  background-image: linear-gradient(to right,
+      red 0%,
+      red var(--maxRangePercent),
+      white var(--maxRangePercent),
+      white 100%);
 }
 
-.min-max-slider > input::-webkit-slider-runnable-track,
-.min-max-slider > input::-moz-range-track,
-.min-max-slider > input::-ms-track {
+.min-max-slider>input::-webkit-slider-runnable-track,
+.min-max-slider>input::-moz-range-track,
+.min-max-slider>input::-ms-track {
   box-sizing: border-box;
   border: none;
   height: 4px;
@@ -387,44 +382,44 @@ input::focus {
   background-repeat: no-repeat;
 }
 
-.min-max-slider > input::focus {
+.min-max-slider>input::focus {
   outline: none;
 }
 
-.min-max-slider > input.max::-moz-range-progress {
+.min-max-slider>input.max::-moz-range-progress {
   background: var(--color-red);
   border-radius: 4px;
 }
 
-.min-max-slider > input.min::-moz-range-progress {
+.min-max-slider>input.min::-moz-range-progress {
   height: 0.6em;
   background: var(--color-grey);
   border-radius: 4px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 20px; 
-  height: 20px; 
-  background: white; 
-  cursor: pointer; 
-  border:  1px solid var(--color-red);
+  width: 20px;
+  height: 20px;
+  background: white;
+  cursor: pointer;
+  border: 1px solid var(--color-red);
 }
 
 input[type="range"]::-moz-range-thumb {
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 20px; 
-  height: 20px; 
-  background: white; 
-  cursor: pointer; 
-  border:  1px solid var(--color-red);
+  width: 20px;
+  height: 20px;
+  background: white;
+  cursor: pointer;
+  border: 1px solid var(--color-red);
 }
 
-.min-max-slider > input::-webkit-slider-runnable-track {
+.min-max-slider>input::-webkit-slider-runnable-track {
   cursor: pointer;
 }
 
@@ -454,13 +449,13 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .mka__full-width-no-carsfound__container {
-  min-width: 45rem;
+  min-width: 47rem;
 }
 
 @media (max-width: 767px) {
   .mka__range-btn-align {
-      display: flex;
-      gap: 25px;
+    display: flex;
+    gap: 25px;
   }
 }
 

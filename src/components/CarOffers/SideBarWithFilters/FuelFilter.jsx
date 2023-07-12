@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
-const FuelFilter = ({ filteredCarsList, handleFuelChange, colourStyles, isResetting, setIsResetting, state }) => {
+const FuelFilter = ({ filteredCarsList, handleFuelChange, colourStyles, isResetting, setIsResetting, carFilteringAttributes }) => {
   const [selectedValue, setSelectedValue] = useState(null);
 
   const distinctBy = (arr, f) => {
@@ -41,7 +41,7 @@ const FuelFilter = ({ filteredCarsList, handleFuelChange, colourStyles, isResett
         onChange={handleSelectChange}
         isSearchable={false}
         value={selectedValue}
-        isDisabled={!state.mileage}
+        isDisabled={!carFilteringAttributes.make}
         theme={theme => ({
           ...theme,
           borderRadius: 0,

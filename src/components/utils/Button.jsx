@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Button = props => {
-  const buttonClass = `btn ${props.className}`;
+const Button = ({ onClick, className, children }) => {
+  const buttonClass = `btn ${className}`;
   return (
     <>
-      <button type='submit' className={buttonClass} onClick={props.onClick}>
+      <button type='submit' className={buttonClass} onClick={onClick}>
         <svg
           width='180px'
           height='60px'
@@ -14,7 +14,7 @@ const Button = props => {
           <polyline points='179,1 179,59 1,59 1,1 179,1' className='bg-line' />
           <polyline points='179,1 179,59 1,59 1,1 179,1' className='hl-line' />
         </svg>
-        <span>{props.children}</span>
+        <span>{children}</span>
       </button>
     </>
   );

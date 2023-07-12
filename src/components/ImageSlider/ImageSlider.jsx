@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -6,8 +6,19 @@ import './ImageSlider.css';
 import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from 'swiper';
+import LoadingSvg from '../utils/LoadingSvg';
 
 const ImageSlider = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Swiper
@@ -19,7 +30,6 @@ const ImageSlider = () => {
         modules={[Pagination, Navigation]}
         className='mka__home-slider'
       >
-        {/* Probati svrstati u jednu komponentu i mapovati */}
         <SwiperSlide>
           <div className='mka__img-slider-size'>
             <img src={require('../../assets/1.jpg')} alt='gallery-image_1' />
@@ -66,6 +76,11 @@ const ImageSlider = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+      {isLoading && (
+        <div className='mka__loading-svg-container'>
+          <LoadingSvg />
+        </div>
+      )}
     </>
   );
 };

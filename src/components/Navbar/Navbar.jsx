@@ -114,6 +114,7 @@ const Navbar = () => {
                 <div className='mka__place-for-cars_table'>
                   {Array.from(carsToCompare).map((car) => (
                     <IndividualCarColumn
+                      key={car.id}
                       car={car}
                       onClickDeleteCarHandler={onClickDeleteCarHandler}
                     />
